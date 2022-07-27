@@ -11,7 +11,7 @@ tags: ['levelup', 'electronics', 'solution']
 
 Print your intro on the Serial Monitor.
 
-```c++
+```java
 void setup()
 {
   Serial.begin(9600);  //Begin serial communication at 9600(Baud rate)
@@ -31,16 +31,16 @@ You can see an example intro here.
 
 Swap the last two numbers of your ID. (Don't Hardcode swapped numbers)
 
-```c++
+```java
 void setup()
 {
   Serial.begin(9600);
 
   //Initialize all variables
-  int a=0;
-  int b=2;
-  int c=4;
-  int d=0;
+  int a = 0;
+  int b = 2;
+  int c = 4;
+  int d = 0;
 
   //Print original ID number
   Serial.print("Original id no. is ");
@@ -71,7 +71,7 @@ Make an H-bridge but instead of Motor, you have to use 2 LEDs.
 1. 1st LED should glow in one configuration &
 2. 2nd LED should glow in other configuration
 
-```c++
+```java
 void setup()
 {
   pinMode(3, OUTPUT);  //Initialize the pins as output

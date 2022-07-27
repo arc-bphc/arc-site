@@ -9,29 +9,26 @@ tags: ['levelup', 'electronics', 'solution']
 ## Assignment 1
 Check if a number is prime.
 
-```c++
-int x,y;
+```java
+int x, y;
 
-void setup()
-{
+void setup() {
   Serial.begin(9600);
 }
 
-void loop()
-{
-  if (Serial.available() > 0) //Check for serial data
-  {
-    x=Serial.parseInt();  //Read Serial input
+void loop() {
+  if (Serial.available() > 0) { //Check for serial data
+    x = Serial.parseInt();  //Read Serial input
     Serial.println(x);
-	for (int i = 2; i < x; i++)  //For loop dividing the number by each number between 0 and itself
-    {
-      if (x % i == 0) // If it divides then toggles y to 1
-      {
-		  y=1;
+	for (int i = 2; i < x; i++) { //For loop dividing the number by each number between 0 and itself
+      if (x % i == 0) { // If it divides then toggles y to 1
+		y = 1;
 	  }
     }
-    if (y==1) Serial.println("It is not a prime number");
-    else Serial.println("It is a prime number");
+    if (y==1) 
+      Serial.println("It is not a prime number");
+    else 
+      Serial.println("It is a prime number");
     y=0;
   }
 }
@@ -43,10 +40,10 @@ Enter a prime number and see!
 ## Assignment 2
 Encrypt and decrypt an integer input using XOR
 
-```c++
+```java
 //Initialize variables
-char x='F';
-int y,z;
+char x = 'F';
+int y, z;
 
 void setup()
 {
@@ -58,10 +55,10 @@ void loop()
 {
   if (Serial.available() > 0) //Check for Serial data
   {
-    y=Serial.parseInt(); //Read serial data and store in a variable
+    y = Serial.parseInt(); //Read serial data and store in a variable
     Serial.print("Your integer is: ");
     Serial.println(y);
-    z= x^y; //XOR operation
+    z = x ^ y; //XOR operation
     Serial.print("The encrypted/decrypted code is :");
     Serial.println(z);  //Print the encrypted/decrypted value
   }

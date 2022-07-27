@@ -11,7 +11,7 @@ const ContentSecurityPolicy = `
   media-src 'none';
   connect-src *;
   font-src 'self';
-  frame-src www.youtube.com
+  frame-src www.youtube.com www.tinkercad.com
 `
 
 const securityHeaders = [

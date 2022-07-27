@@ -8,7 +8,7 @@ tags: ['levelup', 'electronics', 'solution']
 ## Assignment 1
 Calculate the velocity of an object moving with constant velocity using the HC SR 04 Sensor. Assume that the velocity vector of the object points directly towards or away from the HC SR04 transmitter/receiver. (Ignore Doppler Effect)
 
-```c++
+```java
 //Set variables to 0
 float dist,dist1,speed = 0;
 
@@ -57,7 +57,7 @@ Use this velocity calculated in previous question to calculate the distance of t
 
 This is an additon to previous code. Add the following to it.
 
-```c++
+```java
 delay((timeInterval-1)*1000); //wait for (total interval - 1 second)
 
   dist2 = 0.01723 * readDistance(10, 11);  //latest distance

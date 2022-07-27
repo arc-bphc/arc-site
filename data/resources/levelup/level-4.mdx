@@ -31,10 +31,10 @@ The Arduino comes equipped with internal resistors which can be operated in the 
 As you would have noticed in the pinMode() documentation [(Link)](https://www.arduino.cc/reference/en/language/functions/digital-io/pinmode/), The Digital GPIO pins can operate in the INPUT_PULLUP which enables the internal resistors on that pin and let's the pin be used in Pull-Up mode.
 
 <Iamge 
-	src="static/images/levelup/level-4/pullup.png" 
+	src="/static/images/levelup/level-4/pullup.png" 
 	alt="Pull-Up" 
-	width='auto' 
-	height='auto'
+	width='500' 
+	height='500'
 />
 
 **MCU = Micro-Controller Unit**
@@ -50,10 +50,10 @@ A Push button comprises of two metal contacts that touch upon pressing action on
 Thus, if the sensing element is sensitive enough, it registers multiple button press from a single action. This can introduce errors in the system you are using and can hinder a lot of processes.
 
 <Image 
-	src="static/images/levelup/level-4/bouncing.png" 
+	src="/static/images/levelup/level-4/bouncing.png" 
 	alt="Bouncing" 
-	width='auto' 
-	height='auto'
+	width='500' 
+	height='500'
 />
 
 To overcome these errors we establish "Debouncing" Techniques, This can be achieved both via software or hardware tweaks.
@@ -78,10 +78,10 @@ The Arduino UNO has 6 pins (A0 to A5) that can read analog input voltages receiv
 These Analog Pins map the input voltages to a resolved value between 0 and 1023, Using a 10 bit ADC (Analog to Digital Converter)
 
 <Image 
-	src="static/images/levelup/level-4/analoginput.png" 
+	src="/static/images/levelup/level-4/analoginput.png" 
 	alt="AnalogInput" 
 	width='700px' 
-	height='auto'
+	height='500'
 />
 
 **Links to Follow :** [Analog Input?](https://www.youtube.com/watch?v=cmc-BPtkdAU&feature=youtu.be)
@@ -94,7 +94,7 @@ This in-built arduino function reads a value from a GPIO analog pin and resolves
 
 **Syntax** : `analogRead(pin)`
 
-```c++
+```java
 int analogPin = 42;
 int val; //to store the analog read
 
@@ -124,11 +124,11 @@ Pins **3, 5, 6, 9, 10, 11** on the Arduino UNO are equipped with the PWM logic, 
 
 **Syntax** : `analogWrite(Pin_number, value)`
 
-<Image src="static/images/levelup/level-4/pwm.png" alt="PWM" width='auto' height='auto' />
+<Image src="/static/images/levelup/level-4/pwm.png" alt="PWM" width='500' height='500' />
 
 Notice how the pins have a ~ symbol on them to help differentiate.
 
-<Image src="static/images/levelup/level-4/pwmpins.png" alt="PWMpins" width='auto' height='auto' />
+<Image src="/static/images/levelup/level-4/pwmpins.png" alt="PWMpins" width='500' height='500' />
 
 Documentation for [analogWrite()](https://www.arduino.cc/reference/en/language/functions/analog-io/analogwrite/)
 
@@ -137,7 +137,7 @@ Documentation for [analogWrite()](https://www.arduino.cc/reference/en/language/f
 
 ## Dim an LED
 
-```c++
+```java
 int brightness = 0;
 
 void setup()
@@ -161,10 +161,10 @@ void loop()
 ```
 
 <Image 
-	src="static/images/levelup/level-4/dimLED.png" 
+	src="/static/images/levelup/level-4/dimLED.png" 
 	alt="dimLED" 
 	width='700px'
-	height='auto'
+	height='500'
 />
 
 [Link to the PWM Simulation](https://www.tinkercad.com/things/5OJLL9YWGF9)
@@ -174,10 +174,10 @@ void loop()
 Pulse Width Modulation (PWM) is a technique for creating analog results with digital means. The Arduino generates a square wave, a signal switched on and off. This on- off pattern can simulate voltages in between the full Vcc (5V) and off (0V) by changing the **"duty cycle"** of the Square wave.
 
 <Image 
-	src="static/images/levelup/level-4/PWM_2.png" 
+	src="/static/images/levelup/level-4/PWM_2.png" 
 	alt="PWM_2" 
 	width='800px' 
-	height='auto'
+	height='500'
 />
 
 ## Duty Cycle
@@ -218,10 +218,10 @@ A 3-terminal instrument which measures and gives out a fraction of voltage appli
 
 
 <Image 
-	src="static/images/levelup/level-4/Potentiometer.png" 
+	src="/static/images/levelup/level-4/Potentiometer.png" 
 	alt="Potentiometer" 
 	width='800px' 
-	height='auto'
+	height='500'
 />
 
 
@@ -241,10 +241,10 @@ When the light of enough energy falls on it, the number of electrons available f
 
 
 <Image 
-	src="static/images/levelup/level-4/LDR.png" 
+	src="/static/images/levelup/level-4/LDR.png" 
 	alt="LDR" 
 	width='600px' 
-	height='auto'
+	height='500'
 />
 
 
@@ -263,10 +263,10 @@ The RGB LED can emit different colors by mixing the 3 basic colors red, green an
 
 
 <Image 
-	src="static/images/levelup/level-4/RGBLED.png" 
+	src="/static/images/levelup/level-4/RGBLED.png" 
 	alt="RGB-LED" 
 	width='900px' 
-	height='auto'
+	height='500'
 />
 
 
@@ -303,17 +303,17 @@ Generate a PWM wave of any desired **% Duty Cycle** from a **Non-PWM supporting 
 Task :- Make a 4 wheeled bot as shown in the figure.
 
 <Image 
-	src="static/images/levelup/level-7/Ass2_lvl7.png" 
+	src="/static/images/levelup/level-7/Ass2_lvl7.png" 
 	alt="ChassisCAD" 
 	width='750px' 
-	height='auto'
+	height='500'
 />
 
 <Image 
-	src="static/images/levelup/level-7/Ass22_lvl7.png" 
+	src="/static/images/levelup/level-7/Ass22_lvl7.png" 
 	alt="MotorCAD" 
 	width='750px' 
-	height='auto'
+	height='500'
 />
 
 This week you have to use your creativity for the part designing , but emphasis will be on the assembly and the type of mates being used.
