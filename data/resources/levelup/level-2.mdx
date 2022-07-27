@@ -1,19 +1,8 @@
 ---
-title: Level 2 Resources
-tags: LevelUp
-layout: article
-mode: normal
-type: article
-sharing: true
-author: Automation and Robotics Club
-show_author_profile: true
-show_title: true
-full_width: false
-header: true
-aside:
-  toc: true
-sidebar:
-  nav: levelup-bar
+title: Level 2
+category: 'resource'
+level: 2
+tags: ['levelup', 'electronics']
 ---
 
 ## Arduino Uno
@@ -28,7 +17,12 @@ one i.e. Arduino Uno
 
 ## What’s in an Arduino Uno?
 
-<img src="{{site.baseurl}}/assets/images/resources/Level 2/arduinouno.png" alt="LED" width=auto height=auto>
+<Image 
+  src='static/images/levelup/level-2/arduinouno.png'
+  alt='arduinouno'
+  width='auto' 
+  height='auto' 
+/>
 
 ### Microcontroller
 This part is the brain of the Arduino. It processes the code written and executes the
@@ -60,7 +54,12 @@ They are of two types:
 **Digital GPIO**: Strictly outputs two values i.e. HIGH or LOW.
 **Analog GPIO**: Reads an analog signal within a defined precision.
 
-<img src="{{site.baseurl}}/assets/images/resources/Level 2/digitalvsanalog.png" alt="LED" width=auto height=auto>
+<Image 
+  src='static/images/levelup/level-2/digitalvsanalog.png'
+  alt='digitalvsanalog'
+  width='auto'
+  height='auto'
+/>
 
 
 ## Serial Communication
@@ -69,8 +68,9 @@ communicates with the computer and the serial monitor.
 
 A video on the serial port and print commands can be found here.
 
-`important`{:.warning}
-<div>{%- include extensions/youtube.html id='b5kndEtAKl8' -%}</div>
+`important`
+
+<EmbedItem url='https://www.youtube.com/embed/b5kndEtAKl8' />
 
 The serial monitor can also be used to take inputs from the
 user.
@@ -141,17 +141,22 @@ On the other hand, the decimal system is the oldest and the most widely used num
 
 An introduction to Binary number system and Decimal number systems is explained well in these links :
 
-`important`{:.warning}
-<div>{%- include extensions/youtube.html id='5OBZYhJnne0' -%}</div>
+`important`
+<EmbedItem url='https://www.youtube.com/embed/5OBZYhJnne0' />
 
-`important`{:.warning}
-<div>{%- include extensions/youtube.html id='4vNlt_EDw1Q' -%}</div>
+`important`
+<EmbedItem url='https://www.youtube.com/embed/4vNlt_EDw1Q' />
 
-`important`{:.warning}
-<div>{%- include extensions/youtube.html id='rTuKKVcYeMg' -%}</div>
+`important`
+<EmbedItem url='https://www.youtube.com/embed/rTuKKVcYeMg' />
 
 
-<img src="{{site.baseurl}}/assets/images/resources/Level 2/binaryquestion.png" alt="LED" width=auto height=auto>
+<Image 
+  src="static/images/levelup/level-2/binaryquestion.png" 
+  alt='binaryquestion' 
+  width='auto' 
+  height='auto'
+/>
 
 ## Bit Math
 Working on bytes, or data types comprising of bytes like ints, floats, doubles or even
@@ -164,45 +169,33 @@ operations operate on the individual bits of the bit patterns. Bit operations ar
 and can be used in optimizing time complexity. Some common bit operators are discussed
 in this section and in this video
 
-`important`{:.warning}
-<div>{%- include extensions/youtube.html id='McgvehwAako' -%}</div>
+`important`
+<EmbedItem url='https://www.youtube.com/embed/McgvehwAako' />
 
 
 <div class="swiper swiper-demo">
   <div class="swiper__wrapper">
-    <div class="swiper__slide"><img class="image image" src="{{site.baseurl}}/assets/images/resources/Level 2/bitwise.png"/></div>
-    <div class="swiper__slide"><img class="image image" src="{{site.baseurl}}/assets/images/resources/Level 2/and.png"/></div>
-    <div class="swiper__slide"><img class="image image" src="{{site.baseurl}}/assets/images/resources/Level 2/or_exp.png"/></div>
-    <div class="swiper__slide"><img class="image image" src="{{site.baseurl}}/assets/images/resources/Level 2/NOT.png"/></div>
-    <div class="swiper__slide"><img class="image image" src="{{site.baseurl}}/assets/images/resources/Level 2/xor.png"/></div>
-    <div class="swiper__slide"><img class="image image" src="{{site.baseurl}}/assets/images/resources/Level 2/left_shift.png"/></div>
-    <div class="swiper__slide"><img class="image image" src="{{site.baseurl}}/assets/images/resources/Level 2/right_shift.png"/></div>
+    <div class="swiper__slide"><Image class="image image" src="static/images/levelup/level-2/bitwise.png"/></div>
+    <div class="swiper__slide"><Image class="image image" src="static/images/levelup/level-2/and.png"/></div>
+    <div class="swiper__slide"><Image class="image image" src="static/images/levelup/level-2/or_exp.png"/></div>
+    <div class="swiper__slide"><Image class="image image" src="static/images/levelup/level-2/NOT.png"/></div>
+    <div class="swiper__slide"><Image class="image image" src="static/images/levelup/level-2/xor.png"/></div>
+    <div class="swiper__slide"><Image class="image image" src="static/images/levelup/level-2/left_shift.png"/></div>
+    <div class="swiper__slide"><Image class="image image" src="static/images/levelup/level-2/right_shift.png"/></div>
   </div>
   <div class="swiper__button swiper__button--prev fas fa-chevron-left"></div>
   <div class="swiper__button swiper__button--next fas fa-chevron-right"></div>
 </div>
 
-<style>
-.swiper-demo {
-  height: auto;
-}
-</style>
-<script>
-{%- include scripts/lib/swiper.js -%}
-var SOURCES = window.TEXT_VARIABLES.sources;
-window.Lazyload.js(SOURCES.jquery, function() {
-  $('.swiper-demo').swiper();
-});
-</script>
 
 ## Truth Tables
 
 <div class="swiper swiper-demo">
   <div class="swiper__wrapper">
-    <div class="swiper__slide"><img class="image image" src="{{site.baseurl}}/assets/images/resources/Level 2/NOT_table.png"/></div>
-    <div class="swiper__slide"><img class="image image" src="{{site.baseurl}}/assets/images/resources/Level 2/or.png"/></div>
-    <div class="swiper__slide"><img class="image image" src="{{site.baseurl}}/assets/images/resources/Level 2/table 1.png"/></div>
-    <div class="swiper__slide"><img class="image image" src="{{site.baseurl}}/assets/images/resources/Level 2/table 2.png"/></div>
+    <div class="swiper__slide"><Image class="image image" src="static/images/levelup/level-2/NOT_table.png"/></div>
+    <div class="swiper__slide"><Image class="image image" src="static/images/levelup/level-2/or.png"/></div>
+    <div class="swiper__slide"><Image class="image image" src="static/images/levelup/level-2/table 1.png"/></div>
+    <div class="swiper__slide"><Image class="image image" src="static/images/levelup/level-2/table 2.png"/></div>
   </div>
   <div class="swiper__button swiper__button--prev fas fa-chevron-left"></div>
   <div class="swiper__button swiper__button--next fas fa-chevron-right"></div>
@@ -223,12 +216,12 @@ x-axis being time and y-axis being voltage.
 
 You can learn more about an oscilloscope through these videos :
 
-`important`{:.warning}
-<div>{%- include extensions/youtube.html id='lSHAE_Y6snc' -%}</div>
+`important`
+<EmbedItem url='https://www.youtube.com/embed/lSHAE_Y6snc' />
 
 
-`important`{:.warning}
-<div>{%- include extensions/youtube.html id='wfvYz1L0Qkk' -%}</div>
+`important`
+<EmbedItem url='https://www.youtube.com/embed/wfvYz1L0Qkk' />
 
 
 ## Measuring Voltage and Current using a Multimeter
@@ -237,18 +230,18 @@ electronic measuring instrument that combines several measurement functions in o
 typical multimeter can measure voltage, current, and resistance.
 
 
-`important`{:.warning}
-<div>{%- include extensions/youtube.html id='0UUZkiNbklA' -%}</div>
+`important`
+<EmbedItem url='https://www.youtube.com/embed/0UUZkiNbklA' />
 
 
-`important`{:.warning}
-<div>{%- include extensions/youtube.html id='Gnsrjc8RU4A' -%}</div>
+`important`
+<EmbedItem url='https://www.youtube.com/embed/Gnsrjc8RU4A' />
 
 ## OnShape
 We recommend you watch the videos first to get started with OnShape.
 
-<div>{%- include extensions/youtube.html id='2l8Do2Uk_JQ' -%}</div>
-<div>{%- include extensions/youtube.html id='9VdrudxHAiE' -%}</div>
+<EmbedItem url='https://www.youtube.com/embed/2l8Do2Uk_JQ' />
+<EmbedItem url='https://www.youtube.com/embed/9VdrudxHAiE' />
 
 
 ## Assignment

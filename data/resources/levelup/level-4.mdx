@@ -1,19 +1,8 @@
 ---
-title: Level 4 Resources
-tags: LevelUp
-layout: article
-mode: normal
-type: article
-sharing: true
-author: Automation and Robotics Club
-show_author_profile: true
-show_title: true
-full_width: false
-header: true
-aside:
-  toc: true
-sidebar:
-  nav: levelup-bar
+title: Level 4
+category: 'resource'
+level: 4
+tags: ['levelup', 'electronics']
 ---
 # Pre Requisites
 
@@ -41,7 +30,12 @@ The Arduino comes equipped with internal resistors which can be operated in the 
 
 As you would have noticed in the pinMode() documentation [(Link)](https://www.arduino.cc/reference/en/language/functions/digital-io/pinmode/), The Digital GPIO pins can operate in the INPUT_PULLUP which enables the internal resistors on that pin and let's the pin be used in Pull-Up mode.
 
-<img src="{{site.baseurl}}/assets/images/resources/Level 4/pullup.png" alt="Pull-Up" width=400px height=auto>
+<Iamge 
+	src="static/images/levelup/level-4/pullup.png" 
+	alt="Pull-Up" 
+	width='auto' 
+	height='auto'
+/>
 
 **MCU = Micro-Controller Unit**
 
@@ -55,7 +49,12 @@ A Push button comprises of two metal contacts that touch upon pressing action on
 
 Thus, if the sensing element is sensitive enough, it registers multiple button press from a single action. This can introduce errors in the system you are using and can hinder a lot of processes.
 
-<img src="{{site.baseurl}}/assets/images/resources/Level 4/bouncing.png" alt="Bouncing" width=500px height=auto>
+<Image 
+	src="static/images/levelup/level-4/bouncing.png" 
+	alt="Bouncing" 
+	width='auto' 
+	height='auto'
+/>
 
 To overcome these errors we establish "Debouncing" Techniques, This can be achieved both via software or hardware tweaks.
 
@@ -78,7 +77,12 @@ The Arduino UNO has 6 pins (A0 to A5) that can read analog input voltages receiv
 
 These Analog Pins map the input voltages to a resolved value between 0 and 1023, Using a 10 bit ADC (Analog to Digital Converter)
 
-<img src="{{site.baseurl}}/assets/images/resources/Level 4/analoginput.png" alt="AnalogInput" width=700px height=auto>
+<Image 
+	src="static/images/levelup/level-4/analoginput.png" 
+	alt="AnalogInput" 
+	width='700px' 
+	height='auto'
+/>
 
 **Links to Follow :** [Analog Input?](https://www.youtube.com/watch?v=cmc-BPtkdAU&feature=youtu.be)
 
@@ -120,11 +124,11 @@ Pins **3, 5, 6, 9, 10, 11** on the Arduino UNO are equipped with the PWM logic, 
 
 **Syntax** : `analogWrite(Pin_number, value)`
 
-<img src="{{site.baseurl}}/assets/images/resources/Level 4/pwm.png" alt="PWM" width=500px height=auto>
+<Image src="static/images/levelup/level-4/pwm.png" alt="PWM" width='auto' height='auto' />
 
 Notice how the pins have a ~ symbol on them to help differentiate.
 
-<img src="{{site.baseurl}}/assets/images/resources/Level 4/pwmpins.png" alt="PWMpins" width=auto height=600px>
+<Image src="static/images/levelup/level-4/pwmpins.png" alt="PWMpins" width='auto' height='auto' />
 
 Documentation for [analogWrite()](https://www.arduino.cc/reference/en/language/functions/analog-io/analogwrite/)
 
@@ -156,7 +160,12 @@ void loop()
 }
 ```
 
-<img src="{{site.baseurl}}/assets/images/resources/Level 4/dimLED.png" alt="dimLED" width=700px height=auto>
+<Image 
+	src="static/images/levelup/level-4/dimLED.png" 
+	alt="dimLED" 
+	width='700px'
+	height='auto'
+/>
 
 [Link to the PWM Simulation](https://www.tinkercad.com/things/5OJLL9YWGF9)
 
@@ -164,7 +173,12 @@ void loop()
 
 Pulse Width Modulation (PWM) is a technique for creating analog results with digital means. The Arduino generates a square wave, a signal switched on and off. This on- off pattern can simulate voltages in between the full Vcc (5V) and off (0V) by changing the **"duty cycle"** of the Square wave.
 
-<img src="{{site.baseurl}}/assets/images/resources/Level 4/PWM_2.png" alt="PWM_2" width=800px height=auto>
+<Image 
+	src="static/images/levelup/level-4/PWM_2.png" 
+	alt="PWM_2" 
+	width='800px' 
+	height='auto'
+/>
 
 ## Duty Cycle
 
@@ -203,7 +217,12 @@ $$
 A 3-terminal instrument which measures and gives out a fraction of voltage applied across its two ends, depending upon the variation of the position of sliding contact over the uniform resistance (placed in a semi-circular manner, acting as a voltage divider).
 
 
-<img src="{{site.baseurl}}/assets/images/resources/Level 4/Potentiometer.png" alt="Potentiometer" width=800px height=auto>
+<Image 
+	src="static/images/levelup/level-4/Potentiometer.png" 
+	alt="Potentiometer" 
+	width='800px' 
+	height='auto'
+/>
 
 
 #### Links to Follow:
@@ -221,7 +240,12 @@ When the light of enough energy falls on it, the number of electrons available f
 
 
 
-<img src="{{site.baseurl}}/assets/images/resources/Level 4/LDR.png" alt="LDR" width=600px height=auto>
+<Image 
+	src="static/images/levelup/level-4/LDR.png" 
+	alt="LDR" 
+	width='600px' 
+	height='auto'
+/>
 
 
 
@@ -238,7 +262,12 @@ The RGB LED can emit different colors by mixing the 3 basic colors red, green an
 
 
 
-<img src="{{site.baseurl}}/assets/images/resources/Level 4/RGBLED.png" alt="RGB-LED" width=900px height=auto>
+<Image 
+	src="static/images/levelup/level-4/RGBLED.png" 
+	alt="RGB-LED" 
+	width='900px' 
+	height='auto'
+/>
 
 
 **Links to Follow :** [Using RGB Leds in TinkerCAD](https://youtu.be/YqHkULDmmGU)
@@ -273,9 +302,19 @@ Generate a PWM wave of any desired **% Duty Cycle** from a **Non-PWM supporting 
 
 Task :- Make a 4 wheeled bot as shown in the figure.
 
-<img src="{{site.baseurl}}/assets/images/resources/Level 7/Ass2_lvl7.png" alt="ChassisCAD" width=750px height=auto>
+<Image 
+	src="static/images/levelup/level-7/Ass2_lvl7.png" 
+	alt="ChassisCAD" 
+	width='750px' 
+	height='auto'
+/>
 
-<img src="{{site.baseurl}}/assets/images/resources/Level 7/Ass22_lvl7.png" alt="MotorCAD" width=750px height=auto>
+<Image 
+	src="static/images/levelup/level-7/Ass22_lvl7.png" 
+	alt="MotorCAD" 
+	width='750px' 
+	height='auto'
+/>
 
 This week you have to use your creativity for the part designing , but emphasis will be on the assembly and the type of mates being used.
 Guidelines for Parts :-
