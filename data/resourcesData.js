@@ -9,7 +9,7 @@ const resourcesData = [
     title: 'Level Up',
     description: `A gamified bootcamp on electronics, programming and design to get you up and running in no time`,
     imgSrc: '/static/images/Level-Up.png',
-    href: '/resources/level-up',
+    href: '/resources/levelup/introduction',
   },
 ]
 

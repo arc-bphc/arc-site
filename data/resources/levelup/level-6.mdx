@@ -1,19 +1,8 @@
 ---
-title: Level 6 Resources
-tags: LevelUp
-layout: article
-mode: normal
-type: article
-sharing: true
-author: Automation and Robotics Club
-show_author_profile: true
-show_title: true
-full_width: false
-header: true
-aside:
-  toc: true
-sidebar:
-  nav: levelup-bar
+title: Level 6
+category: 'resource'
+level: 6
+tags: ['levelup', 'electronics']
 ---
 
 <style>
@@ -27,8 +16,8 @@ sidebar:
 
 ## Introduction
 
-`important`{:.warning}
-<div>{%- include extensions/youtube.html id='nxiJ38JvZiE' -%}</div>
+`important`
+<EmbedItem url='https://www.youtube.com/embed/nxiJ38JvZiE' />
 
 
 # Introduction to LINUX
@@ -37,12 +26,11 @@ At present, ROS is fully supported only by Linux systems. This means any ROS-bas
 
 In the Linux for Robotics course, you will master essential Linux knowledge in order to get started with ROS.
 
-`important`{:.warning}
+`important`
 ## Setting Up Environment
 You can choose any one of the three ways to configure your environment.Initially,you can use the Virtual Machine to run linux-based applications and later you could dual boot your system with Linux and Windows.
 The third option of completely removing Windows and shifting to Linux completely is also present.But initially,it is advised to use any one of the first two methods. 
 
-<!-- https://csabitsh.wordpress.com/linux-installation/ -->
 ### Dual boot Installation:
 Switching to Linux can be a big decision, depending on how you use your computer. Sometimes, you just need Windows for specific applications, and sometimes you need Linux for other applications. Whether you are just curious or you need it for work or a personal project, having both operating systems on one computer can be useful.This article will help you [install Ubuntu 20.04 and dual boot alongside Windows 10.](https://medium.com/linuxforeveryone/how-to-install-ubuntu-20-04-and-dual-boot-alongside-windows-10-323a85271a73)
 
@@ -71,7 +59,12 @@ chmod +x linux-setup.sh
 ## Courses
 
 Here is the complete course of:
-<img src="{{site.baseurl}}/assets/images/resources/Level 6/linuxposter.jpg" alt="Linux Course Resources" width=auto height=auto>
+<Image 
+  src="static/images/levelup/level-6/linuxposter.jpg" 
+  alt="Linux Course Resources" 
+  width='auto'
+  height='auto'
+/>
 
 [Linux for Robotics ConstructSim Course](https://www.theconstructsim.com/robotigniteacademy_learnros/ros-courses-library/linux-for-robotics/)
 
@@ -92,7 +85,7 @@ Here is the beginners guide to the Unix and Linux operating system. Eight simple
 ### Linux Assignment
 Assignments will be updated soon..
 
-<!-- ## Folder_Maze
+## Folder_Maze
 
 Use the linux commands that you learnt to navigate the folder maze,copy the text files with animals to the animal folder and end your quest by finding the treasure.txt file.. -->
 
@@ -106,7 +99,12 @@ Python is the most popular programming language for robots, and it is also the f
 Here is the complete course of:
 
 [Python For Robotics ConstructSim Course](https://www.theconstructsim.com/robotigniteacademy_learnros/ros-courses-library/python-robotics/)
-<img src="{{site.baseurl}}/assets/images/resources/Level 6/pyposter.jpg" alt="python course" width=auto height=auto>
+<Image 
+  src="static/images/levelup/level-6/pyposter.jpg" 
+  alt="python course" 
+  width='auto' 
+  height='auto'
+/>
 
 ### Learning Objectives
 
@@ -120,9 +118,9 @@ Apart from the ConstructSim Python course, here is a python course to learn Pyth
 
 You could go from starting of this bootcamp videos till the milestone project 2.
 
-<!-- # Python Assignment -->
+# Python Assignment
 
-<!-- ## Fill in the blanks: -->
+## Fill in the blanks: 
 
 ---
 ## NUMPY
@@ -131,10 +129,15 @@ Numpy is a scientific computing package in python, that’s extensively used in 
 Numpy is a multi-dimensional arrays library.
 You can use numpy to store all sorts of data in one dimensional array,two dimensional array,3 D array and so on.
 
-<img src="{{site.baseurl}}/assets/images/resources/Level 6/numpy.png" alt="Data Types" width=auto height=auto>
+<Image 
+  src="static/images/levelup/level-6/numpy.png" 
+  alt="Data Types" 
+  width='auto' 
+  height='auto'
+/>
 
 The following link explains all sorts of stuff that can be done using numpy library.
-<div>{%- include extensions/youtube.html id='QUT1VHiLmmI' -%}</div>
+<EmbedItem url='https://www.youtube.com/embed/QUT1VHiLmmI' />
 
 
 For further reading visit the documentation page for numpy - Overview — NumPy v1.18 Manual
@@ -193,7 +196,12 @@ print(image)
 # Display image.
 plt.imshow(image)
 ```
-<img src="{{site.baseurl}}/assets/images/resources/Level 6/o1.png" alt="Data Types" width=auto height=auto>
+<Image 
+  src="static/images/levelup/level-6/o1.png" 
+  alt="Data Types" 
+  width='auto' 
+  height='auto'
+/>
 
 **What happened?**
 Even though the image was read in as a gray scale image, it won't necessarily display in gray scale when using imshow(). matplotlib uses different color maps and it's possible that the gray scale color map is not set.
@@ -201,7 +209,12 @@ Even though the image was read in as a gray scale image, it won't necessarily di
 # Set color map to gray scale for proper rendering.
 plt.imshow(cb_img, cmap='gray')
 ```
-<img src="{{site.baseurl}}/assets/images/resources/Level 6/o2.png" alt="Data Types" width=auto height=auto>
+<Image 
+  src="static/images/levelup/level-6/o2.png" 
+  alt="Data Types" 
+  width='auto' 
+  height='auto'
+/>
 
 ### Working with Color Images
 Until now, we have been using gray scale images in our discussion. Let us now discuss color images.
@@ -211,7 +224,12 @@ coke_img = cv2.imread("coca-cola-logo.png",1)
 plt.imshow(coke_img)
 ```
 
-<img src="{{site.baseurl}}/assets/images/resources/Level 6/o3.png" alt="Data Types" width=auto height=auto>
+<Image 
+  src="static/images/levelup/level-6/o3.png" 
+  alt="Data Types" 
+  width='auto' 
+  height='auto'
+/>
 
 **Huhh! This isn't what we expected?**
 The color displayed above is different from the actual image. This is because matplotlib expects the image in RGB format whereas OpenCV stores images in BGR format. Thus, for correct display, we need to reverse the channels of the image. We will discuss about the channels in the sections below.
@@ -220,7 +238,12 @@ coke_img_channels_reversed = coke_img[:, :, ::-1]
 plt.imshow(coke_img_channels_reversed)
 ```
 
-<img src="{{site.baseurl}}/assets/images/resources/Level 6/o4.png" alt="Data Types" width=auto height=auto>
+<Image 
+  src="static/images/levelup/level-6/o4.png" 
+  alt="Data Types" 
+  width='auto' 
+  height='auto'
+/>
 
 ### Splitting Color Channels
 `cv2.split()` Divides a multi-channel array into several single-channel arrays.
@@ -242,7 +265,12 @@ imgMerged = cv2.merge((b,g,r))
 plt.subplot(144);plt.imshow(imgMerged[:,:,::-1]);plt.title("Merged Output");
 ```
 
-<img src="{{site.baseurl}}/assets/images/resources/Level 6/o5.png" alt="Data Types" width=auto height=auto>
+<Image 
+  src="static/images/levelup/level-6/o5.png" 
+  alt="Data Types" 
+  width='auto' 
+  height='auto'
+/>
 
 ### Converting to different Color Spaces
 `cv2.cvtColor()` Converts an image from one color space to another. The function converts an input image from one color space to another. In case of a transformation to-from RGB color space, the order of the channels should be specified explicitly (RGB or BGR).
@@ -320,10 +348,20 @@ plt.imshow(cropped_region)
 ```
 
 **Before**
-<img src="{{site.baseurl}}/assets/images/resources/Level 6/o6.png" alt="Data Types" width=auto height=auto>
+<Image 
+  src="static/images/levelup/level-6/o6.png" 
+  alt="Data Types" 
+  width='auto' 
+  height='auto'
+/>
 
 **After**
-<img src="{{site.baseurl}}/assets/images/resources/Level 6/o7.png" alt="Data Types" width=auto height=auto>
+<Image 
+  src="static/images/levelup/level-6/o7.png" 
+  alt="Data Types" 
+  width='auto' 
+  height='auto'
+/>
 
 ### Resizing images
 The function `resize` resizes the image `src` down to or up to the specified size. The size and type are derived from the `src`,`dsize`,`fx`, and `fy`.
@@ -354,7 +392,12 @@ plt.subplot(143);plt.imshow(img_NZ_rgb_flipped_both);plt.title("Both Flipped");
 plt.subplot(144);plt.imshow(img_NZ_rgb);plt.title("Original");
 ```
 
-<img src="{{site.baseurl}}/assets/images/resources/Level 6/o8.png" alt="Data Types" width=auto height=auto>
+<Image 
+  src="static/images/levelup/level-6/o8.png" 
+  alt="Data Types" 
+  width='auto' 
+  height='auto'
+/>
 
 ## Image Annotation
 
@@ -368,7 +411,12 @@ We will use cv2.line function for this.
 cv2.line(image, (200, 100), (400, 100), (0, 255, 255), thickness=5, lineType=cv2.LINE_AA);
 ```
 
-<img src="{{site.baseurl}}/assets/images/resources/Level 6/o9.png" alt="Data Types" width=auto height=auto>
+<Image 
+  src="static/images/levelup/level-6/o9.png" 
+  alt="Data Types" 
+  width='auto' 
+  height='auto'
+/>
 
 ### Drawing a Circle
 We will use cv2.circle function for this.
@@ -381,7 +429,12 @@ cv2.circle(image, (900,500), 100, (0, 0, 255), thickness=5, lineType=cv2.LINE_AA
 
 ```
 
-<img src="{{site.baseurl}}/assets/images/resources/Level 6/o10.png" alt="Data Types" width=auto height=auto>
+<Image 
+  src="static/images/levelup/level-6/o10.png" 
+  alt="Data Types" 
+  width='auto'
+  height='auto'
+/>
 
 ### Drawing a Rectangle
 
@@ -395,7 +448,12 @@ cv2.rectangle(image, (500, 100), (700,600), (255, 0, 255), thickness=5, lineType
 
 ```
 
-<img src="{{site.baseurl}}/assets/images/resources/Level 6/o11.png" alt="Data Types" width=auto height=auto>
+<Image 
+  src="static/images/levelup/level-6/o11.png" 
+  alt="Data Types" 
+  width='auto' 
+  height='auto' 
+/>
 
 ### Adding Text
 Finally, let's see how we can write some text on an image using cv2.putText function.
@@ -408,7 +466,12 @@ cv2.putText(imageText, text, (200, 700), fontFace, fontScale, fontColor, fontThi
 
 ```
 
-<img src="{{site.baseurl}}/assets/images/resources/Level 6/o12.png" alt="Data Types" width=auto height=auto>
+<Image 
+  src="static/images/levelup/level-6/o12.png" 
+  alt="Data Types" 
+  width='auto' 
+  height='auto'
+/>
 
 ## Image Enhancement
 
@@ -422,7 +485,12 @@ img_rgb_brighter = cv2.add(img_rgb, matrix)
 img_rgb_darker   = cv2.subtract(img_rgb, matrix)
 ```
 
-<img src="{{site.baseurl}}/assets/images/resources/Level 6/o13.png" alt="Data Types" width=auto height=auto>
+<Image 
+  src="static/images/levelup/level-6/o13.png" 
+  alt="Data Types" 
+  width='auto' 
+  height='auto'
+/>
 
 
 ### Changing contrast
@@ -437,7 +505,12 @@ img_rgb_darker   = np.uint8(cv2.multiply(np.float64(img_rgb), matrix1))
 img_rgb_brighter = np.uint8(cv2.multiply(np.float64(img_rgb), matrix2))
 ```
 
-<img src="{{site.baseurl}}/assets/images/resources/Level 6/o14.png" alt="Data Types" width=auto height=auto>
+<Image 
+  src="static/images/levelup/level-6/o14.png" 
+  alt="Data Types" 
+  width='auto' 
+  height='auto'
+/>
 
 **What happened?**
 Can you see the weird colors in some areas of the image after multiplication?
@@ -472,7 +545,12 @@ plt.subplot(122); plt.imshow(img_thresh, cmap="gray");       plt.title("Threshol
 
 print(img_thresh.shape)
 ```
-<img src="{{site.baseurl}}/assets/images/resources/Level 6/o15.png" alt="Data Types" width=auto height=auto>
+<Image 
+  src="static/images/levelup/level-6/o15.png" 
+  alt="Data Types" 
+  width='auto' 
+  height='auto'
+/>
 
 [https://docs.opencv.org/4.5.1/d7/d4d/tutorial_py_thresholding.html](https://docs.opencv.org/4.5.1/d7/d4d/tutorial_py_thresholding.html)
 ### BITWISE operations
@@ -489,7 +567,12 @@ plt.subplot(121);plt.imshow(img_rec,cmap='gray')
 plt.subplot(122);plt.imshow(img_cir,cmap='gray')
 print(img_rec.shape)
 ```
-<img src="{{site.baseurl}}/assets/images/resources/Level 6/o16.png" alt="Data Types" width=auto height=auto>
+<Image 
+  src="static/images/levelup/level-6/o16.png" 
+  alt="Data Types" 
+  width='auto' 
+  height='auto'
+/>
 
 **Example**
 **Bitwise AND Operator**
@@ -497,7 +580,12 @@ print(img_rec.shape)
 result = cv2.bitwise_and(img_rec, img_cir, mask = None)
 plt.imshow(result,cmap='gray')
 ```
-<img src="{{site.baseurl}}/assets/images/resources/Level 6/o17.png" alt="Data Types" width=auto height=auto>
+<Image 
+  src="static/images/levelup/level-6/o17.png" 
+  alt="Data Types" 
+  width='auto' 
+  height='auto'
+/>
 
 
 
@@ -525,12 +613,12 @@ Follow these youtube playlists:
 This covers all necessary concepts on OpenCV 
 
 
-<div>{%- include extensions/youtube.html id='oXlwWbU8l2o' -%}</div>
+<EmbedItem url='https://www.youtube.com/embed/oXlwWbU8l2o' />
 
 Using OpenCV is something we will be working with a lot so make sure to go through this - 
-<div>{%- include extensions/youtube.html id='mfiRJ1qgToc' -%}</div>
+<EmbedItem url='https://www.youtube.com/embed/mfiRJ1qgToc' />
 This will cover everything that is required to get started with OpenCV in python-
-<div>{%- include extensions/youtube.html id='WQeoO7MI0Bs' -%}</div>
+<EmbedItem url='https://www.youtube.com/embed/WQeoO7MI0Bs' />
 
 For further information on OpenCV refer their official website which has the required documentation,tutorials and github repos for OpenCV Home - OpenCV
 
@@ -538,5 +626,10 @@ For further information on OpenCV refer their official website which has the req
 ### Assignment 1
 **Logo Manipulation**
 In this assignment you have to fill in the white lettering of the Coca-Cola logo below with a background image.
-<img src="{{site.baseurl}}/assets/images/resources/Level 6/assgn1.png" alt="Assignment 1" width=auto height=auto>
+<Image 
+  src="static/images/levelup/level-6/assgn1.png" 
+  alt="Assignment 1" 
+  width='auto' 
+  height='auto'
+/>
 

@@ -8,19 +8,20 @@ const DEFAULT_LAYOUT = 'PostLayout'
 
 export async function getStaticPaths() {
   const posts = getFiles('resources')
+  const paths = posts.map((p) => ({
+    params: {
+      slug: formatSlug(p).split('/'),
+    },
+  }));
   return {
-    paths: posts.map((p) => ({
-      params: {
-        slug: formatSlug(p).split('/'),
-      },
-    })),
+    paths: paths,
     fallback: false,
   }
 }
 
 export async function getStaticProps({ params }) {
+  console.log(params)
   const allPosts = await getAllFilesFrontMatter('resources')
-  console.log(allPosts)
   const postIndex = allPosts.findIndex((post) => formatSlug(post.slug) === params.slug.join('/'))
   const prev = allPosts[postIndex + 1] || null
   const next = allPosts[postIndex - 1] || null

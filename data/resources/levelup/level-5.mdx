@@ -1,19 +1,8 @@
 ---
-title: Level 5 Resources
-tags: LevelUp
-layout: article
-mode: normal
-type: article
-sharing: true
-author: Automation and Robotics Club
-show_author_profile: true
-show_title: true
-full_width: false
-header: true
-aside:
-  toc: true
-sidebar:
-  nav: levelup-bar
+title: Level 5
+category: 'resource'
+level: 5
+tags: ['levelup', 'electronics']
 ---
 # Programming and Electronics
 
@@ -58,7 +47,12 @@ char str[ ] = "abcdef";
 
 Indexing of an Array
 
-<img src="{{site.baseurl}}/assets/images/resources/Level 5/arrayindex.PNG" alt="Array Index" width=400px height=auto>
+<Image 
+    src="static/images/levelup/level-5/arrayindex.PNG" 
+    alt="Array Index" 
+    width='400px' 
+    height='auto'
+/>
 
 ## Accessing Elements
 
@@ -104,9 +98,9 @@ int walk(int speed, int x) {
 
 Syntax is expressed through convention.
 
-1.  <> : have relevant placeholders, eg: `<type>`
+1.  `<>` : have relevant placeholders, eg: `<type>`
 
-2.  []: optional items; May or may not exist for proper functioning.
+2.  `[]`: optional items; May or may not exist for proper functioning.
 
 ## Why Functions?
 
@@ -141,7 +135,11 @@ PASSIVE INFRARED SENSOR:
 - PIR sensors are made of pyroelectric material, which is used to detect the levels of infrared radiation in the surroundings. The way this sensor works is actually quite interesting and is nicely explained [here](https://learn.adafruit.com/pir-passive-infrared-proximity-motion-sensor/how-pirs-work).
 - Follow the link to go to the [datasheet](https://www.epitran.it/ebayDrive/datasheet/44.pdf).
 
-<img src="{{site.baseurl}}/assets/images/resources/Level 6/70e32a17599ed5becda28990c1442cf7.png" alt="PIR" width=900px height=auto>
+<Image 
+    src="static/images/levelup/level-6/70e32a17599ed5becda28990c1442cf7.png" 
+    alt="PIR" 
+    width='900px' 
+    height='auto'>
 
 
 VIDEO TUTORIALS:
@@ -159,7 +157,12 @@ Simulate this in TinkerCAD after watching this [video](https://www.youtube.com/w
 - The integrated circuits used for voltage regulation are called Voltage regulator ICs.
 - The 7805 IC is one of 78xx series. More information about 7805 and its components can be found [here](https://www.electronicshub.org/understanding-7805-ic-voltage-regulator/).
 
-<img src="{{site.baseurl}}/assets/images/resources/Level 6/7805IC.png" alt="7805IC" width=auto height=400px>
+<Image 
+    src="static/images/levelup/level-6/7805IC.png" 
+    alt="7805IC" 
+    width='auto' 
+    height='400px'
+/>
 
 | Pin No. | Pin | Function | Description |
 | --- | --- | --- | --- |
@@ -169,7 +172,12 @@ Simulate this in TinkerCAD after watching this [video](https://www.youtube.com/w
 
 A detailed video explanation on the 7805 IC can be found [here](https://www.youtube.com/watch?v=LEv26VH0S1E).
 
-<img src="{{site.baseurl}}/assets/images/resources/Level 6/favicon-32x32.png" alt="Regulator Circuit Diagram" width=500px height=auto>
+<Image 
+    src="static/images/levelup/level-6/favicon-32x32.png" 
+    alt="Regulator Circuit Diagram" 
+    width='500px' 
+    height='auto'
+/>
 
 ## Servo Motor
 
@@ -178,7 +186,12 @@ A detailed video explanation on the 7805 IC can be found [here](https://www.yout
 - A Servo consists of a motor (AC or DC), a potentiometer, gear assembly, and a controlling circuit.
 - The position of the servo motor is decided by the electrical pulse given to the signal wire.
 
-<img src="{{site.baseurl}}/assets/images/resources/Level 6/Servo_lvl6.png" alt="Servo Motor" width=500px height=auto>
+<Image 
+    src="static/images/levelup/level-6/Servo_lvl6.png" 
+    alt="Servo Motor" 
+    width='500px' 
+    height='auto'
+/>
 
 
 Follow the link for simulating the [TinkerCAD files](https://www.tinkercad.com/things/lPbqaB1MX5D).
@@ -200,7 +213,12 @@ Link for the [datasheet](http://www.ee.ic.ac.uk/pcheung/teaching/DE1_EE/stores/s
 - However, the speed and direction of rotation depend on the voltage provided. For this, we use a motor driver such as an L293D
 - It’s a 16-pin motor driver IC (see diagram) which can drive to dc motors simultaneously in any direction (clockwise or counter-clockwise).
 
-<img src="{{site.baseurl}}/assets/images/resources/Level 6/L293D_lvl6.png" alt="L293D Diagram" width=400px height=auto>
+<Image 
+    src="static/images/levelup/level-6/L293D_lvl6.png"
+    alt="L293D Diagram" 
+    width='400px' 
+    height='auto'
+/>
 
 
 ### More about L293D
@@ -220,14 +238,24 @@ FOR MORE INFORMATION ON L293D:
 - [Connecting dc motors with the IC](https://www.youtube.com/watch?v=fPLEncYrl4Q&feature=youtu.be)
 - [More on H-bridge](https://maker.pro/custom/projects/all-you-need-to-know-about-l293d)
 
-<img src="{{site.baseurl}}/assets/images/resources/Level 6/H-bridge_lvl6.png" alt="H-Bridge" width=350px height=auto>
+<Image 
+    src="static/images/levelup/level-6/H-bridge_lvl6.png" 
+    alt="H-Bridge" 
+    width='350px' 
+    height='auto'
+/>
 
 
 ## A New Sensor has Appeared!
 
 **Ultrasonic Sensor: HC SR04**
 
-<img src="{{site.baseurl}}/assets/images/resources/Level 5/hcsr04.png" alt="hcsr04" width=500px height=auto>
+<Image 
+    src="static/images/levelup/level-5/hcsr04.png" 
+    alt="hcsr04" 
+    width='500px' 
+    height='auto'
+/>
 
 Working:
 
@@ -262,7 +290,7 @@ Calculate the velocity of an object moving with constant velocity using the HC S
 
 Use this velocity calculated in previous question to calculate the distance of the object after a given time interval. Measure the distance using the HC SR 04 sensor and calculate the error. (Ignore Doppler Effect)
 
-<!-- ### Assignment 3
+### Assignment 3
 
 How would you measure the speed of sound in water using the HC SR04 Sensor and the Arduino UNO? What other materials are required? Try to think solutions as creative as possible. -->
 
@@ -279,7 +307,12 @@ The path of the segway should be as follows -
 
 An example path (Approximate path) -
 
-<img src="{{site.baseurl}}/assets/images/resources/Level 6/Ass1_lvl6.png" alt="Assignment 1" width=600px height=auto>
+<Image 
+    src="static/images/levelup/level-6/Ass1_lvl6.png" 
+    alt="Assignment 1" 
+    width='600px' 
+    height='auto'
+/>
 
 Specifications :
 Radius of wheel = 30 cm
@@ -295,10 +328,21 @@ Assumptions -
 2.  There is sufficient friction so that no slipping takes place.
 
 The time taken by the segway to rotate 90 degrees can be calculated as follows -
-<img src="{{site.baseurl}}/assets/images/resources/Level 6/1_lvl6.png" alt="Segway1" width=500px height=auto><br>
+<Image 
+    src="static/images/levelup/level-6/1_lvl6.png" 
+    alt="Segway1" 
+    width='500px' 
+    height='auto'
+/>
+<br>
 
 Your setup on TinkerCAD should look something like this -
-<img src="{{site.baseurl}}/assets/images/resources/Level 6/3_lvl6.png" alt="Setup" width=700px height=auto>
+<Image 
+    src="static/images/levelup/level-6/3_lvl6.png" 
+    alt="Setup" 
+    width='700px' 
+    height='auto'
+/>
 
 
 **NOTE - WHEELS ON THE OPPOSITE SIDES**
