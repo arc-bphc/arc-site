@@ -16,7 +16,7 @@ function Sidebar({ postsInSameFolder }) {
                     <span class="ml-3">{post.title}</span>
                   </a>
                 </li>
-                <hr />
+                {post.orderInSidebar%2== 0 && <hr />}
               </>
             )
           })}
