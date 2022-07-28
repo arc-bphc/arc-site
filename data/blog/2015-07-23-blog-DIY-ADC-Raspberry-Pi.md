@@ -15,7 +15,6 @@ cover: /assets/images/blog/thumbnails/DIY ADC for Raspberry Pi.png
 
 ## Aim
 To Build a cheap ADC for Raspberry Pi.
-<!--more-->
 
 ## Details
 Raspberry Pi does not have an in-built ADC and but it needs one for sure. It is tough finding MCP3008 or ADS series ICs which are costlier and easier to use (they have an SPI or I2C integrated). This is how he found his new way to solve out the problem, which many of you may face while dealing with Raspberry Pi.

@@ -19,19 +19,4 @@ const blogPostsData = [
   }
 ]
 
-const projectPostsData = [
-  {
-    title: 'Automated Flute Project',
-    description: 'Automating the Flute playing process',
-    imgSrc: '/static/images/flute.jpeg',
-    href: '/resources/workshop'
-  },
-  {
-    title: 'ROS Basics',
-    description: 'Basics of ROS ecosystem',
-    imgSrc: '/static/images/ros.jpg',
-    href: '/resources/workshop'
-  }
-]
-
-export { blogPostsData, projectPostsData }
+export { blogPostsData }

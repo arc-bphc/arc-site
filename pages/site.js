@@ -1,7 +1,8 @@
 import siteMetadata from '@/data/siteMetadata'
-import { blogPostsData, projectPostsData } from '@/data/siteData'
+import { blogPostsData } from '@/data/siteData'
 import Card from '@/components/Card'
 import { PageSEO } from '@/components/SEO'
+import projectsData from '@/data/projectsData';
 
 export default function Site() {
   return (
@@ -33,7 +34,7 @@ export default function Site() {
         </div>
         <div className="container py-12">
           <div className="-m-4 flex flex-wrap">
-            {projectPostsData.map((d) => (
+            {projectsData.map((d) => (
               <Card
                 key={d.title}
                 title={d.title}

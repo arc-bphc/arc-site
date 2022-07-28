@@ -106,7 +106,7 @@ function showDivs(n, no) {
 </div>
  
 <script>
-{%- include scripts/lib/swiper.js -%}
+{%-include scripts/lib/swiper.js -%}
 var SOURCES = window.TEXT_VARIABLES.sources;
 window.Lazyload.js(SOURCES.jquery, function() {
   $('.swiper-demo').swiper();
