@@ -21,7 +21,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  console.log(params)
   const allPosts = await getAllFilesFrontMatter('resources')
   const postIndex = allPosts.findIndex((post) => formatSlug(post.slug) === params.slug.join('/'))
   const prev = allPosts[postIndex + 1] || null
@@ -40,14 +39,24 @@ export async function getStaticProps({ params }) {
     fs.writeFileSync('./public/feed.xml', rss)
   }
 
-  return { props: { post, authorDetails, prev, next } }
+  //Code for the sidebar :)
+  let postsInSameFolder = []
+  if(params.slug.length > 1){
+    //This means there's a nested system
+    const folderName = params.slug[0];
+    postsInSameFolder = allPosts.filter(post => post.slug.split("/")[0] == folderName)
+    postsInSameFolder.sort((post1, post2) => post1.orderInSidebar - post2.orderInSidebar)
+  }
+
+  return { props: { post, authorDetails, prev, next, postsInSameFolder } }
 }
 
-export default function Resources({ post, authorDetails, prev, next }) {
+export default function Resources({ post, authorDetails, prev, next, postsInSameFolder }) {
   const { mdxSource, toc, frontMatter } = post
 
   return (
     <>
+      <Sidebar postsInSameFolder={postsInSameFolder}/>
       {frontMatter.draft !== true ? (
         <MDXLayoutRenderer
           layout={frontMatter.layout || DEFAULT_LAYOUT}
