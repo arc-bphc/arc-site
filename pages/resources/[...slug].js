@@ -5,7 +5,7 @@ import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { formatSlug, getAllFilesFrontMatter, getFileBySlug, getFiles } from '@/lib/mdx'
 import Sidebar from '@/components/Sidebar'
 
-const DEFAULT_LAYOUT = 'PostLayout'
+const DEFAULT_LAYOUT = 'ResourceLayout'
 
 export async function getStaticPaths() {
   const posts = getFiles('resources')

@@ -2,7 +2,7 @@ function Sidebar({ postsInSameFolder }) {
   console.log(postsInSameFolder);
 
   return (
-    <aside class="w-60 sticky" aria-label="Sidebar">
+    <aside class="w-60 sticky table-cell" aria-label="Sidebar">
       <div class="overflow-y-auto rounded bg-gray-50 py-4 px-3 dark:bg-gray-800">
         <ul class="space-y-1">
           {postsInSameFolder.map(post => {
