@@ -8,9 +8,9 @@ function Sidebar({ postsInSameFolder }) {
           {postsInSameFolder.map(post => {
             return (
               <>
-                <li>
+                <li key={post.orderInSidebar}>
                   <a
-                    href="/resources/levelup/introduction"
+                    href={`/resources/${post.slug}`}
                     class="flex items-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                   >
                     <span class="ml-3">{post.title}</span>
