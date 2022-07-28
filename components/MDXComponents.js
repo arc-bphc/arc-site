@@ -7,11 +7,13 @@ import TOCInline from './TOCInline'
 import Pre from './Pre'
 import { BlogNewsletterForm } from './NewsletterForm'
 import EmbedItem from './EmbedItem'
+import ImageSwiper from './ImageSwiper'
 
 export const MDXComponents = {
   Image,
   TOCInline,
   EmbedItem,
+  ImageSwiper,
   a: CustomLink,
   pre: Pre,
   BlogNewsletterForm: BlogNewsletterForm,
