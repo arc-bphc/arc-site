@@ -16,24 +16,15 @@ fs.readdir("../data/blog", (err, data) => {
             })
 
             //For removing layout
-            if(data.toString().split("---")[1].includes("layout: ")){
-                d.splice(3, 1);
-            }
-            updatedText = d.join("\n")
-            fs.writeFile("../data/blog/" + file, updatedText, (err) => {
-                if(err) console.error(err);
-            })
+            // if(data.toString().split("---")[1].includes("layout: ")){
+            //     d.splice(3, 1);
+            // }
+            // updatedText = d.join("\n")
+            // fs.writeFile("../data/blog/" + file, updatedText, (err) => {
+            //     if(err) console.error(err);
+            // })
             
         })
     })
-
-})
-
-
-
-fs.readFile("../data/blog/2015-07-23-blog-DIY-ADC-Raspberry-Pi.md", (err, data) => {
-    let d = (data.toString().split("\n"));
-
-    
 
 })
