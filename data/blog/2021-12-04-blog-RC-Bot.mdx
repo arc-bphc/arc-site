@@ -10,7 +10,7 @@ show_author_profile: true
 show_title: true
 full_width: false
 header: true
-cover: /assets/images/blog/thumbnails/RC Bot.png
+cover: /static/assets/images/blog/thumbnails/RC Bot.png
 ---
 
 ## Aim
@@ -23,7 +23,7 @@ NRF controlled RC Car
 
 ## Overview
 
-<Image src="/assets/images/blog/RC-Bot/1.png" alt="1" width='500' height='500'>
+<Image src="/static/assets/images/blog/RC-Bot/1.png" alt="1" width='500' height='500'>
 
 <EmbedItem url="https://www.youtube.com/embed/GEZFZWXSNjg" />
 
@@ -42,7 +42,7 @@ The car is fitted with a pro mini and an NRFacting as a receiver. The remote con
 
 ## MPU 6050
 
-<Image src="/assets/images/blog/RC-Bot/2.png" alt="2" width='500' height='500'>
+<Image src="/static/assets/images/blog/RC-Bot/2.png" alt="2" width='500' height='500'>
 The MPU-6050 is the world’s first and only 6-axis motion tracking devices designed for the low power, low cost, and high performance requirements of smartphones, tablets and wearable sensors.
 MPU6050 is a Micro Electro-mechanical system (MEMS), it consists of three-axis accelerometer and three-axis gyroscope. It helps us to measure velocity, orientation, acceleration, displacement and other motion like features.
 This module uses the I2C module for interfacing with Arduino.
@@ -385,7 +385,7 @@ if (!dmpReady) return;
 ```
 
 ## NRF 24
-<Image src="/assets/images/blog/RC-Bot/3.png" alt="3" width='500' height='500'>
+<Image src="/static/assets/images/blog/RC-Bot/3.png" alt="3" width='500' height='500'>
 The nRF24L01+ transceiver module is designed to operate in 2.4 GHz worldwide ISM frequency band and uses GFSK modulation for data transmission. The data transfer rate can be one of 250kbps, 1Mbps and 2Mbps. The nRF24L01+ transceiver module communicates over a 4-pin Serial Peripheral Interface (SPI) with a maximum data rate of 10Mbps. All the parameters such as frequency channel (125 selectable channels), output power (0 dBm, -6 dBm, -12 dBm or -18 dBm), and data rate (250kbps, 1Mbps, or 2Mbps) can be configured through SPI interface. The SPI bus uses a concept of a Master and Slave, in most common applications our Arduino is the Master and the nRF24L01+ transceiver module is the Slave.
 Following is a link for a more practical understanding
 https://electronoobs.com/eng_arduino_tut95.php
@@ -488,19 +488,19 @@ Serial.println("SSD1306 allocation failed");
 radio.begin();
 radio.openWritingPipe(address);
 //radio.setAutoAck(false);
-//radio.setDataRate(RF24_250KBPS);
+//radio.setDataRate(RF24*250KBPS);
 radio.stopListening();
 //radio.setPALevel(RF24_PA_LOW);
-/_
+/*
 // Activate the Arduino internal pull-up resistors
-pinMode(jB1, INPUT_PULLUP);
+pinMode(jB1, INPUT*PULLUP);
 pinMode(jB2, INPUT_PULLUP);
 pinMode(t1, INPUT_PULLUP);
 pinMode(t2, INPUT_PULLUP);
 pinMode(b1, INPUT_PULLUP);
 pinMode(b2, INPUT_PULLUP);
 pinMode(b3, INPUT_PULLUP);
-pinMode(b4, INPUT_PULLUP);_/
+pinMode(b4, INPUT_PULLUP);*/
 
 // Set initial default values
 //data.j1PotX = 127; // Values from 0 to 255. When Joystick is in resting position, the value is in the middle, or 127. We actually map the pot value from 0 to 1023 to 0 to 255 because that's one BYTE value
@@ -765,14 +765,14 @@ if (radio.available())
 {
 Serial.println("All Good");
 digitalWrite(2, !digitalRead(2));
-radio.read(&data, sizeof(Data_Package));
+radio.read(&data, sizeof(Data*Package));
 ModeSwitch = data.ModeSwitch;
 //Serial.println(data.j1PotY);
 //Serial.println(data.j2PotX);
-/_digitalWrite(2, HIGH);
+/\_digitalWrite(2, HIGH);
 delay(500);
 digitalWrite(2, LOW);
-delay(500);_/
+delay(500);*/
 }
 else
 {
