@@ -9,10 +9,10 @@ import Comments from '@/components/comments'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
 import Sidebar from '@/components/Sidebar'
 
-const editUrl = (fileName) => `${siteMetadata.siteRepo}/blob/master/data/blog/${fileName}`
+const editUrl = (fileName) => `${siteMetadata.siteRepo}/blob/master/data/projects/${fileName}`
 const discussUrl = (slug) =>
   `https://mobile.twitter.com/search?q=${encodeURIComponent(
-    `${siteMetadata.siteUrl}/blog/${slug}`
+    `${siteMetadata.siteUrl}/projects/${slug}`
   )}`
 
 const resourceDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
@@ -23,7 +23,7 @@ export default function ResourceLayout({ frontMatter, authorDetails, next, prev,
   return (
     <TableCellContainer>
       <BlogSEO
-        url={`${siteMetadata.siteUrl}/blog/${slug}`}
+        url={`${siteMetadata.siteUrl}/projects/${slug}`}
         authorDetails={authorDetails}
         {...frontMatter}
       />
@@ -120,7 +120,7 @@ export default function ResourceLayout({ frontMatter, authorDetails, next, prev,
                           Previous Article
                         </h2>
                         <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
-                          <Link href={`/blog/${prev.slug}`}>{prev.title}</Link>
+                          <Link href={`/projects/${prev.slug}`}>{prev.title}</Link>
                         </div>
                       </div>
                     )}
@@ -130,7 +130,7 @@ export default function ResourceLayout({ frontMatter, authorDetails, next, prev,
                           Next Article
                         </h2>
                         <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
-                          <Link href={`/blog/${next.slug}`}>{next.title}</Link>
+                          <Link href={`/projects/${next.slug}`}>{next.title}</Link>
                         </div>
                       </div>
                     )}

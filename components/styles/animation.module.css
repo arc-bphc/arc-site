@@ -1,0 +1,26 @@
+@keyframes fade-inout {
+  0%{ opacity: 1;}
+  100%{ opacity: 0;}
+}
+/* support for opera */
+@-o-keyframes fade-inout{
+  0%{ opacity: 1;}
+  100%{ opacity: 0;}
+}
+/* support for mozila */
+@-moz-keyframes fade-inout{
+  0%{ opacity: 1;}
+  100%{ opacity: 0;}
+}
+/* support for safari and chrome */
+@-webkit-keyframes fade-inout{
+  0%{ opacity: 1;}
+  100%{ opacity: 0;}
+}
+.fade {
+   -webkit-animation: fade-inout 0.7s infinite alternate;
+   -moz-animation: fade-inout 0.7s infinite alternate;
+   -o-animation: fade-inout 0.7s infinite alternate;
+    animation: fade-inout 0.7s infinite alternate;
+    display: inline;
+}

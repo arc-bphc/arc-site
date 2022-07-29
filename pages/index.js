@@ -13,7 +13,7 @@ import Head from 'next/head'
 const MAX_DISPLAY = 5
 
 export async function getStaticProps() {
-  const posts = await getAllFilesFrontMatter('blog')
+  const posts = await getAllFilesFrontMatter('projects')
 
   return { props: { posts } }
 }
