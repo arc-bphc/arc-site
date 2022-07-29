@@ -3,7 +3,7 @@ const resourcesData = [
     title: 'Robotics BootCamp',
     description: `Workshop`,
     imgSrc: '/static/images/workshop.jpg',
-    href: '/resources/workshop',
+    href: '/resources/workshop/2021-07-06-Day0-1',
   },
   {
     title: 'Level Up',
