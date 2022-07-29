@@ -1,14 +1,12 @@
 import Link from '@/components/Link'
-import { PageSEO } from '@/components/SEO'
-import Tag from '@/components/Tag'
-import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
-import formatDate from '@/lib/utils/formatDate'
-import Script from 'next/script'
 import Image from 'next/image'
-import NewsletterForm from '@/components/NewsletterForm'
 import logo from '../assets/ARC_logo_white.png'
-import Head from 'next/head'
+import { useCallback } from 'react'
+
+import Particles from 'react-tsparticles'
+import particlesConfig from '../particlesConfig.json'
+import { loadFull } from 'tsparticles'
 
 const MAX_DISPLAY = 5
 
@@ -19,12 +17,17 @@ export async function getStaticProps() {
 }
 
 export default function Home({ posts }) {
+  const customInit = useCallback(async (engine) => {
+    // this adds the bundle to tsParticles
+    await loadFull(engine)
+  })
+
   return (
     <>
-      <div
-        id="particles-js"
-        className="fixed top-0 left-0 right-0 flex h-full w-full justify-center bg-no-repeat"
-      >
+      <div className="fixed top-0 left-0 right-0 flex h-full w-full justify-center bg-no-repeat">
+        <div className="particles">
+          <Particles height="100vh" width="100vw" options={particlesConfig} init={customInit} />
+        </div>
         <div className="header m-0 flex w-1/2 flex-col items-center justify-center text-center">
           <div style={{ width: '50%', height: 'auto', position: 'relative' }}>
             <Image
