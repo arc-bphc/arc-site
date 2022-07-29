@@ -54,7 +54,7 @@
     },
     "move": {
       "enable": true,
-      "speed": 6,
+      "speed": 3,
       "direction": "none",
       "random": false,
       "straight": false,
@@ -105,6 +105,9 @@
         "particles_nb": 2
       }
     }
+  },
+  "background": {
+    "color": "0b0e14"
   },
   "retina_detect": true
 }

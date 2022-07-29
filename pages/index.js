@@ -138,6 +138,12 @@ export default function Home({ posts }) {
             z-index: -1;
             background-color: var(--main-color);
           }
+
+          .header {
+            -webkit-user-select: none; /* Safari */
+            -ms-user-select: none; /* IE 10 and IE 11 */
+            user-select: none; /* Standard syntax */
+          }
         `}
       </style>
     </>
