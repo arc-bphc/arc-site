@@ -23,7 +23,7 @@ NRF controlled RC Car
 
 ## Overview
 
-<Image src="/static/assets/images/blog/RC-Bot/1.png" alt="1" width='500' height='500'>
+<Image src="/static/assets/images/blog/RC-Bot/1.png" alt="1" width="500" height="500" />
 
 <EmbedItem url="https://www.youtube.com/embed/GEZFZWXSNjg" />
 
@@ -42,14 +42,14 @@ The car is fitted with a pro mini and an NRFacting as a receiver. The remote con
 
 ## MPU 6050
 
-<Image src="/static/assets/images/blog/RC-Bot/2.png" alt="2" width='500' height='500'>
-The MPU-6050 is the world’s first and only 6-axis motion tracking devices designed for the low power, low cost, and high performance requirements of smartphones, tablets and wearable sensors.
-MPU6050 is a Micro Electro-mechanical system (MEMS), it consists of three-axis accelerometer and three-axis gyroscope. It helps us to measure velocity, orientation, acceleration, displacement and other motion like features.
-This module uses the I2C module for interfacing with Arduino.
-Following is the code to interface it with Arduino
-```
-#include "MPU6050_6Axis_MotionApps20.h"
-//#include "MPU6050.h" // not necessary if using MotionApps include file
+<Image src="/static/assets/images/blog/RC-Bot/2.png" alt="2" width="500" height="500" />
+The MPU-6050 is the world’s first and only 6-axis motion tracking devices designed for the low power,
+low cost, and high performance requirements of smartphones, tablets and wearable sensors. MPU6050 is
+a Micro Electro-mechanical system (MEMS), it consists of three-axis accelerometer and three-axis gyroscope.
+It helps us to measure velocity, orientation, acceleration, displacement and other motion like features.
+This module uses the I2C module for interfacing with Arduino. Following is the code to interface it with
+Arduino ``` #include "MPU6050_6Axis_MotionApps20.h" //#include "MPU6050.h" // not necessary if using
+MotionApps include file
 
 // Arduino Wire library is required if I2Cdev I2CDEV_ARDUINO_WIRE implementation
 // is used in I2Cdev.h
@@ -385,7 +385,7 @@ if (!dmpReady) return;
 ```
 
 ## NRF 24
-<Image src="/static/assets/images/blog/RC-Bot/3.png" alt="3" width='500' height='500'>
+<Image src="/static/assets/images/blog/RC-Bot/3.png" alt="3" width='500' height='500' />
 The nRF24L01+ transceiver module is designed to operate in 2.4 GHz worldwide ISM frequency band and uses GFSK modulation for data transmission. The data transfer rate can be one of 250kbps, 1Mbps and 2Mbps. The nRF24L01+ transceiver module communicates over a 4-pin Serial Peripheral Interface (SPI) with a maximum data rate of 10Mbps. All the parameters such as frequency channel (125 selectable channels), output power (0 dBm, -6 dBm, -12 dBm or -18 dBm), and data rate (250kbps, 1Mbps, or 2Mbps) can be configured through SPI interface. The SPI bus uses a concept of a Master and Slave, in most common applications our Arduino is the Master and the nRF24L01+ transceiver module is the Slave.
 Following is a link for a more practical understanding
 https://electronoobs.com/eng_arduino_tut95.php

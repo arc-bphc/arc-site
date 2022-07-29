@@ -48,7 +48,12 @@ To amplify the voltage signals of the electret mic, op-amp(LM 358) was used. Op-
 
 The inverting AC amplifier configuration was used which mean that there is inversion of the output signal with respect to the input as it is 180o out of phase. This is the circuit diagram for it :-
 
-<Image src="/static/assets/images/blog/Music-Visualisation/1.png" alt="Resistor" width='500' height='500'>
+<Image
+  src="/static/assets/images/blog/Music-Visualisation/1.png"
+  alt="Resistor"
+  width="500"
+  height="500"
+/>
 
 The V_OUT_UC goes into the Arduino. The V_OUT is for connecting earphones directly.
 
@@ -58,15 +63,30 @@ Here, the voltage gain is given by -R5/R4. Using R5 as 100K and R4 as 1K, a volt
 
 A graphical representation of the op-amp circuit is here
 
-<Image src="/static/assets/images/blog/Music-Visualisation/2.png" alt="Resistor" width='500' height='500'>
+<Image
+  src="/static/assets/images/blog/Music-Visualisation/2.png"
+  alt="Resistor"
+  width="500"
+  height="500"
+/>
 
 Here, an electrolytic Microphone Coupling Capacitor has been used. A coupling capacitor is generally used in audio circuits to keep the DC and AC signals apart. DC is used give power to the parts of the circuit while the incoming audio signal will be AC. Since a capacitor blocks low frequencies and allows high frequencies, it can be used to block the DC signals and allowing only AC signals to pass through, effectively decreasing the noise. The next interesting component is the ceramic Power Supply Decoupling Capacitor which protects the ICs by suppressing the high frequency signals in the power supply signals. The power supply is taken from the 5V of the Arduino.
 
 The reading on the serial plotter look like this :-
 
-<Image src="/static/assets/images/blog/Music-Visualisation/3.png" alt="Resistor" width='500' height='500'>
+<Image
+  src="/static/assets/images/blog/Music-Visualisation/3.png"
+  alt="Resistor"
+  width="500"
+  height="500"
+/>
 
-<Image src="/static/assets/images/blog/Music-Visualisation/4.png" alt="Resistor" width='500' height='500'>
+<Image
+  src="/static/assets/images/blog/Music-Visualisation/4.png"
+  alt="Resistor"
+  width="500"
+  height="500"
+/>
 
 ### The RGB LED Strip Circuit
 
@@ -76,7 +96,12 @@ The PWM voltage output pins of the Arduino, which control the brightness, are co
 
 This is the graphical representation of the circuit:-
 
-<Image src="/static/assets/images/blog/Music-Visualisation/5.png" alt="Resistor" width='500' height='500'>
+<Image
+  src="/static/assets/images/blog/Music-Visualisation/5.png"
+  alt="Resistor"
+  width="500"
+  height="500"
+/>
 
 ### The Code for Sampling and Filtering
 
@@ -94,7 +119,17 @@ The cut-off frequencies for the filters were calculated by playing tracks and ob
 
 Just a few snaps
 
-<Image src="/static/assets/images/blog/Music-Visualisation/6.png" alt="Resistor" width='500' height='500'>
-<Image src="/static/assets/images/blog/Music-Visualisation/7.png" alt="Resistor" width='500' height='500'>
+<Image
+  src="/static/assets/images/blog/Music-Visualisation/6.png"
+  alt="Resistor"
+  width="500"
+  height="500"
+/>
+<Image
+  src="/static/assets/images/blog/Music-Visualisation/7.png"
+  alt="Resistor"
+  width="500"
+  height="500"
+/>
 
 <EmbedItem url="https://www.youtube.com/embed/zxZnOtWrG0c" />
