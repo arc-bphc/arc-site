@@ -2,12 +2,12 @@ import siteMetadata from '@/data/siteMetadata'
 import { blogPostsData } from '@/data/siteData'
 import Card from '@/components/Card'
 import { PageSEO } from '@/components/SEO'
-import projectsData from '@/data/projectsData'
+import projectsData from '@/data/blogData'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 
 //For future update
 export async function getStaticProps() {
-  const posts = await getAllFilesFrontMatter('blog')
+  const posts = await getAllFilesFrontMatter('projects')
   const initialDisplayPosts = posts.slice(0, 3)
   console.log(initialDisplayPosts)
 
