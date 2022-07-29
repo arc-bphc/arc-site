@@ -101,24 +101,25 @@ export default function Home({ posts }) {
               </div>
             </Link>
           </div>
+
           <div className="header-links">
-            <Link className="link p-2 text-xl" href="#about" data-scroll="">
-              About Us
+            <Link className="link p-2 text-xl" href="/projects" data-scroll="">
+              Projects
             </Link>
-            <Link className="link p-2 text-xl" href="#team" data-scroll="">
-              Our Team
+            <Link className="link p-2 text-xl" href="/resources" data-scroll="">
+              Resources
             </Link>
-            <Link className="link p-2 text-xl" href="#sponsors" data-scroll="">
-              Sponsors
-            </Link>
-            <Link className="link p-2 text-xl" href="#contact" data-scroll="">
-              Contact Us
+            <Link className="link p-2 text-xl" href="/blog" data-scroll="">
+              Blog
             </Link>
             <Link className="header-vertical-line p-2 text-xl" data-scroll="">
               |
             </Link>
-            <Link className="link p-2 text-xl" href="/resources/">
-              Resources
+            <Link className="link p-2 text-xl" href="/about">
+              About
+            </Link>
+            <Link className="link p-2 text-xl" href="#contact" data-scroll="">
+              Contact Us
             </Link>
           </div>
         </div>
