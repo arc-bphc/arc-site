@@ -26,6 +26,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['InterVariable', ...defaultTheme.fontFamily.sans],
+        montserratSans: ['Montserrat', ...defaultTheme.fontFamily.sans],
       },
       colors: {
         primary: colors.teal,

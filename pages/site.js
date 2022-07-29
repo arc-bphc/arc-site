@@ -9,7 +9,7 @@ import { getAllFilesFrontMatter } from '@/lib/mdx'
 export async function getStaticProps() {
   const posts = await getAllFilesFrontMatter('projects')
   const initialDisplayPosts = posts.slice(0, 3)
-  console.log(initialDisplayPosts)
+  // console.log(initialDisplayPosts)
 
   return { props: { initialDisplayPosts } }
 }
