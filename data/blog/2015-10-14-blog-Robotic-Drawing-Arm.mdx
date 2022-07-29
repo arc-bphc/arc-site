@@ -31,23 +31,10 @@ To make a Robotic Drawing Arm that mimics the motion of a finger on touchpad or 
 
 The Structure of this Draw-arm is similar to the arm of a person posed for drawing/writing things up. A laptop was used for most of the processing and the Arduino was only used to control the servo motors. A Cpp code took the mouse co-ordinates as input and scaled them to the 31cm \* 40cm drawing board. The scaled input was then used to change the angles of the servo motors to reach the particular point in the drawing board. This information of the angle of the servo motor was relayed to the Arduino using serial communication over USB.
 
-<div class="swiper swiper-demo">
-  <div class="swiper__wrapper">
-    <div class="swiper__slide">
-      <Image class="image image" src="/assets/images/blog/Robotic-Drawing-Arm/1.png" />
-    </div>
-    <div class="swiper__slide">
-      <Image class="image image" src="/assets/images/blog/Robotic-Drawing-Arm/2.png" />
-    </div>
-    <div class="swiper__slide">
-      <Image class="image image" src="/assets/images/blog/Robotic-Drawing-Arm/3.png" />
-    </div>
-  </div>
-  <div class="swiper__button swiper__button--prev fas fa-chevron-left"></div>
-  <div class="swiper__button swiper__button--next fas fa-chevron-right"></div>
-</div>
-
-<EmbedItem url="https://www.youtube.com/embed/HpxBxgD3gcE" />
-
-Multiple Authors: Rohan Dvivedi(2014 Batch) and Kativarpu Parthiv(2014 Batch)
-hiv(2014 Batch)
+<ImageSwiper
+  imageArray={[
+    '/assets/images/blog/Robotic-Drawing-Arm/1.png',
+    '/assets/images/blog/Robotic-Drawing-Arm/2.png',
+    '/assets/images/blog/Robotic-Drawing-Arm/3.png',
+  ]}
+/>

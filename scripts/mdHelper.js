@@ -58,12 +58,14 @@ switch (commands[0]) {
         .toString()
         .split(',')
         .forEach((file) => {
-          fs.readFile('../data/blog/' + file, (err, file) => {
+          fs.readFile('../data/blog/' + file, (err, fileContent) => {
             if (err) return console.error(err)
-            let checkIfHasSwiper = file.toString().split('<div class="swiper swiper-demo">').length
+            let checkIfHasSwiper = fileContent
+              .toString()
+              .split('<div class="swiper swiper-demo">').length
             if (checkIfHasSwiper > 1) {
               //It has swiper
-              let swiperData = file
+              let swiperData = fileContent
                 .toString()
                 .split('<div class="swiper swiper-demo">')[1]
                 .split(
@@ -75,7 +77,7 @@ switch (commands[0]) {
                 hrefs.push(href.split('src=')[1])
               })
 
-              let swiperD = file.toString().split('<div class="swiper swiper-demo">')
+              let swiperD = fileContent.toString().split('<div class="swiper swiper-demo">')
               swiperD.splice(1, 1, `<ImageSwiper imageArray={[${hrefs}]} />`)
 
               fs.writeFile('../data/blog/' + file, swiperD.join('\n'), (err) => {
