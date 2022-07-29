@@ -1,7 +1,7 @@
 ---
 title: Robotic Arm
-tags: [arduino,Servo,PWM]
-layout: article
+tags: [arduino, Servo, PWM]
+date: 2021-12-1
 mode: normal
 type: article
 sharing: true
@@ -14,15 +14,18 @@ cover: /assets/images/blog/thumbnails/robotic_arm.jpeg
 ---
 
 # Robotic Arm
+
 ## A Brief Overview.
+
 We worked on building a **Mechanical Manipulator[M.M.]**, i.e. a Robotic Arm, with 3 Degrees of Freedom. We tried to control the arm with a Bluetooth module. To achieve our goal we used 3 servos.
 
 ### Degrees of Freedom.
-In **Mechanical Manipulators[M.M.]**, **Degrees of Freedom** typically refers to the joints in the arm. They represent the axes of rotation in the arm. These **joints** allow us to control the arm. These joints usually have some kind of **actuators** which enable the  **M.M.** to move. We used **servos** to achieve this task.
 
+In **Mechanical Manipulators[M.M.]**, **Degrees of Freedom** typically refers to the joints in the arm. They represent the axes of rotation in the arm. These **joints** allow us to control the arm. These joints usually have some kind of **actuators** which enable the **M.M.** to move. We used **servos** to achieve this task.
 
 ### MG995s
-**MG995s** is the servo model which we have utilized. 
+
+**MG995s** is the servo model which we have utilized.
 Its specifications are as follows :
 • Weight: 55 g
 • Dimension: 40.7 x 19.7 x 42.9 mm approx.
@@ -33,28 +36,22 @@ Its specifications are as follows :
 • Stable and shock proof double ball bearing design
 • Temperature range: 0 ºC – 55 ºC
 
-
 <Image src="/assets/images/blog/Robotic-Arm/1.png" alt="Resistor" width='500' height='500'>
 
 <Image src="/assets/images/blog/Robotic-Arm/2.png" alt="Resistor" width='500' height='500'>
 
-
 ### Connecting Linkers
+
 **Linkers** are the connecting rods - which are typically rectangular - that are placed between two joints. These linkers constitute a major part of the **" M.M."**. We 3D printed the linkers and we connected them together at the joints in the following way:
 
 <Image src="/assets/images/blog/Robotic-Arm/3.png" alt="Resistor" width='500' height='500'>
 
-
-
-
 ### Power Supply and the Final Circuit
+
 The 3 servos were powered using a SMPS. A Switch Mode Power Supply (SMPS) is a power supply which can provide a fixed voltage and current upto a maximum value pertaining to that voltage.
 We used the 5V mode of the SMPS.
-The positive of the SMPS was connected to the 3 servos via a common positive, same with the negative terminal. The input pin of motor was connected to PWM pins. 
-The arduino board was also powered from the same positive. 
-
-
-
+The positive of the SMPS was connected to the 3 servos via a common positive, same with the negative terminal. The input pin of motor was connected to PWM pins.
+The arduino board was also powered from the same positive.
 
 ### HC05 Bluetooth Module
 
@@ -64,11 +61,9 @@ This module enables communication between the arduino uno and the custom-built a
 
 Here, the app gives a number between 0 and 180 to be sent to a given servo (number is based on the position of the slider). This is then transmitted to the module as serial data and thus to the uno. This information is used to operate the servo accordingly using servo.write().
 
-
 <Image src="/assets/images/blog/Robotic-Arm/4.png" alt="Resistor" width='500' height='500'>
 
 <Image src="/assets/images/blog/Robotic-Arm/5.png" alt="Resistor" width='500' height='500'>
-
 
 Pin Description:
 
@@ -112,7 +107,7 @@ void setup() {
 void loop() {
   while(Serial.available()>0){
     char input = Serial.read();
-    
+
     if(input=='F'){
       if (x >= 2 && x < 178)
       {
@@ -164,9 +159,11 @@ void loop() {
 Given above is the code used for the project. As we can see the 3 degrees of freedom of the arm are controlled using 3 independent servos. Information is received via the Bluetooth Module - a number that indicates the degree of rotation or movement required (on a scale of 2 to 178-based on the slider in the app) is received and the required servo is activated accordingly using servo.write(). The two directional movements possible for each servo is coded (2 functions for each servo). Each slider in the app is meant for a particular servo's movement.
 
 ### Demonstration
+
 This is a demonstration of the working of the arm, done at the expo.
 
-<EmbedItem url='https://www.youtube.com/embed/hvCeoiGeYC4' />
+<EmbedItem url="https://www.youtube.com/embed/hvCeoiGeYC4" />
 
-<EmbedItem url='https://www.youtube.com/embed/hvCeoiGeYC4' />
+<EmbedItem url="https://www.youtube.com/embed/hvCeoiGeYC4" />
 
+vCeoiGeYC4' />
