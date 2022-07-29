@@ -130,6 +130,14 @@ export default function Home({ posts }) {
             display: block;
             vertical-align: bottom;
           }
+
+          .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-color: var(--main-color);
+          }
         `}
       </style>
     </>
