@@ -1,7 +1,6 @@
 ---
 title: DIY ADC for Raspberry Pi
 tags: [adc, raspberry pi, cd4051, 555 timer]
-layout: article
 date: 2015-07-23
 mode: normal
 type: article
@@ -11,7 +10,7 @@ show_author_profile: true
 show_title: true
 full_width: false
 header: true
-cover: /assets/images/blog/thumbnails/DIY ADC for Raspberry Pi.png
+cover: /static/assets/images/blog/thumbnails/DIY ADC for Raspberry Pi.png
 ---
 
 ## Aim
@@ -66,21 +65,11 @@ it has 2 methods for the object type analogread.
 1 [Header](https://technopediabphc.files.wordpress.com/2015/07/header.docx)
 2 [Source](https://technopediabphc.files.wordpress.com/2015/07/source.docx)
 
-<div class="swiper swiper-demo">
-  <div class="swiper__wrapper">
-    <div class="swiper__slide">
-      <Image class="image image" src="/assets/images/blog/DIY-ADC-Raspi/pinout.png" />
-    </div>
-    <div class="swiper__slide">
-      <Image class="image image" src="/assets/images/blog/DIY-ADC-Raspi/PCB.png" />
-    </div>
-    <div class="swiper__slide">
-      <Image class="image image" src="/assets/images/blog/DIY-ADC-Raspi/exp.png" />
-    </div>
-    <div class="swiper__slide">
-      <Image class="image image" src="/assets/images/blog/DIY-ADC-Raspi/ADC.png" />
-    </div>
-  </div>
-  <div class="swiper__button swiper__button--prev fas fa-chevron-left"></div>
-  <div class="swiper__button swiper__button--next fas fa-chevron-right"></div>
-</div>
+<ImageSwiper
+  imageArray={[
+    '/static/assets/images/blog/DIY-ADC-Raspi/pinout.png',
+    '/static/assets/images/blog/DIY-ADC-Raspi/PCB.png',
+    '/static/assets/images/blog/DIY-ADC-Raspi/exp.png',
+    '/static/assets/images/blog/DIY-ADC-Raspi/ADC.png',
+  ]}
+/>
