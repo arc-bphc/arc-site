@@ -5,8 +5,10 @@ import logo from '../assets/ARC_logo_white.png'
 import { useCallback } from 'react'
 
 import Particles from 'react-tsparticles'
-import particlesConfig from '../particlesConfig.json'
+import particlesConfigDark from '../particlesConfig_DARK.json'
+import particlesConfigLight from '../particlesConfig_LIGHT.json'
 import { loadFull } from 'tsparticles'
+import { useTheme } from 'next-themes'
 
 const MAX_DISPLAY = 5
 
@@ -20,19 +22,34 @@ export default function Home({ posts }) {
   const customInit = useCallback(async (engine) => {
     // this adds the bundle to tsParticles
     await loadFull(engine)
-  })
+  }, [])
+  const { theme, setTheme, resolvedTheme } = useTheme()
+
+  // if (
+  //   localStorage.theme === 'dark' ||
+  //   (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+  // ) {
+  //   console.log('dark')
+  // } else {
+  //   console.log('light')
+  // }
+
+  let particleConfig = particlesConfigDark
+  if (theme === 'light') {
+    particleConfig = particlesConfigLight
+  }
 
   return (
     <>
       <div className="fixed top-0 left-0 right-0 flex h-full w-full justify-center bg-no-repeat">
         <div className="particles">
-          <Particles height="100vh" width="100vw" options={particlesConfig} init={customInit} />
+          <Particles className="h-full w-full" options={particleConfig} init={customInit} />
         </div>
-        <div className="header m-0 flex w-1/2 flex-col items-center justify-center text-center">
+        <div className="header pointer-events-none m-0 flex w-1/2 flex-col items-center justify-center text-center">
           <div style={{ width: '50%', height: 'auto', position: 'relative' }}>
             <Image
               src={logo}
-              className="logo-scaling shrink"
+              className="logo-scaling shrink invert dark:invert-0"
               alt="Transparent Logo"
               layout="responsive"
               objectFit="contain"
@@ -54,9 +71,9 @@ export default function Home({ posts }) {
               href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=arc@hyderabad.bits-pilani.ac.in"
               target="_blank"
               rel="noreferrer"
-              className="group rounded-full p-2"
+              className="group pointer-events-auto rounded-full p-2"
             >
-              <div className="rounded-full border-2 border-white p-2 transition-colors duration-700 ease-in-out hover:bg-white group-hover:border-black">
+              <div className="rounded-full border-2 border-black p-2 transition-colors duration-700 ease-in-out group-hover:border-black group-hover:bg-black dark:border-white dark:group-hover:bg-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 480 512"
@@ -71,9 +88,9 @@ export default function Home({ posts }) {
               target="_blank"
               href="https://github.com/arc-bphc"
               rel="noreferrer"
-              className="group rounded-full p-2"
+              className="group pointer-events-auto rounded-full p-2"
             >
-              <div className="rounded-full border-2 border-white p-2 transition-colors duration-700 ease-in-out hover:bg-white group-hover:border-black">
+              <div className="rounded-full border-2 border-black p-2 transition-colors duration-700 ease-in-out group-hover:border-black group-hover:bg-black dark:border-white dark:group-hover:bg-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 480 512"
@@ -88,9 +105,9 @@ export default function Home({ posts }) {
               target="_blank"
               href="https://www.facebook.com/automationandroboticsclub"
               rel="noreferrer"
-              className="group rounded-full p-2"
+              className="group pointer-events-auto rounded-full p-2"
             >
-              <div className="rounded-full border-2 border-white p-2 transition-colors duration-700 ease-in-out hover:bg-white group-hover:border-black">
+              <div className="rounded-full border-2 border-black p-2 transition-colors duration-700 ease-in-out group-hover:border-black group-hover:bg-black dark:border-white dark:group-hover:bg-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 480 512"
@@ -103,22 +120,22 @@ export default function Home({ posts }) {
           </div>
 
           <div className="header-links">
-            <Link className="link p-2 text-xl" href="/projects" data-scroll="">
+            <Link className="link pointer-events-auto p-2 text-xl" href="/projects" data-scroll="">
               Projects
             </Link>
-            <Link className="link p-2 text-xl" href="/resources" data-scroll="">
+            <Link className="link pointer-events-auto p-2 text-xl" href="/resources" data-scroll="">
               Resources
             </Link>
-            <Link className="link p-2 text-xl" href="/blog" data-scroll="">
+            <Link className="link pointer-events-auto p-2 text-xl" href="/blog" data-scroll="">
               Blog
             </Link>
-            <Link className="header-vertical-line p-2 text-xl" data-scroll="">
+            <Link className="header-vertical-line pointer-events-auto p-2 text-xl" data-scroll="">
               |
             </Link>
-            <Link className="link p-2 text-xl" href="/about">
+            <Link className="link pointer-events-auto p-2 text-xl" href="/about">
               About
             </Link>
-            <Link className="link p-2 text-xl" href="#contact" data-scroll="">
+            <Link className="link pointer-events-auto p-2 text-xl" href="#contact" data-scroll="">
               Contact Us
             </Link>
           </div>

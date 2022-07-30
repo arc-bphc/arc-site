@@ -43,13 +43,17 @@ The car is fitted with a pro mini and an NRFacting as a receiver. The remote con
 ## MPU 6050
 
 <Image src="/static/assets/images/blog/RC-Bot/2.png" alt="2" width="500" height="500" />
-The MPU-6050 is the world’s first and only 6-axis motion tracking devices designed for the low power,
+
+The MPU-6050 is the world's first and only 6-axis motion tracking devices designed for the low power,
 low cost, and high performance requirements of smartphones, tablets and wearable sensors. MPU6050 is
 a Micro Electro-mechanical system (MEMS), it consists of three-axis accelerometer and three-axis gyroscope.
 It helps us to measure velocity, orientation, acceleration, displacement and other motion like features.
 This module uses the I2C module for interfacing with Arduino. Following is the code to interface it with
-Arduino ``` #include "MPU6050_6Axis_MotionApps20.h" //#include "MPU6050.h" // not necessary if using
-MotionApps include file
+Arduino
+
+```
+#include "MPU6050_6Axis_MotionApps20.h"
+//#include "MPU6050.h" // not necessary if using MotionApps include file
 
 // Arduino Wire library is required if I2Cdev I2CDEV_ARDUINO_WIRE implementation
 // is used in I2Cdev.h
@@ -385,18 +389,21 @@ if (!dmpReady) return;
 ```
 
 ## NRF 24
-<Image src="/static/assets/images/blog/RC-Bot/3.png" alt="3" width='500' height='500' />
-The nRF24L01+ transceiver module is designed to operate in 2.4 GHz worldwide ISM frequency band and uses GFSK modulation for data transmission. The data transfer rate can be one of 250kbps, 1Mbps and 2Mbps. The nRF24L01+ transceiver module communicates over a 4-pin Serial Peripheral Interface (SPI) with a maximum data rate of 10Mbps. All the parameters such as frequency channel (125 selectable channels), output power (0 dBm, -6 dBm, -12 dBm or -18 dBm), and data rate (250kbps, 1Mbps, or 2Mbps) can be configured through SPI interface. The SPI bus uses a concept of a Master and Slave, in most common applications our Arduino is the Master and the nRF24L01+ transceiver module is the Slave.
-Following is a link for a more practical understanding
-https://electronoobs.com/eng_arduino_tut95.php
 
+<Image src="/static/assets/images/blog/RC-Bot/3.png" alt="3" width="500" height="500" />
 
-
-
+The nRF24L01+ transceiver module is designed to operate in 2.4 GHz worldwide ISM frequency band and uses
+GFSK modulation for data transmission. The data transfer rate can be one of 250kbps, 1Mbps and 2Mbps.
+The nRF24L01+ transceiver module communicates over a 4-pin Serial Peripheral Interface (SPI) with a maximum
+data rate of 10Mbps. All the parameters such as frequency channel (125 selectable channels), output power
+(0 dBm, -6 dBm, -12 dBm or -18 dBm), and data rate (250kbps, 1Mbps, or 2Mbps) can be configured through
+SPI interface. The SPI bus uses a concept of a Master and Slave, in most common applications our Arduino
+is the Master and the nRF24L01+ transceiver module is the Slave. Following is a link for a more practical
+understanding https://electronoobs.com/eng_arduino_tut95.php
 
 ## Transmitter Code
-```
 
+```
 #include <SPI.h>
 #include <nRF24L01.h>
 #include <RF24.h>
@@ -478,7 +485,7 @@ Serial.println("SSD1306 allocation failed");
 // // Display static text
 // display.println("The display is working");
 // display.display();
-//  
+//
  // Initialize interface to the MPU6050
 //initialize_MPU6050();
 // Call this function if you need to get the IMU error values for your module
@@ -603,7 +610,7 @@ if(data.j2PotX <= 120 || data.j2PotX >= 140 )
 else
 digitalWrite(sidewardLed, LOW);
 
-//  
+//
 sensors_event_t a, g, temp;
 mpu.getEvent(&a, &g, &temp);
 
@@ -688,21 +695,21 @@ data.IMUlr = map(accAngleX, -80, +80, 255, 0);
 ```
 
 ## Receiver Code
-```
 
+```
 #include <nRF24L01.h>
 #include <RF24.h>
 #include <Wire.h>
 #include <SPI.h>
 
-//RF24 radio(7, 8); // nRF24L01 (CE, CSN) for NANO
-//RF24 radio(9, 10); // nRF24L01 (CE, CSN) for UNO
-RF24 radio(5, 6); // nRF24L01 (CE, CSN) for PRO MINI
+//RF24 radio(7, 8);   // nRF24L01 (CE, CSN) for NANO
+//RF24 radio(9, 10);   // nRF24L01 (CE, CSN) for UNO
+RF24 radio(5, 6);   // nRF24L01 (CE, CSN) for PRO MINI
 const byte address[6] = "00001"; // Address
-//Max size of this struct is 32 bytes - NRF24L01 buffer limit
+   //Max size of this struct is 32 bytes - NRF24L01 buffer limit
 
 #define ForwardReverse 9 // pwm pin to the hbridge to vary motor speed
-#define Sideward 10 // pwm pin to the hbridge to vary motor speed
+#define Sideward 10   // pwm pin to the hbridge to vary motor speed
 
 #define ForwardReverse 9
 #define Sideward 10
@@ -713,239 +720,241 @@ const byte address[6] = "00001"; // Address
 
 int ModeSwitch;
 struct Data_Package {
-byte j1PotY;
-byte j2PotX;
-byte IMUfwdrev;
-byte IMUlr;
-byte ModeSwitch;
+  byte j1PotY;
+  byte j2PotX;
+  byte IMUfwdrev;
+  byte IMUlr;
+  byte ModeSwitch;
 };
 
 Data_Package data;
 
-void setup() {
-Serial.begin(9600);
-pinMode(right, OUTPUT);
-pinMode(left, OUTPUT);
-pinMode(2, OUTPUT); // led for debugging and showing comms working
-pinMode(forward, OUTPUT);
-pinMode(ForwardReverse, OUTPUT);
-pinMode(Sideward, OUTPUT);
-pinMode(reverse, OUTPUT);
-digitalWrite(2, HIGH);
-delay(1000);
-digitalWrite(2, LOW);
 
-//pinMode(LED_BUILTIN, OUTPUT);
-radio.begin();
-radio.openReadingPipe(0, address);
-//radio.setPALevel(RF24_PA_MIN);
-radio.startListening();
+void setup() {
+  Serial.begin(9600);
+  pinMode(right, OUTPUT);
+  pinMode(left, OUTPUT);
+  pinMode(2, OUTPUT);  // led for debugging and showing comms working
+  pinMode(forward, OUTPUT);
+  pinMode(ForwardReverse, OUTPUT);
+  pinMode(Sideward, OUTPUT);
+  pinMode(reverse, OUTPUT);
+  digitalWrite(2, HIGH);
+  delay(1000);
+  digitalWrite(2, LOW);
+
+
+  //pinMode(LED_BUILTIN, OUTPUT);
+  radio.begin();
+  radio.openReadingPipe(0, address);
+  //radio.setPALevel(RF24_PA_MIN);
+  radio.startListening();
 
     //data.j1PotX = 127; // Values from 0 to 255. When Joystick is in resting position, the value is in the middle, or 127. We actually map the pot value from 0 to 1023 to 0 to 255 because that's one BYTE value
-
-data.j1PotY = 127;
-data.j2PotX = 127;
-/_data.j2PotY = 127;
-data.j1Button = 1;
-data.j2Button = 1;
-data.pot1 = 1;
-data.pot2 = 1;
-data.tSwitch1 = 1;
-data.tSwitch2 = 1;
-data.button1 = 1;
-data.button2 = 1;
-data.button3 = 1;
-data.button4 = 1;_/
+  data.j1PotY = 127;
+  data.j2PotX = 127;
+  /*data.j2PotY = 127;
+  data.j1Button = 1;
+  data.j2Button = 1;
+  data.pot1 = 1;
+  data.pot2 = 1;
+  data.tSwitch1 = 1;
+  data.tSwitch2 = 1;
+  data.button1 = 1;
+  data.button2 = 1;
+  data.button3 = 1;
+  data.button4 = 1;*/
 
 }
 
 void loop() {
-Serial.println("This is Receiver");
-if (radio.available())
-{
-Serial.println("All Good");
-digitalWrite(2, !digitalRead(2));
-radio.read(&data, sizeof(Data*Package));
-ModeSwitch = data.ModeSwitch;
-//Serial.println(data.j1PotY);
-//Serial.println(data.j2PotX);
-/\_digitalWrite(2, HIGH);
-delay(500);
-digitalWrite(2, LOW);
-delay(500);*/
-}
-else
-{
-digitalWrite(2, HIGH);
-//Stop();
-digitalWrite(forward, LOW); // vehicle stops
-digitalWrite(reverse, LOW);
-analogWrite(ForwardReverse,0);
-digitalWrite(right, LOW);
-digitalWrite(left, LOW);
+ Serial.println("This is Receiver");
+ if (radio.available())
+ {
+   Serial.println("All Good");
+   digitalWrite(2, !digitalRead(2));
+   radio.read(&data, sizeof(Data_Package));
+   ModeSwitch = data.ModeSwitch;
+   //Serial.println(data.j1PotY);
+   //Serial.println(data.j2PotX);
+   /*digitalWrite(2, HIGH);
+   delay(500);
+   digitalWrite(2, LOW);
+   delay(500);*/
+ }
+ else
+ {
+   digitalWrite(2, HIGH);
+   //Stop();
+  digitalWrite(forward, LOW);      // vehicle stops
+  digitalWrite(reverse, LOW);
+  analogWrite(ForwardReverse,0);
+  digitalWrite(right, LOW);
+  digitalWrite(left, LOW);
+ }
+
+ if(ModeSwitch){                     // This is the mode in which the bot will work in joystick mode
+
+ if(data.j1PotY >= 130)
+ {
+   onward();
+   if(data.j2PotX >= 130)
+   {
+    turnRight();
+   }
+
+   else if(data.j2PotX <= 120)
+   {
+    turnLeft();
+   }
+ }
+
+ else if(data.j1PotY <= 120)
+ {
+   Reverse();
+   if(data.j2PotX >= 130)
+   {
+    turnRight();
+   }
+
+   else if(data.j2PotX <= 120)
+   {
+    turnLeft();
+   }
+ }
+
+ else if(data.j1PotY <= 130 && data.j1PotY >=120)
+ {
+  Stop();
+  if(data.j2PotX >= 130)
+   {
+    turnRight();
+   }
+
+   else if(data.j2PotX <= 120)
+   {
+    turnLeft();
+   }
+ }
+ }
+
+
+
+else if(!ModeSwitch){                     // this is the   mode n which the bot will work in motion control/ gesture control mode
+
+  if(data.IMUfwdrev >= 140)
+ {
+   onwardMS();
+   if(data.IMUlr >= 145)
+   {
+    turnRightMS();
+   }
+
+   else if(data.IMUlr <= 110)
+   {
+    turnLeftMS();
+   }
+ }
+
+ else if(data.IMUfwdrev <= 100)
+ {
+   ReverseMS();
+   if(data.IMUlr >= 145)
+   {
+    turnRightMS();
+   }
+
+   else if(data.IMUlr <= 110)
+   {
+    turnLeftMS();
+   }
+ }
+
+ else if(data.IMUfwdrev < 140 && data.IMUfwdrev > 100)
+ {
+  Stop();
+  if(data.IMUlr >= 145)
+   {
+    turnRightMS();
+   }
+
+   else if(data.IMUlr <= 110)
+   {
+    turnLeftMS();
+   }
+ }
+
 }
 
-if(ModeSwitch){ // This is the mode in which the bot will work in joystick mode
-
-if(data.j1PotY >= 130)
-{
-onward();
-if(data.j2PotX >= 130)
-{
-turnRight();
-}
-
-else if(data.j2PotX <= 120)
-{
-turnLeft();
-}
-}
-
-else if(data.j1PotY <= 120)
-{
-Reverse();
-if(data.j2PotX >= 130)
-{
-turnRight();
-}
-
-else if(data.j2PotX <= 120)
-{
-turnLeft();
-}
-}
-
-else if(data.j1PotY <= 130 && data.j1PotY >=120)
-{
-Stop();
-if(data.j2PotX >= 130)
-{
-turnRight();
-}
-
-else if(data.j2PotX <= 120)
-{
-turnLeft();
-}
-}
-}
-
-else if(!ModeSwitch){ // this is the mode n which the bot will work in motion control/ gesture control mode
-
-if(data.IMUfwdrev >= 140)
-{
-onwardMS();
-if(data.IMUlr >= 145)
-{
-turnRightMS();
-}
-
-else if(data.IMUlr <= 110)
-{
-turnLeftMS();
-}
-}
-
-else if(data.IMUfwdrev <= 100)
-{
-ReverseMS();
-if(data.IMUlr >= 145)
-{
-turnRightMS();
-}
-
-else if(data.IMUlr <= 110)
-{
-turnLeftMS();
-}
-}
-
-else if(data.IMUfwdrev < 140 && data.IMUfwdrev > 100)
-{
-Stop();
-if(data.IMUlr >= 145)
-{
-turnRightMS();
-}
-
-else if(data.IMUlr <= 110)
-{
-turnLeftMS();
-}
-}
 
 }
 
-}
+
+
 
 int onward()
 {
-digitalWrite(forward, HIGH); // vehicle moves forward
-digitalWrite(reverse, LOW);
-analogWrite(ForwardReverse, (data.j1PotY-128)\*2);
+  digitalWrite(forward, HIGH);      // vehicle moves forward
+  digitalWrite(reverse, LOW);
+  analogWrite(ForwardReverse, (data.j1PotY-128)*2);
 }
 
 int Reverse()
 {
-digitalWrite(forward, LOW); // vehicle reverses
-digitalWrite(reverse, HIGH);
-analogWrite(ForwardReverse,(127-data.j1PotY)*2);
+  digitalWrite(forward, LOW);      // vehicle reverses
+  digitalWrite(reverse, HIGH);
+  analogWrite(ForwardReverse,(127-data.j1PotY)*2);
 }
 int turnRight()
 {
-digitalWrite(left, LOW); // steering turns right
-digitalWrite(right, HIGH);
-analogWrite(Sideward,(data.j2PotX-128)*2);
+  digitalWrite(left, LOW);      // steering turns right
+  digitalWrite(right, HIGH);
+  analogWrite(Sideward,(data.j2PotX-128)*2);
 }
 
 int turnLeft()
 {
-digitalWrite(right, LOW); // steering turns left
-digitalWrite(left, HIGH);
-analogWrite(Sideward,(127-data.j2PotX)\*2);
+  digitalWrite(right, LOW);      // steering turns left
+  digitalWrite(left, HIGH);
+  analogWrite(Sideward,(127-data.j2PotX)*2);
 }
+
+
 
 int onwardMS()
 {
-digitalWrite(forward, HIGH); // vehicle moves forward
-digitalWrite(reverse, LOW);
-analogWrite(ForwardReverse, (data.IMUfwdrev-128)\*2);
+  digitalWrite(forward, HIGH);      // vehicle moves forward
+  digitalWrite(reverse, LOW);
+  analogWrite(ForwardReverse, (data.IMUfwdrev-128)*2);
 }
 
 int ReverseMS()
 {
-digitalWrite(forward, LOW); // vehicle reverses
-digitalWrite(reverse, HIGH);
-analogWrite(ForwardReverse,(127-data.IMUfwdrev)*2);
+  digitalWrite(forward, LOW);      // vehicle reverses
+  digitalWrite(reverse, HIGH);
+  analogWrite(ForwardReverse,(127-data.IMUfwdrev)*2);
 }
 int turnRightMS()
 {
-digitalWrite(left, LOW); // steering turns right
-digitalWrite(right, HIGH);
-analogWrite(Sideward,(data.IMUlr-128)*2);
+  digitalWrite(left, LOW);      // steering turns right
+  digitalWrite(right, HIGH);
+  analogWrite(Sideward,(data.IMUlr-128)*2);
 }
 
 int turnLeftMS()
 {
-digitalWrite(right, LOW); // steering turns left
-digitalWrite(left, HIGH);
-analogWrite(Sideward,(127-data.IMUlr)\*2);
+  digitalWrite(right, LOW);      // steering turns left
+  digitalWrite(left, HIGH);
+  analogWrite(Sideward,(127-data.IMUlr)*2);
 }
 
 int Stop()
 {
-digitalWrite(forward, LOW); // vehicle stops
-digitalWrite(reverse, LOW);
-analogWrite(ForwardReverse,0);
-digitalWrite(right, LOW);
-digitalWrite(left, LOW);
+  digitalWrite(forward, LOW);      // vehicle stops
+  digitalWrite(reverse, LOW);
+  analogWrite(ForwardReverse,0);
+  digitalWrite(right, LOW);
+  digitalWrite(left, LOW);
 }
 
-```
-
-
-
-
-OW);
-}
 ```
