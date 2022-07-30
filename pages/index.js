@@ -56,12 +56,12 @@ export default function Home({ posts }) {
             />
           </div>
           <h1 className="pt-8">
-            <span className="site-title font-montserratSans text-6xl">
+            <span className="site-title font-montserratSans text-6xl text-black dark:text-white">
               Automation &amp; Robotics Club
             </span>
           </h1>
           <h1 className="p-6">
-            <span className="site-description font-montserratSans text-4xl">
+            <span className="site-description font-montserratSans text-4xl text-black dark:text-white">
               Electronics | Design | Programming
             </span>
           </h1>
@@ -120,22 +120,44 @@ export default function Home({ posts }) {
           </div>
 
           <div className="header-links">
-            <Link className="link pointer-events-auto p-2 text-xl" href="/projects" data-scroll="">
+            <Link
+              className="link pointer-events-auto p-2 text-xl text-black dark:text-white"
+              href="/projects"
+              data-scroll=""
+            >
               Projects
             </Link>
-            <Link className="link pointer-events-auto p-2 text-xl" href="/resources" data-scroll="">
+            <Link
+              className="link pointer-events-auto p-2 text-xl text-black dark:text-white"
+              href="/resources"
+              data-scroll=""
+            >
               Resources
             </Link>
-            <Link className="link pointer-events-auto p-2 text-xl" href="/blog" data-scroll="">
+            <Link
+              className="link pointer-events-auto p-2 text-xl text-black dark:text-white"
+              href="/blog"
+              data-scroll=""
+            >
               Blog
             </Link>
-            <Link className="header-vertical-line pointer-events-auto p-2 text-xl" data-scroll="">
+            <Link
+              className="header-vertical-line pointer-events-auto p-2 text-xl text-black dark:text-white"
+              data-scroll=""
+            >
               |
             </Link>
-            <Link className="link pointer-events-auto p-2 text-xl" href="/about">
+            <Link
+              className="link pointer-events-auto p-2 text-xl text-black dark:text-white"
+              href="/about"
+            >
               About
             </Link>
-            <Link className="link pointer-events-auto p-2 text-xl" href="#contact" data-scroll="">
+            <Link
+              className="link pointer-events-auto p-2 text-xl text-black dark:text-white"
+              href="#contact"
+              data-scroll=""
+            >
               Contact Us
             </Link>
           </div>
