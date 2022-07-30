@@ -13,7 +13,7 @@ export async function getStaticPaths() {
     params: {
       slug: formatSlug(p).split('/'),
     },
-  }));
+  }))
   return {
     paths: paths,
     fallback: false,
@@ -41,10 +41,10 @@ export async function getStaticProps({ params }) {
 
   //Code for the sidebar :)
   let postsInSameFolder = []
-  if(params.slug.length > 1){
+  if (params.slug.length > 1) {
     //This means there's a nested system
-    const folderName = params.slug[0];
-    postsInSameFolder = allPosts.filter(post => post.slug.split("/")[0] == folderName)
+    const folderName = params.slug[0]
+    postsInSameFolder = allPosts.filter((post) => post.slug.split('/')[0] == folderName)
     postsInSameFolder.sort((post1, post2) => post1.orderInSidebar - post2.orderInSidebar)
   }
 
@@ -56,7 +56,7 @@ export default function Resources({ post, authorDetails, prev, next, postsInSame
 
   return (
     <>
-      <Sidebar postsInSameFolder={postsInSameFolder}/>
+      <Sidebar postsInSameFolder={postsInSameFolder} />
       {frontMatter.draft !== true ? (
         <MDXLayoutRenderer
           layout={frontMatter.layout || DEFAULT_LAYOUT}

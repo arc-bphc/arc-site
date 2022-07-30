@@ -5,6 +5,7 @@ level: 4
 tags: ['levelup', 'electronics']
 orderInSidebar: 7
 ---
+
 # Pre Requisites
 
 - TinkerCAD
@@ -20,7 +21,6 @@ orderInSidebar: 7
 - Analog Sensors: LDR And Potentiometers
 - Onshape : 3D Drafting
 
-
 ## Pull-Up Resistors
 
 A pull-up resistor is a simple resistor used to make sure that the voltage is well-defined even when the switch is open. It is used to ensure that a wire is **pulled up** to a high logical level in the absence of an input signal.
@@ -31,16 +31,11 @@ The Arduino comes equipped with internal resistors which can be operated in the 
 
 As you would have noticed in the pinMode() documentation [(Link)](https://www.arduino.cc/reference/en/language/functions/digital-io/pinmode/), The Digital GPIO pins can operate in the INPUT_PULLUP which enables the internal resistors on that pin and let's the pin be used in Pull-Up mode.
 
-<Iamge 
-	src="/static/images/levelup/level-4/pullup.png" 
-	alt="Pull-Up" 
-	width='500' 
-	height='500'
-/>
+<Image src="/static/images/levelup/level-4/pullup.png" alt="Pull-Up" width="500" height="500" />
 
 **MCU = Micro-Controller Unit**
 
-**Links to Follow :**  [Youtube - Floating Pins and Pull-Up resistors](https://youtu.be/G_i1ZhadTa0)
+**Links to Follow :** [Youtube - Floating Pins and Pull-Up resistors](https://youtu.be/G_i1ZhadTa0)
 
 ## Switch Debouncing
 
@@ -50,12 +45,7 @@ A Push button comprises of two metal contacts that touch upon pressing action on
 
 Thus, if the sensing element is sensitive enough, it registers multiple button press from a single action. This can introduce errors in the system you are using and can hinder a lot of processes.
 
-<Image 
-	src="/static/images/levelup/level-4/bouncing.png" 
-	alt="Bouncing" 
-	width='500' 
-	height='500'
-/>
+<Image src="/static/images/levelup/level-4/bouncing.png" alt="Bouncing" width="500" height="500" />
 
 To overcome these errors we establish "Debouncing" Techniques, This can be achieved both via software or hardware tweaks.
 
@@ -68,6 +58,7 @@ This function returns the number of milliseconds passed since the Arduino board 
 **Syntax**: `time_variable = millis()`
 
 #### Links to Follow :
+
 - [Documentation for millis()](https://www.arduino.cc/reference/en/language/functions/time/millis/)
 - [Debouncing simulation on TinkerCAD](https://www.tinkercad.com/things/7JrveliVaod)
 - [Another Video on Debouncing](https://www.youtube.com/watch?v=PzlIXpWKRMk&feature=youtu.be)
@@ -78,16 +69,14 @@ The Arduino UNO has 6 pins (A0 to A5) that can read analog input voltages receiv
 
 These Analog Pins map the input voltages to a resolved value between 0 and 1023, Using a 10 bit ADC (Analog to Digital Converter)
 
-<Image 
-	src="/static/images/levelup/level-4/analoginput.png" 
-	alt="AnalogInput" 
-	width='700px' 
-	height='500'
+<Image
+  src="/static/images/levelup/level-4/analoginput.png"
+  alt="AnalogInput"
+  width="700px"
+  height="500"
 />
 
 **Links to Follow :** [Analog Input?](https://www.youtube.com/watch?v=cmc-BPtkdAU&feature=youtu.be)
-
-
 
 ## analogRead()
 
@@ -112,7 +101,6 @@ val = analogRead(analogPin);
 
 **Links to Follow :** [analogRead() function documentation](https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/)
 
-
 **Can you use the analog pins(A0- A5) for Digtal Functions?**
 
 Find out for yourself!
@@ -125,16 +113,13 @@ Pins **3, 5, 6, 9, 10, 11** on the Arduino UNO are equipped with the PWM logic, 
 
 **Syntax** : `analogWrite(Pin_number, value)`
 
-<Image src="/static/images/levelup/level-4/pwm.png" alt="PWM" width='500' height='500' />
+<Image src="/static/images/levelup/level-4/pwm.png" alt="PWM" width="500" height="500" />
 
 Notice how the pins have a ~ symbol on them to help differentiate.
 
-<Image src="/static/images/levelup/level-4/pwmpins.png" alt="PWMpins" width='500' height='500' />
+<Image src="/static/images/levelup/level-4/pwmpins.png" alt="PWMpins" width="500" height="500" />
 
 Documentation for [analogWrite()](https://www.arduino.cc/reference/en/language/functions/analog-io/analogwrite/)
-
-
-
 
 ## Dim an LED
 
@@ -161,12 +146,7 @@ void loop()
 }
 ```
 
-<Image 
-	src="/static/images/levelup/level-4/dimLED.png" 
-	alt="dimLED" 
-	width='700px'
-	height='500'
-/>
+<Image src="/static/images/levelup/level-4/dimLED.png" alt="dimLED" width="700px" height="500" />
 
 [Link to the PWM Simulation](https://www.tinkercad.com/things/5OJLL9YWGF9)
 
@@ -174,12 +154,7 @@ void loop()
 
 Pulse Width Modulation (PWM) is a technique for creating analog results with digital means. The Arduino generates a square wave, a signal switched on and off. This on- off pattern can simulate voltages in between the full Vcc (5V) and off (0V) by changing the **"duty cycle"** of the Square wave.
 
-<Image 
-	src="/static/images/levelup/level-4/PWM_2.png" 
-	alt="PWM_2" 
-	width='800px' 
-	height='500'
-/>
+<Image src="/static/images/levelup/level-4/PWM_2.png" alt="PWM_2" width="800px" height="500" />
 
 ## Duty Cycle
 
@@ -201,6 +176,7 @@ t_{on} + t_{off} = Time\ period\newline
 
 \end{gather}
 
+
 $$
 
 $$
@@ -208,6 +184,7 @@ V_{average} = 5V \times Duty\ Cycle
 $$
 
 #### Links to Follow :
+
 - [Arduino Foundations - PWM](https://www.arduino.cc/en/Tutorial/Foundations/PWM)
 - [Paul McWhorter on PWM](https://www.youtube.com/watch?v=YfV-vYT3yfQ)
 
@@ -217,21 +194,18 @@ $$
 
 A 3-terminal instrument which measures and gives out a fraction of voltage applied across its two ends, depending upon the variation of the position of sliding contact over the uniform resistance (placed in a semi-circular manner, acting as a voltage divider).
 
-
-<Image 
-	src="/static/images/levelup/level-4/Potentiometer.png" 
-	alt="Potentiometer" 
-	width='800px' 
-	height='500'
+<Image
+  src="/static/images/levelup/level-4/Potentiometer.png"
+  alt="Potentiometer"
+  width="800px"
+  height="500"
 />
 
-
 #### Links to Follow:
+
 - Paul McWhorter's [Understanding Potentiometers](https://www.youtube.com/watch?v=PUte1cmJ44A)
 - [How Potentiometers work](https://www.youtube.com/watch?v=F_e3XIbvsOU)
 - [Simulating a Potentiometer in TinkerCAD](https://www.youtube.com/watch?v=xb_0QxeInDs)
-
-
 
 ### LDR
 
@@ -239,17 +213,7 @@ A Light Dependent Resistor (a.k.a photoresistor or LDR) is a device whose resist
 
 When the light of enough energy falls on it, the number of electrons available for the conduction increases proportional to the intensity of light.
 
-
-
-<Image 
-	src="/static/images/levelup/level-4/LDR.png" 
-	alt="LDR" 
-	width='600px' 
-	height='500'
-/>
-
-
-
+<Image src="/static/images/levelup/level-4/LDR.png" alt="LDR" width="600px" height="500" />
 
 #### Links to Follow:
 
@@ -261,15 +225,7 @@ When the light of enough energy falls on it, the number of electrons available f
 
 The RGB LED can emit different colors by mixing the 3 basic colors red, green and blue. So it actually consists of 3 separate LEDs red, green and blue packed in a single case. That’s why it has 4 leads, one lead for each of the 3 colors and one common cathode or anode depending on the RGB LED type.
 
-
-
-<Image 
-	src="/static/images/levelup/level-4/RGBLED.png" 
-	alt="RGB-LED" 
-	width='900px' 
-	height='500'
-/>
-
+<Image src="/static/images/levelup/level-4/RGBLED.png" alt="RGB-LED" width="900px" height="500" />
 
 **Links to Follow :** [Using RGB Leds in TinkerCAD](https://youtu.be/YqHkULDmmGU)
 
@@ -300,21 +256,20 @@ Generate a PWM wave of any desired **% Duty Cycle** from a **Non-PWM supporting 
 
 ## Assignment 3
 
-
 Task :- Make a 4 wheeled bot as shown in the figure.
 
-<Image 
-	src="/static/images/levelup/level-7/Ass2_lvl7.png" 
-	alt="ChassisCAD" 
-	width='750px' 
-	height='500'
+<Image
+  src="/static/images/levelup/level-7/Ass2_lvl7.png"
+  alt="ChassisCAD"
+  width="750px"
+  height="500"
 />
 
-<Image 
-	src="/static/images/levelup/level-7/Ass22_lvl7.png" 
-	alt="MotorCAD" 
-	width='750px' 
-	height='500'
+<Image
+  src="/static/images/levelup/level-7/Ass22_lvl7.png"
+  alt="MotorCAD"
+  width="750px"
+  height="500"
 />
 
 This week you have to use your creativity for the part designing , but emphasis will be on the assembly and the type of mates being used.
@@ -323,7 +278,7 @@ Guidelines for Parts :-
 
 Guidelines for Assembly :-
 (i) Make sure mates are realistic. Eg: A wheel mounted onto the bot should be capable of rotation.
-(ii) Make sure dimensions are appropriate. Eg: The wheel should have proper dimensions to fit onto the shaft it’s being mounted on. Other dimensions like length of chassis or diameter of wheel are left to your discretion.
+(ii) Make sure dimensions are appropriate. Eg: The wheel should have proper dimensions to fit onto the shaft it's being mounted on. Other dimensions like length of chassis or diameter of wheel are left to your discretion.
 
 Guidelines for Motion Study :-
 (i) Give the same rpm to all motors and show the wheels spinning.
