@@ -98,7 +98,7 @@ export default function ResourceLayout({ frontMatter, authorDetails, next, prev,
               </div>
               <Comments frontMatter={frontMatter} /> */}
             </div>
-            {/* <footer>
+            <footer>
               <div className="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
                 {tags && (
                   <div className="py-4 xl:py-8">
@@ -145,7 +145,7 @@ export default function ResourceLayout({ frontMatter, authorDetails, next, prev,
                   &larr; Back to the blog
                 </Link>
               </div>
-            </footer> */}
+            </footer>
           </div>
         </div>
       </article>
