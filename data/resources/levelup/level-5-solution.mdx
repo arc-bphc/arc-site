@@ -6,7 +6,10 @@ tags: ['levelup', 'electronics', 'solution']
 orderInSidebar: 10
 ---
 
+<TOCInline toc={props.toc} toHeading={2} asDisclosure />
+
 ## Assignment 1
+
 Calculate the velocity of an object moving with constant velocity using the HC SR 04 Sensor. Assume that the velocity vector of the object points directly towards or away from the HC SR04 transmitter/receiver. (Ignore Doppler Effect)
 
 ```java
@@ -48,11 +51,22 @@ void loop()
   Serial.println("cm/s");
   }
 ```
+
 &nbsp;
 Try to measure the velocity yourself.
-<iframe width="725" height="453" src="https://www.tinkercad.com/embed/1V1gOPmAhNP?editbtn=1" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+
+<iframe
+  width="725"
+  height="453"
+  src="https://www.tinkercad.com/embed/1V1gOPmAhNP?editbtn=1"
+  frameborder="0"
+  marginwidth="0"
+  marginheight="0"
+  scrolling="no"
+></iframe>
 
 ## Assignment 2
+
 Use this velocity calculated in previous question to calculate the distance of the object after a given time interval. Measure the distance using the HC SR 04 sensor and calculate the error. (Ignore Doppler Effect)
 &nbsp;
 
@@ -72,5 +86,15 @@ delay((timeInterval-1)*1000); //wait for (total interval - 1 second)
   Serial.print("Error is: ");
   Serial.println(dist2-(dist+(speed*timeInterval)));  //Calculate error in distance
 ```
+
 You can test the code here.
-<iframe width="725" height="453" src="https://www.tinkercad.com/embed/b8N1mB9d0gA?editbtn=1" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe> -->
+
+<iframe
+  width="725"
+  height="453"
+  src="https://www.tinkercad.com/embed/b8N1mB9d0gA?editbtn=1"
+  frameborder="0"
+  marginwidth="0"
+  marginheight="0"
+  scrolling="no"
+></iframe> -->

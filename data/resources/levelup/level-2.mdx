@@ -6,7 +6,10 @@ tags: ['levelup', 'electronics']
 orderInSidebar: 3
 ---
 
+<TOCInline toc={props.toc} toHeading={2} asDisclosure />
+
 ## Arduino Uno
+
 Arduino is a platform used for building electronic projects, it consists of a physical
 programmable circuit board (often referred to as a microcontroller ), and a software (called the IDE) which runs on the computer and allows you to write programs to the physical board.
 
@@ -18,20 +21,22 @@ one i.e. Arduino Uno
 
 ## What’s in an Arduino Uno?
 
-<Image 
-  src='/static/images/levelup/level-2/arduinouno.png'
-  alt='arduinouno'
-  width='500' 
-  height='500' 
+<Image
+  src="/static/images/levelup/level-2/arduinouno.png"
+  alt="arduinouno"
+  width="500"
+  height="500"
 />
 
 ### Microcontroller
+
 This part is the brain of the Arduino. It processes the code written and executes the
 input and output commands. So it includes a memory that stores your code, a processor
 that processes your code. The Arduino uses ATMega microcontrollers and the Arduino Uno
 has the ATMega328 microcontroller.
 
 ### USB Port
+
 The USB port allows you to connect to the computer
 to establish a medium of communication between
 communication has to follow a set of rules called a
@@ -39,74 +44,74 @@ uses to communicate with the computer is called
 Receptor & Transmitter).
 
 ### Power pins
+
 The Arduino Uno can output 5 volt and 3.3 volt from the pins “5V” and “3.3V”. This can
 be used to power other sensors or components.
 
 ### GND or Ground pins
+
 These pins are at 0 volt. They are used to complete and form a closed circuit.
 
 ### Reset Push Button
+
 By clicking this button restarts your Arduino Uno.
 
 ### GPIO (General Purpose Input Output) Pins
+
 They are specific pins on the arduino that can be programmed to input/output signals.
 They bridge the programming with the electronics.
 They are of two types:
 **Digital GPIO**: Strictly outputs two values i.e. HIGH or LOW.
 **Analog GPIO**: Reads an analog signal within a defined precision.
 
-<Image 
-  src='/static/images/levelup/level-2/digitalvsanalog.png'
-  alt='digitalvsanalog'
-  width='500'
-  height='500'
+<Image
+  src="/static/images/levelup/level-2/digitalvsanalog.png"
+  alt="digitalvsanalog"
+  width="500"
+  height="500"
 />
 
-
 ## Serial Communication
+
 On the software side, let’s look into how the Uno actually
 communicates with the computer and the serial monitor.
 
 A video on the serial port and print commands can be found here.
 
-
-
-<EmbedItem url='https://www.youtube.com/embed/b5kndEtAKl8' />
+<EmbedItem url="https://www.youtube.com/embed/b5kndEtAKl8" />
 
 The serial monitor can also be used to take inputs from the
 user.
 
 Here is Paul McWhorter’s amazing [tutorial](https://www.youtube.com/watch?v=7aP5KL5clWA&t=233s) on this topic.
 
-
-
 Pay special attention to [parseInt()](https://www.arduino.cc/reference/en/language/functions/communication/serial/parseint/) and [parseFloat()](https://www.arduino.cc/reference/en/language/functions/communication/stream/streamparsefloat/) commands.
 
 There are two important functions related to the serial input in the code, and that is [Serial.available()](https://www.arduino.cc/reference/en/language/functions/communication/serial/available/) and [Serial.read()](https://www.arduino.cc/reference/en/language/functions/communication/serial/read/).
 
->**Serial.available()** returns the number of characters (i.e. bytes of data) which have arrived in the serial buffer and that are ready to be read.
+> **Serial.available()** returns the number of characters (i.e. bytes of data) which have arrived in the serial buffer and that are ready to be read.
 
->**Serial.read()** returns the first (oldest) character in the buffer and removes that byte of data from the buffer.
+> **Serial.read()** returns the first (oldest) character in the buffer and removes that byte of data from the buffer.
 
 So when all the bytes of data are read and no new serial data has arrived, the buffer is empty and Serial.available() will return 0.
 
-
 ```java
 
-int arrivingdatabyte = 0; // initializing the incoming serial byte  
-void setup(){  
-	Serial.begin(9600); // 9600 is the data rate in bps (bits per second).  
-}  
-void loop(){ // loop function that executes repeatedly  
-	if(Serial.available( ) > 0){  //  It will only send data when the received data is greater than 0.  
-		arrivingdatabyte = Serial.read( );  // It will read the incoming or arriving data byte  
-		Serial.print("data byte received:");  
-		Serial.println(arrivingdatabyte, DEC); // here, DEC means Decimal  
-	}  
+int arrivingdatabyte = 0; // initializing the incoming serial byte
+void setup(){
+	Serial.begin(9600); // 9600 is the data rate in bps (bits per second).
+}
+void loop(){ // loop function that executes repeatedly
+	if(Serial.available( ) > 0){  //  It will only send data when the received data is greater than 0.
+		arrivingdatabyte = Serial.read( );  // It will read the incoming or arriving data byte
+		Serial.print("data byte received:");
+		Serial.println(arrivingdatabyte, DEC); // here, DEC means Decimal
+	}
 }
 ```
 
 ## If else Conditional Statements
+
 The if… else allows greater control over the flow of code than the basic if
 statement, by allowing multiple tests to be grouped.
 
@@ -120,6 +125,7 @@ If no test proves to be true, the default else block is executed, if one
 is present, and sets the default behavior.
 
 Note that an else if block may be used with or without a terminating else block and vice versa. An unlimited number of such else if branches are allowed.
+
 ```java
 if(condition1){
 
@@ -132,34 +138,32 @@ else{
 }
 
 ```
+
 ## Binary System and Decimal System
 
 Computers count different from us. They count with the digits 1 and 0. A computer uses the binary numeral system which is also known as base 2. And in this system, there are only two digits, 1 and 0. This system is used in all modern computers and digital devices like mobile phones.
 
 On the other hand, the decimal system is the oldest and the most widely used numbering system which is also known as base 10. Numbers based on 10 were commonly used in ancient cultures too. This system was derived because we could use our fingers to count.
 
->A bit (short for binary digit) is the smallest and basic unit of data in a computer, and it is usually represented by one of these values, 0 or 1. There are 8 bits in a byte.
+> A bit (short for binary digit) is the smallest and basic unit of data in a computer, and it is usually represented by one of these values, 0 or 1. There are 8 bits in a byte.
 
 An introduction to Binary number system and Decimal number systems is explained well in these links :
 
+<EmbedItem url="https://www.youtube.com/embed/5OBZYhJnne0" />
 
-<EmbedItem url='https://www.youtube.com/embed/5OBZYhJnne0' />
+<EmbedItem url="https://www.youtube.com/embed/4vNlt_EDw1Q" />
 
+<EmbedItem url="https://www.youtube.com/embed/rTuKKVcYeMg" />
 
-<EmbedItem url='https://www.youtube.com/embed/4vNlt_EDw1Q' />
-
-
-<EmbedItem url='https://www.youtube.com/embed/rTuKKVcYeMg' />
-
-
-<Image 
-  src="/static/images/levelup/level-2/binaryquestion.png" 
-  alt='binaryquestion' 
-  width='500' 
-  height='500'
+<Image
+  src="/static/images/levelup/level-2/binaryquestion.png"
+  alt="binaryquestion"
+  width="500"
+  height="500"
 />
 
 ## Bit Math
+
 Working on bytes, or data types comprising of bytes like ints, floats, doubles or even
 data structures which stores large amount of bytes is normal for a programmer. In some
 cases, a programmer needs to go beyond this - that is to say that in a deeper level
@@ -170,11 +174,10 @@ operations operate on the individual bits of the bit patterns. Bit operations ar
 and can be used in optimizing time complexity. Some common bit operators are discussed
 in this section and in this video
 
-
-<EmbedItem url='https://www.youtube.com/embed/McgvehwAako' />
-
+<EmbedItem url="https://www.youtube.com/embed/McgvehwAako" />
 
 ## Oscilloscope
+
 An oscilloscope is a type of electronic test instrument that can graphically display
 signal voltage changes. Other signals (such as sound or vibration) can be converted to
 voltages and displayed on the screen of the oscilloscope.
@@ -188,75 +191,78 @@ x-axis being time and y-axis being voltage.
 
 You can learn more about an oscilloscope through these videos :
 
+<EmbedItem url="https://www.youtube.com/embed/lSHAE_Y6snc" />
 
-<EmbedItem url='https://www.youtube.com/embed/lSHAE_Y6snc' />
-
-
-
-<EmbedItem url='https://www.youtube.com/embed/wfvYz1L0Qkk' />
-
+<EmbedItem url="https://www.youtube.com/embed/wfvYz1L0Qkk" />
 
 ## Measuring Voltage and Current using a Multimeter
+
 A multimeter or a multitester, also known as a VOM (volt-ohm-milliammeter), is an
 electronic measuring instrument that combines several measurement functions in one unit. A
 typical multimeter can measure voltage, current, and resistance.
 
+<EmbedItem url="https://www.youtube.com/embed/0UUZkiNbklA" />
 
-
-<EmbedItem url='https://www.youtube.com/embed/0UUZkiNbklA' />
-
-
-
-<EmbedItem url='https://www.youtube.com/embed/Gnsrjc8RU4A' />
+<EmbedItem url="https://www.youtube.com/embed/Gnsrjc8RU4A" />
 
 ## OnShape
+
 We recommend you watch the videos first to get started with OnShape.
 
-<EmbedItem url='https://www.youtube.com/embed/2l8Do2Uk_JQ' />
-<EmbedItem url='https://www.youtube.com/embed/9VdrudxHAiE' />
-
+<EmbedItem url="https://www.youtube.com/embed/2l8Do2Uk_JQ" />
+<EmbedItem url="https://www.youtube.com/embed/9VdrudxHAiE" />
 
 ## Assignment
 
 ### Electronics
 
-  - Check if a number is prime or not
-  	- Input and Output should be via the Serial Monitor.
-  - Encrypt and Decrypt a number using XOR
-  	- Input and Output should be via the Serial Monitor.
-  	- Bonus if you can let the user decide the "key".
-  	- Reference: [XOR Cipher](https://www.geeksforgeeks.org/xor-cipher/)
-  - Analyze the waveform from the given Black Box and comment about the same.
-	- Check the code comments for further Instructions
+- Check if a number is prime or not
+  - Input and Output should be via the Serial Monitor.
+- Encrypt and Decrypt a number using XOR
+  - Input and Output should be via the Serial Monitor.
+  - Bonus if you can let the user decide the "key".
+  - Reference: [XOR Cipher](https://www.geeksforgeeks.org/xor-cipher/)
+- Analyze the waveform from the given Black Box and comment about the same.
+  - Check the code comments for further Instructions
 
 ### Mechanical
 
-  Question 1:
-  [https://drive.google.com/file/d/1IrdCAFcY2g63ikytJaR6wgfz5AQl4NTV/view?usp=sharing](https://drive.google.com/file/d/1JsA025Tvg-wD47ZFH60i6kuRkRNTmiVP/view?usp=sharing)
+Question 1:
+[https://drive.google.com/file/d/1IrdCAFcY2g63ikytJaR6wgfz5AQl4NTV/view?usp=sharing](https://drive.google.com/file/d/1JsA025Tvg-wD47ZFH60i6kuRkRNTmiVP/view?usp=sharing)
 
-  Question 2:
-  [https://drive.google.com/file/d/1IrdCAFcY2g63ikytJaR6wgfz5AQl4NTV/view?usp=sharing](https://drive.google.com/file/d/1IrdCAFcY2g63ikytJaR6wgfz5AQl4NTV/view?usp=sharing)
+Question 2:
+[https://drive.google.com/file/d/1IrdCAFcY2g63ikytJaR6wgfz5AQl4NTV/view?usp=sharing](https://drive.google.com/file/d/1IrdCAFcY2g63ikytJaR6wgfz5AQl4NTV/view?usp=sharing)
 
 ## Black Box
-<iframe width="725" height="453" src="https://www.tinkercad.com/embed/b46DborvjJo?editbtn=1" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+
+<iframe
+  width="725"
+  height="453"
+  src="https://www.tinkercad.com/embed/b46DborvjJo?editbtn=1"
+  frameborder="0"
+  marginwidth="0"
+  marginheight="0"
+  scrolling="no"
+></iframe>
 
 ## Extra
+
 - **NOTE:** Digital pin 13 is harder to use as a digital input than the other digital pins because it has an LED and resistor attached to it that's soldered to the board on most boards. If you enable its internal 20k pull-up resistor, it will hang at around 1.7V instead of the expected 5V because the onboard LED and series resistor pull the voltage level down, meaning it always returns LOW. If you must use pin 13 as a digital input, set its pinMode() to INPUT and use an external pull down resistor.
 
 - The LED on pin 13 is used by the optiboot loader (the one used on UNO):
-	- at Arduino boot time (the LED blinks a few times)
-	- when uploading a sketch to Arduino
-	- Reference: [Stackexchange](https://arduino.stackexchange.com/questions/1448/whats-the-deal-with-unos-pin-13-led)
-	- In Case you'd like to know what a bootloader is, Reference: [Electrowing](https://www.electronicwings.com/arduino/basics-to-developing-bootloader-for-arduino#:~:text=Arduino%20bootloader%20uses%20the%20serial,board%20over%20USB%20cable%20serially.)
 
+  - at Arduino boot time (the LED blinks a few times)
+  - when uploading a sketch to Arduino
+  - Reference: [Stackexchange](https://arduino.stackexchange.com/questions/1448/whats-the-deal-with-unos-pin-13-led)
+  - In Case you'd like to know what a bootloader is, Reference: [Electrowing](https://www.electronicwings.com/arduino/basics-to-developing-bootloader-for-arduino#:~:text=Arduino%20bootloader%20uses%20the%20serial,board%20over%20USB%20cable%20serially.)
 
 - Topics to Brainstorm if you're done with the slides
-	- What are the different kinds of microcontrollers available in the market other than arduino and what makes arduino so special?
-	- Have a look at all the arduino universe made in the past years, sensors, actuators custom built to go along with arduino.
-	- [Microcontroller vs Microprocessor](https://www.electronicsforu.com/technology-trends/learn-electronics/difference-between-microprocessor-and-microcontroller)
-	- Location and purpose of a crystal oscillator on the arduino uno?
-	- Purpose of the RX and TX LEDS : The TX and RX LEDs blink whenever there is a communication between the onboard microcontroller and the computer through the USB to serial converter chip present near the USB port.
-	- [Ways to power an arduino](https://technobyte.org/2016/07/power-up-the-arduino-uno/(edited))
+  - What are the different kinds of microcontrollers available in the market other than arduino and what makes arduino so special?
+  - Have a look at all the arduino universe made in the past years, sensors, actuators custom built to go along with arduino.
+  - [Microcontroller vs Microprocessor](https://www.electronicsforu.com/technology-trends/learn-electronics/difference-between-microprocessor-and-microcontroller)
+  - Location and purpose of a crystal oscillator on the arduino uno?
+  - Purpose of the RX and TX LEDS : The TX and RX LEDs blink whenever there is a communication between the onboard microcontroller and the computer through the USB to serial converter chip present near the USB port.
+  - [Ways to power an arduino](<https://technobyte.org/2016/07/power-up-the-arduino-uno/(edited)>)
 
 The lighting up of the LEDs indicate the direction of flow of data. When a bit of data goes from the Arduino board to the computer, the TX LED glows. The RX LED glows when a bit of data goes from the computer to the Arduino board.
 

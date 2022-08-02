@@ -5,6 +5,9 @@ level: 5
 tags: ['levelup', 'electronics']
 orderInSidebar: 9
 ---
+
+<TOCInline toc={props.toc} toHeading={2} asDisclosure />
+
 # Programming and Electronics
 
 # Prerequisites
@@ -33,7 +36,6 @@ Remember Strings? Try implementing your own strings with this knowledge.
 
 Sample Code:
 
-
 ```java
 int iArr[6];
 
@@ -48,11 +50,11 @@ char str[ ] = "abcdef";
 
 Indexing of an Array
 
-<Image 
-    src="/static/images/levelup/level-5/arrayindex.PNG" 
-    alt="Array Index" 
-    width='400px' 
-    height='500'
+<Image
+  src="/static/images/levelup/level-5/arrayindex.PNG"
+  alt="Array Index"
+  width="400px"
+  height="500"
 />
 
 ## Accessing Elements
@@ -61,7 +63,7 @@ Note the following points about arrays while accessing elements:
 
 - 0 indexed: i.e. first element is at position (or index) 0.
 - if array of length 'n' last element at index 'n-1'.
-    (What is there at index n?)
+  (What is there at index n?)
 
 Sample Code:
 
@@ -136,13 +138,12 @@ PASSIVE INFRARED SENSOR:
 - PIR sensors are made of pyroelectric material, which is used to detect the levels of infrared radiation in the surroundings. The way this sensor works is actually quite interesting and is nicely explained [here](https://learn.adafruit.com/pir-passive-infrared-proximity-motion-sensor/how-pirs-work).
 - Follow the link to go to the [datasheet](https://www.epitran.it/ebayDrive/datasheet/44.pdf).
 
-<Image 
-    src="/static/images/levelup/level-6/70e32a17599ed5becda28990c1442cf7.png" 
-    alt="PIR" 
-    width='900px' 
-    height='500'
+<Image
+  src="/static/images/levelup/level-6/70e32a17599ed5becda28990c1442cf7.png"
+  alt="PIR"
+  width="900px"
+  height="500"
 />
-
 
 VIDEO TUTORIALS:
 Follow these videos for some tutorials on circuit connections and code explanations -
@@ -159,26 +160,21 @@ Simulate this in TinkerCAD after watching this [video](https://www.youtube.com/w
 - The integrated circuits used for voltage regulation are called Voltage regulator ICs.
 - The 7805 IC is one of 78xx series. More information about 7805 and its components can be found [here](https://www.electronicshub.org/understanding-7805-ic-voltage-regulator/).
 
-<Image 
-    src="/static/images/levelup/level-6/7805IC.png" 
-    alt="7805IC" 
-    width='500' 
-    height='400px'
-/>
+<Image src="/static/images/levelup/level-6/7805IC.png" alt="7805IC" width="500" height="400px" />
 
-| Pin No. | Pin | Function | Description |
-| --- | --- | --- | --- |
-| 1   | INPUT | Input Voltage (7V-35V) | In this pin of the IC positive unregulated voltage is given in regulation |
-| 2   | GROUND | Ground(0V) | In this pin where the ground is given. This pin is neutral for equally the input and output |
-| 3   | OUTPUT | regulated output; 5V(4.8V-5.2V) | The output of the regulated 5V is taken out at this pin of the IC regulator |
+| Pin No. | Pin    | Function                        | Description                                                                                 |
+| ------- | ------ | ------------------------------- | ------------------------------------------------------------------------------------------- |
+| 1       | INPUT  | Input Voltage (7V-35V)          | In this pin of the IC positive unregulated voltage is given in regulation                   |
+| 2       | GROUND | Ground(0V)                      | In this pin where the ground is given. This pin is neutral for equally the input and output |
+| 3       | OUTPUT | regulated output; 5V(4.8V-5.2V) | The output of the regulated 5V is taken out at this pin of the IC regulator                 |
 
 A detailed video explanation on the 7805 IC can be found [here](https://www.youtube.com/watch?v=LEv26VH0S1E).
 
-<Image 
-    src="/static/images/levelup/level-6/favicon-32x32.png" 
-    alt="Regulator Circuit Diagram" 
-    width='500px' 
-    height='500'
+<Image
+  src="/static/images/levelup/level-6/favicon-32x32.png"
+  alt="Regulator Circuit Diagram"
+  width="500px"
+  height="500"
 />
 
 ## Servo Motor
@@ -188,13 +184,12 @@ A detailed video explanation on the 7805 IC can be found [here](https://www.yout
 - A Servo consists of a motor (AC or DC), a potentiometer, gear assembly, and a controlling circuit.
 - The position of the servo motor is decided by the electrical pulse given to the signal wire.
 
-<Image 
-    src="/static/images/levelup/level-6/Servo_lvl6.png" 
-    alt="Servo Motor" 
-    width='500px' 
-    height='500'
+<Image
+  src="/static/images/levelup/level-6/Servo_lvl6.png"
+  alt="Servo Motor"
+  width="500px"
+  height="500"
 />
-
 
 Follow the link for simulating the [TinkerCAD files](https://www.tinkercad.com/things/lPbqaB1MX5D).
 
@@ -206,7 +201,6 @@ Tutorial:
 
 Link for the [datasheet](http://www.ee.ic.ac.uk/pcheung/teaching/DE1_EE/stores/sg90_datasheet.pdf) for SG90.
 
-
 ## DC Motor and L293D
 
 - The Motors also come in different sizes and types, the most common ones are the normal DC motor and the Brushless DC motor (BLDC).
@@ -215,13 +209,12 @@ Link for the [datasheet](http://www.ee.ic.ac.uk/pcheung/teaching/DE1_EE/stores/s
 - However, the speed and direction of rotation depend on the voltage provided. For this, we use a motor driver such as an L293D
 - It’s a 16-pin motor driver IC (see diagram) which can drive to dc motors simultaneously in any direction (clockwise or counter-clockwise).
 
-<Image 
-    src="/static/images/levelup/level-6/L293D_lvl6.png"
-    alt="L293D Diagram" 
-    width='400px' 
-    height='500'
+<Image
+  src="/static/images/levelup/level-6/L293D_lvl6.png"
+  alt="L293D Diagram"
+  width="400px"
+  height="500"
 />
-
 
 ### More about L293D
 
@@ -240,24 +233,18 @@ FOR MORE INFORMATION ON L293D:
 - [Connecting dc motors with the IC](https://www.youtube.com/watch?v=fPLEncYrl4Q&feature=youtu.be)
 - [More on H-bridge](https://maker.pro/custom/projects/all-you-need-to-know-about-l293d)
 
-<Image 
-    src="/static/images/levelup/level-6/H-bridge_lvl6.png" 
-    alt="H-Bridge" 
-    width='350px' 
-    height='500'
+<Image
+  src="/static/images/levelup/level-6/H-bridge_lvl6.png"
+  alt="H-Bridge"
+  width="350px"
+  height="500"
 />
-
 
 ## A New Sensor has Appeared!
 
 **Ultrasonic Sensor: HC SR04**
 
-<Image 
-    src="/static/images/levelup/level-5/hcsr04.png" 
-    alt="hcsr04" 
-    width='500px' 
-    height='500'
-/>
+<Image src="/static/images/levelup/level-5/hcsr04.png" alt="hcsr04" width="500px" height="500" />
 
 Working:
 
@@ -309,11 +296,11 @@ The path of the segway should be as follows -
 
 An example path (Approximate path) -
 
-<Image 
-    src="/static/images/levelup/level-6/Ass1_lvl6.png" 
-    alt="Assignment 1" 
-    width='600px' 
-    height='500'
+<Image
+  src="/static/images/levelup/level-6/Ass1_lvl6.png"
+  alt="Assignment 1"
+  width="600px"
+  height="500"
 />
 
 Specifications :
@@ -330,21 +317,12 @@ Assumptions -
 2.  There is sufficient friction so that no slipping takes place.
 
 The time taken by the segway to rotate 90 degrees can be calculated as follows -
-<Image 
-    src="/static/images/levelup/level-6/1_lvl6.png" 
-    alt="Segway1" 
-    width='500px' 
-    height='500'
-/>
+
+<Image src="/static/images/levelup/level-6/1_lvl6.png" alt="Segway1" width="500px" height="500" />
 <br />
 
 Your setup on TinkerCAD should look something like this -
-<Image 
-    src="/static/images/levelup/level-6/3_lvl6.png" 
-    alt="Setup" 
-    width='700px' 
-    height='500'
-/>
 
+<Image src="/static/images/levelup/level-6/3_lvl6.png" alt="Setup" width="700px" height="500" />
 
 **NOTE - WHEELS ON THE OPPOSITE SIDES**
