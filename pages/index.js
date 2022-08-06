@@ -9,6 +9,7 @@ import particlesConfigDark from '../particlesConfig_DARK.json'
 import particlesConfigLight from '../particlesConfig_LIGHT.json'
 import { loadFull } from 'tsparticles'
 import { useTheme } from 'next-themes'
+import Card from '@/components/Card'
 
 const MAX_DISPLAY = 5
 
@@ -35,7 +36,7 @@ export default function Home({ posts }) {
       <div className="flex flex-col items-center justify-center text-center">
         <div
           className="pointer-events-auto flex w-full justify-center bg-cover bg-no-repeat"
-          style={{ 'min-height': 100 + 'vh' }}
+          style={{ minHeight: 100 + 'vh' }}
         >
           <div className="particles">
             <Particles className="h-full w-full" options={particleConfig} init={customInit} />
@@ -134,7 +135,7 @@ export default function Home({ posts }) {
               <Link className="header-vertical-line pointer-events-auto p-2 text-xl" data-scroll="">
                 |
               </Link>
-              <Link className="link pointer-events-auto p-2 text-xl" href="/about">
+              <Link className="link pointer-events-auto p-2 text-xl" href="#about">
                 About
               </Link>
               <Link className="link pointer-events-auto p-2 text-xl" href="#contact" data-scroll="">
@@ -144,8 +145,60 @@ export default function Home({ posts }) {
           </div>
         </div>
 
-        <div className="m-0 flex w-4/5 flex-col items-center justify-center text-center">
+        <div
+          id="about"
+          className="m-0 flex w-4/5 flex-col items-center justify-center text-center"
+          style={{ minHeight: 100 + 'vh' }}
+        >
           <span className="p-4 font-montserratSans text-4xl font-medium">About Us</span>
+          <span className="p-4 font-montserratSans text-xl">
+            {' '}
+            The Automation and Robotics Club (ARC) is a part of the Technical Senate of BITS Pilani,
+            Hyderabad Campus. If inquisitiveness and innovation are your assets, then you've found
+            the right place for yourself. We take up promising challenges, workshops and projects
+            which combine the aspects of electronics, mechanics and programming. The only
+            prerequisite to joining us - the desire to quench curiosity and express yourself{' '}
+          </span>
+
+          <div className="flex-column md:flex">
+            <Card
+              title={'Level Up'}
+              description={`A gamified bootcamp to get you started in the fields of robotics, 
+              mastering topics ranging from basic electronics and programming to 
+              simulations and mechanical design`}
+              imgSrc={'/static/images/Level-Up-font.png'}
+              href={'/resources/levelup/introduction'}
+            />
+
+            <Card
+              title={'Workshops'}
+              description={`Various intriguing workshops conducted throughout the year, which
+               effortlessly combine learning with enjoyment`}
+              imgSrc={'/static/images/workshop.jpg'}
+              href={'/resources/workshop/2021-07-06-Day0-1'}
+            />
+
+            <Card
+              title={'Projects'}
+              description={`Several inter-disciplinary projects including a Robotic Arm, Laser Harp, UAV,
+              self-playing instruments and much more`}
+              imgSrc={'/static/assets/images/resources/1954436.jpg'}
+              href={'/projects'}
+            />
+          </div>
+          <button
+            href="/about"
+            className="mr-2 mb-2 rounded-lg border border-gray-300 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+          >
+            Know More
+          </button>
+        </div>
+
+        <div
+          className="m-0 flex w-4/5 flex-col items-center justify-center text-center"
+          style={{ minHeight: 100 + 'vh' }}
+        >
+          <span className="p-4 font-montserratSans text-4xl font-medium">Contact Us</span>
           <span className="p-4 font-montserratSans text-xl">
             {' '}
             The Automation and Robotics Club (ARC) is a part of the Technical Senate of BITS Pilani,
