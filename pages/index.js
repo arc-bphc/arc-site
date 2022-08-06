@@ -190,21 +190,18 @@ export default function Home({ posts }) {
               href={'/projects'}
             />
           </div>
-          <button
-            href="/about"
-            className="mr-2 mb-2 rounded-lg border border-gray-300 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
-          >
-            Know More
-          </button>
         </div>
 
-        <div className="m-0 flex w-4/5 flex-col items-center justify-center text-center">
+        <div
+          className="m-0 flex w-4/5 flex-col items-center justify-center text-center"
+          style={{ minHeight: 100 + 'vh' }}
+        >
           <span className="p-4 font-montserratSans text-4xl font-medium">Spotlight</span>
           <span className="p-4 font-montserratSans text-xl">
             {' '}
             Meet four new members of our club everytime you refresh this page.{' '}
           </span>
-          <div className="flex">
+          <div className="flex-column md:flex">
             {/* How the old site handled things lmao:
             
             <script type="text/javascript">
@@ -307,7 +304,10 @@ export default function Home({ posts }) {
           </div>
         </div>
 
-        <div className="m-0 flex w-4/5 flex-col items-center justify-center text-center">
+        <div
+          className="m-0 flex w-4/5 flex-col items-center justify-center text-center"
+          style={{ minHeight: 100 + 'vh' }}
+        >
           <span className="p-4 font-montserratSans text-4xl font-medium"> Our Sponsors</span>
           <div className="flex w-full items-center justify-center text-center">
             <Card key={'Nvidia Jetson'} title={'Nvidia Jetson'} imgSrc={nvidia_img} />{' '}
