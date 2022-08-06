@@ -36,9 +36,9 @@ export default function ResourceLayout({ frontMatter, authorDetails, next, prev,
                 <div>
                   <dt className="sr-only">Published on</dt>
                   <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                    <time dateTime={date}>
+                    {/* <time dateTime={date}>
                       {new Date(date).toLocaleDateString(siteMetadata.locale, resourceDateTemplate)}
-                    </time>
+                    </time> */}
                   </dd>
                 </div>
               </dl>
@@ -89,16 +89,16 @@ export default function ResourceLayout({ frontMatter, authorDetails, next, prev,
             {/* <Sidebar /> */}
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
               <div className="prose max-w-none pt-10 pb-8 dark:prose-dark">{children}</div>
-              <div className="pt-6 pb-6 text-sm text-gray-700 dark:text-gray-300">
+              {/* <div className="pt-6 pb-6 text-sm text-gray-700 dark:text-gray-300">
                 <Link href={discussUrl(slug)} rel="nofollow">
                   {'Discuss on Twitter'}
                 </Link>
                 {` • `}
                 <Link href={editUrl(fileName)}>{'View on GitHub'}</Link>
               </div>
-              <Comments frontMatter={frontMatter} />
+              <Comments frontMatter={frontMatter} /> */}
             </div>
-            {/* <footer>
+            <footer>
               <div className="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
                 {tags && (
                   <div className="py-4 xl:py-8">
@@ -145,7 +145,7 @@ export default function ResourceLayout({ frontMatter, authorDetails, next, prev,
                   &larr; Back to the blog
                 </Link>
               </div>
-            </footer> */}
+            </footer>
           </div>
         </div>
       </article>

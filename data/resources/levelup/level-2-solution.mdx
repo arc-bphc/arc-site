@@ -6,8 +6,10 @@ tags: ['levelup', 'electronics', 'solution']
 orderInSidebar: 4
 ---
 
+<TOCInline toc={props.toc} toHeading={2} asDisclosure />
 
 ## Assignment 1
+
 Check if a number is prime.
 
 ```java
@@ -26,19 +28,30 @@ void loop() {
 		y = 1;
 	  }
     }
-    if (y==1) 
+    if (y==1)
       Serial.println("It is not a prime number");
-    else 
+    else
       Serial.println("It is a prime number");
     y=0;
   }
 }
 ```
+
 &nbsp;
 Enter a prime number and see!
-<iframe width="725" height="453" src="https://www.tinkercad.com/embed/0BT5juFv1NO?editbtn=1" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+
+<iframe
+  width="725"
+  height="453"
+  src="https://www.tinkercad.com/embed/0BT5juFv1NO?editbtn=1"
+  frameborder="0"
+  marginwidth="0"
+  marginheight="0"
+  scrolling="no"
+></iframe>
 
 ## Assignment 2
+
 Encrypt and decrypt an integer input using XOR
 
 ```java
@@ -65,12 +78,24 @@ void loop()
   }
 }
 ```
+
 Start encrypting your messages now on!
-<iframe width="725" height="453" src="https://www.tinkercad.com/embed/fVCIdFr3sp6?editbtn=1" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+
+<iframe
+  width="725"
+  height="453"
+  src="https://www.tinkercad.com/embed/fVCIdFr3sp6?editbtn=1"
+  frameborder="0"
+  marginwidth="0"
+  marginheight="0"
+  scrolling="no"
+></iframe>
 
 ## Assignment 3
+
 Black box code, analyze the waveform.
 &nbsp;
 
 ### Explanation
+
 As you enter a value between 0 to 255, the time duration for which the output is HIGH is proportional to the number entered. That means average output voltage would be higher if the entered number is greater. The formula is $V(x)=5x/255$.
