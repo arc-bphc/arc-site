@@ -3,7 +3,7 @@ import { getAllFilesFrontMatter } from '@/lib/mdx'
 import Image from 'next/image'
 import logo from '../assets/ARC_logo_white.png'
 import nvidia_img from '../assets/nvidia.png'
-import { useCallback } from 'react'
+import { useCallback, useState } from 'react'
 import Card from '@/components/Card'
 
 import Particles from 'react-tsparticles'
@@ -31,6 +31,24 @@ export default function Home({ posts }) {
   if (theme === 'light') {
     particleConfig = particlesConfigLight
   }
+
+  const [formName, setFormName] = useState('')
+  const [formEmail, setFormEmail] = useState('')
+  const [formMessage, setFormMessage] = useState('')
+
+  const onNameChange = (e) => {
+    setFormName(e.target.value)
+  }
+
+  const onEmailChange = (e) => {
+    setFormEmail(e.target.value)
+  }
+
+  const onMessageChange = (e) => {
+    setFormMessage(e.target.value)
+  }
+
+  const submitForm = () => {}
 
   return (
     <>
@@ -320,13 +338,45 @@ export default function Home({ posts }) {
           style={{ minHeight: 100 + 'vh' }}
         >
           <span className="p-4 font-montserratSans text-4xl font-medium">Contact Us</span>
-          <span className="p-4 font-montserratSans text-xl">
-            {' '}
-            The Automation and Robotics Club (ARC) is a part of the Technical Senate of BITS Pilani,
-            Hyderabad Campus. If inquisitiveness and innovation are your assets, then you've found
-            the right place for yourself. We take up promising challenges, workshops and projects
-            which combine the aspects of electronics, mechanics and programming. The only
-            prerequisite to joining us - the desire to quench curiosity and express yourself{' '}
+          <span className="w-full p-4 font-montserratSans text-xl">
+            <div>
+              <label className="text-white-700 block text-2xl font-medium">Name</label>
+              <div className="relative mt-1 w-full rounded-md shadow-sm">
+                <input
+                  type="text"
+                  className="block w-full rounded-md border-gray-300 pl-7 pr-12 text-gray-800 focus:border-indigo-500 focus:ring-indigo-500 sm:text-xl"
+                  placeholder="First and Last Name"
+                  onChange={onNameChange}
+                />
+              </div>
+              <label className="text-white-700 block text-2xl font-medium">Email Address</label>
+              <div className="relative mt-1 w-full rounded-md shadow-sm">
+                <input
+                  type="text"
+                  className="block w-full rounded-md border-gray-300 pl-7 pr-12 text-gray-800 focus:border-indigo-500 focus:ring-indigo-500 sm:text-xl"
+                  placeholder="Email"
+                  onChange={onEmailChange}
+                />
+              </div>
+              <label className="text-white-700 block text-2xl font-medium">Message</label>
+              <div className="relative mt-1 w-full rounded-md shadow-sm">
+                <textarea
+                  type="text"
+                  className="block w-full rounded-md border-gray-300 pl-7 pr-12 text-gray-800 focus:border-indigo-500 focus:ring-indigo-500 sm:text-xl"
+                  placeholder="What do you want us to know?"
+                  onChange={onMessageChange}
+                />
+              </div>
+              <div className="px-4 py-3 sm:px-6">
+                <button
+                  type="submit"
+                  className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-xl font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                  onClick={submitForm}
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
           </span>
         </div>
       </div>
