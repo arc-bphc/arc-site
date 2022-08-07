@@ -334,6 +334,7 @@ export default function Home({ posts }) {
         </div>
 
         <div
+          id="contact"
           className="m-0 flex w-4/5 flex-col items-center justify-center text-center"
           style={{ minHeight: 100 + 'vh' }}
         >
