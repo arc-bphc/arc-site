@@ -159,7 +159,7 @@ export default function Home({ posts }) {
 
               <div className="flex justify-center">
                 <Link
-                  className="header-vertical-line pointer-events-auto hidden p-2 text-xl md:block"
+                  className="header-vertical-line pointer-evengit puts-auto hidden p-2 text-xl md:block"
                   data-scroll=""
                 >
                   |
@@ -277,7 +277,7 @@ export default function Home({ posts }) {
 
         <div
           className="m-0 flex w-4/5 flex-col items-center justify-center text-center"
-          style={{ minHeight: 100 + 'vh' }}
+          style={{ minHeight: 50 + 'vh' }}
         >
           <span className="p-4 font-montserratSans text-4xl font-medium"> Our Sponsors</span>
           <div className="flex w-full items-center justify-center text-center">
