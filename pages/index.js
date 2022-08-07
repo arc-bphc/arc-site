@@ -72,15 +72,16 @@ export default function Home({ posts }) {
               />
             </div>
             <h1 className="pt-8">
-              <span className="site-title font-montserratSans text-6xl text-black dark:text-white">
+              <span className="site-title font-montserratSans text-4xl text-black dark:text-white md:text-6xl">
                 Automation &amp; Robotics Club
               </span>
             </h1>
             <h1 className="p-6">
-              <span className="site-description font-montserratSans text-4xl text-black dark:text-white">
+              <span className="site-description font-montserratSans text-2xl text-black dark:text-white md:text-4xl">
                 Electronics | Design | Programming
               </span>
             </h1>
+
             <div className="header-icons mb-2 flex">
               <Link
                 aria-label="Send email"
@@ -134,33 +135,46 @@ export default function Home({ posts }) {
                 </div>
               </Link>
             </div>
-            <div className="about">
-              <Link
-                className="link pointer-events-auto p-2 text-xl"
-                href="/projects"
-                data-scroll=""
-              >
-                Projects
-              </Link>
-              <Link
-                className="link pointer-events-auto p-2 text-xl"
-                href="/resources"
-                data-scroll=""
-              >
-                Resources
-              </Link>
-              <Link className="link pointer-events-auto p-2 text-xl" href="/blog" data-scroll="">
-                Blog
-              </Link>
-              <Link className="header-vertical-line pointer-events-auto p-2 text-xl" data-scroll="">
-                |
-              </Link>
-              <Link className="link pointer-events-auto p-2 text-xl" href="#about">
-                About
-              </Link>
-              <Link className="link pointer-events-auto p-2 text-xl" href="#contact" data-scroll="">
-                Contact Us
-              </Link>
+
+            <div className="flex-column mx-5 md:flex">
+              <div className="flex">
+                <Link
+                  className="link pointer-events-auto p-2 text-xl"
+                  href="/projects"
+                  data-scroll=""
+                >
+                  Projects
+                </Link>
+                <Link
+                  className="link pointer-events-auto p-2 text-xl"
+                  href="/resources"
+                  data-scroll=""
+                >
+                  Resources
+                </Link>
+                <Link className="link pointer-events-auto p-2 text-xl" href="/blog" data-scroll="">
+                  Blog
+                </Link>
+              </div>
+
+              <div className="flex justify-center">
+                <Link
+                  className="header-vertical-line pointer-events-auto hidden p-2 text-xl md:block"
+                  data-scroll=""
+                >
+                  |
+                </Link>
+                <Link className="link pointer-events-auto p-2 text-xl" href="#about">
+                  About
+                </Link>
+                <Link
+                  className="link pointer-events-auto p-2 text-xl"
+                  href="#contact"
+                  data-scroll=""
+                >
+                  Contact Us
+                </Link>
+              </div>
             </div>
           </div>
         </div>
