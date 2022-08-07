@@ -11,6 +11,7 @@ import particlesConfigDark from '../particlesConfig_DARK.json'
 import particlesConfigLight from '../particlesConfig_LIGHT.json'
 import { loadFull } from 'tsparticles'
 import { useTheme } from 'next-themes'
+import ContactForm from '@/components/ContactForm'
 
 const MAX_DISPLAY = 5
 
@@ -340,44 +341,7 @@ export default function Home({ posts }) {
         >
           <span className="p-4 font-montserratSans text-4xl font-medium">Contact Us</span>
           <span className="w-full p-4 font-montserratSans text-xl">
-            <div>
-              <label className="text-white-700 block text-2xl font-medium">Name</label>
-              <div className="relative mt-1 w-full rounded-md shadow-sm">
-                <input
-                  type="text"
-                  className="block w-full rounded-md border-gray-300 pl-7 pr-12 text-gray-800 focus:border-indigo-500 focus:ring-indigo-500 sm:text-xl"
-                  placeholder="First and Last Name"
-                  onChange={onNameChange}
-                />
-              </div>
-              <label className="text-white-700 block text-2xl font-medium">Email Address</label>
-              <div className="relative mt-1 w-full rounded-md shadow-sm">
-                <input
-                  type="text"
-                  className="block w-full rounded-md border-gray-300 pl-7 pr-12 text-gray-800 focus:border-indigo-500 focus:ring-indigo-500 sm:text-xl"
-                  placeholder="Email"
-                  onChange={onEmailChange}
-                />
-              </div>
-              <label className="text-white-700 block text-2xl font-medium">Message</label>
-              <div className="relative mt-1 w-full rounded-md shadow-sm">
-                <textarea
-                  type="text"
-                  className="block w-full rounded-md border-gray-300 pl-7 pr-12 text-gray-800 focus:border-indigo-500 focus:ring-indigo-500 sm:text-xl"
-                  placeholder="What do you want us to know?"
-                  onChange={onMessageChange}
-                />
-              </div>
-              <div className="px-4 py-3 sm:px-6">
-                <button
-                  type="submit"
-                  className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-xl font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                  onClick={submitForm}
-                >
-                  Submit
-                </button>
-              </div>
-            </div>
+            <ContactForm />
           </span>
         </div>
       </div>
