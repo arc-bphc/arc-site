@@ -1,10 +1,4 @@
 const blogData = [
-  // {
-  //   title: 'Automated Flute Project',
-  //   description: 'Automating the Flute playing process',
-  //   imgSrc: '/static/images/flute.jpeg',
-  //   href: '/blog/2021-05-04-project-Automated-Flute-Project'
-  // },
   {
     title: 'ROS Basics',
     description: 'Basics of ROS ecosystem',

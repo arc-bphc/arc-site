@@ -19,4 +19,4 @@ const blogPostsData = [
   },
 ]
 
-export { blogPostsData }
+export default blogPostsData

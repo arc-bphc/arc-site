@@ -203,6 +203,7 @@ export default function Home({ posts }) {
           </span>
           <div className="flex-column md:flex">
             {/* How the old site handled things lmao:
+            //Check membersData.js
             
             <script type="text/javascript">
             // posts = members
