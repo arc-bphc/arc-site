@@ -12,6 +12,7 @@ import particlesConfigLight from '../particlesConfig_LIGHT.json'
 import { loadFull } from 'tsparticles'
 import { useTheme } from 'next-themes'
 import ContactForm from '@/components/ContactForm'
+import membersData from './../data/membersData'
 
 const MAX_DISPLAY = 5
 
@@ -236,42 +237,17 @@ export default function Home({ posts }) {
           </span>
           <div className="flex-column md:flex">
             {/* Check membersData.js */}
-            <Card
-              key={'Lorem'}
-              title={'Lorem'}
-              description={
-                'A gamified bootcamp to get you started in the fields of robotics, mastering topics ranging from basic electronics and programming to simulations and mechanical design'
-              }
-              imgSrc={'/static/images/level-up-font.png'}
-              href={'/resources/levelup/introduction'}
-            />{' '}
-            <Card
-              key={'Dolor'}
-              title={'Dolor'}
-              description={
-                'A gamified bootcamp to get you started in the fields of robotics, mastering topics ranging from basic electronics and programming to simulations and mechanical design'
-              }
-              imgSrc={'/static/images/level-up-font.png'}
-              href={'/resources/levelup/introduction'}
-            />{' '}
-            <Card
-              key={'Ipsum'}
-              title={'Ipsum'}
-              description={
-                'A gamified bootcamp to get you started in the fields of robotics, mastering topics ranging from basic electronics and programming to simulations and mechanical design'
-              }
-              imgSrc={'/static/images/level-up-font.png'}
-              href={'/resources/levelup/introduction'}
-            />{' '}
-            <Card
-              key={'Sit'}
-              title={'Sit'}
-              description={
-                'A gamified bootcamp to get you started in the fields of robotics, mastering topics ranging from basic electronics and programming to simulations and mechanical design'
-              }
-              imgSrc={'/static/images/level-up-font.png'}
-              href={'/resources/levelup/introduction'}
-            />{' '}
+            {membersData.map((member) => {
+              return (
+                <Card
+                  key={member.id}
+                  title={member.name}
+                  description={member.quote}
+                  imgSrc={member.imgsrc}
+                  href={member.facebook}
+                />
+              )
+            })}
           </div>
         </div>
 
