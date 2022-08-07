@@ -329,6 +329,7 @@ export default function Home({ posts }) {
           </span>
         </div>
       </div>
+
       <style jsx>
         {`
           .particles {
