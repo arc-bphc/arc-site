@@ -12,7 +12,7 @@ import particlesConfigLight from '../particlesConfig_LIGHT.json'
 import { loadFull } from 'tsparticles'
 import { useTheme } from 'next-themes'
 import ContactForm from '@/components/ContactForm'
-import membersData from './../data/membersData'
+import { membersData } from './../data/membersData'
 
 const MAX_DISPLAY = 5
 
@@ -167,6 +167,9 @@ export default function Home({ posts }) {
                 </Link>
                 <Link className="link pointer-events-auto p-2 text-xl" href="#about">
                   About
+                </Link>
+                <Link className="link pointer-events-auto p-2 text-xl" href="/team">
+                  Team
                 </Link>
                 <Link
                   className="link pointer-events-auto p-2 text-xl"

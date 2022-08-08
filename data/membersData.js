@@ -327,6 +327,21 @@ let numberOfPosts = 4
 let randomIndex = 0
 
 const membersData = []
+const allMembersData = []
+
+for (let a = 0; a < names.length; a++) {
+  allMembersData.push({
+    id: a,
+    name: names[a],
+    imgsrc: photos[a],
+    quote: quotes[a],
+    email: emails[a],
+    github: githubs[a],
+    facebook: facebooks[a],
+  })
+}
+
+console.log(allMembersData)
 
 for (let i = 0; i < numberOfPosts; i++) {
   while (randomIndexUsed[randomIndex]) {
@@ -345,4 +360,4 @@ for (let i = 0; i < numberOfPosts; i++) {
   randomIndexUsed[randomIndex] = 1
 }
 
-export default membersData
+export { allMembersData, membersData }
