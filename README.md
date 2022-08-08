@@ -3,9 +3,6 @@
 [![GitHub Repo stars](https://img.shields.io/github/stars/arc-bphc/arc-site?style=social)](https://GitHub.com/timlrx/tailwind-nextjs-starter-blog/stargazers/)
 [![GitHub forks](https://img.shields.io/github/forks/arc-bphc/arc-site)](https://GitHub.com/timlrx/tailwind-nextjs-starter-blog/network/)
 
-<!-- [![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Ftimlrxx)](https://twitter.com/timlrxx) -->
-<!-- [![Sponsor](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&link=https://github.com/sponsors/timlrx)](https://github.com/sponsors/timlrx) -->
-
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/timlrx/tailwind-nextjs-starter-blog)
 
 This is a [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/) app made from an actual [template](https://GitHub.com/timlrx/tailwind-nextjs-starter-blog) but edited for our needs.
@@ -13,12 +10,14 @@ This is a [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com
 Here are some Instructions for the future developers:
 
 1. mdx and md files go into the data folder
-2. Add blog posts to projects folder but add the links to them in the `data/blogData.js` similar to the ones that already exist
-3. All the project posts go in the `data/projects` folder
-4. To add resources, check the `data/resources` folder
-5. NOTE: Ensure you add TOCInline component for the resources so that you get a table of contents
-6. Also ensure the md/mdx files under resources do have `orderInSidebar` parameter
-7. Inorder to create a new route
+2. All the project posts go in the `data/projects` folder
+3. To add resources
+   - Add the md/mdx files in the `resources/resource_name` folder
+   - Then add the images to `public/static/assets/images/resourcenameResources`
+   - Please follow this process and don't add images anywhere else
+4. NOTE: Ensure you add TOCInline component for the resources so that you get a table of contents
+5. Also ensure the md/mdx files under resources do have `orderInSidebar` parameter
+6. Inorder to create a new route
    - Create a new base page in the `pages`
    - If it's supposed to work with slugs, just replicate an existing folder such as `projects`
    - Then make a Layout for the same in the `layouts` directory

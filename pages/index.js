@@ -36,24 +36,6 @@ export default function Home({ posts }) {
     particleConfig = particlesConfigLight
   }
 
-  const [formName, setFormName] = useState('')
-  const [formEmail, setFormEmail] = useState('')
-  const [formMessage, setFormMessage] = useState('')
-
-  const onNameChange = (e) => {
-    setFormName(e.target.value)
-  }
-
-  const onEmailChange = (e) => {
-    setFormEmail(e.target.value)
-  }
-
-  const onMessageChange = (e) => {
-    setFormMessage(e.target.value)
-  }
-
-  const submitForm = () => {}
-
   return (
     <>
       <div className="flex flex-col items-center justify-center text-center">
