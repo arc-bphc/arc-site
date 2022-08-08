@@ -177,7 +177,7 @@ In situations where standard messages don't do the job, you can create your own 
 
 - **Edit the CMakeLists.txt - find_package()**
   This is where all the packages required to COMPILE the messages of the topics, services, and actions go. In package.xml, you have to state them as build_depend.
-  ` find_package(catkin REQUIRED COMPONENTS rospy std_msgs message_generation # Add message_generation here, after the other packages ) `
+  `find_package(catkin REQUIRED COMPONENTS rospy std_msgs message_generation # Add message_generation here, after the other packages )`
 - **Edit the CMakeLists.txt - add_message_files()** This function includes all of the messages of this package (in the msg folder) to be compiled. The file should look like this.
   ```
   add_message_files(
@@ -200,7 +200,7 @@ In situations where standard messages don't do the job, you can create your own 
   ```
 - **Edit the package.xml**
   Just add these 3 lines to the package.xml file.
-  ` <build_depend>message_generation</build_depend> <build_export_depend>message_runtime</build_export_depend> <exec_depend>message_runtime</exec_depend> `
+  `<build_depend>message_generation</build_depend> <build_export_depend>message_runtime</build_export_depend> <exec_depend>message_runtime</exec_depend>`
 - **Compile**
   ```
   roscd; cd ..
@@ -334,13 +334,13 @@ find_package(catkin REQUIRED COMPONENTS
 
 - **Edit the CMakeLists.txt - add_service_files()**
   This function includes all of the service messages of this package (in the srv folder) to be compiled. The file should look like this.
-  ` add_service_files( FILES MyCustomServiceMessage.srv ) # Dont Forget to UNCOMENT the parenthesis and add_message_files TOO `
+  `add_service_files( FILES MyCustomServiceMessage.srv ) # Dont Forget to UNCOMENT the parenthesis and add_message_files TOO`
 - **Edit the CMakeLists.txt - generate_messages()**
   Here is where the packages needed for the service messages compilation are imported.
-  ` generate_messages( DEPENDENCIES std_msgs ) # Dont Forget to uncoment here TOO `
+  `generate_messages( DEPENDENCIES std_msgs ) # Dont Forget to uncoment here TOO`
 - **Edit the CMakeLists.txt - catkin_package()**
   State here all of the packages that will be needed by someone that executes something from your package. All of the packages stated here must be in the package.xml as exec_depend.
-  ` catkin_package( CATKIN_DEPENDS rospy message_runtime # This will NOT be the only thing here ) `
+  `catkin_package( CATKIN_DEPENDS rospy message_runtime # This will NOT be the only thing here )`
 - **Edit the package.xml**
   Just add these 3 lines to the package.xml file.
   `xml <build_depend>message_generation</build_depend> <build_export_depend>message_runtime</build_export_depend> <exec_depend>message_runtime</exec_depend> `
@@ -613,10 +613,10 @@ In order to create a actiob message, you will have to follow the next steps:
   ```
 - **Edit the CMakeLists.txt - find_package()**
   This is where all the packages required to COMPILE the messages of the topics, services, and actions go. In package.xml, you have to state them as build_depend.
-  ` find_package(catkin REQUIRED COMPONENTS rospy actionlib_msgs ) `
+  `find_package(catkin REQUIRED COMPONENTS rospy actionlib_msgs )`
 - **Edit the CMakeLists.txt - add_action_files()**
   This function includes all of the action messages of this package (in the action folder) to be compiled. The file should look like this.
-  ` add_action_files( FILES Name.action ) # Dont Forget to UNCOMENT the parenthesis `
+  `add_action_files( FILES Name.action ) # Dont Forget to UNCOMENT the parenthesis`
 - **Edit the CMakeLists.txt - generate_messages()**
   Here is where the packages needed for the service messages compilation are imported.
 
@@ -638,7 +638,7 @@ In order to create a actiob message, you will have to follow the next steps:
 
 - **Edit the package.xml**
   Just add these 3 lines to the package.xml file.
-  ` <build_depend>actionlib</build_depend> <build_depend>actionlib_msgs</build_depend> <build_export_depend>actionlib</build_export_depend> <build_export_depend>actionlib_msgs</build_export_depend> <exec_depend>actionlib</exec_depend> <exec_depend>actionlib_msgs</exec_depend> `
+  `<build_depend>actionlib</build_depend> <build_depend>actionlib_msgs</build_depend> <build_export_depend>actionlib</build_export_depend> <build_export_depend>actionlib_msgs</build_export_depend> <exec_depend>actionlib</exec_depend> <exec_depend>actionlib_msgs</exec_depend>`
 - **Compile**
   ```
   roscd; cd ..

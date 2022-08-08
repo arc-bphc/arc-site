@@ -56,7 +56,7 @@ export default function Resources({ post, authorDetails, prev, next, postsInSame
 
   return (
     <>
-      <Sidebar postsInSameFolder={postsInSameFolder} />
+      {postsInSameFolder.length > 1 && <Sidebar postsInSameFolder={postsInSameFolder} />}
       {frontMatter.draft !== true ? (
         <MDXLayoutRenderer
           layout={frontMatter.layout || DEFAULT_LAYOUT}
