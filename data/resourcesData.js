@@ -13,6 +13,12 @@ const resourcesData = [
     href: '/resources/levelup/introduction',
   },
   {
+    title: 'Processing',
+    description: `Processing is a flexible software sketchbook and a language for learning how to code within the context of the visual arts.`,
+    imgSrc: '/static/assets/images/processingResources/logo.svg',
+    href: '/resources/processing/ProcessingIDE-Day1',
+  },
+  {
     title: 'ROS Basics',
     description: 'Basics of ROS ecosystem',
     imgSrc: '/static/images/ros.jpg',
