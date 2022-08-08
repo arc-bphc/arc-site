@@ -341,8 +341,6 @@ for (let a = 0; a < names.length; a++) {
   })
 }
 
-console.log(allMembersData)
-
 for (let i = 0; i < numberOfPosts; i++) {
   while (randomIndexUsed[randomIndex]) {
     randomIndex = Math.floor(Math.random() * names.length)
