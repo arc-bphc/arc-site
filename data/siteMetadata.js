@@ -14,8 +14,10 @@ const siteMetadata = {
   github: 'https://github.com/arc-bphc',
   twitter: 'https://twitter.com/Twitter',
   facebook: 'https://www.facebook.com/automationandroboticsclub',
+  instagram: 'https://www.instagram.com/arc_bphc/',
   youtube: 'https://youtube.com',
   linkedin: 'https://www.linkedin.com',
+  discord: 'https://discord.com/invite/BgrYVu3P',
   locale: 'en-US',
   analytics: {
     // If you want to use an analytics provider you have to add it to the
