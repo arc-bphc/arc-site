@@ -343,7 +343,6 @@ for (let i = 0; i < numberOfPosts; i++) {
   })
 
   randomIndexUsed[randomIndex] = 1
-  console.log(i)
 }
 
 export default membersData

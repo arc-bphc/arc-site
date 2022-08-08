@@ -277,7 +277,6 @@ export default function Home({ posts }) {
         {`
           .particles {
             position: absolute;
-            width: 100vh;
             height: 100%;
             z-index: -1;
             background-color: var(--main-color);
