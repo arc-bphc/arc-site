@@ -256,36 +256,37 @@ export default function Home({ posts }) {
           </span>
         </div>
 
-        <footer className="w-full bg-white p-4 dark:bg-gray-900 sm:p-6">
+        <footer className="w-full bg-white p-3 dark:bg-gray-900 sm:p-6">
           <div className="md:flex md:justify-between">
             <div className="mb-6 md:mb-0">
               <Link href="/" class="flex-column items-center md:flex">
-                <img src="static/images/bits_logo.png" className="h-15 mx-5" alt="ARC Logo" />
+                <img src="static/images/bits_logo.png" className="h-15 mx-2" alt="ARC Logo" />
                 {/* <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Automation and Robotics Club</span> */}
               </Link>
             </div>
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-6">
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-4 sm:gap-6">
               <div className="mb-6 items-center md:mb-0">
                 <span className="mb-8 text-sm font-semibold uppercase text-gray-900 dark:text-white">
                   Faculty InCharges
                 </span>
-                <p className="text-gray-400">Dr Y.V.D. Rao</p>
+                <p className="mt-4 mb-1 text-gray-400">Dr Y.V.D. Rao</p>
                 <p className="text-gray-400">Dr Abhishek Sarkar</p>
-
+              </div>
+              <div className="mb-6 items-center md:mb-0">
                 <span className="mb-8 text-sm font-semibold uppercase text-gray-900 dark:text-white">
                   President
                 </span>
-                <p className="text-gray-400">Bhaswanth Ayapilla</p>
+                <p className="mt-4 mb-1 text-gray-400">Bhaswanth Ayapilla</p>
                 <p className="text-gray-400">+91 86600 91378</p>
               </div>
-              <div>
-                <h2 className="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">
+              <div className="mb-6 items-center md:mb-0">
+                <span className="mb-8 text-sm font-semibold uppercase text-gray-900 dark:text-white">
                   Resources
-                </h2>
-                <ul className="text-gray-600 dark:text-gray-400">
+                </span>
+                <ul className="mt-4 text-gray-600 dark:text-gray-400">
                   {resourcesData.map((resource) => {
                     return (
-                      <li className="mb-4" key={resource.id}>
+                      <li className="mb-1" key={resource.id}>
                         <Link href={resource.href} class="hover:underline">
                           {resource.title}
                         </Link>
@@ -294,12 +295,12 @@ export default function Home({ posts }) {
                   })}
                 </ul>
               </div>
-              <div>
-                <h2 className="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">
+              <div className="mb-6 items-center md:mb-0">
+                <span className="mb-8 text-sm font-semibold uppercase text-gray-900 dark:text-white">
                   About us
-                </h2>
-                <ul className="text-gray-600 dark:text-gray-400">
-                  <li className="mb-4">
+                </span>
+                <ul className="mt-4 text-gray-600 dark:text-gray-400">
+                  <li className="mb-1">
                     <Link href="/team" class="hover:underline ">
                       Team
                     </Link>
