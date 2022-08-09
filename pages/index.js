@@ -15,6 +15,7 @@ import ContactForm from '@/components/ContactForm'
 import { membersData } from './../data/membersData'
 import siteMetadata from '@/data/siteMetadata'
 import resourcesData from '@/data/resourcesData'
+import ThemeSwitch from '@/components/ThemeSwitch'
 
 const MAX_DISPLAY = 5
 
@@ -29,11 +30,17 @@ export default function Home({ posts }) {
     // this adds the bundle to tsParticles
     await loadFull(engine)
   }, [])
-  const { theme, _, __ } = useTheme()
+
+  const { theme, setTheme, __ } = useTheme()
+
+  {
+    ;() => setTheme('dark')
+  }
 
   let particleConfig = particlesConfigDark
   if (theme === 'light') {
     particleConfig = particlesConfigLight
+    setTheme('light')
   }
 
   return (
@@ -120,7 +127,6 @@ export default function Home({ posts }) {
                 </div>
               </Link>
             </div>
-
             <div className="flex-column mx-5 md:flex">
               <div className="flex">
                 <Link
