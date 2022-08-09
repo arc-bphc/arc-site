@@ -19,17 +19,10 @@ const resourcesData = [
     href: '/resources/processing/ProcessingIDE-Day1',
   },
   {
-    title: 'ROS Basics',
+    title: 'ROS',
     description: 'Basics of ROS ecosystem',
     imgSrc: '/static/images/ros.jpg',
-    href: '/resources/2021-05-04-project-ROS-Basics',
-  },
-  {
-    title: 'ROS TF101',
-    description:
-      'Visualization of TF, Publishing, Broadcasting & Listening to TF, Static Transform, Joint and Robot State Publishers',
-    imgSrc: '/static/images/ros.jpg',
-    href: '/resources/2021-05-04-project-ROS-TF101',
+    href: '/resources/ROS/2021-05-04-project-ROS-Basics',
   },
 ]
 
