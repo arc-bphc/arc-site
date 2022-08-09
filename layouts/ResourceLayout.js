@@ -1,6 +1,5 @@
 import Link from '@/components/Link'
 import PageTitle from '@/components/PageTitle'
-import TableCellContainer from '@/components/TableCellContainer'
 import { BlogSEO } from '@/components/SEO'
 import Image from '@/components/Image'
 import Tag from '@/components/Tag'
@@ -21,7 +20,7 @@ export default function ResourceLayout({ frontMatter, authorDetails, next, prev,
   const { slug, fileName, date, title, images, tags } = frontMatter
 
   return (
-    <TableCellContainer>
+    <div className="mx-auto max-w-xl px-4 sm:px-6 md:table-cell xl:max-w-5xl xl:px-6">
       <BlogSEO
         url={`${siteMetadata.siteUrl}/resources/${slug}`}
         authorDetails={authorDetails}
@@ -149,6 +148,6 @@ export default function ResourceLayout({ frontMatter, authorDetails, next, prev,
           </div>
         </div>
       </article>
-    </TableCellContainer>
+    </div>
   )
 }
