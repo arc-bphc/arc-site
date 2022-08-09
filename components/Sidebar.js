@@ -1,7 +1,7 @@
 function Sidebar({ postsInSameFolder }) {
   return (
-    <div className="table-cell w-60">
-      <aside className="sticky top-20" aria-label="Sidebar">
+    <div className="w-full md:table-cell md:w-60">
+      <aside className="md:sticky md:top-20" aria-label="Sidebar">
         <div className="overflow-y-auto rounded bg-gray-50 py-4 px-3 dark:bg-gray-800">
           <ul className="space-y-1">
             {postsInSameFolder.map((post) => {
