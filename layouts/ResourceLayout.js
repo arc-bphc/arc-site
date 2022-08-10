@@ -20,7 +20,7 @@ export default function ResourceLayout({ frontMatter, authorDetails, next, prev,
   const { slug, fileName, date, title, images, tags } = frontMatter
 
   return (
-    <div className="mx-auto max-w-xl px-4 sm:px-6 md:table-cell xl:max-w-5xl xl:px-6">
+    <div className="mx-auto max-w-xl px-4 sm:px-6 md:table-cell xl:max-w-5xl xl:px-6 2xl:max-w-7xl">
       <BlogSEO
         url={`${siteMetadata.siteUrl}/resources/${slug}`}
         authorDetails={authorDetails}
