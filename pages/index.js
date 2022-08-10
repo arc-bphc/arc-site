@@ -16,6 +16,7 @@ import { membersData } from './../data/membersData'
 import siteMetadata from '@/data/siteMetadata'
 import resourcesData from '@/data/resourcesData'
 import ThemeSwitch from '@/components/ThemeSwitch'
+import ScrollTopAndComment from '@/components/ScrollTopAndComment'
 
 const MAX_DISPLAY = 5
 
@@ -45,6 +46,7 @@ export default function Home({ posts }) {
 
   return (
     <>
+      <ScrollTopAndComment />
       <div className="flex flex-col items-center justify-center text-center">
         <div
           className="pointer-events-auto flex w-full justify-center bg-cover bg-no-repeat"
