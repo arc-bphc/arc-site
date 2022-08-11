@@ -66,7 +66,7 @@ export default function Home({ posts }) {
               />
             </div>
             <h1 className="pt-8">
-              <span className="site-title font-montserratSans text-4xl text-black dark:text-white md:text-6xl">
+              <span className="site-title font-montserratSans text-4xl text-black dark:text-white md:text-6xl font-bold">
                 Automation &amp; Robotics Club
               </span>
             </h1>
