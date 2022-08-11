@@ -19,12 +19,11 @@ function Sidebar({ postsInSameFolder }) {
 
   useEffect(() => {
     const handleWindowScroll = () => {
-      if (window.scrollY > 50) setShow(true)
-      else setShow(false)
+      setShow(true)
     }
-
-    window.addEventListener('scroll', handleWindowScroll)
-    return () => window.removeEventListener('scroll', handleWindowScroll)
+    handleWindowScroll()
+    // window.addEventListener('scroll', handleWindowScroll)
+    // return () => window.removeEventListener('scroll', handleWindowScroll)
   }, [])
 
   return (
