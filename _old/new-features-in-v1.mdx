@@ -14,7 +14,7 @@ canonicalUrl: https://tailwind-nextjs-starter-blog.vercel.app/blog/new-features-
 
 A post on the new features introduced in v1.0. New features:
 
-<TOCInline toc={props.toc} exclude="Overview" toHeading={2} />
+<TOCInline toc={props.toc} exclude="Overview" toHeading={3} />
 
 First load JS decreased from 43kB to 39kB despite all the new features added!^[With the new changes in Nextjs 12, first load JS increase to 45kB.]
 
@@ -83,7 +83,7 @@ To make generating a table of contents (TOC) simple, you can use the existing `T
 For example, the TOC in this post was generated with the following code:
 
 ```jsx
-<TOCInline toc={props.toc} exclude="Overview" toHeading={2} />
+<TOCInline toc={props.toc} exclude="Overview" toHeading={3} />
 ```
 
 You can customise the headings that are displayed by configuring the `fromHeading` and `toHeading` props, or exclude particular headings
