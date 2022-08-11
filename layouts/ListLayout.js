@@ -53,10 +53,10 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
           {displayPosts.map((frontMatter) => {
             const { slug, date, title, summary, tags, cover } = frontMatter
             return (
-              <li key={slug} className="py-4">
+              <li key={slug} className="py-4 px-12">
                 <article className="space-y-2 xl:grid xl:grid-cols-3 xl:items-baseline xl:space-y-0">
                   <div>
-                    <img src={cover} className="h-full" />
+                    <img src={cover} className="w-1/2" />
                   </div>
                   <div className="col-span-2 p-10">
                     <div className="space-y-3">
