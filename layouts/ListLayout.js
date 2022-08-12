@@ -56,7 +56,9 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
               <li key={slug} className="py-4 px-12">
                 <article className="space-y-2 xl:grid xl:grid-cols-3 xl:items-baseline xl:space-y-0">
                   <div>
-                    <img src={cover} className="w-1/2" />
+                    <Link href={`/projects/${slug}`} className="text-gray-900 dark:text-gray-100">
+                      <img src={cover} className="w-1/2" />
+                    </Link>
                   </div>
                   <div className="col-span-2 p-10">
                     <div className="space-y-3">
