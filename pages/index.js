@@ -5,7 +5,7 @@ import logo from '../assets/ARC_logo_white.png'
 import nvidia_img from '../assets/nvidia.png'
 import { useCallback, useState } from 'react'
 import Card from '@/components/Card'
-
+import Head from 'next/head'
 import Particles from 'react-tsparticles'
 import particlesConfigDark from '../particlesConfig_DARK.json'
 import particlesConfigLight from '../particlesConfig_LIGHT.json'
@@ -46,6 +46,9 @@ export default function Home({ posts }) {
 
   return (
     <>
+      <Head>
+        <title>ARC-BPHC</title>
+      </Head>
       <ScrollTopAndComment />
       <div className="flex flex-col items-center justify-center text-center">
         <div
