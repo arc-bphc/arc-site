@@ -57,7 +57,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                 <article className="space-y-2 xl:grid xl:grid-cols-3 xl:items-baseline xl:space-y-0">
                   <div>
                     <Link href={`/projects/${slug}`} className="text-gray-900 dark:text-gray-100">
-                      <img src={cover} className="object-fit h-48 w-96" />
+                      <img src={cover} className="object-fit h-64 w-96" />
                     </Link>
                   </div>
                   <div className="col-span-2 p-10">
