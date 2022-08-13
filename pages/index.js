@@ -337,7 +337,7 @@ export default function Home({ posts }) {
               </Link>
               . All Rights Reserved.
             </span>
-            <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
+            <div className="mt-4 flex justify-center space-x-6 sm:mt-0">
               <Link
                 href={siteMetadata.facebook}
                 className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
