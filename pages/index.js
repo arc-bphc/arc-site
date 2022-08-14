@@ -58,7 +58,7 @@ export default function Home({ posts }) {
           <div className="particles">
             <Particles className="h-full w-full" options={particleConfig} init={customInit} />
           </div>
-          <div className="header pointer-events-none m-0 flex w-1/2 flex-col items-center justify-center text-center">
+          <div className="header pointer-events-auto z-[2] m-0 flex w-1/2 flex-col items-center justify-center text-center">
             <div style={{ width: '50%', height: 'auto', position: 'relative' }}>
               <Image
                 src={logo}
@@ -177,7 +177,7 @@ export default function Home({ posts }) {
 
         <div
           id="about"
-          className="m-0 flex w-4/5 flex-col items-center justify-center text-center"
+          className="z-[2] m-0 flex w-4/5 flex-col items-center justify-center text-center"
           style={{ minHeight: 100 + 'vh' }}
         >
           <span className="p-4 font-montserratSans text-4xl font-medium">About Us</span>
@@ -222,7 +222,7 @@ export default function Home({ posts }) {
         </div>
 
         <div
-          className="m-0 flex w-4/5 flex-col items-center justify-center text-center"
+          className="z-[2] m-0 flex w-4/5 flex-col items-center justify-center text-center"
           style={{ minHeight: 100 + 'vh' }}
         >
           <span className="p-4 font-montserratSans text-4xl font-medium">Spotlight</span>
@@ -247,7 +247,7 @@ export default function Home({ posts }) {
         </div>
 
         <div
-          className="m-0 flex w-4/5 flex-col items-center justify-center text-center"
+          className="z-[2] m-0 flex w-4/5 flex-col items-center justify-center text-center"
           style={{ minHeight: 50 + 'vh' }}
         >
           <span className="p-4 font-montserratSans text-4xl font-medium"> Our Sponsors</span>
@@ -258,7 +258,7 @@ export default function Home({ posts }) {
 
         <div
           id="contact"
-          className="m-0 flex w-4/5 flex-col items-center justify-center text-center"
+          className="z-[2] m-0 flex w-4/5 flex-col items-center justify-center text-center"
           style={{ minHeight: 100 + 'vh' }}
         >
           <span className="p-4 font-montserratSans text-4xl font-medium">Contact Us</span>
@@ -267,7 +267,7 @@ export default function Home({ posts }) {
           </span>
         </div>
 
-        <footer className="w-full bg-white p-3 dark:bg-gray-900 sm:p-6">
+        <footer className="z-[2] w-full bg-white p-3 dark:bg-gray-900 sm:p-6">
           <div className="md:flex md:justify-between">
             <div className="mb-6 md:mb-0">
               <Link
@@ -396,7 +396,7 @@ export default function Home({ posts }) {
           .particles {
             position: absolute;
             height: 100%;
-            z-index: -1;
+            z-index: 0;
             background-color: var(--main-color);
           }
 
