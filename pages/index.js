@@ -275,7 +275,7 @@ export default function Home({ posts }) {
                 className="flex-column items-center md:flex"
               >
                 <img src="static/images/bits_logo.png" className="h-15 mx-2" alt="ARC Logo" />
-                {/* <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Automation and Robotics Club</span> */}
+                {/* <span className="self-center text-2xl font-semibld whitespace-nowrap dark:text-white">Automation and Robotics Club</span> */}
               </Link>
             </div>
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-4 sm:gap-6">
