@@ -1,91 +1,48 @@
 # ARC Website: Tailwind + NextJS
 
-## Installation
+## First Timer Guide
 
-1. Install [nodejs](https://nodejs.org/en/), preferably LTS and using [Node Version Manager](https://github.com/nvm-sh/nvm)
-2. Clone this repo and go into the directory
-3. Run `npm install `
+- Create a [Github](https://github.com/) account
+- Install [git](https://git-scm.com/downloads) command line on your Device
+- Install [nodejs](https://nodejs.org/en/), preferably LTS and using [Node Version Manager](https://github.com/nvm-sh/nvm)
+- Open Terminal
+- Clone this repo using `git clone URL`
+- You get the URL when you click on Code above
+- Use cd and other commands to move into the directory where you have cloned the repo
+- Run `npm install `
+- Run `npm start` or `npm run dev` and ppen [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Development
-
-For development server:
-
-```bash
-npm start
-```
-
-or
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-## Working on Issues
-
-1. Work in **branches** to avoid clash with the main branch
-   Basically create a new branch with your_name/feature you were working on so that it doesn't clash with the deployment version
-2. Solve Issues
-3. Push Code :)
+---
 
 ## Instructions for Maintaining the Website
 
 Here are some Instructions for the future developers:
 
-1. mdx and md files go into the data folder
-2. All the project posts go in the `data/projects` folder
-3. To add resources
+**NOTE: mdx and md files go into the data folder**
+
+#### Add Resources
+
+1. To add resources
+   - Here `resources` denotes the category of resource, eg. LevelUp or say Processing
    - Add the md/mdx files in the `resources/resource_name` folder
    - Then add the images to `public/static/assets/images/resourcenameResources`
    - Please follow this process and don't add images anywhere else
-4. NOTE: Ensure you add TOCInline component for the resources so that you get a table of contents
-5. Also ensure the md/mdx files under resources do have `orderInSidebar` parameter
-6. Inorder to create a new route
-   - Create a new base page in the `pages`
-   - If it's supposed to work with slugs, just replicate an existing folder such as `projects`
-   - Then make a Layout for the same in the `layouts` directory
-   - Then figure it out :)
+2. NOTE: Ensure you add TOCInline component for the resources so that you get a table of contents
+   `<TOCInline toc={props.toc} toHeading={3} asDisclosure />`
+3. Also ensure the md/mdx files under resources do have `orderInSidebar` parameter
 
-## Extend / Customize
+#### Add Projects
 
-`data/siteMetadata.js` - contains most of the site related information which should be modified for a user's need.
+1. All the project posts go in the `data/projects` folder
 
-`data/authors/default.md` - default author information (required). Additional authors can be added as files in `data/authors`.
+---
 
-`data/projectsData.js` - data used to generate styled card on the projects page.
-
-`data/headerNavLinks.js` - navigation links.
-
-`data/logo.svg` - replace with your own logo.
-
-`data/blog` - replace with your own blog posts.
-
-`public/static` - store assets such as images and favicons.
-
-`tailwind.config.js` and `css/tailwind.css` - contain the tailwind stylesheet which can be modified to change the overall look and feel of the site.
-
-`css/prism.css` - controls the styles associated with the code blocks. Feel free to customize it and use your preferred prismjs theme e.g. [prism themes](https://github.com/PrismJS/prism-themes).
-
-`components/social-icons` - to add other icons, simply copy an svg file from [Simple Icons](https://simpleicons.org/) and map them in `index.js`. Other icons use [heroicons](https://heroicons.com/).
-
-`components/MDXComponents.js` - pass your own JSX code or React component by specifying it over here. You can then call them directly in the `.mdx` or `.md` file. By default, a custom link and image component is passed.
-
-`layouts` - main templates used in pages.
-
-`pages` - pages to route to. Read the [Next.js documentation](https://nextjs.org/docs) for more information.
-
-`next.config.js` - configuration related to Next.js. You need to adapt the Content Security Policy if you want to load scripts, images etc. from other domains.
-
-## Post
+## Making Posts
 
 ### Frontmatter
 
-Frontmatter follows [Hugo's standards](https://gohugo.io/content-management/front-matter/).
-
-Currently 7 fields are supported.
+NOTE: Go through [Markdown Guide](https://www.markdownguide.org/basic-syntax/) for help regarding what markdown is and how it is used
+Currently the following fields are supported.
 
 ```
 title (required)
@@ -98,63 +55,74 @@ images (optional, if none provided defaults to socialBanner in siteMetadata conf
 authors (optional list which should correspond to the file names in `data/authors`. Uses `default` if none is specified)
 layout (optional list which should correspond to the file names in `data/layouts`)
 canonicalUrl (optional, canonical url for the post for SEO)
+cover (image that shows up as thumbnail)
 ```
 
 Here's an example of a post's frontmatter:
 
 ```
 ---
-title: 'Introducing Tailwind Nexjs Starter Blog'
-date: '2021-01-12'
-lastmod: '2021-01-18'
-tags: ['next-js', 'tailwind', 'guide']
-draft: false
-summary: 'Looking for a performant, out of the box template, with all the best in web technology to support your blogging needs? Checkout the Tailwind Nextjs Starter Blog template.'
-images: ['/static/images/canada/mountains.jpg', '/static/images/canada/toronto.jpg']
-authors: ['default', 'sparrowhawk']
-layout: PostLayout
-canonicalUrl: https://tailwind-nextjs-starter-blog.vercel.app/blog/introducing-tailwind-nextjs-starter-blog
+title: Gesture Controlled Bot
+tags: [l298n, HC-05, MATLAB, Image Processing]
+date: 2015-07-04
+mode: normal
+type: article
+sharing: true
+author: Suyash Yeotikar
+show_author_profile: true
+show_title: true
+full_width: false
+header: true
+cover: /static/assets/images/blog/thumbnails/Gesture Controlled Bot.png
 ---
 ```
 
-### Compose
+### Adding Images
 
-Run `node ./scripts/compose.js` to bootstrap a new post.
+For specific size
 
-Follow the interactive prompt to generate a post with pre-filled front matter.
+```
+<Image src="/static/assets/images/blog/Robotic-Arm/2.png" alt="Resistor" width="500" height="500" />
+```
 
-## Deploy
+Otherwise
 
-**Vercel**  
-The easiest way to deploy the template is to use the [Vercel Platform](https://vercel.com) from the creators of Next.js. Check out the [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
+![Image](Image Address)
+```
 
-**Netlify / GitHub Pages / Firebase etc.**  
-As the template uses `next/image` for image optimization, additional configurations have to be made to deploy on other popular static hosting websites like [Netlify](https://www.netlify.com/) or [GitHub Pages](https://pages.github.com/). An alternative image optimization provider such as Imgix, Cloudinary or Akamai has to be used. Alternatively, replace the `next/image` component with a standard `<img>` tag. See [`next/image` documentation](https://nextjs.org/docs/basic-features/image-optimization) for more details.
+### Adding youtube videos
 
-The API routes used in the newsletter component cannot be used in a static site export. You will need to use a form API endpoint provider and substitute the route in the newsletter component accordingly. Other hosting platforms such as Netlify also offer alternative solutions - please refer to their docs for more information.
+```
+<EmbedItem url="https://www.youtube.com/embed/OffjpoCmOaU" />
+```
 
-## Features (By the original Developer)
+### Adding Image Sliders
 
-- Easy styling customization with [Tailwind 3.0](https://tailwindcss.com/blog/tailwindcss-v3) and primary color attribute
-- Near perfect lighthouse score - [Lighthouse report](https://www.webpagetest.org/result/210111_DiC1_08f3670c3430bf4a9b76fc3b927716c5/)
-- Lightweight, 45kB first load JS, uses Preact in production build
-- Mobile-friendly view
-- Light and dark theme
-- Self-hosted font with [Fontsource](https://fontsource.org/)
-- Supports [plausible](https://plausible.io/), [simple analytics](https://simpleanalytics.com/) and google analytics
-- [MDX - write JSX in markdown documents!](https://mdxjs.com/)
-- Server-side syntax highlighting with line numbers and line highlighting via [rehype-prism-plus](https://github.com/timlrx/rehype-prism-plus)
-- Math display supported via [KaTeX](https://katex.org/)
-- Citation and bibliography support via [rehype-citation](https://github.com/timlrx/rehype-citation)
-- Automatic image optimization via [next/image](https://nextjs.org/docs/basic-features/image-optimization)
-- Flexible data retrieval with [mdx-bundler](https://github.com/kentcdodds/mdx-bundler)
-- Support for tags - each unique tag will be its own page
-- Support for multiple authors
-- Blog templates
-- TOC component
-- Support for nested routing of blog posts
-- Newsletter component with support for mailchimp, buttondown, convertkit, klaviyo, revue, and emailoctopus
-- Supports [giscus](https://github.com/laymonage/giscus), [utterances](https://github.com/utterance/utterances) or disqus
-- Projects page
-- Preconfigured security headers
-- SEO friendly with RSS feed, sitemaps and more!
+```
+<ImageSwiper
+  imageArray={[
+    '/static/images/levelup/level-1/jumper1.png',
+    '/static/images/levelup/level-1/jumper2.png',
+  ]}
+/>
+```
+
+---
+
+## Working on Issues
+
+1. Work in **branches** to avoid clash with the main branch
+   Basically create a new branch with your_name/feature you were working on so that it doesn't clash with the deployment version
+2. Whenever you want to work on an issue, do `git checkout -b branch_name` and make changes here
+3. Then use `git push` to push the code on the **new branch**
+4. Solve Issues
+
+## Creating new pages
+
+Inorder to create a new route
+
+- Create a new base page in the `pages`
+- If it's supposed to work with slugs, just replicate an existing folder such as `projects`
+- Then make a Layout for the same in the `layouts` directory
+- Then figure it out :)
