@@ -4,7 +4,7 @@ const siteMetadata = {
   headerTitle: 'Automation and Robotics Club',
   description: 'ARC Website made by tailwind.css and next.js',
   language: 'en-us',
-  theme: 'system', // system, dark or light
+  theme: 'dark', // system, dark or light
   siteUrl: 'https://arc-bphc.github.io',
   siteRepo: 'https://github.com/arc-bphc/',
   siteLogo: '/static/images/logo.png',
