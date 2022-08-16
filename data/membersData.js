@@ -324,7 +324,7 @@ let githubs = [
 
 let randomIndexUsed = {}
 let numberOfPosts = 4
-let randomIndex = 0
+let randomIndex = Math.floor(Math.random() * names.length)
 
 const membersData = []
 const allMembersData = []
