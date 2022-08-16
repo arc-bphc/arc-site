@@ -59,19 +59,19 @@ chmod +x linux-setup.sh
 
 ### Some Issues you might face during ROS installation
 
-1. apt-get signature issue
+**1. apt-get signature issue**
 
-- You have to run a command to get the signaturs back up
+- You have to run a command to get the signatures back up
 
-2. catkin_make not found
+**2. catkin_make not found**
 
-- Run
+- Run the following and then run the script again
 
 ```
 source /opt/ros/noetic/setup.bash
 ```
 
-and then run the script again 3. python being used instead of python3
+**3. python being used instead of python3**
 
 - Run the script with noetic argument
 - ./linux-script.sh noetic
