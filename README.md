@@ -4,7 +4,9 @@
 
 - Create a [Github](https://github.com/) account
 - Install [git](https://git-scm.com/downloads) command line on your Device
-- Install [nodejs](https://nodejs.org/en/), preferably LTS and using [Node Version Manager](https://github.com/nvm-sh/nvm)
+- Connect it with [SSH](https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/GitHub-SSH-Windows-Example)
+- Install [NodeJS](https://nodejs.org/en/), preferably LTS and using [Node Version Manager](https://github.com/nvm-sh/nvm)
+- Use this link for NVM is using [windows](https://github.com/coreybutler/nvm-windows/releases)
 - Open Terminal
 - Clone this repo using `git clone URL`
 - You get the URL when you click on Code above
