@@ -4,13 +4,24 @@
 
 - Create a [Github](https://github.com/) account
 - Install [git](https://git-scm.com/downloads) command line on your Device
-- Install [nodejs](https://nodejs.org/en/), preferably LTS and using [Node Version Manager](https://github.com/nvm-sh/nvm)
-- Open Terminal
-- Clone this repo using `git clone URL`
-- You get the URL when you click on Code above
-- Use cd and other commands to move into the directory where you have cloned the repo
-- Run `npm install `
-- Run `npm start` or `npm run dev` and ppen [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Connect it with [SSH](https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/GitHub-SSH-Windows-Example)
+
+From here you have 2 methods:
+
+1. Docker Method(Simple Method)
+   - Install [Docker](https://www.docker.com/products/docker-desktop/)
+   - Go into the cloned folder
+   - Run `docker build -t arcnextapp .`
+   - And then run `docker run -it -p 3000:3000 arcnextapp`
+2. Manual Installation Method
+   - Install [NodeJS](https://nodejs.org/en/), preferably LTS and using [Node Version Manager](https://github.com/nvm-sh/nvm)
+   - Use this link for NVM is using [windows](https://github.com/coreybutler/nvm-windows/releases)
+   - Open Terminal
+   - Clone this repo using `git clone URL`
+   - You get the URL when you click on Code above
+   - Use cd and other commands to move into the directory where you have cloned the repo
+   - Run `npm install `
+   - Run `npm start` or `npm run dev` and ppen [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ---
 
