@@ -322,6 +322,60 @@ let githubs = [
   'https://github.com/YugAjmera',
 ]
 
+let linkedins = [
+  'https://www.linkedin.com/in/abdulazeem-tk4vr/',
+  'https://www.linkedin.com/in/abijith-yl/',
+  'https://www.linkedin.com/in/adeecc/',
+  'https://www.linkedin.com/in/arbaranwal/',
+  'https://www.linkedin.com/in/anvaishy/',
+  'https://www.linkedin.com/in/prasadboi/',
+  'https://www.linkedin.com/in/arunabh17/',
+  '',
+  'https://www.linkedin.com/in/fraction36/',
+  '',
+  '',
+  'https://www.linkedin.com/in/jaydigvijay/',
+  'https://www.linkedin.com/in/divyekalra1/',
+  'https://www.linkedin.com/in/gauritewari/',
+  '',
+  'https://www.linkedin.com/in/guru-narayana/',
+  '',
+  'https://www.linkedin.com/in/textzip/',
+  '',
+  'https://www.linkedin.com/in/sunkenhero/',
+  '',
+  '',
+  'https://www.linkedin.com/in/albegade-pavan/',
+  'https://www.linkedin.com/in/phanindra-R/',
+  '',
+  '',
+  'https://www.linkedin.com/in/pm-engr/',
+  'https://www.linkedin.com/in/priyesh0453/',
+  'https://www.linkedin.com/in/RajivDVK/',
+  'https://www.linkedin.com/in/reuben-george-02/',
+  'https://www.linkedin.com/in/rishabsingh3003/',
+  'https://www.linkedin.com/in/ritz71020/',
+  'https://www.linkedin.com/in/pandaboi/',
+  '',
+  '',
+  'https://www.linkedin.com/in/hardhat5/',
+  'https://www.linkedin.com/in/sakshamssy/',
+  '',
+  'https://www.linkedin.com/in/shubham-333/',
+  '',
+  'https://www.linkedin.com/in/SriramKodey/',
+  '',
+  'https://www.linkedin.com/in/suraj-2306/',
+  'https://www.linkedin.com/in/tanayranjan/',
+  'https://www.linkedin.com/in/webisgood/',
+  'https://www.linkedin.com/in/ujjwal-raizada/',
+  'https://www.linkedin.com/in/utkarsh0902/',
+  '',
+  '',
+  '',
+  'https://www.linkedin.com/in/yugajmera/',
+]
+
 let randomIndexUsed = {}
 let numberOfPosts = 4
 let randomIndex = Math.floor(Math.random() * names.length)
@@ -338,6 +392,7 @@ for (let a = 0; a < names.length; a++) {
     email: emails[a],
     github: githubs[a],
     facebook: facebooks[a],
+    linkedin: linkedins[a],
   })
 }
 
@@ -353,6 +408,7 @@ for (let i = 0; i < numberOfPosts; i++) {
     email: emails[randomIndex],
     github: githubs[randomIndex],
     facebook: facebooks[randomIndex],
+    linkedin: linkedins[randomIndex],
   })
 
   randomIndexUsed[randomIndex] = 1
