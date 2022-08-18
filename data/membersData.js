@@ -1,3 +1,16 @@
+const PORs = [
+  {
+    Timestamp: '2022-08-18T06:29:26.637Z',
+    email: 'f20200304@hyderabad.bits-pilani.ac.in',
+    name: 'Bhaswanth Ayapilla',
+    picture: 'https://drive.google.com/open?id=1R1RjAgeuN8t5VAX0e-8O4IribDD7vBIT',
+    github: 'https://github.com/Bhaswanth-A',
+    linkedin: 'https://www.linkedin.com/in/bhaswanth-a/',
+    facebook: 'https://www.facebook.com/Bhaswanth.A.02/',
+    description: 'President',
+  },
+]
+
 const data = [
   {
     Timestamp: '2022-08-18T05:06:33.945Z',
@@ -47,20 +60,11 @@ const data = [
   {
     Timestamp: '2022-08-18T05:56:56.870Z',
     email: 'f20211648@hyderabad.bits-pilani.ac.in',
-    name: 'f20211648@hyderabad.bits-pilani.ac.in',
+    name: 'Arjun Raghuram',
     picture: 'https://drive.google.com/open?id=1qQEYCFt1_sVpIjkZJxruF67ZnvvzaPdC',
     github: 'https://github.com/ArjunInnit',
     linkedin: 'https://www.linkedin.com/in/arjun-raghuraman-a79474232/',
     facebook: 'https://www.facebook.com/profile.php?id=100010179977459',
-  },
-  {
-    Timestamp: '2022-08-18T06:29:26.637Z',
-    email: 'f20200304@hyderabad.bits-pilani.ac.in',
-    name: 'Bhaswanth Ayapilla',
-    picture: 'https://drive.google.com/open?id=1R1RjAgeuN8t5VAX0e-8O4IribDD7vBIT',
-    github: 'https://github.com/Bhaswanth-A',
-    linkedin: 'https://www.linkedin.com/in/bhaswanth-a/',
-    facebook: 'https://www.facebook.com/Bhaswanth.A.02/',
   },
   {
     Timestamp: '2022-08-17T10:48:09.247Z',
@@ -206,6 +210,15 @@ const data = [
     linkedin: 'https://www.linkedin.com/in/yogya-chawla-011924208/',
     facebook: 'https://www.facebook.com/yogya.chawla.90',
   },
+  {
+    Timestamp: '2022-08-18T06:57:28.690Z',
+    email: 'f20213192@hyderabad.bits-pilani.ac.in',
+    name: 'Anushri Katiyar',
+    picture: 'https://drive.google.com/open?id=1pZzguZBcbkAg_Iq-ElamlpKR7iYLcrSC',
+    github: 'https://github.com/Raven16433',
+    linkedin: 'linkedin.com/in/anushri-katiyar-608590232',
+    facebook: 'facebook.com/anushri23katiyar',
+  },
 ]
 
 let randomIndexUsed = {}
@@ -232,4 +245,4 @@ for (let i = 0; i < numberOfPosts; i++) {
   randomIndexUsed[randomIndex] = 1
 }
 
-export { allMembersData, membersData }
+export { allMembersData, membersData, PORs }

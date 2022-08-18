@@ -1,10 +1,8 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from './Image'
-import Link from './Link'
 import SocialIcon from './social-icons'
 
 const MemberCard = ({ title, description, imgSrc, facebook, github, linkedin }) => (
-  <div className="md p-4 md:w-1/2" style={{ maxWidth: '350px' }}>
+  <div className="md p-4 md:w-1/2" style={{ maxWidth: '350px', height: '500px' }}>
     <div
       className={`${
         imgSrc && 'h-full'
@@ -21,7 +19,9 @@ const MemberCard = ({ title, description, imgSrc, facebook, github, linkedin }) 
       )}
       <div className="p-6">
         <h2 className="mb-3 text-center text-2xl font-bold leading-8 tracking-tight">{title}</h2>
-        <p className="prose mb-3 max-w-none text-gray-500 dark:text-gray-400">{description}</p>
+        <p className="prose mb-3 max-w-none text-center text-xl text-gray-500 dark:text-gray-400">
+          {description}
+        </p>
         <div className="flex justify-center">
           {github && (
             <span className="p-3">
