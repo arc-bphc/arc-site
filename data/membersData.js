@@ -432,7 +432,7 @@ const data = [
     facebook: 'Param Budhadev',
   },
   {
-    Timestamp: '2022-08-18T13:43:11.116Z',
+    Timestamp: '2022-08-18T13:43:11.11Z',
     email: 'f20212825@hyderabad.bits-pilani.ac.in',
     name: 'Rahul Avasthi',
     picture: '/static/members/rahula.jpg',
