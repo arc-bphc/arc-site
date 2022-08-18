@@ -20,6 +20,16 @@ const PORs = [
     description: 'Secretary',
   },
   {
+    Timestamp: '8/18/2022 22:09:39',
+    email: 'f20202115@hyderabad.bits-pilani.ac.in',
+    name: 'Harshvardhan S Goyal',
+    picture: '/static/members/harshvardhan.jpg',
+    github: 'https://github.com/Xvilgator',
+    linkedin: 'https://www.linkedin.com/in/harshvardhan-goyal-22634b163/',
+    facebook: 'https://www.facebook.com/harshvardhan.goyal.777',
+    description: 'Editorial Head',
+  },
+  {
     Timestamp: '2022-08-18T07:19:21.069Z',
     email: 'f20210075@hyderabad.bits-pilani.ac.in',
     name: 'Divyateja Pasupuleti',
@@ -510,6 +520,15 @@ const data = [
     github: 'https://github.com/jainbhavya832',
     linkedin: 'https://www.linkedin.com/in/bhavya-j-703320134',
     facebook: 'https://www.facebook.com/bhavya.jain.758737',
+  },
+  {
+    Timestamp: '8/18/2022 22:27:21',
+    email: 'f20202151@hyderabad.bits-pilani.ac.in',
+    name: 'Aditya Seth',
+    picture: '/static/members/adityas.png',
+    github: 'https://github.com/generalkeno-b',
+    linkedin: 'https://www.linkedin.com/in/aditya-seth-aa01b8207',
+    facebook: 'https://www.facebook.com/aditya.seth.353803',
   },
 ]
 
