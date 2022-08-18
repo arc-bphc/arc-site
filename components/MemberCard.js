@@ -15,6 +15,7 @@ const MemberCard = ({ title, description, imgSrc, facebook, github, linkedin }) 
           className="object-contain object-center md:h-36 lg:h-48"
           width={500}
           height={400}
+          unoptimized={true}
         />
       )}
       <div className="p-6">
