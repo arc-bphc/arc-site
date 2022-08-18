@@ -34,7 +34,7 @@ export default function Team() {
             {year}
           </h1>
           <br />
-          <div className="flex flex-col items-start justify-start md:flex-row md:flex-wrap md:items-center md:justify-center md:space-x-6">
+          <div className="flex flex-col items-start justify-start md:flex-row md:flex-wrap md:items-center md:justify-center">
             {allMembersData[year].map((member) => {
               return (
                 <MemberCard
