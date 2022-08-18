@@ -46,6 +46,23 @@ Here are some Instructions for the future developers:
 
 1. All the project posts go in the `data/projects` folder
 
+#### Add your details
+
+```
+  {
+    Timestamp: '2022-08-17T11:07:20.271Z',
+    email: 'BITS EMAIL',
+    name: 'NAME',
+    picture: '/static/members/NAME.jpg',
+    github: 'github',
+    linkedin: 'linkedin',
+    facebook: 'facebook',
+  },
+```
+
+Add this to the last in the `data/membersData.js` file and send a PR
+Also upload your pic to `/static/members/`
+
 ---
 
 ## Making Posts
