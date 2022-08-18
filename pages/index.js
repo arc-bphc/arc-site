@@ -37,11 +37,6 @@ export async function getStaticProps() {
 }
 
 export default function Home({ membersData }) {
-  const customInit = useCallback(async (engine) => {
-    // this adds the bundle to tsParticles
-    await loadFull(engine)
-  }, [])
-
   const { theme, setTheme, __ } = useTheme()
 
   {
@@ -59,9 +54,6 @@ export default function Home({ membersData }) {
           className="pointer-events-auto flex w-full justify-center bg-cover bg-no-repeat"
           style={{ minHeight: 100 + 'vh' }}
         >
-          {/* <div className="particles">
-            <Particles className="h-full w-full" options={particleConfig} init={customInit} />
-          </div> */}
           <div className="header pointer-events-auto z-[2] m-0 flex w-1/2 flex-col items-center justify-center text-center">
             <div style={{ width: '50%', height: 'auto', position: 'relative' }}>
               <Image
