@@ -30,16 +30,6 @@ const PORs = [
     description: 'Secretary',
   },
   {
-    Timestamp: '8/18/2022 22:09:39',
-    email: 'f20202115@hyderabad.bits-pilani.ac.in',
-    name: 'Harshvardhan S Goyal',
-    picture: '/static/members/harshvardhan.jpg',
-    github: 'https://github.com/Xvilgator',
-    linkedin: 'https://www.linkedin.com/in/harshvardhan-goyal-22634b163/',
-    facebook: 'https://www.facebook.com/harshvardhan.goyal.777',
-    description: 'Editorial Head',
-  },
-  {
     Timestamp: '2022-08-18T07:19:21.069Z',
     email: 'f20210075@hyderabad.bits-pilani.ac.in',
     name: 'Divyateja Pasupuleti',
@@ -68,6 +58,16 @@ const PORs = [
     linkedin: 'https://www.linkedin.com/in/aditya-gupta-994680229/',
     facebook: 'https://www.facebook.com/profile.php?id=100076187603468',
     description: 'Treasurer',
+  },
+  {
+    Timestamp: '8/18/2022 22:09:39',
+    email: 'f20202115@hyderabad.bits-pilani.ac.in',
+    name: 'Harshvardhan S Goyal',
+    picture: '/static/members/harshvardhan.jpg',
+    github: 'https://github.com/Xvilgator',
+    linkedin: 'https://www.linkedin.com/in/harshvardhan-goyal-22634b163/',
+    facebook: 'https://www.facebook.com/harshvardhan.goyal.777',
+    description: 'Editorial Head',
   },
 ]
 
