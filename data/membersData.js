@@ -351,7 +351,7 @@ const data = [
     facebook: 'https://www.facebook.com/profile.php?id=100077759653369',
   },
   {
-    Timestamp: '2022-08-18T11:45:07.387Z',
+    Timestamp: '2022-08-18T11:45:07.387',
     email: 'f20211895@hyderabad.bits-pilani.ac.in',
     name: 'D. Muruga Perumal',
     picture: '/static/members/muruga.jpg',
