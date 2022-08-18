@@ -11,11 +11,10 @@ const MemberCard = ({ title, description, imgSrc, facebook, github, linkedin }) 
       {imgSrc && (
         <Image
           alt={title}
-          src={'https://drive.google.com/uc?id=' + imgSrc.split('id=')[1]}
+          src={imgSrc}
           className="object-contain object-center md:h-36 lg:h-48"
           width={500}
           height={400}
-          unoptimized={true}
         />
       )}
       <div className="p-6">

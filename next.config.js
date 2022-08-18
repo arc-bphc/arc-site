@@ -59,7 +59,7 @@ module.exports = withBundleAnalyzer({
     dirs: ['pages', 'components', 'lib', 'layouts', 'scripts'],
   },
   images: {
-    domains: ['drive.google.com'],
+    domains: ['drive.google.com', 'arcbphc.vercel.app'],
   },
   async headers() {
     return [
