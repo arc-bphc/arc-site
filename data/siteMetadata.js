@@ -17,7 +17,7 @@ const siteMetadata = {
   instagram: 'https://www.instagram.com/arc_bphc/',
   youtube: 'https://youtube.com',
   linkedin: 'https://www.linkedin.com',
-  discord: 'https://discord.com/invite/BgrYVu3P',
+  discord: 'https://discord.gg/zJerhXArbJ',
   locale: 'en-US',
   analytics: {
     // If you want to use an analytics provider you have to add it to the

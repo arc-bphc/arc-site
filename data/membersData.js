@@ -325,7 +325,7 @@ const data = [
 ]
 
 let randomIndexUsed = {}
-let numberOfPosts = 4
+let numberOfPosts = 3
 let randomIndex = Math.floor(Math.random() * data.length)
 
 const membersData = []
@@ -343,7 +343,7 @@ for (let i = 0; i < numberOfPosts; i++) {
   while (randomIndexUsed[randomIndex]) {
     randomIndex = Math.floor(Math.random() * data.length)
   }
-  membersData.push(data[i])
+  membersData.push(data[randomIndex])
 
   randomIndexUsed[randomIndex] = 1
 }
