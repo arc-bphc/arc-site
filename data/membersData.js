@@ -9,6 +9,16 @@ const PORs = [
     facebook: 'https://www.facebook.com/Bhaswanth.A.02/',
     description: 'President',
   },
+  {
+    Timestamp: '2022-08-18T07:19:21.069Z',
+    email: 'f20210075@hyderabad.bits-pilani.ac.in',
+    name: 'Divyateja Pasupuleti',
+    picture: 'https://drive.google.com/open?id=1Rtk9qXMFSE2hwwkw8FFiQtd2YTOSexmT',
+    github: 'https://github.com/Divyateja04',
+    linkedin: 'https://www.linkedin.com/in/divyateja-pasupuleti/',
+    facebook: 'https://www.facebook.com/divyateja.pasupuleti.7/',
+    description: 'Joint Secretary',
+  },
 ]
 
 const data = [
@@ -218,6 +228,24 @@ const data = [
     github: 'https://github.com/Raven16433',
     linkedin: 'linkedin.com/in/anushri-katiyar-608590232',
     facebook: 'facebook.com/anushri23katiyar',
+  },
+  {
+    Timestamp: '2022-08-18T07:13:12.128Z',
+    email: 'f20210096@hyderabad.bits-pilani.ac.in',
+    name: 'Kumarasamy Chelliah',
+    picture: 'https://drive.google.com/open?id=1P4vYiStPX28X698AGkQcHPCK4XgWBnsV',
+    github: 'https://github.com/Sabr-eX',
+    linkedin: 'https://www.linkedin.com/in/kumarasamy-chelliah-3b9344245/',
+    facebook: 'https://www.facebook.com/profile.php?id=100074360877021',
+  },
+  {
+    Timestamp: '2022-08-18T07:16:09.989Z',
+    email: 'f20210238@hyderabad.bits-pilani.ac.in',
+    name: 'Bharath Vitala',
+    picture: 'https://drive.google.com/open?id=1ZJlte6sPSQHya8Y2-tB4ByiVGPZU-0vL',
+    github: 'https://github.com/VB2004',
+    linkedin: 'https://www.linkedin.com/in/bharath-vitala-b77761229/',
+    facebook: 'https://www.facebook.com/profile.php?id=100009485455202',
   },
 ]
 
