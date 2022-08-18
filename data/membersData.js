@@ -532,15 +532,11 @@ const data = [
   },
 ]
 
-let randomIndexUsed = {}
-let numberOfPosts = 3
-let randomIndex = Math.floor(Math.random() * data.length)
-
 data.sort((a, b) => a.name.localeCompare(b.name))
 
-const membersData = []
 const allMembersData = {}
 
+// The below code is splitting people based on year
 for (let a = 0; a < data.length; a++) {
   if (allMembersData[parseInt(data[a]['email'].slice(1, 5))]) {
     allMembersData[parseInt(data[a]['email'].slice(1, 5))].push(data[a])
@@ -550,13 +546,4 @@ for (let a = 0; a < data.length; a++) {
   }
 }
 
-for (let i = 0; i < numberOfPosts; i++) {
-  while (randomIndexUsed[randomIndex]) {
-    randomIndex = Math.floor(Math.random() * data.length)
-  }
-  membersData.push(data[randomIndex])
-
-  randomIndexUsed[randomIndex] = 1
-}
-
-export { allMembersData, membersData, PORs }
+export { allMembersData, PORs, data }

@@ -5,7 +5,6 @@ import MemberCard from '@/components/MemberCard'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
 import resourcesData from '@/data/resourcesData'
 import siteMetadata from '@/data/siteMetadata'
-import { getAllFilesFrontMatter } from '@/lib/mdx'
 import { useTheme } from 'next-themes'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -15,17 +14,31 @@ import logo from '../assets/ARC_logo_white.png'
 import nvidia_img from '../assets/nvidia.png'
 import particlesConfigDark from '../particlesConfig_DARK.json'
 import particlesConfigLight from '../particlesConfig_LIGHT.json'
-import { membersData } from './../data/membersData'
-
-const MAX_DISPLAY = 5
+import { data } from './../data/membersData'
 
 export async function getStaticProps() {
-  const posts = await getAllFilesFrontMatter('projects')
+  const prop = data
+  let randomIndexUsed = {}
+  let numberOfPosts = 3
+  let randomIndex = Math.floor(Math.random() * prop.length)
 
-  return { props: { posts } }
+  const membersData = []
+
+  for (let i = 0; i < numberOfPosts; i++) {
+    while (randomIndexUsed[randomIndex]) {
+      randomIndex = Math.floor(Math.random() * prop.length)
+    }
+    membersData.push(prop[randomIndex])
+
+    randomIndexUsed[randomIndex] = 1
+  }
+
+  return {
+    props: { membersData },
+  }
 }
 
-export default function Home({ posts }) {
+export default function Home({ membersData }) {
   const customInit = useCallback(async (engine) => {
     // this adds the bundle to tsParticles
     await loadFull(engine)
