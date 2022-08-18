@@ -336,6 +336,7 @@ for (let a = 0; a < data.length; a++) {
     allMembersData[parseInt(data[a]['email'].slice(1, 5))].push(data[a])
   } else {
     allMembersData[parseInt(data[a]['email'].slice(1, 5))] = []
+    allMembersData[parseInt(data[a]['email'].slice(1, 5))].push(data[a])
   }
 }
 
