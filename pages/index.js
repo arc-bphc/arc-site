@@ -8,40 +8,59 @@ import siteMetadata from '@/data/siteMetadata'
 import { useTheme } from 'next-themes'
 import Head from 'next/head'
 import Image from 'next/image'
-import { useCallback } from 'react'
+import { useState, useEffect } from 'react'
 import { loadFull } from 'tsparticles'
 import logo from '../assets/ARC_logo_white.png'
 import nvidia_img from '../assets/nvidia.png'
 import { data } from './../data/membersData'
 
-export async function getStaticProps() {
-  const prop = data
-  let randomIndexUsed = {}
-  let numberOfPosts = 3
-  let randomIndex = Math.floor(Math.random() * prop.length)
+// export async function getStaticProps() {
+//   const prop = data
+//   let randomIndexUsed = {}
+//   let numberOfPosts = 3
+//   let randomIndex = Math.floor(Math.random() * prop.length)
 
-  const membersData = []
+//   const membersData = []
 
-  for (let i = 0; i < numberOfPosts; i++) {
-    while (randomIndexUsed[randomIndex]) {
-      randomIndex = Math.floor(Math.random() * prop.length)
-    }
-    membersData.push(prop[randomIndex])
+//   for (let i = 0; i < numberOfPosts; i++) {
+//     while (randomIndexUsed[randomIndex]) {
+//       randomIndex = Math.floor(Math.random() * prop.length)
+//     }
+//     membersData.push(prop[randomIndex])
 
-    randomIndexUsed[randomIndex] = 1
-  }
+//     randomIndexUsed[randomIndex] = 1
+//   }
 
-  return {
-    props: { membersData },
-  }
-}
+//   return {
+//     props: { membersData },
+//   }
+// }
 
-export default function Home({ membersData }) {
+export default function Home() {
   const { theme, setTheme, __ } = useTheme()
 
   {
     ;() => setTheme('dark')
   }
+
+  const [membersData, setMembersData] = useState([])
+  const [wait, setWait] = useState(true)
+
+  useEffect(() => {
+    const prop = data
+    let randomIndexUsed = {}
+    let numberOfPosts = 3
+    let randomIndex = Math.floor(Math.random() * prop.length)
+    for (let i = 0; i < numberOfPosts; i++) {
+      while (randomIndexUsed[randomIndex]) {
+        randomIndex = Math.floor(Math.random() * prop.length)
+      }
+      membersData.push(prop[randomIndex])
+
+      randomIndexUsed[randomIndex] = 1
+    }
+    setWait(false)
+  }, [])
 
   return (
     <>
@@ -246,19 +265,20 @@ export default function Home({ membersData }) {
           </span>
           <div className="flex-column md:flex">
             {/* Check membersData.js */}
-            {membersData.map((member) => {
-              return (
-                <MemberCard
-                  key={member.id}
-                  title={member.name}
-                  description={member.quote}
-                  imgSrc={member.picture}
-                  facebook={member.facebook}
-                  linkedin={member.linkedin}
-                  github={member.github}
-                />
-              )
-            })}
+            {!wait &&
+              membersData.map((member) => {
+                return (
+                  <MemberCard
+                    key={member.id}
+                    title={member.name}
+                    description={member.quote}
+                    imgSrc={member.picture}
+                    facebook={member.facebook}
+                    linkedin={member.linkedin}
+                    github={member.github}
+                  />
+                )
+              })}
           </div>
         </div>
 
