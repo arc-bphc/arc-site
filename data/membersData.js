@@ -585,6 +585,24 @@ const data = [
     linkedin: 'https://www.linkedin.com/in/soumitra-shewale-6b54041b5/',
     facebook: 'https://www.facebook.com/profile.php?id=100075164958393',
   },
+  {
+    Timestamp: '2022-08-18T17:59:36.685Z',
+    email: 'f20191291@hyderabad.bits-pilani.ac.in',
+    name: 'Divye Kalra',
+    picture: '/static/members/divye.jpg',
+    github: 'https://github.com/divyekalra1',
+    linkedin: 'https://www.linkedin.com/in/divye-kalra-b6b66823b/',
+    facebook: 'https://www.facebook.com/divye.kalra.5',
+  },
+  {
+    Timestamp: '2022-08-18T17:59:36.685Z',
+    email: 'f20190636@hyderabad.bits-pilani.ac.in',
+    name: 'Tejasvi Chhabra',
+    picture: '/static/members/tejasvi.jpg',
+    github: 'https://github.com/chabtj',
+    linkedin: 'https://www.linkedin.com/in/tejasvichabbra/',
+    facebook: 'https://www.facebook.com/profile.php?id=100011495022514',
+  },
 ]
 
 data.sort((a, b) => a.name.localeCompare(b.name))
