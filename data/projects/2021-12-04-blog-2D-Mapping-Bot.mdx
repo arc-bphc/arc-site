@@ -10,7 +10,7 @@ show_author_profile: true
 show_title: true
 full_width: false
 header: true
-cover: /static/assets/images/blog/thumbnails/2D Mapping Bot.png
+cover: /static/images/blog/thumbnails/2D Mapping Bot.png
 ---
 
 ## Aim
@@ -64,7 +64,7 @@ Scanning is done by the HCSR04 ultrasonic sensor mounted upon an SG90 servo moto
 ### ULN 2003 Stepper Driver
 
 <Image
-  src="/static/assets/images/blog/2D-Mapping-Robot/driver.png"
+  src="/static/images/blog/2D-Mapping-Robot/driver.png"
   alt="Driver"
   width="500"
   height="500"
@@ -75,7 +75,7 @@ driver to run. - IN1,IN2,IN3,IN4 - Connected to the Arduino and receive signals 
 **Datasheet of the Component:** https://components101.com/sites/default/files/component_datasheet/IC%20ULN2003%20Datasheet_0.pdf
 ### 28BYJ-48 Stepper Motor
 <Image
-  src="/static/assets/images/blog/2D-Mapping-Robot/stepper.png"
+  src="/static/images/blog/2D-Mapping-Robot/stepper.png"
   alt="stepper"
   width="500"
   height="500"
@@ -86,12 +86,7 @@ https://datasheet.octopart.com/STEP-MOTOR-5V-%2828BYJ-48-5V%29-mikroElektronika-
 
 ### SG90 Micro Servo
 
-<Image
-  src="/static/assets/images/blog/2D-Mapping-Robot/servo.png"
-  alt="Servo"
-  width="500"
-  height="500"
-/>
+<Image src="/static/images/blog/2D-Mapping-Robot/servo.png" alt="Servo" width="500" height="500" />
 It is a micro servo motor which can rotate from 0 to 180 degrees. The pins description is as follows:
 - Yellow - Connected to a digital OUTPUT pin. Servo is rotated by giving the angular position using digitalWrite
 on this pin. - Red - Connected to +5V Power supply. - Brown - Connected to ground. **Here is the link
@@ -100,7 +95,7 @@ for the data sheet :** http://www.ee.ic.ac.uk/pcheung/teaching/DE1_EE/stores/sg9
 ### HCSR04 Ultrasonic Sensor
 
 <Image
-  src="/static/assets/images/blog/2D-Mapping-Robot/us.png"
+  src="/static/images/blog/2D-Mapping-Robot/us.png"
   alt="Ultrasonic"
   width="500"
   height="500"
@@ -115,12 +110,7 @@ for the data sheet :** http://www.ee.ic.ac.uk/pcheung/teaching/DE1_EE/stores/sg9
 
 ### HC05 Bluetooth Module
 
-<Image
-  src="/static/assets/images/blog/2D-Mapping-Robot/bt.png"
-  alt="Bluetooth"
-  width="500"
-  height="500"
-/>
+<Image src="/static/images/blog/2D-Mapping-Robot/bt.png" alt="Bluetooth" width="500" height="500" />
 
 - VCC - Connected to +5V supply.
 - GND - Connected to ground.
@@ -136,7 +126,7 @@ for the data sheet :** http://www.ee.ic.ac.uk/pcheung/teaching/DE1_EE/stores/sg9
 The schematic below shows the circuit connections of the bot:
 
 <Image
-  src="/static/assets/images/blog/2D-Mapping-Robot/diagram.png"
+  src="/static/images/blog/2D-Mapping-Robot/diagram.png"
   alt="Schematic"
   width="500"
   height="500"
@@ -345,7 +335,7 @@ For processing the data, that we receive from Arduino, into a graphical format, 
 Our Processing Output looked like this :-
 
 <Image
-  src="/static/assets/images/blog/2D-Mapping-Robot/output1.png"
+  src="/static/images/blog/2D-Mapping-Robot/output1.png"
   alt="Output1"
   width="500"
   height="500"
@@ -453,7 +443,7 @@ void drawRobot()
 This function is use for drawing body of the bot each time when the `draw()` functions loops each time
 
 <Image
-  src="/static/assets/images/blog/2D-Mapping-Robot/output2.png"
+  src="/static/images/blog/2D-Mapping-Robot/output2.png"
   alt="Output2"
   width="500"
   height="500"
@@ -480,7 +470,7 @@ In this part, we are drawing line which will represent the sensor direction.
 - Rest is code for drawing the line in green color
 
 <Image
-  src="/static/assets/images/blog/2D-Mapping-Robot/output3.png"
+  src="/static/images/blog/2D-Mapping-Robot/output3.png"
   alt="Output3"
   width="500"
   height="500"
@@ -524,7 +514,7 @@ This part of code is about designing a function which will draw obstacle every t
 - From Line 14 to 22, we are updating the picture of `pixel1` into the screen
 
 <Image
-  src="/static/assets/images/blog/2D-Mapping-Robot/output4.png"
+  src="/static/images/blog/2D-Mapping-Robot/output4.png"
   alt="Output4"
   width="500"
   height="500"
@@ -870,47 +860,17 @@ void serialEvent(Serial myPort)
 
 ## A few clicks of the Bot
 
-<Image
-  src="/static/assets/images/blog/2D-Mapping-Robot/r1.png"
-  alt="Robot1"
-  width="500"
-  height="500"
-/>
+<Image src="/static/images/blog/2D-Mapping-Robot/r1.png" alt="Robot1" width="500" height="500" />
 
-<Image
-  src="/static/assets/images/blog/2D-Mapping-Robot/r2.png"
-  alt="Robot2"
-  width="500"
-  height="500"
-/>
+<Image src="/static/images/blog/2D-Mapping-Robot/r2.png" alt="Robot2" width="500" height="500" />
 
-<Image
-  src="/static/assets/images/blog/2D-Mapping-Robot/r3.png"
-  alt="Robot3"
-  width="500"
-  height="500"
-/>
+<Image src="/static/images/blog/2D-Mapping-Robot/r3.png" alt="Robot3" width="500" height="500" />
 
-<Image
-  src="/static/assets/images/blog/2D-Mapping-Robot/r4.png"
-  alt="Robot4"
-  width="500"
-  height="500"
-/>
+<Image src="/static/images/blog/2D-Mapping-Robot/r4.png" alt="Robot4" width="500" height="500" />
 
-<Image
-  src="/static/assets/images/blog/2D-Mapping-Robot/r5.png"
-  alt="Robot5"
-  width="500"
-  height="500"
-/>
+<Image src="/static/images/blog/2D-Mapping-Robot/r5.png" alt="Robot5" width="500" height="500" />
 
-<Image
-  src="/static/assets/images/blog/2D-Mapping-Robot/r6.png"
-  alt="Robot6"
-  width="500"
-  height="500"
-/>
+<Image src="/static/images/blog/2D-Mapping-Robot/r6.png" alt="Robot6" width="500" height="500" />
 
 ---
 

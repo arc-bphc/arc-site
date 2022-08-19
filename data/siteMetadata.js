@@ -8,7 +8,7 @@ const siteMetadata = {
   siteUrl: 'https://arc-bphc.github.io',
   siteRepo: 'https://github.com/arc-bphc/',
   siteLogo: '/static/images/logo.png',
-  image: 'https://arc-bphc.github.io/site/assets/images/logo/logo.png',
+  image: 'https://arc-bphc.github.io/site/images/logo/logo.png',
   socialBanner: '/static/images/twitter-card.png',
   email: 'arc@hyderabad.bits-pilani.ac.in',
   github: 'https://github.com/arc-bphc',

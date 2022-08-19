@@ -8,7 +8,7 @@ sharing: true
 #   type: cover
 #   image:
 #     src: /screenshot.jpg
-cover: /static/assets/images/resources/247-2474702_flute-clip-art.png
+cover: /static/images/resources/247-2474702_flute-clip-art.png
 ---
 
 Automating the Flute playing process
@@ -42,10 +42,10 @@ We achieved the same using a Python script that took a waveform and generated a 
 
 The most crucial part of the project was coming up with the correct closing mechanism for the flute holes, i.e., complete and partial closing for some specific notes. We primarily tried two designs, first with flaps and the second using rings for our closing mechanism. The former being more efficient in its functioning led us to design a flute holder with embedded flaps to act like the player's fingers which was later 3D printed. We also created a prop to channel air from the air pump into the flute. Nylon threads were used to move the flaps by tying them to the actuator -Servo motor in this case. We used rubber bands linked to the flute holder to hold the flaps in place and prevent air leakages.
 
-![](/static/assets/images/resources/fluteproject.jpeg)
+![](/static/images/resources/fluteproject.jpeg)
 
 ### Not a bad player afterall
 
 We then mapped the notes to a specific sequence of servos that were supposed to open the right flaps using the Numpy array to produce the "pleasant" sounds. Having everything in place, we used Pyfarmata to control the Arduino mega, which in turn controlled the 12 servos.
 
-![](/assets/images/resources/fluteproject2.jpeg)
+![](/images/resources/fluteproject2.jpeg)

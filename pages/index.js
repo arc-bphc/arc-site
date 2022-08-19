@@ -8,8 +8,6 @@ import siteMetadata from '@/data/siteMetadata'
 import { useTheme } from 'next-themes'
 import Head from 'next/head'
 import Image from 'next/image'
-import { useCallback } from 'react'
-import { loadFull } from 'tsparticles'
 import logo from '../assets/ARC_logo_white.png'
 import nvidia_img from '../assets/nvidia.png'
 import { data } from './../data/membersData'
@@ -229,7 +227,7 @@ export default function Home({ membersData }) {
               title={'Projects'}
               description={`Several inter-disciplinary projects including a Robotic Arm, Laser Harp, UAV,
               self-playing instruments and much more`}
-              imgSrc={'/static/assets/images/resources/1954436.jpg'}
+              imgSrc={'/static/images/resources/1954436.jpg'}
               href={'/projects'}
             />
           </div>
@@ -409,13 +407,6 @@ export default function Home({ membersData }) {
 
       <style jsx>
         {`
-          .particles {
-            position: absolute;
-            height: 100%;
-            z-index: 0;
-            background-color: var(--main-color);
-          }
-
           .header {
             -webkit-user-select: none; /* Safari */
             -ms-user-select: none; /* IE 10 and IE 11 */

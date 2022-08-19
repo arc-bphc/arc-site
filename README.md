@@ -36,7 +36,7 @@ Here are some Instructions for the future developers:
 1. To add resources
    - Here `resources` denotes the category of resource, eg. LevelUp or say Processing
    - Add the md/mdx files in the `resources/resource_name` folder
-   - Then add the images to `public/static/assets/images/resourcenameResources`
+   - Then add the images to `public/static/images/resourcenameResources`
    - Please follow this process and don't add images anywhere else
 2. NOTE: Ensure you add TOCInline component for the resources so that you get a table of contents
    `<TOCInline toc={props.toc} toHeading={3} asDisclosure />`
@@ -101,7 +101,7 @@ show_author_profile: true
 show_title: true
 full_width: false
 header: true
-cover: /static/assets/images/blog/thumbnails/Gesture Controlled Bot.png
+cover: /static/images/blog/thumbnails/Gesture Controlled Bot.png
 ---
 ```
 
@@ -110,7 +110,7 @@ cover: /static/assets/images/blog/thumbnails/Gesture Controlled Bot.png
 For specific size
 
 ```
-<Image src="/static/assets/images/blog/Robotic-Arm/2.png" alt="Resistor" width="500" height="500" />
+<Image src="/static/images/blog/Robotic-Arm/2.png" alt="Resistor" width="500" height="500" />
 ```
 
 Otherwise

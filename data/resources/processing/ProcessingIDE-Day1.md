@@ -19,7 +19,7 @@ Processing is a flexible software sketchbook and a language for learning how to 
 
 Basic coding structure of Processing IDE is divided into 2 parts :- void setup() and void draw().
 
-![3b65e638dbbdda79fea575bf08781ff7.png](/static/assets/images/processingResources/3b65e638dbbdda79fea575bf08781ff7.png)
+![3b65e638dbbdda79fea575bf08781ff7.png](/static/images/processingResources/3b65e638dbbdda79fea575bf08781ff7.png)
 
 `void setup()` - This part of code will be executed only once.
 `void loop()` - This part of code will be executed continously infinite times.
@@ -30,9 +30,9 @@ To spawn a window, we need to give a command for it, which specify its width and
 Syntax - `size(width, height, renderer);`
 
 Let's try using size(640,320) in `void setup()`
-![23f7f58b9a5f62b00771f6156b9dc3ad.png](/static/assets/images/processingResources/23f7f58b9a5f62b00771f6156b9dc3ad.png)
+![23f7f58b9a5f62b00771f6156b9dc3ad.png](/static/images/processingResources/23f7f58b9a5f62b00771f6156b9dc3ad.png)
 
-![bc838b28ed453df521c016ecd9f62b30.png](/static/assets/images/processingResources/bc838b28ed453df521c016ecd9f62b30.png)
+![bc838b28ed453df521c016ecd9f62b30.png](/static/images/processingResources/bc838b28ed453df521c016ecd9f62b30.png)
 
 As you can see, it summoned a blank window with width 640 and height 320.
 In `renderer` part, you can specify which redering engine to use. For example, if you input 'P2D', it means 2D graphics renderer that makes use of OpenGL-compatible graphics hardware. P3D is for 3D graphics and there are many more. If you didn't specify the type of renderer, it will pick up default renderer.
@@ -45,13 +45,13 @@ Syntax - background(Red,Green,Blue), background(grayvalue), background(img)
 
 Let's try running this command in void setup() -
 
-![58397811db48987202cdc234de522608.png](/static/assets/images/processingResources/58397811db48987202cdc234de522608.png)
-![1f341701a79fd7adfd863ea8967f0c63.png](/static/assets/images/processingResources/1f341701a79fd7adfd863ea8967f0c63.png)
+![58397811db48987202cdc234de522608.png](/static/images/processingResources/58397811db48987202cdc234de522608.png)
+![1f341701a79fd7adfd863ea8967f0c63.png](/static/images/processingResources/1f341701a79fd7adfd863ea8967f0c63.png)
 
 Now, let's try using gray value,
 
-![06239f37909dee4cedf93871612cb736.png](/static/assets/images/processingResources/06239f37909dee4cedf93871612cb736.png)
-![3c342346c46872cffe8d53e2f7ccbfb5.png](/static/assets/images/processingResources/3c342346c46872cffe8d53e2f7ccbfb5.png)
+![06239f37909dee4cedf93871612cb736.png](/static/images/processingResources/06239f37909dee4cedf93871612cb736.png)
+![3c342346c46872cffe8d53e2f7ccbfb5.png](/static/images/processingResources/3c342346c46872cffe8d53e2f7ccbfb5.png)
 
 We can even set an image in background, but for that, first we need to define a variable for image using 'PImage', which we will look into that later
 
@@ -64,8 +64,8 @@ The syntax for line command is - line(x1,y1,x2,y2),
 where (x1,y1) is coordinate of first end point of the line and (x2,y2) is coordinate of second end point of the line
 
 Let's execute it in Processing IDE
-![1de8f10996f58faf354e8a765ffdf13c.png](/static/assets/images/processingResources/1de8f10996f58faf354e8a765ffdf13c.png)
-![8f71e7339de72131ff024fe77e2cd969.png](/static/assets/images/processingResources/8f71e7339de72131ff024fe77e2cd969.png)
+![1de8f10996f58faf354e8a765ffdf13c.png](/static/images/processingResources/1de8f10996f58faf354e8a765ffdf13c.png)
+![8f71e7339de72131ff024fe77e2cd969.png](/static/images/processingResources/8f71e7339de72131ff024fe77e2cd969.png)
 
 As you can see, a black line is drawn. But what if we want to draw different colors, width of lines?
 So for changing colors, we use a command before line command, that is, stroke()
@@ -75,13 +75,13 @@ Syntax - stroke(R,G,B), stroke(gray)
 So, before giving any shape command, to specify it's outline color, we need to use stroke command before it.
 
 For example :-
-![29c0889373e5707796ad26a90c5e4e78.png](/static/assets/images/processingResources/29c0889373e5707796ad26a90c5e4e78.png)
-![b739839830ad467fff5f5e44b6672bdd.png](/static/assets/images/processingResources/b739839830ad467fff5f5e44b6672bdd.png)
+![29c0889373e5707796ad26a90c5e4e78.png](/static/images/processingResources/29c0889373e5707796ad26a90c5e4e78.png)
+![b739839830ad467fff5f5e44b6672bdd.png](/static/images/processingResources/b739839830ad467fff5f5e44b6672bdd.png)
 
 For changing it's width, we will be using strokeWeight(), similar to stroke() command,
 
-![01f5021316e43207e7a299b5033b03ff.png](/static/assets/images/processingResources/01f5021316e43207e7a299b5033b03ff.png)
-![144a760a8f6fb8369d7a750c4ad9082f.png](/static/assets/images/processingResources/144a760a8f6fb8369d7a750c4ad9082f.png)
+![01f5021316e43207e7a299b5033b03ff.png](/static/images/processingResources/01f5021316e43207e7a299b5033b03ff.png)
+![144a760a8f6fb8369d7a750c4ad9082f.png](/static/images/processingResources/144a760a8f6fb8369d7a750c4ad9082f.png)
 
 As you can see, it got super thicc :)
 
@@ -101,13 +101,13 @@ br - radius for bottom-right corner
 bl - radius for bottom-left corner
 
 Let's execute!!!!!!!!!!!!!!!!
-![3c74c3cf07565b8f01d6f6031c7f863c.png](/static/assets/images/processingResources/3c74c3cf07565b8f01d6f6031c7f863c.png)
-![78f5339a42bc8a810e29fbb8c0fcdc15.png](/static/assets/images/processingResources/78f5339a42bc8a810e29fbb8c0fcdc15.png)
+![3c74c3cf07565b8f01d6f6031c7f863c.png](/static/images/processingResources/3c74c3cf07565b8f01d6f6031c7f863c.png)
+![78f5339a42bc8a810e29fbb8c0fcdc15.png](/static/images/processingResources/78f5339a42bc8a810e29fbb8c0fcdc15.png)
 
 Let's try changing stroke size and color
 
-![dd0aaf332356b0b0393b630745f87201.png](/static/assets/images/processingResources/dd0aaf332356b0b0393b630745f87201.png)
-![3bcbd766b7c8fd94da36cc42ef26acae.png](/static/assets/images/processingResources/3bcbd766b7c8fd94da36cc42ef26acae.png)
+![dd0aaf332356b0b0393b630745f87201.png](/static/images/processingResources/dd0aaf332356b0b0393b630745f87201.png)
+![3bcbd766b7c8fd94da36cc42ef26acae.png](/static/images/processingResources/3bcbd766b7c8fd94da36cc42ef26acae.png)
 
 As you can see, the thickness got increased, and outline changed to purple (cz we set stroke to purple)
 
@@ -120,8 +120,8 @@ It is similar to stroke command
 
 Execution Time!!!
 
-![fc593e08820a49ca5af21453f60fa180.png](/static/assets/images/processingResources/fc593e08820a49ca5af21453f60fa180.png)
-![afed7648a0e5f1657daba705ba72bc1d.png](/static/assets/images/processingResources/afed7648a0e5f1657daba705ba72bc1d.png)
+![fc593e08820a49ca5af21453f60fa180.png](/static/images/processingResources/fc593e08820a49ca5af21453f60fa180.png)
+![afed7648a0e5f1657daba705ba72bc1d.png](/static/images/processingResources/afed7648a0e5f1657daba705ba72bc1d.png)
 
 What if? (2)
 What if we don't want to fill any color inside it (Like it automatically adopts background color?)
@@ -129,22 +129,22 @@ What if we don't want to fill any color inside it (Like it automatically adopts 
 Yup, for that, we can use `noFill()`
 Syntax - noFill()
 
-![67e87bdfee985974c57eb25248d74a5e.png](/static/assets/images/processingResources/67e87bdfee985974c57eb25248d74a5e.png)
-![173abcb9e733b2363020ab8bb016a5af.png](/static/assets/images/processingResources/173abcb9e733b2363020ab8bb016a5af.png)
+![67e87bdfee985974c57eb25248d74a5e.png](/static/images/processingResources/67e87bdfee985974c57eb25248d74a5e.png)
+![173abcb9e733b2363020ab8bb016a5af.png](/static/images/processingResources/173abcb9e733b2363020ab8bb016a5af.png)
 
 What if? (3)
 What if we don't want outline in similar way?
 
 Similar to `noFill()`, there exist `noStroke()`
 
-![5eae2865962ee332c4eea178112f6010.png](/static/assets/images/processingResources/5eae2865962ee332c4eea178112f6010.png)
-![a0668d7ea6fd31a850b8f747eb50ec46.png](/static/assets/images/processingResources/a0668d7ea6fd31a850b8f747eb50ec46.png)
+![5eae2865962ee332c4eea178112f6010.png](/static/images/processingResources/5eae2865962ee332c4eea178112f6010.png)
+![a0668d7ea6fd31a850b8f747eb50ec46.png](/static/images/processingResources/a0668d7ea6fd31a850b8f747eb50ec46.png)
 
 What if? (4)
 What if we use both command at once :) ?
 
-![13ebcb8065483561939fc1b85de253e3.png](/static/assets/images/processingResources/13ebcb8065483561939fc1b85de253e3.png)
-![668ac9c1647a0b01de79c50543417367.png](/static/assets/images/processingResources/668ac9c1647a0b01de79c50543417367.png)
+![13ebcb8065483561939fc1b85de253e3.png](/static/images/processingResources/13ebcb8065483561939fc1b85de253e3.png)
+![668ac9c1647a0b01de79c50543417367.png](/static/images/processingResources/668ac9c1647a0b01de79c50543417367.png)
 
 Now, if you remember correctly, I talked about `rectMode()`
 
@@ -178,10 +178,10 @@ The default mode is `ellipseMode(CENTER)`, which interprets the first two parame
 
 Executing it,
 
-![688edbdf667d3b30065e2a560eb67430.png](/static/assets/images/processingResources/688edbdf667d3b30065e2a560eb67430.png)
-![2180428e9ecd53e78f4d762bee29688f.png](/static/assets/images/processingResources/2180428e9ecd53e78f4d762bee29688f.png)
-![c2b2891cce3f407db294b85866104ac0.png](/static/assets/images/processingResources/c2b2891cce3f407db294b85866104ac0.png)
-![0f84d4b3d90c778752d221f049661bc4.png](/static/assets/images/processingResources/0f84d4b3d90c778752d221f049661bc4.png)
+![688edbdf667d3b30065e2a560eb67430.png](/static/images/processingResources/688edbdf667d3b30065e2a560eb67430.png)
+![2180428e9ecd53e78f4d762bee29688f.png](/static/images/processingResources/2180428e9ecd53e78f4d762bee29688f.png)
+![c2b2891cce3f407db294b85866104ac0.png](/static/images/processingResources/c2b2891cce3f407db294b85866104ac0.png)
+![0f84d4b3d90c778752d221f049661bc4.png](/static/images/processingResources/0f84d4b3d90c778752d221f049661bc4.png)
 
 ### Arc (Automation and Robotics Club :p)
 
@@ -195,22 +195,22 @@ stop - angle to stop the arc, specified in radians
 
 Types of mode :- OPEN, CHORD, PIE
 
-![255277cc8b34183d3a3a92d51e30a310.png](/static/assets/images/processingResources/255277cc8b34183d3a3a92d51e30a310.png)
-![c4e04816f27c07eef896f58ddd6d9069.png](/static/assets/images/processingResources/c4e04816f27c07eef896f58ddd6d9069.png)
-![88828de5e737a840e9ef0874578fb8de.png](/static/assets/images/processingResources/88828de5e737a840e9ef0874578fb8de.png)
-![1860caf7346c07c592a7f536ad9ae94c.png](/static/assets/images/processingResources/1860caf7346c07c592a7f536ad9ae94c.png)
+![255277cc8b34183d3a3a92d51e30a310.png](/static/images/processingResources/255277cc8b34183d3a3a92d51e30a310.png)
+![c4e04816f27c07eef896f58ddd6d9069.png](/static/images/processingResources/c4e04816f27c07eef896f58ddd6d9069.png)
+![88828de5e737a840e9ef0874578fb8de.png](/static/images/processingResources/88828de5e737a840e9ef0874578fb8de.png)
+![1860caf7346c07c592a7f536ad9ae94c.png](/static/images/processingResources/1860caf7346c07c592a7f536ad9ae94c.png)
 
 ## Fun Fact
 
-![7c617ff36c79b5dbbd67f8309d0b295f.png](/static/assets/images/processingResources/7c617ff36c79b5dbbd67f8309d0b295f.png)
+![7c617ff36c79b5dbbd67f8309d0b295f.png](/static/images/processingResources/7c617ff36c79b5dbbd67f8309d0b295f.png)
 
 Try to guess the result here, will the screen be green, red or mix?
 
 The Answer -
-![c7f988050fcb8c80efcadeccc277e667.png](/static/assets/images/processingResources/c7f988050fcb8c80efcadeccc277e667.png)
+![c7f988050fcb8c80efcadeccc277e667.png](/static/images/processingResources/c7f988050fcb8c80efcadeccc277e667.png)
 
 What if we switch places?
-![136abb9a2df77518ec4287c2ed10bb2e.png](/static/assets/images/processingResources/136abb9a2df77518ec4287c2ed10bb2e.png)
+![136abb9a2df77518ec4287c2ed10bb2e.png](/static/images/processingResources/136abb9a2df77518ec4287c2ed10bb2e.png)
 
 That's right, the window's graphics only get updated when the code jumps from end of `void draw()` to start of it.
 

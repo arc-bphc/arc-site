@@ -18,7 +18,7 @@ const resourcesData = [
     id: 3,
     title: 'Processing',
     description: `Processing is a flexible software sketchbook and a language for learning how to code within the context of the visual arts.`,
-    imgSrc: '/static/assets/images/processingResources/logo.svg',
+    imgSrc: '/static/images/processingResources/logo.svg',
     href: '/resources/processing/ProcessingIDE-Day1',
   },
   {
