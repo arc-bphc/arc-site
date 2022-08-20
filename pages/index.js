@@ -180,6 +180,9 @@ export default function Home() {
                 >
                   Resources
                 </Link>
+                <Link className="link pointer-events-auto p-2 text-xl" href="/blog" data-scroll="">
+                  Blog
+                </Link>
               </div>
 
               <div className="flex justify-center">

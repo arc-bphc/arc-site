@@ -1,12 +1,12 @@
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import siteMetadata from '@/data/siteMetadata'
-import ListLayout from '@/layouts/ListLayout'
+import BlogListLayout from '@/layouts/BlogListLayout'
 import { PageSEO } from '@/components/SEO'
 
 export const POSTS_PER_PAGE = 8
 
 export async function getStaticProps() {
-  const posts = await getAllFilesFrontMatter('projects')
+  const posts = await getAllFilesFrontMatter('blog')
   const initialDisplayPosts = posts.slice(0, POSTS_PER_PAGE)
   const pagination = {
     currentPage: 1,
@@ -16,15 +16,15 @@ export async function getStaticProps() {
   return { props: { initialDisplayPosts, posts, pagination } }
 }
 
-export default function Projects({ posts, initialDisplayPosts, pagination }) {
+export default function Blog({ posts, initialDisplayPosts, pagination }) {
   return (
     <>
-      <PageSEO title={`Projects - ${siteMetadata.author}`} description={siteMetadata.description} />
-      <ListLayout
+      <PageSEO title={`Blog - ${siteMetadata.author}`} description={siteMetadata.description} />
+      <BlogListLayout
         posts={posts}
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}
-        title="Projects"
+        title="Blog Posts"
       />
     </>
   )
