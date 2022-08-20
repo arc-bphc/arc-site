@@ -327,7 +327,7 @@ const data = [
   {
     Timestamp: '2022-08-18T10:42:51.025Z',
     email: 'f20202099@hyderabad.bits-pilani.ac.in',
-    name: 'SRIGOPAL SARDA',
+    name: 'Srigopal Sarda',
     picture: '/static/members/srigopal.jpeg',
     github: 'https://github.com/Srigopalsarda',
     linkedin: 'https://www.linkedin.com/in/gopal-sarda-5a8ab5209/',
@@ -597,7 +597,7 @@ const data = [
   {
     Timestamp: '2022-08-18T17:59:36.685Z',
     email: 'f20190636@hyderabad.bits-pilani.ac.in',
-    name: 'Tejasvi Chhabra',
+    name: 'Tejasvi Chabbra',
     picture: '/static/members/tejasvi.jpg',
     github: 'https://github.com/chabtj',
     linkedin: 'https://www.linkedin.com/in/tejasvichabbra/',
