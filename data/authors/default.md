@@ -1,6 +1,6 @@
 ---
 name: Automation and Robotics Club
-avatar: /static/assets/images/LogoWhite.png
+avatar: /static/images/LogoWhite.png
 # occupation: Professor of Atmospheric Science
 company: BITS Pilani Hyderabad Campus
 email: arc@hyderabad.bits-pilani.ac.in

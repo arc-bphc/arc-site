@@ -4,11 +4,11 @@ const siteMetadata = {
   headerTitle: 'Automation and Robotics Club',
   description: 'ARC Website made by tailwind.css and next.js',
   language: 'en-us',
-  theme: 'system', // system, dark or light
+  theme: 'dark', // system, dark or light
   siteUrl: 'https://arc-bphc.github.io',
   siteRepo: 'https://github.com/arc-bphc/',
   siteLogo: '/static/images/logo.png',
-  image: 'https://arc-bphc.github.io/site/assets/images/logo/logo.png',
+  image: 'https://arc-bphc.github.io/site/images/logo/logo.png',
   socialBanner: '/static/images/twitter-card.png',
   email: 'arc@hyderabad.bits-pilani.ac.in',
   github: 'https://github.com/arc-bphc',
@@ -17,7 +17,7 @@ const siteMetadata = {
   instagram: 'https://www.instagram.com/arc_bphc/',
   youtube: 'https://youtube.com',
   linkedin: 'https://www.linkedin.com',
-  discord: 'https://discord.com/invite/BgrYVu3P',
+  discord: 'https://discord.gg/zJerhXArbJ',
   locale: 'en-US',
   analytics: {
     // If you want to use an analytics provider you have to add it to the

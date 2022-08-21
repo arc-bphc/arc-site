@@ -5,12 +5,12 @@ date: 2021-12-05
 mode: normal
 type: article
 sharing: true
-author: Automation and Robotics Club
+author: Sirish, Andrew, Shaurya
 show_author_profile: true
 show_title: true
 full_width: false
 header: true
-cover: /static/assets/images/blog/thumbnails/LED Matrix.png
+cover: /static/images/blog/thumbnails/LED Matrix.png
 ---
 
 ## Aim
@@ -29,9 +29,9 @@ Making a robot that balances itself using accelerometer and PID
 
 FFT is based on the principle that any signal(periodic or not) can be reconstructed by adding sinusoidal waves of different frequencies and amplitudes. Now FFT does this in reverse, where it splits an already existing wave into sinusoidal signals i.e the frequencies the wave contains.
 
-<Image src="/static/assets/images/blog/LED-Matrix/1.png" alt="1" width="500" height="500" />
+<Image src="/static/images/blog/LED-Matrix/1.png" alt="1" width="500" height="500" />
 
-<Image src="/static/assets/images/blog/LED-Matrix/2.png" alt="2" width="500" height="500" />
+<Image src="/static/images/blog/LED-Matrix/2.png" alt="2" width="500" height="500" />
 
 Thus, we make use of FFT to identify which frequencies are present in any analog signal and also see which of those frequencies are the most dominating.
 Coming to applying FFT to our audio visualiser, when we feed in an audio signal into an FFT we can find out the relative strengths of the frequencies.
@@ -57,13 +57,13 @@ Say we want to sample an audio signal 10,000 times per second, i.e.
 - Furthermore, if we take a wave of frequency 10kHz we see that we only get 1 sample per wave, and the signal can no longer be reconstructed as it results in a straight line.
 - Thus this is where the Nyquist theorem comes in and says that the maximum frequency we are able to sample is half of the sampling frequency.
 
-<Image src="/static/assets/images/blog/LED-Matrix/3.png" alt="3" width="500" height="500" />
+<Image src="/static/images/blog/LED-Matrix/3.png" alt="3" width="500" height="500" />
 
 ## Number of Samples
 
 The FFT algorithm works with a finite number of samples. This number needs to be 2n where n is an integer (resulting in 32, 64, 128, etc). The larger this number is, the slower the algorithm will be. However, with many samples, you will get a larger resolution for the results.
 
-<Image src="/static/assets/images/blog/LED-Matrix/4.png" alt="4" width="500" height="500" />
+<Image src="/static/images/blog/LED-Matrix/4.png" alt="4" width="500" height="500" />
 
 ## Implementation:
 

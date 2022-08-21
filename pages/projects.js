@@ -24,7 +24,7 @@ export default function Projects({ posts, initialDisplayPosts, pagination }) {
         posts={posts}
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}
-        title="All Posts"
+        title="Projects"
       />
     </>
   )

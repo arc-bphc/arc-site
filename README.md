@@ -4,13 +4,24 @@
 
 - Create a [Github](https://github.com/) account
 - Install [git](https://git-scm.com/downloads) command line on your Device
-- Install [nodejs](https://nodejs.org/en/), preferably LTS and using [Node Version Manager](https://github.com/nvm-sh/nvm)
-- Open Terminal
-- Clone this repo using `git clone URL`
-- You get the URL when you click on Code above
-- Use cd and other commands to move into the directory where you have cloned the repo
-- Run `npm install `
-- Run `npm start` or `npm run dev` and ppen [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Connect it with [SSH](https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/GitHub-SSH-Windows-Example)
+
+From here you have 2 methods:
+
+1. Docker Method(Simple Method)
+   - Install [Docker](https://www.docker.com/products/docker-desktop/)
+   - Go into the cloned folder
+   - Run `docker build -t arcnextapp .`
+   - And then run `docker run -it -p 3000:3000 arcnextapp`
+2. Manual Installation Method
+   - Install [NodeJS](https://nodejs.org/en/), preferably LTS and using [Node Version Manager](https://github.com/nvm-sh/nvm)
+   - Use this link for NVM is using [windows](https://github.com/coreybutler/nvm-windows/releases)
+   - Open Terminal
+   - Clone this repo using `git clone URL`
+   - You get the URL when you click on Code above
+   - Use cd and other commands to move into the directory where you have cloned the repo
+   - Run `npm install `
+   - Run `npm start` or `npm run dev` and ppen [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ---
 
@@ -25,7 +36,7 @@ Here are some Instructions for the future developers:
 1. To add resources
    - Here `resources` denotes the category of resource, eg. LevelUp or say Processing
    - Add the md/mdx files in the `resources/resource_name` folder
-   - Then add the images to `public/static/assets/images/resourcenameResources`
+   - Then add the images to `public/static/images/resourcenameResources`
    - Please follow this process and don't add images anywhere else
 2. NOTE: Ensure you add TOCInline component for the resources so that you get a table of contents
    `<TOCInline toc={props.toc} toHeading={3} asDisclosure />`
@@ -34,6 +45,23 @@ Here are some Instructions for the future developers:
 #### Add Projects
 
 1. All the project posts go in the `data/projects` folder
+
+#### Add your details
+
+```
+  {
+    Timestamp: '2022-08-17T11:07:20.271Z',
+    email: 'BITS EMAIL',
+    name: 'NAME',
+    picture: '/static/members/NAME.jpg',
+    github: 'github',
+    linkedin: 'linkedin',
+    facebook: 'facebook',
+  },
+```
+
+Add this to the last in the `data/membersData.js` file and send a PR
+Also upload your pic to `/static/members/`
 
 ---
 
@@ -73,7 +101,7 @@ show_author_profile: true
 show_title: true
 full_width: false
 header: true
-cover: /static/assets/images/blog/thumbnails/Gesture Controlled Bot.png
+cover: /static/images/blog/thumbnails/Gesture Controlled Bot.png
 ---
 ```
 
@@ -82,7 +110,7 @@ cover: /static/assets/images/blog/thumbnails/Gesture Controlled Bot.png
 For specific size
 
 ```
-<Image src="/static/assets/images/blog/Robotic-Arm/2.png" alt="Resistor" width="500" height="500" />
+<Image src="/static/images/blog/Robotic-Arm/2.png" alt="Resistor" width="500" height="500" />
 ```
 
 Otherwise

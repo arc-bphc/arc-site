@@ -19,7 +19,6 @@ const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day:
 
 export default function PostLayout({ frontMatter, authorDetails, next, prev, children }) {
   const { slug, fileName, date, title, images, tags } = frontMatter
-
   return (
     <SectionContainer>
       <BlogSEO
@@ -44,6 +43,10 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
               </dl>
               <div>
                 <PageTitle>{title}</PageTitle>
+              </div>
+              <div>
+                Made By -{' '}
+                <span className="text-gray-500 dark:text-gray-400">{frontMatter.author}</span>
               </div>
             </div>
           </header>

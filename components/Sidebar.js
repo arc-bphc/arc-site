@@ -29,7 +29,7 @@ function Sidebar({ postsInSameFolder }) {
   return (
     <>
       <div
-        className={`fixed left-8 bottom-8 z-10 flex-col gap-3 rounded-lg bg-black p-2 transition-all hover:bg-gray-300 sm:hidden ${
+        className={`fixed left-8 bottom-8 z-10 flex-col gap-3 rounded-lg bg-gray-100 p-2 transition-all hover:bg-gray-300 dark:bg-gray-900 sm:hidden ${
           show ? 'flex' : 'hidden'
         }`}
       >

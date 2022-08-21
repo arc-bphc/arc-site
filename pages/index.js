@@ -1,48 +1,65 @@
+import Card from '@/components/Card'
+import ContactForm from '@/components/ContactForm'
 import Link from '@/components/Link'
-import { getAllFilesFrontMatter } from '@/lib/mdx'
+import MemberCard from '@/components/MemberCard'
+import ScrollTopAndComment from '@/components/ScrollTopAndComment'
+import resourcesData from '@/data/resourcesData'
+import siteMetadata from '@/data/siteMetadata'
+import { useTheme } from 'next-themes'
+import Head from 'next/head'
 import Image from 'next/image'
+import { useState, useEffect } from 'react'
 import logo from '../assets/ARC_logo_white.png'
 import nvidia_img from '../assets/nvidia.png'
-import { useCallback, useState } from 'react'
-import Card from '@/components/Card'
-import Head from 'next/head'
-import Particles from 'react-tsparticles'
-import particlesConfigDark from '../particlesConfig_DARK.json'
-import particlesConfigLight from '../particlesConfig_LIGHT.json'
-import { loadFull } from 'tsparticles'
-import { useTheme } from 'next-themes'
-import ContactForm from '@/components/ContactForm'
-import { membersData } from './../data/membersData'
-import siteMetadata from '@/data/siteMetadata'
-import resourcesData from '@/data/resourcesData'
-import ThemeSwitch from '@/components/ThemeSwitch'
-import ScrollTopAndComment from '@/components/ScrollTopAndComment'
+import { data } from './../data/membersData'
 
-const MAX_DISPLAY = 5
+// export async function getStaticProps() {
+//   const prop = data
+//   let randomIndexUsed = {}
+//   let numberOfPosts = 3
+//   let randomIndex = Math.floor(Math.random() * prop.length)
 
-export async function getStaticProps() {
-  const posts = await getAllFilesFrontMatter('projects')
+//   const membersData = []
 
-  return { props: { posts } }
-}
+//   for (let i = 0; i < numberOfPosts; i++) {
+//     while (randomIndexUsed[randomIndex]) {
+//       randomIndex = Math.floor(Math.random() * prop.length)
+//     }
+//     membersData.push(prop[randomIndex])
 
-export default function Home({ posts }) {
-  const customInit = useCallback(async (engine) => {
-    // this adds the bundle to tsParticles
-    await loadFull(engine)
-  }, [])
+//     randomIndexUsed[randomIndex] = 1
+//   }
 
+//   return {
+//     props: { membersData },
+//   }
+// }
+
+export default function Home() {
   const { theme, setTheme, __ } = useTheme()
 
   {
     ;() => setTheme('dark')
   }
 
-  let particleConfig = particlesConfigDark
-  if (theme === 'light') {
-    particleConfig = particlesConfigLight
-    setTheme('light')
-  }
+  const [membersData, setMembersData] = useState([])
+  const [wait, setWait] = useState(true)
+
+  useEffect(() => {
+    const prop = data
+    let randomIndexUsed = {}
+    let numberOfPosts = 3
+    let randomIndex = Math.floor(Math.random() * prop.length)
+    for (let i = 0; i < numberOfPosts; i++) {
+      while (randomIndexUsed[randomIndex]) {
+        randomIndex = Math.floor(Math.random() * prop.length)
+      }
+      membersData.push(prop[randomIndex])
+
+      randomIndexUsed[randomIndex] = 1
+    }
+    setWait(false)
+  }, [])
 
   return (
     <>
@@ -55,9 +72,6 @@ export default function Home({ posts }) {
           className="pointer-events-auto flex w-full justify-center bg-cover bg-no-repeat"
           style={{ minHeight: 100 + 'vh' }}
         >
-          <div className="particles">
-            <Particles className="h-full w-full" options={particleConfig} init={customInit} />
-          </div>
           <div className="header pointer-events-auto z-[2] m-0 flex w-1/2 flex-col items-center justify-center text-center">
             <div style={{ width: '50%', height: 'auto', position: 'relative' }}>
               <Image
@@ -94,6 +108,24 @@ export default function Home({ posts }) {
                     className="h-12 w-12 fill-black p-1 transition-colors duration-700 ease-in-out group-hover:fill-white dark:fill-white dark:group-hover:fill-black"
                   >
                     <path d="M464 64C490.5 64 512 85.49 512 112C512 127.1 504.9 141.3 492.8 150.4L275.2 313.6C263.8 322.1 248.2 322.1 236.8 313.6L19.2 150.4C7.113 141.3 0 127.1 0 112C0 85.49 21.49 64 48 64H464zM217.6 339.2C240.4 356.3 271.6 356.3 294.4 339.2L512 176V384C512 419.3 483.3 448 448 448H64C28.65 448 0 419.3 0 384V176L217.6 339.2z" />
+                  </svg>
+                </div>
+              </Link>
+              <Link
+                aria-label="Discord"
+                href={siteMetadata.discord}
+                target="_blank"
+                rel="noreferrer"
+                className="group pointer-events-auto rounded-full p-2"
+              >
+                <div className="rounded-full border-2 border-black p-2 transition-colors duration-700 ease-in-out group-hover:border-black group-hover:bg-black dark:border-white dark:group-hover:bg-white">
+                  <svg
+                    role="img"
+                    viewBox="0 0 24 24"
+                    className="h-12 w-12 invert-0 hover:invert dark:invert dark:hover:invert-0"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z" />
                   </svg>
                 </div>
               </Link>
@@ -147,6 +179,9 @@ export default function Home({ posts }) {
                   data-scroll=""
                 >
                   Resources
+                </Link>
+                <Link className="link pointer-events-auto p-2 text-xl" href="/blog" data-scroll="">
+                  Blog
                 </Link>
               </div>
 
@@ -215,7 +250,7 @@ export default function Home({ posts }) {
               title={'Projects'}
               description={`Several inter-disciplinary projects including a Robotic Arm, Laser Harp, UAV,
               self-playing instruments and much more`}
-              imgSrc={'/static/assets/images/resources/1954436.jpg'}
+              imgSrc={'/static/images/resources/1954436.jpg'}
               href={'/projects'}
             />
           </div>
@@ -228,21 +263,24 @@ export default function Home({ posts }) {
           <span className="p-4 font-montserratSans text-4xl font-medium">Spotlight</span>
           <span className="p-4 font-montserratSans text-xl">
             {' '}
-            Meet four new members of our club everytime you refresh this page.{' '}
+            Meet three new members of our club everytime you refresh this page.{' '}
           </span>
           <div className="flex-column md:flex">
             {/* Check membersData.js */}
-            {membersData.map((member) => {
-              return (
-                <Card
-                  key={member.id}
-                  title={member.name}
-                  description={member.quote}
-                  imgSrc={member.imgsrc}
-                  href={member.facebook}
-                />
-              )
-            })}
+            {!wait &&
+              membersData.map((member) => {
+                return (
+                  <MemberCard
+                    key={member.id}
+                    title={member.name}
+                    description={member.quote}
+                    imgSrc={member.picture}
+                    facebook={member.facebook}
+                    linkedin={member.linkedin}
+                    github={member.github}
+                  />
+                )
+              })}
           </div>
         </div>
 
@@ -365,15 +403,6 @@ export default function Home({ posts }) {
                 <span className="sr-only">Instagram page</span>
               </Link>
               <Link
-                href={siteMetadata.twitter}
-                className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
-              >
-                <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
-                </svg>
-                <span className="sr-only">Twitter page</span>
-              </Link>
-              <Link
                 href={siteMetadata.github}
                 className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
               >
@@ -393,13 +422,6 @@ export default function Home({ posts }) {
 
       <style jsx>
         {`
-          .particles {
-            position: absolute;
-            height: 100%;
-            z-index: 0;
-            background-color: var(--main-color);
-          }
-
           .header {
             -webkit-user-select: none; /* Safari */
             -ms-user-select: none; /* IE 10 and IE 11 */

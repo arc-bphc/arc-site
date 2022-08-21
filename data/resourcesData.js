@@ -18,7 +18,7 @@ const resourcesData = [
     id: 3,
     title: 'Processing',
     description: `Processing is a flexible software sketchbook and a language for learning how to code within the context of the visual arts.`,
-    imgSrc: '/static/assets/images/processingResources/logo.svg',
+    imgSrc: '/static/images/processingResources/logo.svg',
     href: '/resources/processing/ProcessingIDE-Day1',
   },
   {
@@ -27,6 +27,20 @@ const resourcesData = [
     description: 'Basics of ROS ecosystem',
     imgSrc: '/static/images/ros.jpg',
     href: '/resources/ROS/2021-05-04-project-ROS-Basics',
+  },
+  {
+    id: 5,
+    title: 'Manufacturing Skills',
+    description: 'The reality that many manufacturers are facing right now',
+    imgSrc: '/static/images/propel1.jpg',
+    href: 'https://www.propelsoftware.com/articles/the-manufacturing-skills-gap',
+  },
+  {
+    id: 6,
+    title: 'AI in Manufacturing',
+    description: "May be a necessity for a manufacturer's survival",
+    imgSrc: '/static/images/propel2.jpeg',
+    href: 'https://www.propelsoftware.com/blog/ai-in-manufacturing',
   },
 ]
 
