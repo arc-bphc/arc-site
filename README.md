@@ -101,7 +101,7 @@ show_author_profile: true
 show_title: true
 full_width: false
 header: true
-cover: /static/images/blog/thumbnails/Gesture Controlled Bot.png
+cover: /static/images/projects/thumbnails/Gesture Controlled Bot.png
 ---
 ```
 
@@ -110,7 +110,7 @@ cover: /static/images/blog/thumbnails/Gesture Controlled Bot.png
 For specific size
 
 ```
-<Image src="/static/images/blog/Robotic-Arm/2.png" alt="Resistor" width="500" height="500" />
+<Image src="/static/images/projects/Robotic-Arm/2.png" alt="Resistor" width="500" height="500" />
 ```
 
 Otherwise

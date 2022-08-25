@@ -1,5 +1,5 @@
 import siteMetadata from '@/data/siteMetadata'
-import blogPostsData from '@/data/siteData'
+import projectPostsData from '@/data/siteData'
 import Card from '@/components/Card'
 import { PageSEO } from '@/components/SEO'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
@@ -29,7 +29,7 @@ export default function Site({ initialDisplayPosts }) {
         </div>
         <div className="container py-12">
           <div className="-m-4 flex flex-wrap">
-            {blogPostsData.map((d) => (
+            {projectPostsData.map((d) => (
               <Card
                 key={d.title}
                 title={d.title}
