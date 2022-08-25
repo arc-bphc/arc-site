@@ -51,7 +51,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
         <ul>
           {!filteredBlogPosts.length && 'No posts found.'}
           {displayPosts.map((frontMatter) => {
-            const { slug, date, title, summary, tags, cover } = frontMatter
+            const { slug, date, title, summary, tags, author } = frontMatter
             return (
               <li key={slug} className="py-4 px-12">
                 <article className="space-y-2 xl:grid xl:grid-cols-2 xl:items-baseline xl:space-y-0">
@@ -73,6 +73,8 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                       <dl>
                         <dt className="sr-only">Published on</dt>
                         <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                          <p style={{ display: 'inline', fontWeight: 'bold' }}>{author}</p>
+                          {' - '}
                           <time dateTime={date}>{formatDate(date)}</time>
                         </dd>
                       </dl>
