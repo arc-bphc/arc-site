@@ -1,6 +1,6 @@
 import { TagSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
-import ListLayout from '@/layouts/ListLayout'
+import BlogListLayout from '@/layouts/BlogListLayout'
 import generateRss from '@/lib/generate-rss'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import { getAllTags } from '@/lib/tags'
@@ -11,7 +11,9 @@ import path from 'path'
 const root = process.cwd()
 
 export async function getStaticPaths() {
-  const tags = await getAllTags('projects')
+  let projectTags = await getAllTags('projects')
+  let blogTags = await getAllTags('blog')
+  const tags = { ...projectTags, ...blogTags }
 
   return {
     paths: Object.keys(tags).map((tag) => ({
@@ -24,7 +26,10 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const allPosts = await getAllFilesFrontMatter('projects')
+  const projectPosts = await getAllFilesFrontMatter('projects')
+  const blogPosts = await getAllFilesFrontMatter('blog')
+  const allPosts = projectPosts.concat(blogPosts)
+
   const filteredPosts = allPosts.filter(
     (post) => post.draft !== true && post.tags.map((t) => kebabCase(t)).includes(params.tag)
   )
@@ -49,7 +54,7 @@ export default function Tag({ posts, tag }) {
         title={`${tag} - ${siteMetadata.author}`}
         description={`${tag} tags - ${siteMetadata.author}`}
       />
-      <ListLayout posts={posts} title={title} />
+      <BlogListLayout posts={posts} title={title} />
     </>
   )
 }
