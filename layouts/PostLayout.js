@@ -45,7 +45,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                 <PageTitle>{title}</PageTitle>
               </div>
               <div>
-                Made By -{' '}
+                Contributed By -{' '}
                 <span className="text-gray-500 dark:text-gray-400">{frontMatter.author}</span>
               </div>
             </div>
