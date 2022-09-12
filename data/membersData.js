@@ -120,7 +120,7 @@ const data = [
   {
     Timestamp: '2022-08-18T05:56:56.870Z',
     email: 'f20211648@hyderabad.bits-pilani.ac.in',
-    name: 'Arjun Raghuram',
+    name: 'Arjun Raghuraman',
     picture: '/static/members/arjun.jpg',
     github: 'https://github.com/ArjunInnit',
     linkedin: 'https://www.linkedin.com/in/arjun-raghuraman-a79474232/',
