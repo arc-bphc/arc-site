@@ -290,7 +290,13 @@ export default function Home() {
         >
           <span className="p-4 font-montserratSans text-4xl font-medium"> Our Sponsors</span>
           <div className="flex w-full items-center justify-center text-center">
-            <Card key={'Nvidia Jetson'} title={'Nvidia Jetson'} imgSrc={nvidia_img} />{' '}
+            <Image
+              alt={'Nvidia Jetson'}
+              src={nvidia_img}
+              className="object-contain object-center md:h-36 lg:h-48"
+              width={544}
+              height={306}
+            />
           </div>
         </div>
 
