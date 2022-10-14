@@ -13,28 +13,6 @@ import logo from '../assets/ARC_logo_white.png'
 import nvidia_img from '../assets/nvidia.png'
 import { data } from './../data/membersData'
 
-// export async function getStaticProps() {
-//   const prop = data
-//   let randomIndexUsed = {}
-//   let numberOfPosts = 3
-//   let randomIndex = Math.floor(Math.random() * prop.length)
-
-//   const membersData = []
-
-//   for (let i = 0; i < numberOfPosts; i++) {
-//     while (randomIndexUsed[randomIndex]) {
-//       randomIndex = Math.floor(Math.random() * prop.length)
-//     }
-//     membersData.push(prop[randomIndex])
-
-//     randomIndexUsed[randomIndex] = 1
-//   }
-
-//   return {
-//     props: { membersData },
-//   }
-// }
-
 export default function Home() {
   const { theme, setTheme, __ } = useTheme()
 
@@ -69,7 +47,7 @@ export default function Home() {
       <ScrollTopAndComment />
       <div className="flex flex-col items-center justify-center text-center">
         <div
-          className="pointer-events-auto flex w-full justify-center bg-cover bg-no-repeat"
+          className="bodyBackground pointer-events-auto flex w-full justify-center bg-cover bg-no-repeat"
           style={{ minHeight: 100 + 'vh' }}
         >
           <div className="header pointer-events-auto z-[2] m-0 flex w-1/2 flex-col items-center justify-center text-center">
