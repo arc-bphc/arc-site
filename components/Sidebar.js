@@ -29,7 +29,7 @@ function Sidebar({ postsInSameFolder }) {
   return (
     <>
       <div
-        className={`fixed left-8 bottom-8 z-10 flex-col gap-3 rounded-lg bg-gray-100 p-2 transition-all hover:bg-gray-300 dark:bg-gray-900 sm:hidden ${
+        className={`fixed left-8 bottom-8 z-10 flex-col gap-3 rounded-lg bg-gray-100 p-2 transition-all hover:bg-gray-300 dark:bg-gray-900 md:hidden ${
           show ? 'flex' : 'hidden'
         }`}
       >
@@ -96,10 +96,10 @@ function Sidebar({ postsInSameFolder }) {
       </div>
 
       {/* Web SideBar */}
-      <div className="hidden w-full md:flex md:table-cell md:w-60">
-        <aside className="md:sticky md:top-20" aria-label="Sidebar">
+      <div className="h-30 hidden w-full lg:table-cell lg:w-60 ">
+        <aside className="md:sticky md:top-10" aria-label="Sidebar">
           <div className="overflow-y-auto rounded bg-gray-50 py-4 px-3 dark:bg-gray-800">
-            <ul className="space-y-1">
+            <ul>
               {postsInSameFolder.map((post) => {
                 return (
                   <div key={post.orderInSidebar}>
