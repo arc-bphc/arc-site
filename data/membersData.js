@@ -190,15 +190,6 @@ const data = [
     facebook: 'https://www.facebook.com/profile.php?id=100075439942201',
   },
   {
-    Timestamp: '2022-08-17T17:11:13.688Z',
-    email: 'f20210564@hyderabad.bits-pilani.ac.in',
-    name: 'Sai charan',
-    picture: '/static/members/sai.jpeg',
-    github: 'https://github.com/Saicharanvihari',
-    linkedin: 'https://www.linkedin.com/in/sai-charan-646373233',
-    facebook: 'https://www.facebook.com/saicharan.vihari',
-  },
-  {
     Timestamp: '2022-08-18T06:32:54.887Z',
     email: 'f20200543@hyderabad.bits-pilani.ac.in',
     name: 'Shashank Raghav Cheekati',
@@ -224,15 +215,6 @@ const data = [
     github: 'https://github.com/tanayranjan',
     linkedin: 'https://www.linkedin.com/in/tanay-ranjan-34b066132/',
     facebook: 'https://www.facebook.com/tanay.ranjan.33/',
-  },
-  {
-    Timestamp: '2022-08-17T10:26:14.985Z',
-    email: 'f20212090@hyderabad.bits-pilani.ac.in',
-    name: 'Teerth Vasant Patel',
-    picture: '/static/members/teerth.jpeg',
-    github: 'https://github.com/teerthpatel0408',
-    linkedin: 'https://www.linkedin.com/in/teerth-patel-b04477226',
-    facebook: 'https://www.facebook.com/profile.php?id=100073313805889',
   },
   {
     Timestamp: '2022-08-18T01:32:58.063Z',
@@ -532,15 +514,6 @@ const data = [
     facebook: 'https://www.facebook.com/bhavya.jain.758737',
   },
   {
-    Timestamp: '8/18/2022 22:27:21',
-    email: 'f20202151@hyderabad.bits-pilani.ac.in',
-    name: 'Aditya Seth',
-    picture: '/static/members/adityas.png',
-    github: 'https://github.com/generalkeno-b',
-    linkedin: 'https://www.linkedin.com/in/aditya-seth-aa01b8207',
-    facebook: 'https://www.facebook.com/aditya.seth.353803',
-  },
-  {
     Timestamp: '2022-08-18T17:24:12.928Z',
     email: 'f20202165@hyderabad.bits-pilani.ac.in',
     name: 'Adithya Dinesh',
@@ -575,15 +548,6 @@ const data = [
     github: 'https://github.com/Vrindamc03',
     linkedin: 'https://www.linkedin.com/in/vrinda-m-c-3b1729240',
     facebook: 'https://www.facebook.com/profile.php?id=100077747313599',
-  },
-  {
-    Timestamp: '2022-08-18T17:59:36.685Z',
-    email: 'f20210781@hyderabad.bits-pilani.ac.in',
-    name: 'Soumitra Shewale',
-    picture: '/static/members/soumitra.jpg',
-    github: 'https://github.com/soumitradev',
-    linkedin: 'https://www.linkedin.com/in/soumitra-shewale-6b54041b5/',
-    facebook: 'https://www.facebook.com/profile.php?id=100075164958393',
   },
   {
     Timestamp: '2022-08-18T17:59:36.685Z',
