@@ -2,6 +2,9 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 const colors = require('tailwindcss/colors')
 
 module.exports = {
+  screens: {
+    'h-sm': { raw: '(min-height: 800px)' },
+  },
   experimental: {
     optimizeUniversalDefaults: true,
   },

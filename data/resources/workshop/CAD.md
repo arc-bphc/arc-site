@@ -1,0 +1,824 @@
+---
+title: Extra Resource - CAD
+tags: ['TeXt']
+mode: normal
+type: article
+sharing: true
+author: Automation and Robotics Club
+show_author_profile: true
+show_title: true
+full_width: false
+header: true
+aside:
+  toc: true
+sidebar:
+  nav: workshop-bar
+orderInSidebar: 15
+---
+
+<TOCInline toc={props.toc} toHeading={3} asDisclosure />
+
+# Creating Onshape Account
+
+## Introduction
+
+Onshape is an online version of CAD which is useful for designing, simulations, etc. You could access it without paying using it's educational version for a limited time. In this section, we're going to show how to access it.
+
+## Method
+
+- First, go to the website of [Onshape](www.onshape.com) and on top right corner, click on "SIGN IN" button
+- Then click on "Sign up"
+
+  <Image src="/static/images/resources/Day 0/d4446dadb1194bba804019d12701eebf.png" alt="IR" width='500' height='500' />
+
+- Then scroll down and click on education account
+
+  <Image src="/static/images/resources/Day 0/c919da8909a74b72a719c9c9ab370b2f.png" alt="IR" width='500' height='500' />
+
+- Then scroll down and enter your first and last name, in email enter your bits mail, in 'Are you a stuent or educator' box, choose "Student", and in 'School level' box, choose "College or University" and then on bottom, click on "CREATE EDU ACCOUNT" button
+
+  <Image src="/static/images/resources/Day 0/ff905db1ed104ec589c9cfc2054bc52a.png" alt="IR" width='500' height='500' />
+
+- Now, in first box, in which 'School Name' is written, in that enter "BITS Pilani, Hyderabad Campus". In second box conatining 'School website URL', enter "www.bitsadmission.com". Enter your respective City, State, Country, Graduation year and Area of study / degree in respective boxes and in last box containing 'What are you using Onshape for?', enter "Educational Purposes"
+
+  <Image src="/static/images/resources/Day 0/637f92a0ef3b4061a0ea152166b8fab5.png" alt="IR" width='500' height='500' />
+
+- Then scroll down and check all boxes and click on "I'm not a robot" box and then click on "Create Account" box
+
+- Then check your mail box, you will get an activation email, click on "ACTIVATE YOUR ACCOUNT" button, it will then ask you to create password, so set your password, agree to it's term and service and then click on "Get Started".
+- It will ask you to "Set your default units", on that, in length units, select millimeter, and in mass units, slect killogram and then click next, then it will show mouse controls and then it will ask to set a nickname, so set and click next and then it will check your browser, after that click on done
+
+ <br />
+ If everything goes perfect as above, Congratulations you successfully registered on Onshape :)
+ 
+In this section, you will be learning about
+
+- CAD Softwares and their features
+- Onshape Basics
+- Working with 2D sketches in Onshape
+
+# What is Computer Aided Design (CAD) ?
+
+Computer Aided design is a broad field that involves using various computer softwares like Solidworks, Fusion 360, AutoCAD etc. to make 2D sketches and 3D models of real world products that you would like to manufacture.
+
+For example, let us assume that you want to manufacture a chassis for a simple 4 wheeled robot, powered by 4 motors, i.e 1 motor for each wheel. You would first start by choosing a shape you want for the chassis, this could be done by drawing inspirations from other CAD models that have been built for similar purposes or you could create freehand sketches (concept drawings), which are widely used to explore initial design ideas and options available. Once you have a rough idea about how you want the part to look like, you can now start by deciding its important characteristics, i.e material, weight, dimensions etc.. After this you would move on to a CAD software where you would start creating the chassis according to its characteristics.
+
+<Image src="/static/images/resources/Day1_Session2/unknown.png" alt="IR" width='500' height='500' />
+
+## Features of CAD
+
+CAD softwares like Fusion 360 and Solidworks, come with a lot of features that designers often use to improve or validate their designs. These features help in analysing various aspects of a design, this helps in answering important questions like, if the part designed is suitable for a particular task? Will it be able to withstand the loads given to it during real life application? How much can we expect the part to deform during operation?
+
+#### 2D Sketches
+
+There are various tools available in every CAD software to make 2D sketches, basic tools include: line, circle, polygon, arc, mirror, ellipse, fillet all these and more shall be explained in detail in future sessions related to CAD. In our case, we would first want to create the top rectangular surface of the chassis which we would later extrude. This top surface would be sketched after first choosing a sketching plane and using a line or a polygon command to construct a rectangle according to the chosen dimensions.
+
+#### 3D tools
+
+3D tools are usually used after making the sketch, these tools comprise of features like extrude, revolve, cut, sweep, fillet, loft, more of which shall be explained in greater detail in future sessions on CAD. After making 2D sketches of surfaces of the chassis, we would now extrude these sketches, which basically means giving them a certain depth or thickness. After we are done with the extrusions, we can see that our 3D model looks almost complete, however, there is a lot more to the construction phase than you might expect. For further enhancement of the design you would also like to add certain finishing touches like fillets. Fillets are used to make curved edges and they are important as curved edges are much more efficient in distributing stress throughout the body, thereby, increasing its durability and lowering the risk of failure of the body against high loads. In some cases, fillet also makes the part more aerodynamic and easy to manufacture.
+
+#### Static structural simulations:
+
+Most CAD softwares come with these analysis features, for the example stated earlier, you would probably perform static structural simulations on the chassis. This involves applying loads on various areas of the chassis and applying certain boundary conditions (areas that would act as fixed supports during the load application). The software would then highlight different areas of the model with different colours to indicate regions that would experience more stress, deformation or strain relative to others. After carefully analysing these regions we could refine our design to make it more efficient, by removing excess material, and durable, by adding materials or support to areas that have high chances of failing during application.
+
+#### Topology optimisation:
+
+Topology optimisation involves optimising the shape of a part based on the loads and boundary conditions that it will face during its application. As stated earlier, after doing a thorough analysis of stresses and strains endured on various regions of the chassis, you might realise that certain areas of the chassis experience almost zero stress and do not contribute much in giving support to regions that are facing high stress. This means that you could remove material from these regions as it is unnecessary. This could be done automatically, i.e the software could judge such areas and reduce material from it or manually. However, we must also keep in mind the manufacturability of the product, a lot of the times the geometry obtained after topology optimisation is almost impossible or extremely hard to manufacture.
+<Image src="/static/images/resources/Day1_Session2/Topology-optimization-copy.jpg" alt="IR" width='500' height='500' />
+
+Image that shows how a part has gone through several iterations of optimisation for higher efficiency. Topology optimisation becomes especially important during mass production as it helps in saving costs on material and manufacturing time
+
+##### There are various other features, that haven't been touched upon, for e.g CFD (deals with fluid flows around an object), modal analysis (helps vibrational analysis) that are used at an advanced level to acheive a better understanding of various parts of a design. Sometimes softwares like ANSYS that are specifically built for carrying out these simulations are used for getting more accurate results than a CAD software's inbuilt features.
+
+## Different CAD softwares
+
+There are a variety of softwares that you could use, few of those are Solidworks, Fusion 360, AutoCAD, Creo, Onshape (online website). Since Fusion and Solidworks are some of the most popular CAD softwares used we would be looking at their differences in detail.
+
+Solidworks is an assembly driven software which means that you can create parts of a complex model individually, in different files, and assemble these in a separate file. Unlike Solidworks, Fusion allows us to create multiple components in the same file making it easier for users to reference other components and design accordingly. Consequently, Fusion is ideal for making parts that require a lesser amount of components.
+
+As described earlier, to validate designs, several simulations are performed and both softwares come inbuilt with these simulation features. Fusion is good for doing a basic analysis and is easy to use, its limitation being its inability to give accurate results. Solidworks is used for acheiving more accurate results, and can be used by people who have prior experience in FEA.
+
+There are various other features that differ in both of these softwares, in conclusion, Fusion is an easy-to-use, beginner friendly software, whereas, Solidworks is used by more experienced CAD engineers.
+
+# Onshape BASICS
+
+**Onshape** is a cloud-based computer-aided design (CAD) software. Using web-based servers, software users can collaborate on a single model, editing and interacting at the same time.
+
+Onshape will be the CAD software used for this workshop.
+
+As a part of our Day 0 session, you would have signed up for an Onshape account
+
+## 2D Drawings
+
+All ONSHAPE models that have to be created typically begin with a **2D sketch**. This is where we create basic shapes and specify dimensions. These sketches are then going to be used to create 3D CAD models.
+
+## Creating a document:
+
+1. First, we create a new document using the Create button on the top left
+
+<Image src="/static/images/resources/Day1_Session2/Screenshot_20210721_152146.png" alt="IR" width='500' height='500' />
+
+2. When we open a new workspace, we start in the 3D environment. The 3D environment view may be rotated by using right click + drag.
+3. Use to cube on the top right to orient the sketch as required
+4. Press and hold the mouse wheel to pan the workspace
+5. Scroll wheel zooms in the direction of the cursor
+
+<Image src="/static/images/resources/Day1_Session2/Screenshot_20210721_184545.png" alt="IR" width='500' height='500' />
+
+For a more detailed explanation on how sketch works and how to use various tools that are available it is **recommended** to go through the following videos:
+
+- [BASIC 2D drawing](https://youtu.be/2l8Do2Uk_JQ)
+- [BASIC sketch tools](https://youtu.be/3kwgWZ6LQf8)
+
+# Creating a new sketch
+
+1. On the Features panel, we can select a plane to create our sketch on.
+2. Right-click on the selected plane and then choose 'New sketch'
+
+<Image src="/static/images/resources/Day1_Session2/Screenshot_20210721_154803.png" alt="IR" width='500' height='500' />
+
+3. After creating a sketch, we can double click on from the Features panel it to view it
+
+4. You will notice that the toolbar also has a new set of tools
+
+5. A dialog box also appears to indicate that you are working on the sketch
+
+<Image src="/static/images/resources/Day1_Session2/dialog.png" alt="IR" width='500' height='500' />
+
+6. Right clicking on the workspace gives us the option to view normal to the sketch plane
+
+**NOTE:** If you accidentally click the red x and cancel the sketch, you have ten seconds to click Restore in the blue message at the top of the window to restore the sketch.
+
+## Drawing Tools
+
+Here are some important drawing tools used in Onshape:
+
+1. Point Tool:
+
+   - Allows the user to create points on a plane
+   - Snaps to nearby major point if available
+
+2. Dimension Tool:
+
+   - Onshape makes use of a smart dimension tool.
+   - Can set dimensions between two selected elements
+   - Can an also input a distance then points will follow that constraint
+   - Based on cursor placement, one can dimension diagonally, horizontally or vertically
+   - Can also dimension angles by clicking on two lines
+
+3. Line Tool:
+
+   - Click and release to create a line.
+   - Snaps to nearest major point if available.
+   - Can be dimensioned when it is made
+
+**TIP:** Do not press enter after you click to set the line, as this helps you specify the exact dimensions of the object without having to edit the dimensions later. Saves time :)
+
+4. Relation Tool
+
+   - The relation tool consists of subtools contained in a dropdown menu.
+   - These tools are used to define relations between two curves in a sketch plane.
+
+Some examples:
+
+1. Tangent tool
+2. Equal tool
+3. Concentric tool
+
+## Sketch Constraints
+
+Sketch constraints are a fantastic way to ensure accuracy in your sketching. Through constraints you can ensure something is on the midpoint, is perfectly concentric, won’t move from a line and more. Constraints are perfect for designing functional CAD models.
+
+## Important colours in sketches and what they indicate:
+
+### Blue:
+
+Under defined
+
+### Black:
+
+Fully defined
+
+### Red:
+
+- Sketches can become over-constrained; this is where a constraint you want to apply would conflict with the rest of the constraints/dimensions on the sketch object.
+- Here you will encounter Over defined (Clash) / Sketch could not be solved.
+
+## Eliminating Overdefined Parts of the Sketch & Removing Clashes
+
+- Check for overdefined (indicated in red)
+- Hit the 'Esc' key to exit the current tool in use
+- Select and delete the overdefined dimension
+
+**Tips:**
+
+- Don't be afraid to make mistakes, you can always hit Ctrl + Z to undo a step.
+- Hit the 'Esc' key to exit a selected tool.
+- Hovering over a point also shows the constraints it is under.
+
+> Onshape is a 'Parametric Software'. This means we can always go back and change a parameter later on. This allows for tweaks to be made quickly and easily when dimensions are not finalised.
+
+## Snap:
+
+Snap is a feature in CAD software that helps speed up workflow. It assumes that you want to work with pre-existing points while adding new elements, and also suggests constraints based on the sketch.
+
+For example :
+While drawing a line, if you hover your cursor over a horizontal line, it creates a horizontal constraint, shown below
+
+<Image src="/static/images/resources/Day1_Session2/Screenshot_20210721_161400.png" alt="IR" width='500' height='500' />
+
+## Completing a sketch
+
+- To complete the sketch, click on the green checkmark in the sketch dialog box
+
+<Image src="/static/images/resources/Day1_Session2/dialog.png" alt="IR" width='500' height='500' />
+
+- To go back and edit your sketch, double click on your sketch in the features tab.
+
+<Image src="/static/images/resources/Day1_Session2/Screenshot_20210721_154144.png" alt="IR" width='500' height='500' />
+
+### Note:
+
+As you may have noticed Onshape gives us the freedom to choose our own workflow. We can choose to:
+
+1. Dimension each entity of the sketch as you go
+
+   OR
+
+2. create the sketch elements constrain them later using the tools in the toolbar
+
+# Demonstration of 2D Sketches
+
+In the following section, we will go over the process and general guidelines to be followed while creating a sketch in Onshape. This will be illustrated with the help of an example.
+
+You will be introduced to the following concepts:
+
+- Construction Lines: These are entities that you will be using as reference for your sketch, and will be indicated using dotted lines
+- Arc tool
+- Slot tool
+- Tangent tool
+- Mirror Tool
+- Trim Tool
+
+**Sketch Demonstration:**
+<EmbedItem url='https://www.youtube.com/embed/RuMsru6XAGo' />
+
+# 2D CAD
+
+Hey! Welcome to the first CAD session of our workshop.
+
+In the first half of this section, you will be learning about
+
+- CAD Softwares and their features
+- Onshape Basics
+- Working with 2D sketches in Onshape
+
+# What is Computer Aided Design (CAD) ?
+
+Computer Aided design is a broad field that involves using various computer softwares like Solidworks, Fusion 360, AutoCAD etc. to make 2D sketches and 3D models of real world products that you would like to manufacture.
+
+For example, let us assume that you want to manufacture a chassis for a simple 4 wheeled robot, powered by 4 motors, i.e 1 motor for each wheel. You would first start by choosing a shape you want for the chassis, this could be done by drawing inspirations from other CAD models that have been built for similar purposes or you could create freehand sketches (concept drawings), which are widely used to explore initial design ideas and options available. Once you have a rough idea about how you want the part to look like, you can now start by deciding its important characteristics, i.e material, weight, dimensions etc.. After this you would move on to a CAD software where you would start creating the chassis according to its characteristics.
+
+<Image src="/static/images/resources/Day1_Session2/unknown.png" alt="IR" width='500' height='500' />
+
+## Features of CAD
+
+CAD softwares like Fusion 360 and Solidworks, come with a lot of features that designers often use to improve or validate their designs. These features help in analysing various aspects of a design, this helps in answering important questions like, if the part designed is suitable for a particular task? Will it be able to withstand the loads given to it during real life application? How much can we expect the part to deform during operation?
+
+#### 2D Sketches
+
+There are various tools available in every CAD software to make 2D sketches, basic tools include: line, circle, polygon, arc, mirror, ellipse, fillet all these and more shall be explained in detail in future sessions related to CAD. In our case, we would first want to create the top rectangular surface of the chassis which we would later extrude. This top surface would be sketched after first choosing a sketching plane and using a line or a polygon command to construct a rectangle according to the chosen dimensions.
+
+#### 3D tools
+
+3D tools are usually used after making the sketch, these tools comprise of features like extrude, revolve, cut, sweep, fillet, loft, more of which shall be explained in greater detail in future sessions on CAD. After making 2D sketches of surfaces of the chassis, we would now extrude these sketches, which basically means giving them a certain depth or thickness. After we are done with the extrusions, we can see that our 3D model looks almost complete, however, there is a lot more to the construction phase than you might expect. For further enhancement of the design you would also like to add certain finishing touches like fillets. Fillets are used to make curved edges and they are important as curved edges are much more efficient in distributing stress throughout the body, thereby, increasing its durability and lowering the risk of failure of the body against high loads. In some cases, fillet also makes the part more aerodynamic and easy to manufacture.
+
+#### Static structural simulations:
+
+Most CAD softwares come with these analysis features, for the example stated earlier, you would probably perform static structural simulations on the chassis. This involves applying loads on various areas of the chassis and applying certain boundary conditions (areas that would act as fixed supports during the load application). The software would then highlight different areas of the model with different colours to indicate regions that would experience more stress, deformation or strain relative to others. After carefully analysing these regions we could refine our design to make it more efficient, by removing excess material, and durable, by adding materials or support to areas that have high chances of failing during application.
+
+#### Topology optimisation:
+
+Topology optimisation involves optimising the shape of a part based on the loads and boundary conditions that it will face during its application. As stated earlier, after doing a thorough analysis of stresses and strains endured on various regions of the chassis, you might realise that certain areas of the chassis experience almost zero stress and do not contribute much in giving support to regions that are facing high stress. This means that you could remove material from these regions as it is unnecessary. This could be done automatically, i.e the software could judge such areas and reduce material from it or manually. However, we must also keep in mind the manufacturability of the product, a lot of the times the geometry obtained after topology optimisation is almost impossible or extremely hard to manufacture.
+<Image src="/static/images/resources/Day1_Session2/Topology-optimization-copy.jpg" alt="IR" width='500' height='500' />
+
+Image that shows how a part has gone through several iterations of optimisation for higher efficiency. Topology optimisation becomes especially important during mass production as it helps in saving costs on material and manufacturing time
+
+##### There are various other features, that haven't been touched upon, for e.g CFD (deals with fluid flows around an object), modal analysis (helps vibrational analysis) that are used at an advanced level to acheive a better understanding of various parts of a design. Sometimes softwares like ANSYS that are specifically built for carrying out these simulations are used for getting more accurate results than a CAD software's inbuilt features.
+
+## Different CAD softwares
+
+There are a variety of softwares that you could use, few of those are Solidworks, Fusion 360, AutoCAD, Creo, Onshape (online website). Since Fusion and Solidworks are some of the most popular CAD softwares used we would be looking at their differences in detail.
+
+Solidworks is an assembly driven software which means that you can create parts of a complex model individually, in different files, and assemble these in a separate file. Unlike Solidworks, Fusion allows us to create multiple components in the same file making it easier for users to reference other components and design accordingly. Consequently, Fusion is ideal for making parts that require a lesser amount of components.
+
+As described earlier, to validate designs, several simulations are performed and both softwares come inbuilt with these simulation features. Fusion is good for doing a basic analysis and is easy to use, its limitation being its inability to give accurate results. Solidworks is used for acheiving more accurate results, and can be used by people who have prior experience in FEA.
+
+There are various other features that differ in both of these softwares, in conclusion, Fusion is an easy-to-use, beginner friendly software, whereas, Solidworks is used by more experienced CAD engineers.
+
+# Onshape BASICS
+
+**Onshape** is a cloud-based computer-aided design (CAD) software. Using web-based servers, software users can collaborate on a single model, editing and interacting at the same time.
+
+Onshape will be the CAD software used for this workshop.
+
+As a part of our Day 0 session, you would have signed up for an Onshape account
+
+## 2D Drawings
+
+All ONSHAPE models that have to be created typically begin with a **2D sketch**. This is where we create basic shapes and specify dimensions. These sketches are then going to be used to create 3D CAD models.
+
+## Creating a document:
+
+1. First, we create a new document using the Create button on the top left
+
+<Image src="/static/images/resources/Day1_Session2/Screenshot_20210721_152146.png" alt="IR" width='500' height='500' />
+
+2. When we open a new workspace, we start in the 3D environment. The 3D environment view may be rotated by using right click + drag.
+3. Use to cube on the top right to orient the sketch as required
+4. Press and hold the mouse wheel to pan the workspace
+5. Scroll wheel zooms in the direction of the cursor
+
+<Image src="/static/images/resources/Day1_Session2/Screenshot_20210721_184545.png" alt="IR" width='500' height='500' />
+
+For a more detailed explanation on how sketch works and how to use various tools that are available it is **recommended** to go through the following videos:
+
+- [BASIC 2D drawing](https://youtu.be/2l8Do2Uk_JQ)
+- [BASIC sketch tools](https://youtu.be/3kwgWZ6LQf8)
+
+# Creating a new sketch
+
+1. On the Features panel, we can select a plane to create our sketch on.
+2. Right-click on the selected plane and then choose 'New sketch'
+
+<Image src="/static/images/resources/Day1_Session2/Screenshot_20210721_154803.png" alt="IR" width='500' height='500' />
+
+3. After creating a sketch, we can double click on from the Features panel it to view it
+
+4. You will notice that the toolbar also has a new set of tools
+
+5. A dialog box also appears to indicate that you are working on the sketch
+
+<Image src="/static/images/resources/Day1_Session2/dialog.png" alt="IR" width='500' height='500' />
+
+6. Right clicking on the workspace gives us the option to view normal to the sketch plane
+
+**NOTE:** If you accidentally click the red x and cancel the sketch, you have ten seconds to click Restore in the blue message at the top of the window to restore the sketch.
+
+## Drawing Tools
+
+Here are some important drawing tools used in Onshape:
+
+1. Point Tool:
+
+   - Allows the user to create points on a plane
+   - Snaps to nearby major point if available
+
+2. Dimension Tool:
+
+   - Onshape makes use of a smart dimension tool.
+   - Can set dimensions between two selected elements
+   - Can an also input a distance then points will follow that constraint
+   - Based on cursor placement, one can dimension diagonally, horizontally or vertically
+   - Can also dimension angles by clicking on two lines
+
+3. Line Tool:
+
+   - Click and release to create a line.
+   - Snaps to nearest major point if available.
+   - Can be dimensioned when it is made
+
+**TIP:** Do not press enter after you click to set the line, as this helps you specify the exact dimensions of the object without having to edit the dimensions later. Saves time :)
+
+4. Relation Tool
+
+   - The relation tool consists of subtools contained in a dropdown menu.
+   - These tools are used to define relations between two curves in a sketch plane.
+
+Some examples:
+
+1. Tangent tool
+2. Equal tool
+3. Concentric tool
+
+## Sketch Constraints
+
+Sketch constraints are a fantastic way to ensure accuracy in your sketching. Through constraints you can ensure something is on the midpoint, is perfectly concentric, won’t move from a line and more. Constraints are perfect for designing functional CAD models.
+
+## Important colours in sketches and what they indicate:
+
+### Blue:
+
+Under defined
+
+### Black:
+
+Fully defined
+
+### Red:
+
+- Sketches can become over-constrained; this is where a constraint you want to apply would conflict with the rest of the constraints/dimensions on the sketch object.
+- Here you will encounter Over defined (Clash) / Sketch could not be solved.
+
+## Eliminating Overdefined Parts of the Sketch & Removing Clashes
+
+- Check for overdefined (indicated in red)
+- Hit the 'Esc' key to exit the current tool in use
+- Select and delete the overdefined dimension
+
+**Tips:**
+
+- Don't be afraid to make mistakes, you can always hit Ctrl + Z to undo a step.
+- Hit the 'Esc' key to exit a selected tool.
+- Hovering over a point also shows the constraints it is under.
+
+> Onshape is a 'Parametric Software'. This means we can always go back and change a parameter later on. This allows for tweaks to be made quickly and easily when dimensions are not finalised.
+
+## Snap:
+
+Snap is a feature in CAD software that helps speed up workflow. It assumes that you want to work with pre-existing points while adding new elements, and also suggests constraints based on the sketch.
+
+For example :
+While drawing a line, if you hover your cursor over a horizontal line, it creates a horizontal constraint, shown below
+
+<Image src="/static/images/resources/Day1_Session2/Screenshot_20210721_161400.png" alt="IR" width='500' height='500' />
+
+## Completing a sketch
+
+- To complete the sketch, click on the green checkmark in the sketch dialog box
+
+<Image src="/static/images/resources/Day1_Session2/dialog.png" alt="IR" width='500' height='500' />
+
+- To go back and edit your sketch, double click on your sketch in the features tab.
+
+<Image src="/static/images/resources/Day1_Session2/Screenshot_20210721_154144.png" alt="IR" width='500' height='500' />
+
+### Note:
+
+As you may have noticed Onshape gives us the freedom to choose our own workflow. We can choose to:
+
+1. Dimension each entity of the sketch as you go
+
+   OR
+
+2. create the sketch elements constrain them later using the tools in the toolbar
+
+# Demonstration of 2D Sketches
+
+In the following section, we will go over the process and general guidelines to be followed while creating a sketch in Onshape. This will be illustrated with the help of an example.
+
+You will be introduced to the following concepts:
+
+- Construction Lines: These are entities that you will be using as reference for your sketch, and will be indicated using dotted lines
+- Arc tool
+- Slot tool
+- Tangent tool
+- Mirror Tool
+- Trim Tool
+
+**Sketch Demonstration:**
+
+<EmbedItem url='https://www.youtube.com/embed/RuMsru6XAGo' />
+
+# 3D CAD
+
+In this section, you will be learning how to
+
+- Work with 3D Onshape Tools
+- Import parts into an assembly
+- Make a working assembly with mates!
+
+# Extrude
+
+The basic extrude tool gives a 3-D feature to a 2-D obect.
+
+Once you have finished drawing a sketch in Onshape the 3-D toolbar appears and you can now use extrude on your sketch.
+
+Here is a simple example
+
+<EmbedItem url='https://www.youtube.com/embed/WHI0Jxq0p48' />
+
+## Types of extrude
+
+Other than converting a 2-D object into a 3-D one the extrude tool can also modify an existing 3-D object by adding or removing material, or intersecting parts in its path.
+
+The various types extrude are explained below:
+
+- ### New
+
+  As seen in the last clip this option converts a 2-D object into a 3-D object.
+
+- ### Add
+  This option adds extrude onto an existing 3-D object.
+
+<EmbedItem url='https://www.youtube.com/embed/JCL8uEXLr-8' />
+
+- ### Remove
+  Instead of adding this option removes material from an existing 3-D object.
+
+<EmbedItem url='https://www.youtube.com/embed/H2G0nnhlKsU' />
+
+- ### Intersect
+  This option leaves material only where intersections exist between different objects.
+
+<EmbedItem url='https://www.youtube.com/embed/BqmFZSSvCB8' />
+
+## Amount of extrude
+
+The amount of extrude can be controlled by providing one of the options given below.
+
+- Blind: To a specified distance (as entered in the Depth field).
+- Up to next: Up to the next face or faces encountered in the specified direction.
+- Up to face: Up to the infinite face underlying the selected face or plane.
+- Up to part: Up to the next part encountered in the specified direction.
+- Up to vertex: Up to a selected point (vertex)
+- Through all: Through all selected parts.
+
+## Few other options in extrude
+
+- **Draft**
+  The draft option provides a taper of the specified angle to the extrusion.
+
+<EmbedItem url='https://www.youtube.com/embed/0FKxw38VaXo' />
+
+- **Symmetric**
+  Symmetric option basically does the same extrusion on both the sides of a particular surface.
+
+<EmbedItem url='https://www.youtube.com/embed/md78fU1A-rU' />
+
+- **Second end position**
+  Using this option we can provide a different type of extrusion on the other side of a surface.
+
+<EmbedItem url='https://www.youtube.com/embed/fud6iO2uOzI' />
+
+## Example
+
+Here is an example of a spinner using extrude.
+
+<EmbedItem url='https://www.youtube.com/embed/PjdAClYkzTs' />
+
+# Sweep,Revolve and Loft
+
+These tools are similar to the basic extrude tool in the sense it gives a 3-D feature to a 2-D object.
+
+## Revolve
+
+The new option in revolve tool requires you to select a surface and an axis. It then creates parts by revolving sketch regions or planar faces about the provided axis.
+
+Here are a few examples
+
+<EmbedItem url='https://www.youtube.com/embed/id0NPu4uJxI' />
+
+Revolve has the same options as extrude tool which include:
+
+- New
+- Add
+- Remove
+- Intersect
+
+So we can create, add to, subtract from, or intersect parts by revolving sketch regions or planar faces about a central axis as we did in extrude.
+
+### Amount of revolve
+
+By default the revolve angle is set to 360 degrees (Full option).
+
+In order to specify the amount of revolve we must change this option to one-direction,symmetric or two direction and provide the required angle.
+
+<Image src="/static/images/resources/Day2_Session2/rev_1.JPG" alt="IR" width='500' height='500' />
+
+<Image src="/static/images/resources/Day2_Session2/rev_2.JPG" alt="IR" width='500' height='500' />
+
+## Sweep
+
+The sweep tool requires you to select a surface and a path perpendicular to the surface.
+It then extrudes the 2-D surface along the given path resulting in a 3-D object.
+
+<EmbedItem url='https://www.youtube.com/embed/EdoDnWBRa1g' />
+
+Again using sweep we can also modify an existing obect by adding or removing material, or intersecting parts in its path.
+
+## Planes and Loft
+
+### Planes
+
+Before using the loft tool we will look a bit into planes,as the loft tool is used with respect to planes.
+
+Usually there are 3 planes in Onshape- Front,Right and Top.
+You can hide/unhide these planes according to you convienience while drawing.
+
+We can also create new planes according to our convienience using the plane tool.
+We have to select a particular surface/plane and put in the required offset distance to create a new plane parallel to the selected plane/surface.
+
+<EmbedItem url='https://www.youtube.com/embed/bG_zzAzHjRU' />
+
+### Loft
+
+The loft tool allows smooth transition between two or more surfaces/shapes present in parallel planes.
+
+Lets see an example
+
+<EmbedItem url='https://www.youtube.com/embed/w82IzBDUv3s' />
+
+Similar to the tools we have seen till now loft has options of New,Add,Remove as well as intersect.
+
+#### More options in Loft
+
+- **Adjusting profile**
+
+The loft tool has an option to provide the end profile condition and the start profile condition.
+
+These provide options to change how the surfaces connect each other.
+
+Both the start and the end profile condition have the following options which can be used as required.
+
+<Image src="/static/images/resources/Day2_Session2/loft.JPG" alt="IR" width='500' height='500' />
+
+- **Path**
+
+We can also provide the path along which we want our loft to connect.
+This option along with intermediate sections can really make a huge difference in how the surfaces connect.
+Here is an example
+
+Loft with no path:
+
+<Image src="/static/images/resources/Day2_Session2/path_1.png" alt="IR" width='500' height='500' />
+
+Loft with path and 2 intermediate sections:
+
+<Image src="/static/images/resources/Day2_Session2/path_2.png" alt="IR" width='500' height='500' />
+
+Loft with path and 20 intermediate sections:
+
+<Image src="/static/images/resources/Day2_Session2/path_3.png" alt="IR" width='500' height='500' />
+
+# Assemblies
+
+Once we create the required parts the only thing left is to assemble them in order to make the final object/robot.
+
+An Onshape assembly tab is where you define degrees of freedom and relations between different parts.
+
+## Starting an Assembly
+
+Every Onshape file comes with a Part Studio and Assembly tab at the bottom.
+Part Studio is where we have been making our sketches and parts whereas the assembly tab is where we will be bringing those parts together and defining relations between them.
+We can make multiple part studios and assemblies in an Onshape document.
+
+### Importing parts
+
+You can either import parts from the Part Studio of the same Onshape file or some other Onshape file using the Insert option in the assembly tab.
+
+Here is how we import parts in the assembly tab:
+
+<EmbedItem url='https://www.youtube.com/embed/WEQ-rTs-rWQ' />
+
+- One of the important part in building an assembly is fixing one of the parts to the origin.
+- Rest of the parts can be moved around this fixed part.
+- The triad manipulator can be used for more control when moving parts.
+
+Once we have imported all the parts to be assembled,The only thing left is to define relations between these parts ie. how they should move with respect to each other.
+
+This is done using mates which will be explained in the next section.
+
+# Mates
+
+There can only be one Onshape Mate between any two parts, and the movement (degrees of freedom) between those two parts is embedded in the Mate. At the time of placing a mate between two entities, Onshape will offer points on each entity to which to align with the mate's coordinate system.
+
+There are different mates for different purposes.
+The axes mentioned in the following list are with respect to the mates' coordinate system and not with respect to that of the assembly.
+
+## Types of Mates
+
+### 1. Fastened Mate
+
+This mate restricts degrees of freedom of individual parts essentially combining the 2 parts into one. It is as if you welded them or bolted (fastened) them together.
+
+<EmbedItem url='https://www.youtube.com/embed/fbae00T7wqI' />
+
+<br />
+
+### 2. Revolute Mate
+
+This mate relates 2 entities to rotate about the required axis. All degrees of motion are restricted except rotation of about the Z axis. This is used while modelling for a wheel.
+
+<EmbedItem url='https://www.youtube.com/embed/yZ1fVoPnb4k' />
+
+<br />
+
+### 3. Slider Mate
+
+This mate relates 2 entities to such that one entity moves along the second entity. All degrees of motion are restricted except the motion along the Z axis. it is used while modelling a piston.
+
+<EmbedItem url='https://www.youtube.com/embed/brs3jW4zqVo' />
+
+<br />
+
+### 4. Planar Mate
+
+This mate relates the movement of 2 entities. it restricts the motion of one entity to the X and Y axes and allows its rotation relative to the second entity.
+
+<EmbedItem url='https://www.youtube.com/embed/ajL99WqCobc' />
+
+<br />
+
+### 5. Cylindrical Mate
+
+This mate is combination of the Revolute and the Slider Mates and hence does the function of both. That is, translation along the Z axis and rotation about the Z axis.
+
+<EmbedItem url='https://www.youtube.com/embed/cqtfcyb7Aj4' />
+
+<br />
+
+### 6. Pin Slot Mate
+
+Similar to the Cylindrical Mate, this mate is along a combination of the Revolute and the Slider mates. The difference between the two is that for Pin Slot Mate the translation is along the X axis. That is, translation along the X axis and rotation about the Z axis. The first Mate connector selected serves as the pin and the rotational movement point. The second Mate connector selected serves as the translational movement.
+
+<EmbedItem url='https://www.youtube.com/embed/X_mZ5chilE8' />
+
+<br />
+
+### 7. Ball Mate
+
+This mate allows the rotation of one entity about all the 3 axes: X,Y and Z. The translational motion is restricted along all the axes.
+
+<EmbedItem url='https://www.youtube.com/embed/UYSfjEhFERM' />
+
+<br />
+
+### 8. Parallel Mate
+
+Mates two entities allowing individual translational movement along any axis, and parallel rotation along any axis.
+
+<EmbedItem url='https://www.youtube.com/embed/M2JEV74HaDs' />
+
+<br />
+
+### 9. Tangent Mate
+
+Mate two entities tangent to the selected faces, edges, or vertices. This mate does not prevent the translation nor the rotation of either of the objects but always maintains a tangential point of the actual object or a projection of the object.
+
+<EmbedItem url='https://www.youtube.com/embed/iIZ4oxS79EA' />
+
+<br />
+
+## Other Features to be used with Mates
+
+### General
+
+<Image src="/static/images/resources/Day2_Session2/mate_1.png" alt="IR" width='500' height='500' />
+
+The bottom leftmost icon is used to change the direction of the primary axis (often the Z axis) during the creation of the mate.
+The icon to the right of this is used to rotate the entity about the Z axis to suit the needs of the model and the mate. This is reorienting the secondary axes.
+The play button is for mates with moving degrees of freedom such as the Revolute Mate and the Ball Mate. This would be used to test if the mate is working as intended and to change the limits or offsets if required.
+Solve is used to set the objects as they are in the rest of the project and test if there are any physical discrepancies.
+
+There is a drop down list for the type of Mate in the case of change.
+<br />
+
+### Limits and Offsets
+
+<Image src="/static/images/resources/Day2_Session2/mate_2.png" alt="IR" width='500' height='500' />
+
+Limits and offsets are set so the model moves as it should in the real world. That is, without clipping through other objects. Offset is the distance from the initial point, angle with respect to the original orientation or the axis of rotation that is modified. Limits are to restrict the motion of a moving object.
+
+### Suppress and Animate features
+
+<Image src="/static/images/resources/Day2_Session2/mate_3.png" alt="IR" width='500' height='500' />
+
+The above list is shown when the mate is right-clicked. Most options are self explanatory. The unique ones are the Suppress and the Animate options. The Suppress option temporarily disables a mate. This is often used to fix any errors in the movement of the individual parts. The Animate option sets the mate into motion.
+
+#### More options regarding Animate
+
+<Image src="/static/images/resources/Day2_Session2/mate_4.png" alt="IR" width='500' height='500' />
+
+Steps refers to the number of movements to take to reach from the start value to the end value. There are 3 types of Playback types : Single, Reciprocate and Loop. The icon to the right of the Playback type drop down can be used to choose the direction of rotation.
+
+## Some projects
+
+### Door Hinge
+
+This project uses only the Fastened, Revolute and the Cylindrical Mates.
+
+<EmbedItem url='https://www.youtube.com/embed/IaQl7qQqt40' />
+
+### Solenoid Boxer 4 Engine
+
+This project uses only the Fastened, Revolute and the Slider Mates.
+
+<EmbedItem url='https://www.youtube.com/embed/wVV5KKzx3Dw' />
+
+## Final Note
+
+It can be seen that using the basic mates and features of OnShape anyone can build models of real life use cases. Simulations of moving objects can be done as well as designing parts. Similar to mates there are also relation such as gear relation and gear and pinion relations which are used for gear mechanics and more complex models.
+
+In the next section, we will be using all the concepts introduced so far to create a CAD model of a bot with a working assembly and mates.
+
+## Double Pendulum Demo
+
+<EmbedItem url='https://www.youtube.com/embed/vQ6-hl2v5B' />
+
+## References and external links
+
+1. [Education Public's Onshape Series](https://www.youtube.com/playlist?list=PL-ptF2slHtJBd9Ge8ifoifNz-9j_rZ5y1)
+2. [Reference](https://cad.onshape.com/help/Content/mate.htm)
+3. [Reference](https://cad.onshape.com/documents/6ba1e39775d942b78b0c84f1/w/cdfcad3a3d7f4565ad4ffef4/e/61db20db6c0b4197818cef4d)
+4. [Door Hinge](https://cad.onshape.com/documents/b801934ab863c5477d10572e/w/b8472fc482c56ccd911522d9/e/6445c8e1ecb55c936bb9270f)

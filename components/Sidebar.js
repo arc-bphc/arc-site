@@ -96,7 +96,7 @@ function Sidebar({ postsInSameFolder }) {
       </div>
 
       {/* Web SideBar */}
-      <div className="h-30 hidden w-full lg:table-cell lg:w-60 ">
+      <div className="h-30 h-sm:hidden hidden w-full lg:table-cell lg:w-60">
         <aside className="md:sticky md:top-10" aria-label="Sidebar">
           <div className="overflow-y-auto rounded bg-gray-50 py-4 px-3 dark:bg-gray-800">
             <ul>
