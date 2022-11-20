@@ -1,5 +1,5 @@
 ---
-title: Extra Resource - CAD
+title: Extra Resource-CAD
 tags: ['TeXt']
 mode: normal
 type: article
