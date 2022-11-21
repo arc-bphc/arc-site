@@ -1,5 +1,5 @@
 ---
-title: Line Follower Robot
+title: Day 3 - Line Follower Robot
 tags: ['TeXt']
 mode: normal
 type: article
