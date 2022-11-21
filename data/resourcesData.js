@@ -5,7 +5,7 @@ const resourcesData = [
     description: `A 3-Day Robotics Workshop. With no prerequisites, featuring hands-on
     experience and a 5-in-1 kit. With BONUS 2 Complete Projects`,
     imgSrc: '/static/images/workshop.jpg',
-    href: '/resources/workshop/2021-07-06-Day0-1',
+    href: '/resources/workshop/1-AboutTheWorkshop',
   },
   {
     id: 2,

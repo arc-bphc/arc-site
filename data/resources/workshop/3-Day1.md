@@ -1,5 +1,5 @@
 ---
-title: Workshop Day 2 Session 1
+title: Workshop Day 1 Session 1
 tags: ['TeXt']
 mode: normal
 type: article
@@ -13,7 +13,7 @@ aside:
   toc: true
 sidebar:
   nav: workshop-bar
-orderInSidebar: 7
+orderInSidebar: 3
 ---
 
 <TOCInline toc={props.toc} toHeading={3} asDisclosure />
@@ -456,20 +456,6 @@ Since the nature of a device (input/output) and the pin its connected to, doesn'
 
 The pin numbers for the Arduino board are mentioned on the board and can be used as it is inside the **pinMode()** function.
 
-## Talking Digital
-
-Now that the Arduino has an heads up about the kind of device its dealing with its time we start talking with these devices.
-
-Most of these devices while they can be **Input/Output** can be also classified as **Digital/Analog**.
-
-> **Digital Devices**
-> Examples include push buttons/switches that can either be ON(Logic HIGH) or OFF(logic LOW), these devices have discrete set of states in which they can exist.
-
-> **Analog Devices**
-> Examples include LED, Motors, LDR these devices have a continuous set of states in which they can exist. For example an LED can stay turned ON with different amounts of brightness and a motor can be rotating at different speeds based on the control voltage.
-
-NOTE: Some devices can be both digital and analog based on how they are interfaced.
-
 # Microprocessors
 
 ## What is a microprocessor?
@@ -549,162 +535,55 @@ Devices or computer system made with microprocessors can be made portable due to
 Here is a YouTube video you might refer to:
 [Difference Between MicroController & Microprocessor](https://youtu.be/U2vBsZbgw8M). (use subtitles)
 
-## digitalWrite()
+# C for Arduino Microcontrollers
 
-Since digital devices usually have only two known states either HIGH(ON) or LOW(OFF), we will be using the **[digitalWrite()](https://www.arduino.cc/reference/en/language/functions/digital-io/digitalwrite/)** function to either make a pin go HIGH or LOW, therefore turning ON or OFF the external device connected to the Arduino pin.
+### Programming the Arduino Microcontrollers
 
-A pin in its HIGH state is set to 5 Volts, a pin in LOW state has 0 Volts.
+> Note: This doc assumes some basic familiarity with programming concepts as covered in CS F111: Computer Programming at BITS. Although some pre-requisite knowledge of programming structures is recommended, it is not requried.
 
-**NOTE: A pin has to be set to OUTPUT using pinMode() before you can do a digitalWrite() on it**
+## Control Structure of a simple Arduino Program
 
-**Turning on an LED**
+Almost any arduino program consists of two important functions: `setup()` and `loop()`. These two functions are the building blocks of any arduino program. Most programs that you need to run on a microcontroller device have two major components:
+
+1. Setting up the hardware and the program variables
+2. Recurring tasks like collecting data or sending some data
+
+These tasks are handled by the following two functions:
+
+### The setup() function
+
+This function is called when your Arduino Board starts up. It is used to initalize any variables that you have to use in your program. It can also be used to set up any hardware that you need to use. The crucial part to remember is that this function is called exactly once. Anything, and everyhting that you don't need to run more than once, should be within this function.
+
+### The loop() function
+
+This function is called repeatedly. It is the main function of your program. It is where you should put all the code that you want to run repeatedly. The loop function is called repeatedly until the program is stopped. (How is a program stopped?)
+
+Sample Code Structure:
 
 ```c++
-void setup(){
-    /* LED_BUILTIN is a special keyword for the inbuilt LED connected
-    to digital pin 13 on the arduino, it is usually used for debugging */
-    pinMode(LED_BUILTIN,OUTPUT); // Setting the LED as an OUTPUT device
+// Define Global Variables
+
+void setup() {
+    // Set up your microcontroller here
+    // Initialize Variables
 }
 
-void loop(){
-    digitalWrite(LED_BUILTIN,HIGH); // Turning on the LED by sending it 5V
+void loop() {
+    // Collect some data
+    // Send some data back
 }
 
 ```
 
-Compile and upload the above sketch, you should see a tiny orange LED near the **digital pin 13** light up, congratulations on your first step towards getting to play with digital devices.
+Once we understand the strucutre of a program, we can start writing the code. Let us look at the building blocks.
 
-NOTE: Upload a new **"blank sketch"** after your done staring at the LED, if you don't want it to be turned ON forever. Alternatively you can change the HIGH to LOW in the above sketch and upload it as well.
+## Some extra knowledge (For assignments)
 
-Now that we know how to turn ON an LED, let us go one step further and make it blink (Turn ON and OFF periodically).
+This would be reqiured to solve the Programming assignment.
 
-The most intuitive way of doing this would be to first turn ON the LED and then turn it OFF and do this in a loop forever, which when translated into code looks like this.
-
-**Blinking Attempt 1**
-
-```c++
-void setup(){
-    // Set the pin (D13) the LED is connected to as OUTPUT
-    pinMode(LED_BUILTIN,OUTPUT);
-}
-void loop(){
-    digitalWrite(LED_BUILTIN,HIGH); // Turn the LED ON
-    digitalWrite(LED_BUILTIN,LOW); // Turn the LED OFF
-}
-```
-
-Compile and upload the above sketch and try to look very closely at the LED you should see it flicker very slightly. Just kidding, don't strain your eyes too much. You won't be able to see it blink unless your Barry Allen. So to help normal mortals make sense and visualise digital signals that are usually super fast, humans have invented a few instruments (Logic Analyzers, Oscilloscope). I went ahead and connected a logic analyzer to see exactly what's happening to the LED in the above sketch.
-
-<Image src="/static/images/resources/Day1_Session1/logic_without_delay.png" alt="IR" width='500' height='500' />
-
-Lo and behold, the LED does blink but it stays on for a mere fraction of 3.375 microseconds and stays off for another 3.375 microseconds. Welcome to the world of an Arduino Uno, the ATmega328p thanks to the 16MHz external crystal runs at such incredible speeds due to which it appears like as if the LED has never been turned OFF.
-
-Now that we know whats causing the problem its time we try to fix it.
-
-#### Bitsian Standard Time - (BST)
-
-> **Bitsian Lore**
-> While the whole of India follows the India Standard Time, we Bitsians unfortunately take pride in following the Bitsian Standard Time which basically is a time zone that runs anywhere from 10 to 40 minutes behind the IST. Most event timings during fests are not inclusive of BST due to which participants from other colleges often think the events are **delayed**, if only there were as lite as we are.
-
-## delay()
-
-In great pride, lets meet the next function **[delay()](https://www.arduino.cc/reference/en/language/functions/time/delay/)** which is like the **Bitsian Standard Time** equivalent in the world of Arduino, while it does cause delays it isn't as unpredictable as we bitsians are.
-
-> **delay()**
-> Pauses the program for the amount of time (in milliseconds) specified as parameter. (There are 1000 milliseconds in a second.)
-
-Lets use the delay() function to stall the arduino for a second after and before changing the state of the LED.
-
-**Blink Attempt 2**
-
-```c++
-void setup(){
-    pinMode(LED_BUILTIN,OUTPUT);
-}
-void loop(){
-    digitalWrite(LED_BUILTIN,HIGH);//turn ON the LED
-    delay(1000); // Do nothing for 1 second
-    digitalWrite(LED_BUILTIN,LOW); // turn OFF the LED
-    delay(1000); // Do nothing for 1 second
-}
-
-```
-
-Compile and upload the above sketch and viola, you should now finally have an blinking LED.
-
-The above code in a logic analyzer looks like the following
-
-<Image src="/static/images/resources/Day2_Session1/led_with_delay.png" alt="IR" width='500' height='500' />
-
-As we can see the LED is on for almost a second, while not exact its close enough.
-
-**NOTE: Using delay() will cause your Arduino to sit idle for the specified amount of time without doing anything, which might be fine if our only intention is to blink an LED, but the use of delay should be avoided if we want the arduino to perform multiple tasks**
-
-## Building your first Arduino Circuit : Blinking an LED
-
-Now that you have gained a basic understanding of digital and analog pins, let's build a simple circuit using an Arduino. For this circuit, we will be using **an Arduino, a LED, and a resistor**. The circuit connection looks as below :
-
-<Image src="/static/images/resources/Day2_Session1/blink.png" alt="IR" width='500' height='500' />
-
-The code of this circuit is :
-
-```c++
-void setup()
-{
-  pinMode(9, OUTPUT);//Declaring the mode of pin
-}
-
-void loop()
-{
-  digitalWrite(9, HIGH);//Providing 5V
-  delay(1000); // Wait for 1000 millisecond(s)
-  digitalWrite(9, LOW);//Providing 0V
-  delay(1000); // Wait for 1000 millisecond(s)
-}
-```
-
-By the above circuit connection and the usage of the above code, the LED will blink until the Arduino is given power.
-
-<iframe width="725" height="453" src="https://www.tinkercad.com/embed/6NIZm9eNqsL?editbtn=1" frameBorder="0" marginWidth="0" marginHeight="0" scrolling="no"></iframe>
-
-There maybe a lot in the above code that you might not understand at present, but still try to copy the code and replicate the circuit and run the simulation. This will help you grasp the concepts better in the later sessions.
-
-## How Not To Blowup Your Laptop
-
-The Arduino Uno has undergone many revisions, and hence the [Arduino power supply circuit](https://technobyte.org/arduino-uno-power-supply-arduino-hardware-core/) has evolved to an almost foolproof design. In this project, we will learn about the three different ways in which we can power up the Arduino Uno. While making any Arduino project, it is necessary to know these techniques, since there are instances when flexibility with regards to the power supply is required.
-
-Modern Arduino Uno boards allow the board to have more than one source of power to be connected simultaneously. An intelligent switching circuitry ensures that the highest available voltage is selected and sent to the onboard voltage regulator, and eventually powers up the board.
-
-<EmbedItem url='https://www.youtube.com/embed/dT7WYkca8hY' />
-
-### Power Scheme 1
-
-**Using the USB Cable**
-The USB port of the Arduino Uno can be connected to a desktop/laptop. If the computer recognizes the device, the current supplied to the board is 500mA at 5V. If the connection is not enumerated, 100mA is supplied at 5V.
-
-<Image src="/static/images/resources/Day2_Session1/power_1.png" alt="IR" width='500' height='500' />
-
-### Power Scheme 2
-
-**Using an AC to DC adapter plugged into the barrel connector**
-The barrel connector can be supplied with an input of 7-12V. This is regulated to 5V by the onboard voltage regulator, and the board is powered on.
-
-<Image src="/static/images/resources/Day2_Session1/power_2.png" alt="IR" width='500' height='500' />
-
-### Power Scheme 3
-
-**Using Vin pin**
-Connect a 9V battery with the positive terminal connected to the Vin pin and the negative terminal connected to the GND pin. The Vin port allows an input between 7 and 12 Volts, and the current should not exceed 500mA.
-
-<Image src="/static/images/resources/Day2_Session1/power_4.png" alt="IR" width='500' height='500' />
-
-**NOTE - If the Vin / 5V and GND pins are being used to power up the Arduino, double-check the polarity because if the GND and 5V/Vin pins are mixed up, it can potentially damage the Arduino board.**
-
-## ~~TV~~ Serial
+## <s>TV</s> Serial
 
 Sometimes its really useful to see what's going on inside the brain of a microcontroller. Whilst there are many ways to send and receive information to and from a microcontroller and the computer, using the Serial port turns out to be the easiest.
-Serial communication is the process of sending one bit of data at a time, sequentially from one device to another. The main purpose of this serial communication is to transfer the sketch from computer to Arduino, to send information to computer etc. All Arduino boards have at least one serial port and it communicates on digital pins 0 (RX) and 1 (TX).
-The serial port is connected to the USB port on the board, and we can use the built-in Arduino Serial library to send data to the serial monitor in the Arduino IDE or to an external serial monitor.
 
 ### Monitor
 
@@ -712,336 +591,371 @@ The Serial Monitor is basically a window in the Arduino IDE that allows you to s
 
 #### Here's how you can access the Serial Monitor
 
-1.  Open your Arduino IDE. Click on 'Tools' in the Menu bar, and select 'Serial Monitor'.
-2.  Alternatively, you can use the hotkey Ctrl+Shift+M
+1. Open your Arduino IDE. Click on 'Tools' in the Menu bar, and select 'Serial Monitor'.
+2. Alternatively, you can use the hotkey Ctrl+Shift+M
 
 This is how your Serial Monitor will typically look like
 
-<Image src="/static/images/resources/Day2_Session1/monitor.png" alt="IR" width='500' height='500' />
+<Image src="/static/images/resources/Day 0/serial.png" alt="IR" width='500' height='500' />
 
-### begin()
+### Basic program to print your name
 
-The Serial.begin( ) function is a part of the serial object in the Arduino. It tells the serial object to perform initialization steps to send and receive data on the Rx and Tx (pins 1 and 0). It sets the baud rate for serial communication between your Arduino board and another device.
-
-The most common reason to use serial.begin() is when you want to output some information from your Arduino to your computer screen. 99% of the time, you’ll be putting the Serial.begin() function inside of the setup() function. As you may know, setup() only runs once, and since you’ll only need to establish the Serial Communication one time – it makes sense to have it there.
-
-**Syntax**: `Serial.begin(speed)`
-
-_speed_: It signifies the baud rate. The default baud rate in Arduino is 9600. We can specify other baud rates as well, such as 4800, 14400, 38400, 28800, etc.
-
-Probably the most important practical thing you need to know is that for serial communication to work, the baud rate in Serial.begin() and the baud rate set on the receiving device need to match. If you are using the Arduino IDE Serial Monitor window to read the information from your Arduino, then you can use the baud rate drop down to set the baud rate. But remember! If these two values don’t match – then anything you try to send over serial will not work right.
-
-### print 'F'
-
-The **Serial.print( )** function in Arduino prints data to the serial port. It allows you to send information from your Arduino to your computer, so that you can see the value displayed on your Serial Monitor.
-
-**Syntax**: `Serial.print(value, format)`
-
-_value_: It signifies the value to print, which includes any data type value.
-
-_format_: It consists of number bases, such as OCT (Octal), BIN (Binary), HEX (Hexadecimal), etc. for the integral data types. It also specifies the number of decimal places.
-
-You can read more about this function [here](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/).
-
-If we wish to print the data in different lines, we can use the **Serial.println()** function. This function is basically the same as the Serial.print() function (except that it prints data in different lines) and has the same syntax.
-
-## Getting To Know Your Digital Companion
-
-### digitalRead()
-
-digitalRead() function is used to read the logic state at a pin. It is capable of telling us whether the voltage at a pin is 5V or 0V, or in other words, if the pin is at logic state 1 (HIGH) or 0 (LOW).
-
-**NOTE: A pin has to be set to INPUT using pinMode() before you can do a digitalRead() on it**.
-
-Take a look at the following code to understand better
-
-```c++
-int ledPin = 13;  // LED connected to digital pin 13
-int inPin = 7;    // pushbutton connected to digital pin 7
-int val = 0;      // variable to store the read value
-
-void setup() {
-  pinMode(ledPin, OUTPUT);  // sets the digital pin 13 as output
-  pinMode(inPin, INPUT);    // sets the digital pin 7 as input
-}
-
-void loop() {
-  val = digitalRead(inPin);   // read the input pin
-  digitalWrite(ledPin, val);  // sets the LED to the button's value
-}
-
-```
-
-### The IR Module
-
-The IR sensor (or Infrared sensor) is an electronic device that senses objects around it by emitting light, which usually in the infrared spectrum. It is also capable of measuring the heat radiated by an object and can sense motion.
-
-#### Working principle of IR Module
-
-An IR sensor consists of two parts, the emitter circuit and the receiver circuit. This is collectively known as a photo-coupler or an optocoupler.
-
-The emitter is an IR LED and the detector is an IR photodiode. The IR phototdiode is sensitive to the IR light emitted by an IR LED. The photo-diode’s resistance and output voltage change in proportion to the IR light received. This is the underlying working principle of the IR sensor. When the IR transmitter emits radiation, it reaches the object and some of the radiation reflects back to the IR receiver. Based on the intensity of the reception by the IR receiver, the output of the sensor is defined.
-
-<Image src="/static/images/resources/Day2_Session1/ir_1.png" alt="IR" width='500' height='500' />
-
-##### Distinguishing Between Black and White Colors:
-
-It is universal that black color absorbs the entire radiation incident on it and white color reflects the entire radiation incident on it. Based on this principle, the second positioning of the sensor couple can be made. The IR LED and the photodiode are placed side by side. When the IR transmitter emits infrared radiation, since there is no direct line of contact between the transmitter and receiver, the emitted radiation must reflect back to the photodiode after hitting any object. The surface of the object can be divided into two types: reflective surface and non-reflective surface. If the surface of the object is reflective in nature i.e. it is white or other light color, most of the radiation incident on it will get reflected back and reaches the photodiode. Depending on the intensity of the radiation reflected back, current flows in the photodiode.
-
-If the surface of the object is non-reflective in nature i.e. it is black or other dark color, it absorbs almost all the radiation incident on it. As there is no reflected radiation, there is no radiation incident on the photodiode and the resistance of the photodiode remains higher allowing no current to flow. This situation is similar to there being no object at all.
-
-The pictorial representation of the above scenarios is shown below
-
-<Image src="/static/images/resources/Day2_Session1/ir_2.png" alt="IR" width='500' height='500' />
-
-#### Pins description
-
-<Image src="/static/images/resources/Day2_Session1/ir_3.png" alt="IR" width='500' height='500' />
-
-| Pin Name | Description         |
-| -------- | ------------------- |
-| VCC      | Power Supply Input  |
-| GND      | Power Supply Ground |
-| OUT      | Digital Output      |
-
-#### Interfacing with Arduino
-
-We shall now take a look at how we can use the IR sensor with an Arduino Uno and better understand the digitalRead() function.
-
-Connections:
-
-1.  Connect VCC of IR sensor to the 5V pin of Arduino Uno
-2.  Connect GND of IR sensor to the GND pin of Arduino Uno
-3.  Connect OUT pin of IR sensor to any digital pin on the Uno board. In the demonstration, we will be connecting it to digital pin 6.
-
-Code:
+As you know whatever we do in the `void setup()` is only run once whereas as the part in the `void loop()` keeps on runing until Arduino is powered.
+This is an example to print your name once when the board is powered.
 
 ```c++
 void setup()
 {
-  pinMode(13,OUTPUT); // pin 13 on Uno set as output
-  pinMode(6,INPUT); // pin 6 on Uno set as input
+  Serial.begin(9600);  //Begin serial communication at 9600(Baud rate)
+  Serial.println("Hi, I'm Bhavya Jain");  //Print text
 }
-void loop()
-{
-  if(digitalRead(6) == LOW) // if pin 6 reads low
-  {
-    digitalWrite(13,HIGH); // LED connected to digital pin 13 turns ON
-    delay(10); // delay time
-  }
-  else  // if pin 6 reads high
-  {
-    digitalWrite(13,LOW); // LED connected to digital pin 13 turns OFF
-    delay(10); // delay time
-  }
-}
+
+void loop(){ }
 ```
 
-The digitalRead() function is used to read the state of pin 6 and performs the desired function based on the state of this pin.
+`Serial.print()` is used to print in a single line.
+`Serial.println()` moves to next line after printing.
 
-- If digitalRead() reads LOW from the pin, pin 13 on the Uno is set to high, which turns ON the onboard LED.
-- If digitalRead() reads HIGH from the pin, pin 13 on the Uno is set to low, which turns OFF the onboard LED.
+## Add delay to your program
 
-# PWM
+`delay()` function is used to add some time delay to your program.
+For example if you want to print "1" and thenafter 1 second you want to print "2" and so on. You will need delay function.
 
-By now you must be fairly familiar with GPIO pins (Digital and Analog pins). Now let’s discuss about PWM and a special set of Digital pins, called PWM pins.
-
-- Pulse Width Modulation, or PWM, is a technique for getting analog results with digital means.
-- Digital control is used to create a square wave, a signal switched between on and off. This on-off pattern can simulate voltages in between the full Vcc of the board (e.g., 5 V on Uno, 3.3 V on a MKR board) and off (0 Volts) by changing the portion of the time the signal spends on versus the time that the signal spends off.
-- The duration of "on time" is called the pulse width. To get varying analog values, you change, or modulate, that pulse width.
-- If you repeat this on-off pattern fast enough with an LED for example, the result is as if the signal is a steady voltage between 0 and Vcc controlling the brightness of the LED.
-
-## Duty Cycle
-
-When the Arduino sends a $5V$ signal we can call it “on time”. Now Duty Cycle is defined as the ratio of on time by total time :
-
-> Duty Cycle = t<sub>ON</sub>/(t<sub>ON</sub>+t<sub>OFF</sub>)
-
-The Average voltage is :
-
-> V<sub>average</sub> = $5V$ X Duty Cycle
-
-Thus, Duty Cycle specifically describes the percentage of time a digital signal in ON (5V) over an interval or period of time.
-
-<Image src="/static/images/resources/Day2_Session1/pwm_1.png" alt="IR" width='500' height='500' />
-
-## PWM Pins
-
-PWM pins are special-purpose Digital pins that are capable of sending voltage signals between $0V$ and $5V$ too.
-
-Let us consider a simple circuit consisting of an LED, a resistor, a pushbutton, and an Arduino. When the pushbutton is pressed, the LED turns ON because it receives a 5V voltage. When the pushbutton is released, the LED turns OFF because it does not receive any voltage as the circuit is broken, or in other words, it receives 0V. This is demonstrated below using an oscilloscope.
-
-_When pushbutton is pressed, 5V output_
-
-<Image src="/static/images/resources/Day2_Session1/pwm_2.png" alt="IR" width='500' height='500' />
-
-_When pushbutton is released, 0V output_
-
-<Image src="/static/images/resources/Day2_Session1/pwm_3.png" alt="IR" width='500' height='500' />
-
-Now let's say you want to control the brightness of the LED instead of having a simple ON-OFF circuit. This can be achieved using the PWM pins on the Arduino, by varying the portion of time for which the signal stays ON (5V) versus the time for which the signal stays OFF (0V). This is demonstrated below using an oscilloscope.
-
-<Image src="/static/images/resources/Day2_Session1/pwm_4.png" alt="IR" width='500' height='500' />
-
-### Where are they present on the Arduino?
-
-Identifying a PWM pin is an easy task. There are 6 PWM pins in total in an Arduino (3,5,6,9,10,11). If we observe we can see that the above-mentioned pins are accompanied by a ‘~’ symbol. This is the indication saying that a particular pin is a PWM pin. See the picture below :
-
-<Image src="/static/images/resources/Day2_Session1/pwm_5.png" alt="IR" width='500' height='500' />
-
-### Sending Analog Signals using PWM pins
-
-For usage purposes, the PWM pins are of $8-bit$ resolution is used. In this, voltages varying between $0V$to $5V$ are divided into 256 (2<sup>8</sup>, hence $8-bit$ resolution) parts, such that $0V$ is $0$ and $5V$ is $255$. Using this we can send analog signals through PWM pins. As to how we do that will be covered in the upcoming topics.
-
-For further clarity on PWM check out this [video](https://www.youtube.com/watch?v=yhpk4V9w-ZM).
-
-# The Ancient Art of Analog
-
-## analogRead()
-
-### Description
-
-analogRead() is an inbuilt function in the Arduino IDE which takes the name of the analog pin to be read as its parameter and reads the value of that specified analog pin. This is facilitated by a built in 10-bit ADC(Analog to Digital Convertor). The Analog pins on the Arduino UNO are shown in the diagram below.
-
-<Image src="/static/images/resources/Day2_Session1/an_1.png" alt="IR" width='500' height='500' />
-
-### What is an ADC?
-
-An ADC converts an analog signal picked up by the pin to a digital signal which can further be processed by the microcontroller. The input signals are stored electronically in binary within the ADC.The conversion is achieved by quantising the input signal into discrete values. The resolution of an ADC indicates the number of discrete values it can produce over the allowed range of analog input values. The Arduino UNO is equipped with a 10-bit analog to digital converter. This means that it will map input voltages between 0 and 5V into integer values between 0 and 1023. This yields a resolution between readings of: 5 volts / 1024 units or, 0.0049 volts (4.9 mV) per unit.
-
-<Image src="/static/images/resources/Day2_Session1/an_2.png" alt="IR" width='500' height='500' />
-
-<Image src="/static/images/resources/Day2_Session1/an_3.png" alt="IR" width='500' height='500' />
-
-### Syntax
-
-`analogRead(analogPin)`
-
-**Parameter**: The name of the analog input pin to read from. The analog pins vary from board to board. In the case of the Arduino UNO it is from A0 to A5.
-
-**Return Value**: It returns the analog reading of the pin
-
-**Code**:
+The function takes milliseconds as input.
 
 ```c++
-int analogPin = A2; // A2 chosen as analog pin
-int val = 0; // variable initialized to store analog read
-
 void setup(){
-    pinMode(analogPin, INPUT);
-    Serial.begin(9600);
+	Serial.begin(9600);
 }
-
-void loop()
-{
-    val = analogRead(analogPin);
-    Serial.println(val);
-    delay(500);
-}
-```
-
-Watch this video for a better understanding - [Video](https://www.youtube.com/watch?v=5TitZmA66bI)
-
-### LDR - An analog sensor
-
-A Light Dependent Resistor (a.k.a photoresistor or LDR) is a device whose resistivity varies with the incident electromagnetic radiation. Hence, they are light-sensitive devices. Also called photoconductors photoconductive cells or simply photocells. When the light of enough energy falls on it, the number of electrons available for the conduction increases proportional to the intensity of light
-
-Follow these resources for a circuit diagram and a better understanding.
-
-<iframe width="725" height="453" src="https://www.tinkercad.com/embed/j79CRtmYT1A?editbtn=1" frameBorder="0" marginWidth="0" marginHeight="0" scrolling="no"></iframe>
-
-[Video](https://www.youtube.com/watch?v=2fvXW4OEWLE)
-
-### Project using LDR, LED and Arduino
-
-```c++
-int ldr = A0; // Set A0 (analog input) for LDR
-int value = 0;
-
-void setup(){
-    pinMode(3, OUTPUT);
-    Serial.begin(9600);
-}
-
-void loop()
-{
-    value = analogRead(ldr); // Reads the value of LDR
-    Serial.print("LDR Value is: "); // Prints the value of LDR to Serial Monitor
-    Serial.println(value);
-
-    if(value < 200)
-    {
-        digitalWrite(3, HIGH); // Makes the LED glow in dark
-    }
-    else
-    {
-        digitalWrite(3, LOW); // Turns the LED OFF in light
-    }
-}
-```
-
-<iframe width="725" height="453" src="https://www.tinkercad.com/embed/bzoSiWt6QLX?editbtn=1" frameBorder="0" marginWidth="0" marginHeight="0" scrolling="no"></iframe>
-
-## analogWrite()
-
-### Description
-
-analogRead is an inbuilt function in the Arduino IDE which takes the name of the analog pin to which an analog value has to be written as its parameter and a duty cycle which takes values between 0 and 255.
-
-### Parameters
-
-1.  The Arduino pin to write to
-2.  The Duty Cycle between 0 and 255
-
-### Return Value
-
-There is no return value
-
-### Syntax
-
-```c++
-int ledPin = 9; // LED connected to digital pin 9
-int analogPin = 3; // potentiometer connected to analog pin 3
-int val = 0; // variable to store the read value
-
-void setup(){
-    pinMode(ledPin, OUTPUT); // sets the pin as output
-}
-
 void loop(){
-    val = analogRead(analogPin); // read the input pin
-    analogWrite(ledPin, val / 4); // analogRead values go from 0 to 1023, analogWrite values from 0 to 255
+	//This will print 1,2,1,2...infinitely
+	Serial.print(1);
+	delay(1000); // Do nothing for 1 second
+	Serial.print(2);
+	delay(1000); // Do nothing for 1 second
 }
 
 ```
 
-You can read more about this function [here](https://www.arduino.cc/reference/en/language/functions/analog-io/analogwrite/).
-Also, you can watch this [video](https://www.youtube.com/watch?v=YfV-vYT3yfQ) for a better understanding.
+## Assignment 1
 
-### Dimming an LED using analogWrite()
+1. Print a simple message on monitor "Hello World" in a loop.
+2. Write a program to print "LED on" for 1 second then "LED off" for 1 second infinitely.
+3. Design a traffic signal Red = 3 secs, Yellow = 2 secs, Green = 3 secs. Display "RED LIGHT ON", "YELLOW LIGHT ON" and "GREEN LIGHT ON" for the time mentioned in loop.
+
+## Variables and DataTypes in C++
+
+The Arduino microcontroller uses variables identical to C++ on most parts. Hence, we have the familiar C++ data types like `int`, `float`, `double`, `char`, `bool`, etc. However, beyond the C++ data types, we have the `string` datatype, which is used to store a sequence of characters.
+
+// TODO: Variable Naming Conventions
+
+Example:
 
 ```c++
-int brightness = 0;
 
-void setup(){
-    pinMode(9, OUTPUT);
-}
+int32_t myverylongvariable; // Bad Naming, Extremely Unreadable
+int32_t my_very_long_variable; // Good, but unconvetional
+int32_t MyVeryLongVariable; // Good, but unconventional. Pascal case is used with Classes
 
-void loop()
-{
-    // increase brightness from 0 to 255
-    for (brightness = 0; brightness <= 255; brightness += 5)
-    {
-        analogWrite(9, brightness);
-        delay(30);
-    }
-    // decrease brightness from 255 to 0
-    for (brightness = 255; brightness >= 0; brightness -= 5)
-    {
-        analogWrite(9, brightness);
-        delay(30);
-    }
+int32_t myVeryLongVariable; // Good
+
+```
+
+Most of these datatypes have sizes that depend on the compiler architecture being used (x32 or x64), and is often unreliable. To counteract this problem, we have integer datatypes that specify the size (in bytes) explicitly. For Example, `int8_t` has a fixed size of 8 bits, `int32_t` has a size of 32 bits or 4 bytes. Similarly, there are unsigned variations of the same types availabel as well. For example, `uint8_t`, `uint64_t`. We strongly recommend that you use these fixed-size integer datatypes whenever possible.
+
+Size and Range of Some Standard Data Types:
+
+| typename | Size    | Range                     |
+| -------- | ------- | ------------------------- |
+| char     | 1 byte  | 0 to 255                  |
+| int8_t   | 1 byte  | $-2^7$ to $2^7$ - 1       |
+| int16_t  | 2 bytes | $-2^{15}$ to $2^{15}$ - 1 |
+| int32_t  | 4 bytes | $-2^{31}$ to $2^{31}$ - 1 |
+| ...      | ...     | ...                       |
+| uint8_t  | 1 byte  | 0 to $2^8$ - 1            |
+| uint16_t | 2 bytes | 0 to $2^{16}$ - 1         |
+| ...      | ...     | ...                       |
+| float    | 4 bytes | ...                       |
+| double   | 8 bytes | ...                       |
+
+Examples:
+
+```c++
+
+int a = 5;
+int32_t b = 7; // Equicvalent to int in x64 compilers
+
+unsigned int mask = 1234;
+uint8_t mask = 0x11; // 8 bit unsigned integers most frequently used as bit masks
+
+float f = 2.5f; // the f at the end of 2.5 signifies explicitly that this is a float
+double d = 3.5; // floating point numbers are double precision by default
+
+```
+
+### Bonus: Implicit and Explicit Type Casting
+
+> Please refer to [this](https://www.programiz.com/cpp-programming/type-conversion) source for information on this topic
+
+## Operators
+
+Operators may be unary (single operand) or binary (two operands). We look at the following types of operators:
+
+1. Arithmetic Operators:
+
+| operator | operation                                     | Example                    |
+| -------- | --------------------------------------------- | -------------------------- |
+| `+`      | addition                                      | 3 + 5 = 8                  |
+| `-`      | subtraction                                   | 3 - 5 = -2                 |
+| `*`      | multiplication                                | 3 \* 5 = 15                |
+| `/`      | division                                      | 5 / 3 = 1, 3.0 / 2.0 = 1.5 |
+| `%`      | modulo (Remainder after integer division)     | 5 % 3 = 2                  |
+| `x++`    | postfix increment (Add 1 to the value)        | a++ = a + 1                |
+| `++x`    | prefix increment (Add 1 to the value)         | ++a = a + 1                |
+| `x--`    | postfix decrement (Subtract 1 from the value) | a-- = a - 1                |
+| `--x`    | prefix decrement (Subtract 1 from the value)  | --a = a - 1                |
+
+> `%` is used with integer datatypes (eg: `uint8_t`, `int32_t`, etc) only.
+
+2. Assignment Operations:
+
+| operator | operation                     | Example  |
+| -------- | ----------------------------- | -------- |
+| `=`      | assignment                    | a = 5;   |
+| `+=`     | addition and assignment       | a += 5;  |
+| `-=`     | subtraction and assignment    | a -= 5;  |
+| `*=`     | multiplication and assignment | a \*= 5; |
+| `/=`     | division and assignment       | a /= 5;  |
+| `%=`     | modulo and assignment         | a %= 5;  |
+
+3. Relational operators:
+
+> `int a = 7`
+
+| operator | operation                | Example             |
+| -------- | ------------------------ | ------------------- |
+| `==`     | equal                    | a == 5; is `false`  |
+| `!=`     | not equal                | a != 5; is `true`   |
+| `<`      | less than                | a \< 5; is `false`  |
+| `>`      | greater than             | a > 5; is `true`    |
+| `<=`     | less than or equal to    | a \<= 5; is `false` |
+| `>=`     | greater than or equal to | a >= 5; is `true`   |
+
+4. Logical operators:
+
+> `bool a = true`
+
+> `bool b = false`
+
+| operator | operation | Example              |
+| -------- | --------- | -------------------- |
+| `&&`     | AND       | a && b is `false`    |
+| `\|\|`   | OR        | a `\|\|` b is `true` |
+| `!`      | NOT       | !a is `false`        |
+
+5. Bitwise operators:
+
+> `uint8_t a = 0b0000_1011 = 0x0B`
+
+> `uint8_t b = 0b0000_0010 = 0x02`
+
+| operator | operation   | Example                        |
+| -------- | ----------- | ------------------------------ |
+| `&`      | AND         | a & b `= 0b0000_0010 = 0x02`   |
+| `\|`     | OR          | a \| b `= 0b0000_1011 = 0x0B`  |
+| `^`      | XOR         | a ^ b `= 0b0000_1001 = 0x09`   |
+| `~`      | NOT         | ~a `= 0b1111_0100 = 0xF4`      |
+| `<<`     | LEFT SHIFT  | a \<< b `= 0b0010_1100 = 0x2C` |
+| `>>`     | RIGHT SHIFT | a >> b `= 0b0000_0010 = 0x02`  |
+
+We will look at Bitwise operations in more detail further.
+
+## Assignment 2
+
+### Variables and operators
+
+1. Write a program to make a variable "A" and assign the value "25" to it. Print the value of "A" only once on the monitor.
+2. Write a program to print natural numbers infinitely.
+3. Write a program to print the following series infinitely-
+   a. 1, 3 ,5, 7, 9...
+   b. 1, ,2 ,4, 8, 16...
+   c. 32000, 16000, 8000...
+   d. 10, 10, 20, 20, 30, 30....
+   e. 10, 90, 20, 80, 30, 70...
+
+## Conditionals
+
+We now look at how to control the flow of execution of the program. Typically, every statement is executed line by line. However, there are times when we want to execute a statement only when a condition is true. This is where conditionals come in.
+
+We have the following structure of Programs:
+
+```c++
+if (condition1) {
+    // do something when condition1 is true
+} else if (condition2) {
+    // do something when condition2 is true
+} else {
+    // do something when neither condition is true
 }
 ```
 
-<iframe width="725" height="453" src="https://www.tinkercad.com/embed/5OJLL9YWGF9?editbtn=1" frameBorder="0" marginWidth="0" marginHeight="0" scrolling="no"></iframe>
+### The ternary Operator
+
+Ternary operator provides a simple way to execute a statement when a condition is true or false.
+
+```c++
+variable = condition ? value when condition is true : value when condition is false;
+```
+
+This is equivalent to:
+
+```c++
+if (condition) {
+    variable = value when condition is true;
+} else {
+    variable = value when condition is false;
+}
+```
+
+Example:
+
+```c++
+int32_t a = 5, b = 7;
+int32_t maxAB = (a > b) ? a : b; // maxAB = 7
+```
+
+## Loops
+
+Loops are commands that execute a set of statements multiple times. There are two types of loops: `while` and `for`.
+
+### while loop
+
+These loops execute a set of statements as long as a condition is true. The condition is checked at the beginning of each loop iteration. The loop is exited when the condition becomes false.
+
+Syntax:
+
+```c++
+while (condition) {
+    // Loop body
+}
+```
+
+Example:
+
+```c++
+int32_t i = 0;
+while (i < 10) {
+    i++;
+}
+
+// Value of i after loop exits: 10 (Why not 9?)
+```
+
+### for loop
+
+These loops execute a set of statements once for each element in a collection. The collection is specified by the loop variable. This collection is defined by the loop variable.
+
+Syntax:
+
+```c++
+for (variable = initial value; condition; increment variable) {
+    // Loop Body
+}
+```
+
+Example:
+
+```cpp
+int32_t i;
+for (i = 0; i < 10; i++) {
+    // do something
+}
+```
+
+### The unspoken Brother
+
+The third kind of Loops are the `do while` loops. These loops execute a set of statements as long as a condition is true. The condition is checked at the end of each loop iteration. The loop is exited when the condition becomes false.
+
+> Point out a case where `do while` loop is preferred over `while` loop.
+
+Syntax:
+
+```cpp
+do {
+    // Loop Body
+} while (condition);
+```
+
+## Assignment 3
+
+### Conditional Programming
+
+1. Print natural numbers only till 25
+2. Make a variable and assign thevalue 0 to it. Keep adding 1 to it but print the value of variable only from 20-30
+3. Print table of 5 till 50 only
+4. From the series given in Assignment 2, print the numbers only till the 7th term.
+
+## Functions
+
+A function is a named sequence of statements that perform a specific task. It is a block of code that performs a specific task.
+
+Suppose we need to create a program to create a circle and color it. We can create two functions to solve this problem:
+
+1. A function to draw the circle
+2. A function to color the circle
+
+Dividing a complex problem into smaller chunks makes our program easy to understand and reusable.
+
+There are two types of function:
+
+1. _User-defined functions_: Created by users
+2. _Built-in functions_: Predefined in C++, or the compiler
+
+### User Defined Functions:
+
+Naming A Function: In C++, the conventional practive is to use Camel Case for naming functions. This is similar to how variables are named.
+
+Example:
+
+```c++
+
+int32_t myverylongfunction(); // Bad Naming, Extremely Unreadable
+int32_t my_very_long_function(); // Good, but unconvetional
+int32_t MyVeryLongFunction(); // Good, but unconventional. Pascal case is used with Classes
+
+int32_t myVeryLongFunction(); // Good
+
+```
+
+Every function has a protype (or its signature/declaration) and a definition. The protype contains the return type of the function, the function name, and its parameters. The function definition contains the statements that the function performs.
+
+Syntax:
+
+```c++
+returnType functionName (parameter1, parameter2, ...); // Function Protype
+
+returnType functionName (parameter1, parameter2, ...) { // Function Definition
+    // Function Body
+}
+
+```
+
+> The protype may exists independantly of the definition, but the definition always includes the protype.
+
+Example:
+
+```c++
+
+bool isOdd(int32_t n) {
+    /*
+    Check if the number passed is odd
+    Args:
+        int32_t n: The number to check
+    Returns:
+        bool: True if the number is odd, false otherwise
+    */
+    return (n & 1);
+}
+```
+
+Now that you've finished this section, you have all the **programming knowledge** required to get started with Day 1 of our workshop.
