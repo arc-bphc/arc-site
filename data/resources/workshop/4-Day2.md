@@ -17,6 +17,37 @@ orderInSidebar: 4
 ---
 
 <TOCInline toc={props.toc} toHeading={3} asDisclosure />
+## How Not To Blowup Your Laptop
+
+The Arduino Uno has undergone many revisions, and hence the [Arduino power supply circuit](https://technobyte.org/arduino-uno-power-supply-arduino-hardware-core/) has evolved to an almost foolproof design. In this project, we will learn about the three different ways in which we can power up the Arduino Uno. While making any Arduino project, it is necessary to know these techniques, since there are instances when flexibility with regards to the power supply is required.
+
+Modern Arduino Uno boards allow the board to have more than one source of power to be connected simultaneously. An intelligent switching circuitry ensures that the highest available voltage is selected and sent to the onboard voltage regulator, and eventually powers up the board.
+
+<EmbedItem url='https://www.youtube.com/embed/dT7WYkca8hY' />
+
+### Power Scheme 1
+
+**Using the USB Cable**
+The USB port of the Arduino Uno can be connected to a desktop/laptop. If the computer recognizes the device, the current supplied to the board is 500mA at 5V. If the connection is not enumerated, 100mA is supplied at 5V.
+
+<Image src="/static/images/resources/Day2_Session1/power_1.png" alt="IR" width='500' height='500' />
+
+### Power Scheme 2
+
+**Using an AC to DC adapter plugged into the barrel connector**
+The barrel connector can be supplied with an input of 7-12V. This is regulated to 5V by the onboard voltage regulator, and the board is powered on.
+
+<Image src="/static/images/resources/Day2_Session1/power_2.png" alt="IR" width='500' height='500' />
+
+### Power Scheme 3
+
+**Using Vin pin**
+Connect a 9V battery with the positive terminal connected to the Vin pin and the negative terminal connected to the GND pin. The Vin port allows an input between 7 and 12 Volts, and the current should not exceed 500mA.
+
+<Image src="/static/images/resources/Day2_Session1/power_4.png" alt="IR" width='500' height='500' />
+
+**NOTE - If the Vin / 5V and GND pins are being used to power up the Arduino, double-check the polarity because if the GND and 5V/Vin pins are mixed up, it can potentially damage the Arduino board.**
+
 ## Talking Digital
 
 Now that the Arduino has an heads up about the kind of device its dealing with its time we start talking with these devices.
@@ -150,37 +181,6 @@ By the above circuit connection and the usage of the above code, the LED will bl
 <iframe width="400" height="253" src="https://www.tinkercad.com/embed/6NIZm9eNqsL?editbtn=1" frameBorder="0" marginWidth="0" marginHeight="0" scrolling="no"></iframe>
 
 There maybe a lot in the above code that you might not understand at present, but still try to copy the code and replicate the circuit and run the simulation. This will help you grasp the concepts better in the later sessions.
-
-## How Not To Blowup Your Laptop
-
-The Arduino Uno has undergone many revisions, and hence the [Arduino power supply circuit](https://technobyte.org/arduino-uno-power-supply-arduino-hardware-core/) has evolved to an almost foolproof design. In this project, we will learn about the three different ways in which we can power up the Arduino Uno. While making any Arduino project, it is necessary to know these techniques, since there are instances when flexibility with regards to the power supply is required.
-
-Modern Arduino Uno boards allow the board to have more than one source of power to be connected simultaneously. An intelligent switching circuitry ensures that the highest available voltage is selected and sent to the onboard voltage regulator, and eventually powers up the board.
-
-<EmbedItem url='https://www.youtube.com/embed/dT7WYkca8hY' />
-
-### Power Scheme 1
-
-**Using the USB Cable**
-The USB port of the Arduino Uno can be connected to a desktop/laptop. If the computer recognizes the device, the current supplied to the board is 500mA at 5V. If the connection is not enumerated, 100mA is supplied at 5V.
-
-<Image src="/static/images/resources/Day2_Session1/power_1.png" alt="IR" width='500' height='500' />
-
-### Power Scheme 2
-
-**Using an AC to DC adapter plugged into the barrel connector**
-The barrel connector can be supplied with an input of 7-12V. This is regulated to 5V by the onboard voltage regulator, and the board is powered on.
-
-<Image src="/static/images/resources/Day2_Session1/power_2.png" alt="IR" width='500' height='500' />
-
-### Power Scheme 3
-
-**Using Vin pin**
-Connect a 9V battery with the positive terminal connected to the Vin pin and the negative terminal connected to the GND pin. The Vin port allows an input between 7 and 12 Volts, and the current should not exceed 500mA.
-
-<Image src="/static/images/resources/Day2_Session1/power_4.png" alt="IR" width='500' height='500' />
-
-**NOTE - If the Vin / 5V and GND pins are being used to power up the Arduino, double-check the polarity because if the GND and 5V/Vin pins are mixed up, it can potentially damage the Arduino board.**
 
 ## ~~TV~~ Serial
 
