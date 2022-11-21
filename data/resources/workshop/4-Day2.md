@@ -147,7 +147,7 @@ void loop()
 
 By the above circuit connection and the usage of the above code, the LED will blink until the Arduino is given power.
 
-<iframe width="725" height="453" src="https://www.tinkercad.com/embed/6NIZm9eNqsL?editbtn=1" frameBorder="0" marginWidth="0" marginHeight="0" scrolling="no"></iframe>
+<iframe width="400" height="253" src="https://www.tinkercad.com/embed/6NIZm9eNqsL?editbtn=1" frameBorder="0" marginWidth="0" marginHeight="0" scrolling="no"></iframe>
 
 There maybe a lot in the above code that you might not understand at present, but still try to copy the code and replicate the circuit and run the simulation. This will help you grasp the concepts better in the later sessions.
 
@@ -526,7 +526,7 @@ void loop()
 }
 ```
 
-<iframe width="725" height="453" src="https://www.tinkercad.com/embed/5OJLL9YWGF9?editbtn=1" frameBorder="0" marginWidth="0" marginHeight="0" scrolling="no"></iframe>
+<iframe width="600" height="453" src="https://www.tinkercad.com/embed/5OJLL9YWGF9?editbtn=1" frameBorder="0" marginWidth="0" marginHeight="0" scrolling="no"></iframe>
 
 # Motors and Motor Drivers
 
@@ -910,135 +910,3 @@ In the above code, the pin is the echoPin, and the value is HIGH, i.e. the funct
 Hence it indirectly measures the travel time of the signal. Thus the pingTimeTravel can be calculated using the pulseIn() function.
 
 <EmbedItem url='https://www.youtube.com/embed/M-UKXCUI0r' />
-
-# The HC-05 Bluetooth 2.0 Module
-
-Ever wanted to use your mobile to control how a car moves? To do that, you need the HC-05 Bluetooth module. Here, we will understand the basics of Serial communication using HC-05 and a brief description of its hardware.
-
-## An Overview
-
-Designed to replace cable connections, HC-05 uses serial communication to communicate with the electronics. It uses the 2.45GHz frequency band. The data transfer rate can vary up to 1Mbps and is in the range of 10 meters.
-The HC-05 module can be operated within 4-6V of power supply. It supports baud rate of 9600, 19200, 38400, 57600, etc. We use this module because Arduino can't interface using Bluetooth.
-
-## Pin Diagram
-
-<Image src="/static/images/resources/Day3_Session1/bluetooth_1.png" alt="IR" width='500' height='500' />
-
-The HC-05 has five pins, namely:
-
-1.  Key: This pin is used to set the Data Mode or AT command mode (set high).
-
-    - Data mode: Exchange of data between devices. Baud rate is 9600bps in data mode.
-    - Command mode: It uses AT commands which are used to change the setting of HC-05. Baud rate is 38400bps in command mode. An AT command is a string, e.g., +PSWD:1234 sets the password for communication to 1234.
-
-2.  VCC: This is connected to a +5V power supply.
-3.  Ground - Connected to the ground of the powering system.
-4.  Tx (Transmitter) - This pin transmits the received data Serially. It would be best to connect this pin to the RX pin of the microcontroller you are using.
-5.  Rx (Receiver) - Used for broadcasting data serially over Bluetooth. Connect this pin to the TX pin of the micro-controller.
-6.  State - Used to check if the Bluetooth is working correctly. (Debugging)
-
-## How to connect the module to Arduino?
-
-<Image src="/static/images/resources/Day3_Session1/bluetooth_2.png" alt="IR" width='500' height='500' />
-
-1.  Connect Power Supply (based on the datasheet of modules) for Bluetooth and Microcontroller, which you are using.
-2.  Connect TXD pin of HC-05 Bluetooth module to RXD pin of the microcontroller.
-3.  Connect the RXD pin of the HC-05 Bluetooth module to the TXD pin of the microcontroller.
-4.  Common grounding is needed for both modules.
-5.  To prevent the module from damaging and make it work properly, you should use a resistance division circuit (5v to 3.3v ) between the Arduino TX pin and the module RX pin.
-
-## Sample Code for Arduino _(for reference only)_
-
-To communicate with HC05 using Bluetooth, you need a Bluetooth terminal application on your phone. You can use [this](https://play.google.com/store/apps/details?id=braulio.calle.bluetoothRCcontroller&hl=en_IN&gl=US) one. After opening the app, look for the HC-05 module and pair the device. After pairing, click on it to connect. To start transferring data, upload this code on your Arduino and connect HC05 using the app you have just installed.
-
-```c++
-#include <SoftwareSerial.h> //Necessary for bluetooth serial communication
-SoftwareSerial MyBlue(2, 3); // RX | TX
-int flag = 0;
-int LED = 8;
-void setup()
-{
- Serial.begin(9600);
- MyBlue.begin(9600); //Communication Mode
- pinMode(LED, OUTPUT);
- Serial.println("Ready to connect\nDefualt password is 1234 or 000");
-}
-void loop()
-{
- if (MyBlue.available()) //Checks if the bluetooth connection is online
-   flag = MyBlue.read(); //Reads the value passed by the master device
- if (flag == 1)
- {
-   digitalWrite(LED, HIGH);
-   Serial.println("LED On"); //Turns LED on if 1 is passed
- }
- else if (flag == 0)
- {
-   digitalWrite(LED, LOW); //Turns LED off if 0 is passed
-   Serial.println("LED Off");
- }
-}
-```
-
-To understand this better, try to draw an analogy between this and the Serial class used for communication between your PC and the microcontroller.
-
-## Resources
-
-1.  Follow this [tutorial](https://www.youtube.com/watch?v=u5dhGN6QaL8) to know how to use the Bluetooth app mentioned above.
-2.  If you want to make your own app without in-depth knowledge in development, you can use [MIT App Inventor.](https://play.google.com/store/apps/details?id=edu.mit.appinventor.aicompanion3&hl=en) Follow this [tutorial](https://www.youtube.com/watch?v=QC6TDIduhfg) to get an idea of the basics.
-
-# LM7805 Voltage Regulator
-
-## About
-
-Voltage regulators are used to ensure steady and constant output from voltage sources. The integrated circuits used for voltage regulation are called Voltage regulator ICs.
-
-IC 7805 is a three-terminal Voltage Regulator that restricts the output voltage to 5V output for various ranges of input voltage. It acts as an excellent component against input voltage fluctuations for circuits, and adds an additional safety to your circuitry. Primary job of a voltage regulator is to drop a larger voltage to a smaller one and keep it stable, since that regulated voltage is being used to power sensitive electronics.
-
-LM78xx series is a family of linear voltage regulators. This series of regulators are excellent for most purposes, they can handle up to almost 30V on the input and depending on the package, up to 1A output current. The last digit on the IC signifies the voltage to which input is regulated and given out, for example, 7805 regulates to give 5V output and a 7803 gives a 3V output.
-
-<Image src="/static/images/resources/Day3_Session1/7805_1.jpg" alt="IR" width='500' height='500' />
-
-## Pins Description
-
-<Image src="/static/images/resources/Day3_Session1/7805_pins.jpg" alt="IR" width='500' height='500' />
-
-| Pin No. | Pin    | Function                        | Description                                                                                 |
-| ------- | ------ | ------------------------------- | ------------------------------------------------------------------------------------------- |
-| 1       | INPUT  | Input Voltage (7V-35V)          | In this pin of the IC positive unregulated voltage is given in regulation                   |
-| 2       | GROUND | Ground(0V)                      | In this pin where the ground is given. This pin is neutral for equally the input and output |
-| 3       | OUTPUT | regulated output; 5V(4.8V-5.2V) | The output of the regulated 5V is taken out at this pin of the IC regulator                 |
-
-You can read more about the 7805 IC [here](https://www.electronicshub.org/understanding-7805-ic-voltage-regulator/).
-A detailed video explanation on the 7805 IC can be found [here](https://www.youtube.com/watch?v=LEv26VH0S1E).
-
-<Image src="/static/images/resources/Day3_Session1/7805_connection.jpg" alt="IR" width='500' height='500' />
-
-[Tinkercad Simulation for Reference](https://www.tinkercad.com/things/cGUY894p0d4-lm7805-voltage-regulator)
-[How to use LM7805 regulator in 5 volt dc power supply from 9 volt battery](https://www.youtube.com/watch?v=9KXN69eXzj8)
-
-## 7805 Regulator Features
-
-- 5V positive voltage regulator.
-- Operating current is 5mA.
-- Minimum input voltage is 7V.
-- Maximum input voltage is 35V.
-- Required very minimum external component to fully function.
-- It can deliver up to 1.5A of current.
-- Internal thermal overload and short circuit current limiting protection is available.
-- Junction temperature maximum of 125-degree celsius.
-- This IC has both internal current limiting and thermal shutdown features.
-
-You can also refer to the [datasheet](http://ee-classes.usc.edu/ee459/library/datasheets/LM7805.pdf) for more information.
-
-## Application of LM7805
-
-### Used as
-
-- fixed output regulator.
-- regulated dual supply.
-- In most devices as constant +5V output is needed for microcontrollers and sensors in most of the projects.
-- current limiter for certain applications.
-- polarity reversal protection circuit.
-- Reverse bias protection circuit.
-- positive regulator in negative configurations.
