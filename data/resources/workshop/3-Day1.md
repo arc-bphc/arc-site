@@ -458,11 +458,11 @@ The pin numbers for the Arduino board are mentioned on the board and can be used
 
 # Microprocessors
 
-## What is a microprocessor?
+### What is a microprocessor?
 
 A microprocessor is an integrated circuit (IC) that houses the central processing unit (CPU) of a computer . It is a clock-driven, register-based programmable multipurpose silicon device that accepts binary data as input and processes it according to instructions stored in the memory.
 
-## Why we need a Microprocessor?
+### Why we need a Microprocessor?
 
 A microprocessor, like our brain, can be trained to perform any task. Based on its instruction set and capabilities, it can be programmed to perform anything we desire. When we try to solve a problem without programming, the solution can be exceedingly complex.
 
@@ -470,7 +470,7 @@ When we try to solve a problem without programming, the solution can be exceedin
 
 Assume you wish to construct a large structure. The use of BRICKS will simplify and reduce the cost of building. It will also allow you to design the building in whatever shape or size you like. The bricks that you can employ to solve your problem are instructions stored in a microprocessor. You can quickly solve difficult programmes by following those guidelines.
 
-## How does a Microprocessor work ?
+### How does a Microprocessor work ?
 
 A processor is the brain of a computer which basically consists of _Arithmetical and Logical Unit (ALU), Control Unit and Register Array_.
 
@@ -480,7 +480,7 @@ A processor is the brain of a computer which basically consists of _Arithmetical
 
 So basically a microprocessor takes input from input devices, process it as per instructions given in the memory and produces output.
 
-## Advantages of Microprocessors
+### Advantages of Microprocessors
 
 **Low Cost**
 Microprocessors are available at low cost due to integrated circuit technology which reduces the cost of a computer system.
@@ -506,7 +506,7 @@ Microprocessors are very reliable, failure rate is very less as semiconductor te
 **Portable**
 Devices or computer system made with microprocessors can be made portable due to the small size and low power consumption.
 
-## Examples of Microprocessors
+### Examples of Microprocessors
 
 - Intel 4004 – The First Microprocessor
 - Intel 8085
@@ -515,7 +515,7 @@ Devices or computer system made with microprocessors can be made portable due to
 - Intel Core i7
 - AMD Athlon
 
-## Key differences between Microcontrollers & Microprocessors:
+### Key differences between Microcontrollers & Microprocessors:
 
 |                      | MicroConrollers                                                                                                                                                          | MicroProcessors                                                                                                                                                                                                                                     |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -636,12 +636,6 @@ void loop(){
 }
 
 ```
-
-## Assignment 1
-
-1. Print a simple message on monitor "Hello World" in a loop.
-2. Write a program to print "LED on" for 1 second then "LED off" for 1 second infinitely.
-3. Design a traffic signal Red = 3 secs, Yellow = 2 secs, Green = 3 secs. Display "RED LIGHT ON", "YELLOW LIGHT ON" and "GREEN LIGHT ON" for the time mentioned in loop.
 
 ## Variables and DataTypes in C++
 
