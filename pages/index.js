@@ -220,7 +220,7 @@ export default function Home() {
               description={`Various intriguing workshops conducted throughout the year, which
                effortlessly combine learning with enjoyment`}
               imgSrc={'/static/images/workshop.jpg'}
-              href={'/resources/workshop/2021-07-06-Day0-1'}
+              href={'/resources/workshop/1-AboutTheWorkshop'}
             />
 
             <Card
