@@ -1,5 +1,5 @@
 ---
-title: Workshop Day 1 Session 1
+title: Workshop Day 1
 tags: ['TeXt']
 mode: normal
 type: article

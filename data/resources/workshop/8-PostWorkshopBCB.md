@@ -13,7 +13,7 @@ aside:
   toc: true
 sidebar:
   nav: workshop-bar
-orderInSidebar: 10
+orderInSidebar: 8
 ---
 
 <TOCInline toc={props.toc} toHeading={3} asDisclosure />

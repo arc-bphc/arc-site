@@ -1,5 +1,5 @@
 ---
-title: Workshop Day 1 Assignments
+title: Assignments
 tags: ['TeXt']
 mode: normal
 type: article
@@ -13,7 +13,7 @@ aside:
   toc: true
 sidebar:
   nav: workshop-bar
-orderInSidebar: 4
+orderInSidebar: 5
 ---
 
 <TOCInline toc={props.toc} toHeading={3} asDisclosure />

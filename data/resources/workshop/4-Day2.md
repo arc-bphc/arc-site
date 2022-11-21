@@ -1,5 +1,5 @@
 ---
-title: Workshop Day 2 Session 1
+title: Workshop Day 2
 tags: ['TeXt']
 mode: normal
 type: article
@@ -13,7 +13,7 @@ aside:
   toc: true
 sidebar:
   nav: workshop-bar
-orderInSidebar: 6
+orderInSidebar: 4
 ---
 
 <TOCInline toc={props.toc} toHeading={3} asDisclosure />
