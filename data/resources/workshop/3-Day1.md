@@ -339,6 +339,37 @@ _This is how a Analog Signal looks like._
 
 ## Getting Started With Arduino
 
+### How Not To Blowup Your Laptop
+
+The Arduino Uno has undergone many revisions, and hence the [Arduino power supply circuit](https://technobyte.org/arduino-uno-power-supply-arduino-hardware-core/) has evolved to an almost foolproof design. In this project, we will learn about the three different ways in which we can power up the Arduino Uno. While making any Arduino project, it is necessary to know these techniques, since there are instances when flexibility with regards to the power supply is required.
+
+Modern Arduino Uno boards allow the board to have more than one source of power to be connected simultaneously. An intelligent switching circuitry ensures that the highest available voltage is selected and sent to the onboard voltage regulator, and eventually powers up the board.
+
+<EmbedItem url='https://www.youtube.com/embed/dT7WYkca8hY' />
+
+#### Power Scheme 1
+
+**Using the USB Cable**
+The USB port of the Arduino Uno can be connected to a desktop/laptop. If the computer recognizes the device, the current supplied to the board is 500mA at 5V. If the connection is not enumerated, 100mA is supplied at 5V.
+
+<Image src="/static/images/resources/Day2_Session1/power_1.png" alt="IR" width='500' height='500' />
+
+### Power Scheme 2
+
+**Using an AC to DC adapter plugged into the barrel connector**
+The barrel connector can be supplied with an input of 7-12V. This is regulated to 5V by the onboard voltage regulator, and the board is powered on.
+
+<Image src="/static/images/resources/Day2_Session1/power_2.png" alt="IR" width='500' height='500' />
+
+#### Power Scheme 3
+
+**Using Vin pin**
+Connect a 9V battery with the positive terminal connected to the Vin pin and the negative terminal connected to the GND pin. The Vin port allows an input between 7 and 12 Volts, and the current should not exceed 500mA.
+
+<Image src="/static/images/resources/Day2_Session1/power_4.png" alt="IR" width='500' height='500' />
+
+**NOTE - If the Vin / 5V and GND pins are being used to power up the Arduino, double-check the polarity because if the GND and 5V/Vin pins are mixed up, it can potentially damage the Arduino board.**
+
 You will be learning how to talk to your Arduino and interface it with other sensors to make it smarter.
 
 ### The Sketch
