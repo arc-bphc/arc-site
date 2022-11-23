@@ -524,61 +524,6 @@ The IC works on the principle of H-Bridge (this can be understood on checking ho
 
 <EmbedItem url='https://www.youtube.com/embed/y7WFVobzf1M' />
 
-#### _Circuit on TinkerCAD_
-
-<iframe width="725" height="453" src="https://www.tinkercad.com/embed/l1ABNFeVqaz?editbtn=1" frameBorder="0" marginWidth="0" marginHeight="0" scrolling="no"></iframe>
-
-#### Code
-
-```c++
-int speedPinR = 5; // connect enable pin 1,2
-int dirR1 = 4; // connect input pin 1 which controls output pin 1
-int dirR2 = 2; // connect input pin 2 which controls output pin 2
-int speedPinL = 6; // connect enable pin 3,4
-int dirL1 = 7; // connect input pin 3 which controls output pin 3
-int dirL2 = 12; // connect input pin 4 which controls output pin 4
-const int mSpeedL = 79; // to maintain approx 5000rpm for left wheel
-const int mSpeedR = 79; // to maintain approx 5000rpm for right wheel
-int dt = 1000; // delay time
-
-// Output pins 1,2 connected to right motor
-// Output pins 3,4 connected to left motor
-
-void setup()
-{
-  Serial.begin(9600);
-
-// set pinMode for all pins
-  pinMode(speedPinR, OUTPUT);
-  pinMode(dirR1, OUTPUT);
-  pinMode(dirR2, OUTPUT);
-  pinMode(speedPinL, OUTPUT);
-  pinMode(dirL1, OUTPUT);
-  pinMode(dirL2, OUTPUT);
-}
-
-void loop()
-{
-  digitalWrite(dirR1, HIGH); // input pin 1 set to high
-  digitalWrite(dirR2, LOW); // enable pin 1,2 set to low
-  analogWrite(speedPinR,mSpeedR); // 5000rpm FOR RIGHT
-
-  digitalWrite(dirL1, HIGH); // input pin 3 set to high
-  digitalWrite(dirL2, LOW); // enable pin 3,4 set to low
-  analogWrite(speedPinL,mSpeedL); // 5000rpm FOR LEFT
-
-  delay(dt); // set delay time
- }
-
-```
-
-[TinkerCAD Simulation](https://www.tinkercad.com/things/l1ABNFeVqaz)
-
-Refer to the above to get an idea on how to make the connections and how to work with the L293D.
-
-Here is a very useful video by Paul MCWhorter. Do give it a watch!
-https://www.youtube.com/watch?v=fPLEncYrl4Q
-
 <Image src="/static/images/resources/Day3_Session1/schematic99.png" alt="IR" width='500' height='500' />
 
 #### Code
