@@ -119,7 +119,7 @@ Now that we know whats causing the problem its time we try to fix it.
 > **Bitsian Lore**
 > While the whole of India follows the India Standard Time, we Bitsians unfortunately take pride in following the Bitsian Standard Time which basically is a time zone that runs anywhere from 10 to 40 minutes behind the IST. Most event timings during fests are not inclusive of BST due to which participants from other colleges often think the events are **delayed**, if only there were as lite as we are.
 
-## delay()
+### delay()
 
 In great pride, lets meet the next function **[delay()](https://www.arduino.cc/reference/en/language/functions/time/delay/)** which is like the **Bitsian Standard Time** equivalent in the world of Arduino, while it does cause delays it isn't as unpredictable as we bitsians are.
 
@@ -153,7 +153,7 @@ As we can see the LED is on for almost a second, while not exact its close enoug
 
 **NOTE: Using delay() will cause your Arduino to sit idle for the specified amount of time without doing anything, which might be fine if our only intention is to blink an LED, but the use of delay should be avoided if we want the arduino to perform multiple tasks**
 
-## Building your first Arduino Circuit : Blinking an LED
+### Building your first Arduino Circuit : Blinking an LED
 
 Now that you have gained a basic understanding of digital and analog pins, let's build a simple circuit using an Arduino. For this circuit, we will be using **an Arduino, a LED, and a resistor**. The circuit connection looks as below :
 
@@ -182,13 +182,13 @@ By the above circuit connection and the usage of the above code, the LED will bl
 
 There maybe a lot in the above code that you might not understand at present, but still try to copy the code and replicate the circuit and run the simulation. This will help you grasp the concepts better in the later sessions.
 
-## ~~TV~~ Serial
+### ~~TV~~ Serial
 
 Sometimes its really useful to see what's going on inside the brain of a microcontroller. Whilst there are many ways to send and receive information to and from a microcontroller and the computer, using the Serial port turns out to be the easiest.
 Serial communication is the process of sending one bit of data at a time, sequentially from one device to another. The main purpose of this serial communication is to transfer the sketch from computer to Arduino, to send information to computer etc. All Arduino boards have at least one serial port and it communicates on digital pins 0 (RX) and 1 (TX).
 The serial port is connected to the USB port on the board, and we can use the built-in Arduino Serial library to send data to the serial monitor in the Arduino IDE or to an external serial monitor.
 
-### Monitor
+#### Monitor
 
 The Serial Monitor is basically a window in the Arduino IDE that allows you to send messages from your computer to an Arduino board (over USB) as well as receive messages from the Arduino.
 
@@ -201,7 +201,7 @@ This is how your Serial Monitor will typically look like
 
 <Image src="/static/images/resources/Day2_Session1/monitor.png" alt="IR" width='500' height='500' />
 
-### begin()
+#### begin()
 
 The Serial.begin( ) function is a part of the serial object in the Arduino. It tells the serial object to perform initialization steps to send and receive data on the Rx and Tx (pins 1 and 0). It sets the baud rate for serial communication between your Arduino board and another device.
 
@@ -213,7 +213,7 @@ _speed_: It signifies the baud rate. The default baud rate in Arduino is 9600. W
 
 Probably the most important practical thing you need to know is that for serial communication to work, the baud rate in Serial.begin() and the baud rate set on the receiving device need to match. If you are using the Arduino IDE Serial Monitor window to read the information from your Arduino, then you can use the baud rate drop down to set the baud rate. But remember! If these two values don’t match – then anything you try to send over serial will not work right.
 
-### print 'F'
+#### print 'F'
 
 The **Serial.print( )** function in Arduino prints data to the serial port. It allows you to send information from your Arduino to your computer, so that you can see the value displayed on your Serial Monitor.
 
@@ -227,9 +227,9 @@ You can read more about this function [here](https://www.arduino.cc/reference/en
 
 If we wish to print the data in different lines, we can use the **Serial.println()** function. This function is basically the same as the Serial.print() function (except that it prints data in different lines) and has the same syntax.
 
-## Getting To Know Your Digital Companion
+### Getting To Know Your Digital Companion
 
-### digitalRead()
+#### digitalRead()
 
 digitalRead() function is used to read the logic state at a pin. It is capable of telling us whether the voltage at a pin is 5V or 0V, or in other words, if the pin is at logic state 1 (HIGH) or 0 (LOW).
 
@@ -254,7 +254,7 @@ void loop() {
 
 ```
 
-### The IR Module
+#### The IR Module
 
 The IR sensor (or Infrared sensor) is an electronic device that senses objects around it by emitting light, which usually in the infrared spectrum. It is also capable of measuring the heat radiated by an object and can sense motion.
 
@@ -266,7 +266,7 @@ The emitter is an IR LED and the detector is an IR photodiode. The IR phototdiod
 
 <Image src="/static/images/resources/Day2_Session1/ir_1.png" alt="IR" width='500' height='500' />
 
-##### Distinguishing Between Black and White Colors:
+#### Distinguishing Between Black and White Colors:
 
 It is universal that black color absorbs the entire radiation incident on it and white color reflects the entire radiation incident on it. Based on this principle, the second positioning of the sensor couple can be made. The IR LED and the photodiode are placed side by side. When the IR transmitter emits infrared radiation, since there is no direct line of contact between the transmitter and receiver, the emitted radiation must reflect back to the photodiode after hitting any object. The surface of the object can be divided into two types: reflective surface and non-reflective surface. If the surface of the object is reflective in nature i.e. it is white or other light color, most of the radiation incident on it will get reflected back and reaches the photodiode. Depending on the intensity of the radiation reflected back, current flows in the photodiode.
 
@@ -333,7 +333,7 @@ By now you must be fairly familiar with GPIO pins (Digital and Analog pins). Now
 - The duration of "on time" is called the pulse width. To get varying analog values, you change, or modulate, that pulse width.
 - If you repeat this on-off pattern fast enough with an LED for example, the result is as if the signal is a steady voltage between 0 and Vcc controlling the brightness of the LED.
 
-## Duty Cycle
+### Duty Cycle
 
 When the Arduino sends a $5V$ signal we can call it “on time”. Now Duty Cycle is defined as the ratio of on time by total time :
 
@@ -347,7 +347,7 @@ Thus, Duty Cycle specifically describes the percentage of time a digital signal 
 
 <Image src="/static/images/resources/Day2_Session1/pwm_1.png" alt="IR" width='500' height='500' />
 
-## PWM Pins
+### PWM Pins
 
 PWM pins are special-purpose Digital pins that are capable of sending voltage signals between $0V$ and $5V$ too.
 
@@ -365,13 +365,13 @@ Now let's say you want to control the brightness of the LED instead of having a 
 
 <Image src="/static/images/resources/Day2_Session1/pwm_4.png" alt="IR" width='500' height='500' />
 
-### Where are they present on the Arduino?
+#### Where are they present on the Arduino?
 
 Identifying a PWM pin is an easy task. There are 6 PWM pins in total in an Arduino (3,5,6,9,10,11). If we observe we can see that the above-mentioned pins are accompanied by a ‘~’ symbol. This is the indication saying that a particular pin is a PWM pin. See the picture below :
 
 <Image src="/static/images/resources/Day2_Session1/pwm_5.png" alt="IR" width='500' height='500' />
 
-### Sending Analog Signals using PWM pins
+#### Sending Analog Signals using PWM pins
 
 For usage purposes, the PWM pins are of $8-bit$ resolution is used. In this, voltages varying between $0V$to $5V$ are divided into 256 (2<sup>8</sup>, hence $8-bit$ resolution) parts, such that $0V$ is $0$ and $5V$ is $255$. Using this we can send analog signals through PWM pins. As to how we do that will be covered in the upcoming topics.
 
@@ -379,15 +379,15 @@ For further clarity on PWM check out this [video](https://www.youtube.com/watch?
 
 # The Ancient Art of Analog
 
-## analogRead()
+### analogRead()
 
-### Description
+#### Description
 
 analogRead() is an inbuilt function in the Arduino IDE which takes the name of the analog pin to be read as its parameter and reads the value of that specified analog pin. This is facilitated by a built in 10-bit ADC(Analog to Digital Convertor). The Analog pins on the Arduino UNO are shown in the diagram below.
 
 <Image src="/static/images/resources/Day2_Session1/an_1.png" alt="IR" width='500' height='500' />
 
-### What is an ADC?
+#### What is an ADC?
 
 An ADC converts an analog signal picked up by the pin to a digital signal which can further be processed by the microcontroller. The input signals are stored electronically in binary within the ADC.The conversion is achieved by quantising the input signal into discrete values. The resolution of an ADC indicates the number of discrete values it can produce over the allowed range of analog input values. The Arduino UNO is equipped with a 10-bit analog to digital converter. This means that it will map input voltages between 0 and 5V into integer values between 0 and 1023. This yields a resolution between readings of: 5 volts / 1024 units or, 0.0049 volts (4.9 mV) per unit.
 
@@ -395,7 +395,7 @@ An ADC converts an analog signal picked up by the pin to a digital signal which 
 
 <Image src="/static/images/resources/Day2_Session1/an_3.png" alt="IR" width='500' height='500' />
 
-### Syntax
+#### Syntax
 
 `analogRead(analogPin)`
 
@@ -424,7 +424,7 @@ void loop()
 
 Watch this video for a better understanding - [Video](https://www.youtube.com/watch?v=5TitZmA66bI)
 
-### LDR - An analog sensor
+#### LDR - An analog sensor
 
 A Light Dependent Resistor (a.k.a photoresistor or LDR) is a device whose resistivity varies with the incident electromagnetic radiation. Hence, they are light-sensitive devices. Also called photoconductors photoconductive cells or simply photocells. When the light of enough energy falls on it, the number of electrons available for the conduction increases proportional to the intensity of light
 
@@ -434,7 +434,7 @@ Follow these resources for a circuit diagram and a better understanding.
 
 [Video](https://www.youtube.com/watch?v=2fvXW4OEWLE)
 
-### Project using LDR, LED and Arduino
+#### Project using LDR, LED and Arduino
 
 ```c++
 int ldr = A0; // Set A0 (analog input) for LDR
@@ -464,22 +464,22 @@ void loop()
 
 <iframe width="725" height="453" src="https://www.tinkercad.com/embed/bzoSiWt6QLX?editbtn=1" frameBorder="0" marginWidth="0" marginHeight="0" scrolling="no"></iframe>
 
-## analogWrite()
+### analogWrite()
 
-### Description
+#### Description
 
 analogRead is an inbuilt function in the Arduino IDE which takes the name of the analog pin to which an analog value has to be written as its parameter and a duty cycle which takes values between 0 and 255.
 
-### Parameters
+#### Parameters
 
 1.  The Arduino pin to write to
 2.  The Duty Cycle between 0 and 255
 
-### Return Value
+#### Return Value
 
 There is no return value
 
-### Syntax
+#### Syntax
 
 ```c++
 int ledPin = 9; // LED connected to digital pin 9
@@ -500,7 +500,7 @@ void loop(){
 You can read more about this function [here](https://www.arduino.cc/reference/en/language/functions/analog-io/analogwrite/).
 Also, you can watch this [video](https://www.youtube.com/watch?v=YfV-vYT3yfQ) for a better understanding.
 
-### Dimming an LED using analogWrite()
+#### Dimming an LED using analogWrite()
 
 ```c++
 int brightness = 0;
@@ -530,15 +530,15 @@ void loop()
 
 # Motors and Motor Drivers
 
-## About
+### About
 
 In everyday life, we see rotating devices like a drill, wheels in a vehicle, and a fan that make our tasks easier because their ability to "turn" helps in these cases. But what is the cause that drives them to turn? Well, this cannot be the sole job of electrical or manual work but is a combined effort of certain laws that lead to an electric motor's principle.
 
-## Electric Motor
+### Electric Motor
 
 Energy transformation is the basic principle of an electric motor, and it is pretty evident that in this case, it is from electrical energy to the energy that leads to the motion of a rotor which indeed is mechanical. But what is the cause of the rotation? There has to be a force responsible for this turning effect known as torque. Here, the interrelation between electric current and magnetism helps. It is a known fact that a current-carrying conductor experiences a force in a magnetic field and when it is a conducting loop, it experiences a torque! So torque of a motor is indeed an important factor for selecting a motor for our purpose.
 
-### Components of an Electric Motor
+#### Components of an Electric Motor
 
 The basic parts include:
 
@@ -550,7 +550,7 @@ The basic parts include:
 
 <Image src="/static/images/resources/Day3_Session1/DC_motor_parts.png" alt="IR" width='500' height='500' />
 
-### Working
+#### Working
 
 <Image src="/static/images/resources/Day3_Session1/DC_motor_working.png" alt="IR" width='500' height='500' />
 
@@ -558,7 +558,7 @@ It is essential to understand that providing power to a motor depends on its siz
 
 Another fact about these motors is that they draw a huge amount of current to go to the full-speed state from the initial state (to overcome inertia). This leads to drawing a huge amount of starting current from the power supply (for higher starting voltage across the terminals), which may cause damage to the circuits. So "adjustable speed-drives" and "current limiting resistors" are used to prevent problems to the circuits and the motor itself.
 
-### Types of control in a system
+#### Types of control in a system
 
 Now that we got a good idea about motors let us discuss the two control systems: open-loop and closed-loop systems.
 The reason behind discussing these is to know about how control is established in various systems.
@@ -582,7 +582,7 @@ The above picture shows an open-loop system.
 
 <Image src="/static/images/resources/Day3_Session1/closed_loop_system.png" alt="IR" width='500' height='500' />
 
-### Other types of Motors
+#### Other types of Motors
 
 #### 1) Servo Motor
 
@@ -606,7 +606,7 @@ This motor utilizes an open-loop system.
 
 There are two main ways in which a stepper motor can be driven:
 
-##### Full-step mode:
+#### Full-step mode:
 
 The rotor turns through a bigger angle at once. This can be done by energizing either one or two phases( in general) at a time.
 
@@ -614,7 +614,7 @@ The rotor turns through a bigger angle at once. This can be done by energizing e
 
 It can be seen that the torque in two phase on mode is higher than that of one phase one mode.
 
-##### Microstepping:
+#### Microstepping:
 
 This mode is essential when precision is an important factor in the process. In this case, the rotor is controlled by two phases such that the current in both of them is varied such that the magnetic field produced keeps varying with time, and so is the torque acting on the rotor. This is done such that the rotor moves through small angles( depending in the magnitude of the current and the way you vary it).
 
@@ -624,7 +624,7 @@ In general, Servo Motors run more smoothly than a stepper motor except when micr
 
 A Servo Motor will typically provide 2-3 times the speed of a typical stepper motor as the Servo Motor speed increases, the torque of the Servo Motor remains constant, thus performing better than a stepper motor at higher speeds usually above 1000 RPM
 
-## H-Bridge
+### H-Bridge
 
 The direction in which the motor rotates is expected to change depending on the situation and this cannot be always manually changed. Here comes the role of a H-Bridge which enables the change in direction of the motor by changing the state of the switches in its circuit which can be accomplished by logical HIGH or LOW to the respective switch.
 
@@ -644,13 +644,13 @@ Also it is not advisable to drive the motor and change the direction at the same
 
 <Image src="/static/images/resources/Day3_Session1/hb_5.png" alt="IR" width='500' height='500' />
 
-## Motor Driver
+### Motor Driver
 
 A motor driver at a basic level is an integrated circuit chip used to control a motor as per given instructions with the help of H Bridge topology in the case of the L293D.
 
 Well, lets break this down and look into it closely one at a time.
 
-### Why do we need a motor driver?
+#### Why do we need a motor driver?
 
 - In the world of autonomous technology, we would require efficient communication between microcontrollers like the arduino and a motor which draws a huge amount of current to work at the desired rate. Meanwhile, micro controllers operate on low level voltage/current (Eg: Arduino has an operating voltage of 5V).
 - Thus, to bridge this gap of power output from the arduino to the motor, a motor driver can act as the interface taking in the low current signals from the Arduino and converting them into higher current signals which can help drive the motor as required.
@@ -658,7 +658,7 @@ Well, lets break this down and look into it closely one at a time.
 
 <Image src="/static/images/resources/Day3_Session1/motor_driver_1.png" alt="IR" width='500' height='500' />
 
-### The L293D motor driver
+#### The L293D motor driver
 
 We will now specifically look into the L293D
 
@@ -678,7 +678,7 @@ The IC works on the principle of H-Bridge (this can be understood on checking ho
 
 [Reference](https://components101.com/articles/what-is-motor-driver-h-bridge-topology-and-direction-control)
 
-### L293D PIN DESCRIPTION
+#### L293D PIN DESCRIPTION
 
 The following image shows the pinout of the L293D.
 
@@ -719,7 +719,7 @@ You can also take a look at the [datasheet](https://components101.com/asset/site
 
 Now that we have a fair idea of the the L293D, lets use it in a circuit to grasp the complete picture
 
-### Using L293D with motors and Arduino
+#### Using L293D with motors and Arduino
 
 <EmbedItem url='https://www.youtube.com/embed/y7WFVobzf1M' />
 
@@ -780,7 +780,7 @@ https://www.youtube.com/watch?v=fPLEncYrl4Q
 
 <Image src="/static/images/resources/Day3_Session1/schematic99.png" alt="IR" width='500' height='500' />
 
-### Code
+#### Code
 
 ```c++
 int dirR1 = 11;
@@ -815,22 +815,87 @@ void loop()
  }
 ```
 
-# Ultrasonic Sensor HC-SR04
+## Servo
 
-## About
+### About
+
+A servo motor is a type of motor that can rotate with great precision. Normally this type of motor consists of a control circuit that provides feedback on the current position of the motor shaft, this feedback allows the servo motors to rotate with great precision. If you want to rotate an object at some specific angles or distance, then you use a servo motor
+
+It has 3 pins, 1. Power, 2. Ground and 3. Signal
+
+<Image src="/static/images/resources/Servo-Motor.jpg" alt="IR" width='600' height='500' />
+
+This is a simple Servo Arduino code, that takes input from a potentiometer which gives you input between 0 and 1023 since it's an analogRead. Then we scale down 1024 to 180 and give the servo an angle at which it should rotate to
+
+### Knob
+
+```c
+#include <Servo.h>
+
+Servo myservo;  // create servo object to control a servo
+
+int potpin = 0;  // analog pin used to connect the potentiometer
+int val;    // variable to read the value from the analog pin
+
+void setup() {
+  myservo.attach(9);  // attaches the servo on pin 9 to the servo object
+}
+
+void loop() {
+  val = analogRead(potpin);            // reads the value of the potentiometer (value between 0 and 1023)
+  val = map(val, 0, 1023, 0, 180);     // scale it to use it with the servo (value between 0 and 180)
+  myservo.write(val);                  // sets the servo position according to the scaled value
+  delay(15);                           // waits for the servo to get there
+}
+```
+
+<Image src="/static/images/resources/arduino.png" alt="IR" width='600' height='400' />
+
+### Sweep
+
+You can also make it move through the 180 degrees
+
+```c
+#include <Servo.h>
+
+Servo myservo;  // create servo object to control a servo
+// twelve servo objects can be created on most boards
+
+int pos = 0;    // variable to store the servo position
+
+void setup() {
+  myservo.attach(9);  // attaches the servo on pin 9 to the servo object
+}
+
+void loop() {
+  for (pos = 0; pos <= 180; pos += 1) { // goes from 0 degrees to 180 degrees
+    // in steps of 1 degree
+    myservo.write(pos);              // tell servo to go to position in variable 'pos'
+    delay(15);                       // waits 15ms for the servo to reach the position
+  }
+  for (pos = 180; pos >= 0; pos -= 1) { // goes from 180 degrees to 0 degrees
+    myservo.write(pos);              // tell servo to go to position in variable 'pos'
+    delay(15);                       // waits 15ms for the servo to reach the position
+  }
+}
+```
+
+## Ultrasonic Sensor HC-SR04
+
+### About
 
 The HC-SR04 ultrasonic sensor is used to calculate the distance of an obstacle in the path of the bot. It consists of four pins: VCC, trigger, echo & ground. It also includes a transmitter and receiver, which transmit and receive the US signals, respectively.
 
 <Image src="/static/images/resources/Day3_Session1/HC-SR04_1.png" alt="IR" width='500' height='500' />
 
-## Working Principle
+### Working Principle
 
 The HC-SR04 sensor detects the travel time of a signal from transmission till it's received. The sensor sends out a ping, and an echo is heard. The duration of travel of the signal is then measured by the sensor.
 When the Trig pin of the sensor receives a pulse of HIGH for at least 10 microseconds, it will initiate the sensor, which will transmit out 8 cycles of ultrasonic burst and wait for the reflected ultrasonic burst. When the sensor detects US signals from the receiver, it will set the Echo pin to HIGH and delay for a period proportional to distance.
 
 The sensor transmits 8 cycles of ultrasonic bursts since the receiver needs to hear enough cycles to reach its full output and set the Echo pin to HIGH.
 
-## Pins Description
+### Pins Description
 
 - VCC: This powers the sensor with +5V and is connected to the 5V supply of the Arduino.
 - Trigger: It is an Input pin. It is connected to any digital pin on the Arduino. On sending a HIGH signal to this pin, the transmitter sends out US signals until a LOW signal is sent.
@@ -844,7 +909,7 @@ The following image shows the connection of the terminals of the sensor to the A
 [Reference](https://components101.com/sensors/ultrasonic-sensor-working-pinout-datasheet)
 You can also refer to the [datasheet](https://cdn.sparkfun.com/datasheets/Sensors/Proximity/HCSR04.pdf) for more information.
 
-## Distance Calculation
+### Distance Calculation
 
 As described earlier, the HC-SR04 sensor sends out ultrasonic signals and receives the echo, then measures the pingTimeTravel of the signal.
 
@@ -865,7 +930,7 @@ You can watch the following videos to understand better:
 - [Measuring Speed of Sound With HC-SR04 Sensor](https://www.youtube.com/watch?v=BTMMNsL0_b0)
 - [Measuring Distance With HC-SR04 Ultrasonic Sensor](https://www.youtube.com/watch?v=2hwrDSVHQ-E)
 
-## Code
+### Code
 
 <Image src="/static/images/resources/Day3_Session1/HC-SR04_arduino.png" alt="IR" width='500' height='500' />
 
@@ -896,7 +961,7 @@ void loop() {
 
 <iframe width="725" height="453" src="https://www.tinkercad.com/embed/cGqyGisEibf?editbtn=1" frameBorder="0" marginWidth="0" marginHeight="0" scrolling="no"></iframe>
 
-## pulseIn() Function
+### pulseIn() Function
 
 The pulseIn() function measures the time period of either HIGH or LOW pulse input signal.
 The syntax of pulseIn() function is:
