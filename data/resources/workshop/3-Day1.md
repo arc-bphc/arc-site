@@ -518,7 +518,6 @@ This is how your Serial Monitor will typically look like
 
 <Image src="/static/images/resources/Day2_Session1/monitor.png" alt="IR" width='500' height='500' />
 
-
 #### begin()
 
 The Serial.begin( ) function is a part of the serial object in the Arduino. It tells the serial object to perform initialization steps to send and receive data on the Rx and Tx (pins 1 and 0). It sets the baud rate for serial communication between your Arduino board and another device.
@@ -569,7 +568,6 @@ void loop(){
 }
 
 ```
-
 
 #### print 'F'
 
@@ -712,19 +710,6 @@ Operators may be unary (single operand) or binary (two operands). We look at the
 
 We will look at Bitwise operations in more detail further.
 
-## Assignment 2
-
-### Variables and operators
-
-1. Write a program to make a variable "A" and assign the value "25" to it. Print the value of "A" only once on the monitor.
-2. Write a program to print natural numbers infinitely.
-3. Write a program to print the following series infinitely-
-   a. 1, 3 ,5, 7, 9...
-   b. 1, ,2 ,4, 8, 16...
-   c. 32000, 16000, 8000...
-   d. 10, 10, 20, 20, 30, 30....
-   e. 10, 90, 20, 80, 30, 70...
-
 ## Conditionals
 
 We now look at how to control the flow of execution of the program. Typically, every statement is executed line by line. However, there are times when we want to execute a statement only when a condition is true. This is where conditionals come in.
@@ -828,15 +813,6 @@ do {
 } while (condition);
 ```
 
-## Assignment 3
-
-### Conditional Programming
-
-1. Print natural numbers only till 25
-2. Make a variable and assign thevalue 0 to it. Keep adding 1 to it but print the value of variable only from 20-30
-3. Print table of 5 till 50 only
-4. From the series given in Assignment 2, print the numbers only till the 7th term.
-
 ## Functions
 
 A function is a named sequence of statements that perform a specific task. It is a block of code that performs a specific task.
@@ -939,7 +915,6 @@ While the processor, memory, and I/O peripherals are the most important componen
 <Image src="/static/images/resources/Day1_Session1/microcontroller_examples.png" alt="IR" width='500' height='500' />
 
 Fig 1.2: Arduino with ATmega328 Microcontroller
-
 
 # Microprocessors
 
