@@ -489,95 +489,13 @@ void loop()
 
 In everyday life, we see rotating devices like a drill, wheels in a vehicle, and a fan that make our tasks easier because their ability to "turn" helps in these cases. But what is the cause that drives them to turn? Well, this cannot be the sole job of electrical or manual work but is a combined effort of certain laws that lead to an electric motor's principle.
 
-### Electric Motor
-
-Energy transformation is the basic principle of an electric motor, and it is pretty evident that in this case, it is from electrical energy to the energy that leads to the motion of a rotor which indeed is mechanical. But what is the cause of the rotation? There has to be a force responsible for this turning effect known as torque. Here, the interrelation between electric current and magnetism helps. It is a known fact that a current-carrying conductor experiences a force in a magnetic field and when it is a conducting loop, it experiences a torque! So torque of a motor is indeed an important factor for selecting a motor for our purpose.
-
-#### Components of an Electric Motor
-
-The basic parts include:
-
-- Rotor
-- Stator
-- Brush
-- Commutator
-- Armature
-
-<Image src="/static/images/resources/Day3_Session1/DC_motor_parts.png" alt="IR" width='500' height='500' />
-
-#### Working
-
-<Image src="/static/images/resources/Day3_Session1/DC_motor_working.png" alt="IR" width='500' height='500' />
-
-It is essential to understand that providing power to a motor depends on its size and complexity. A smaller motor can be manually supplied power through a battery, whereas a larger motor, the ones that are used in industries and other high power-driven motors, requires a mechanism which, when energized, connects its terminals to the high power supply. This method of starting a motor is called a "direct on line starter method."
-
-Another fact about these motors is that they draw a huge amount of current to go to the full-speed state from the initial state (to overcome inertia). This leads to drawing a huge amount of starting current from the power supply (for higher starting voltage across the terminals), which may cause damage to the circuits. So "adjustable speed-drives" and "current limiting resistors" are used to prevent problems to the circuits and the motor itself.
-
-#### Types of control in a system
-
-Now that we got a good idea about motors let us discuss the two control systems: open-loop and closed-loop systems.
-The reason behind discussing these is to know about how control is established in various systems.
-
-#### 1) Open-loop system:
-
-○ This is used when the system under consideration is not complex and need not require that much supervision for its working—for example, the lighting in your room, we just turn the lights on, but we do not ensure if it is working with the same brightness for every time interval. The same is the case with ordinary DC Motor; there is no special mechanism to ensure if it is maintaining a constant rpm or torque for every time interval. If it is fine, it works, else it undergoes certain problems.
-
-<Image src="/static/images/resources/Day3_Session1/open_loop_system.png" alt="IR" width='500' height='500' />
-
-The above picture shows an open-loop system.
-● Commanded variable: The output that you desire.
-● Controller: Arduino or any other controller
-● Actuator: The device which actually does the process or which enables other devices to work on the process
-● Process: The task which we want to perform(here, rotation of the motor)
-● Controlled variable: The Actual result/output the we get
-
-#### 2) Closed-loop system:
-
-○ It is clear that in an open-loop schematic, there can be a deviation of the "controlled variable" from the "commanded variable" called the "error variable". This error can cause undesirable consequences when working on huge projects. Here comes the closed-loop system. The special feature of this is that there is a feedback mechanism with the help of sensors that lets the controller know about the situation of the controlled variable with which we can measure the error factor and make our output as desirable as possible.
-
-<Image src="/static/images/resources/Day3_Session1/closed_loop_system.png" alt="IR" width='500' height='500' />
-
-#### Other types of Motors
+### Other types of Motors
 
 #### 1) Servo Motor
-
-- This motor follows a closed-loop system. So it has got the advantage of precision. This motor provides high torque along with the precise position of the shaft, which gives its feedback control.
   <Image src="/static/images/resources/Day3_Session1/servo_working.png" alt="IR" width='500' height='500' />
 
-- The above is the schematic of the servo motor. It is to be noted that input is given to it in the form of PWM signals (pulse-width modulation) which leads to the position control of the motor (Of Course, digital signals also can be used for its position control). Also the position sensors in this closed-loop control are generally potentiometers.
-- This is not all; servos can also be encoded depending on the complexity of the task that is involved making them gain access to speed and torque feedback along with regular position control. And here comes the actual problem of using these complex closed-loop systems when it is essential to perform the task but such skilled workers are not available. Skilled programmers are essential for optimizing the internal algorithms of closed-loop systems which is not an easy task.
-
-So there is another type of motor that is in much use in the real world, the stepper motor.
-
 #### 2) Stepper Motor
-
-This motor utilizes an open-loop system.
-
-- Stepper motors have a permanent magnetic rotating shaft called a rotor and stationary electromagnets surrounding the rotor called the stator.
   <Image src="/static/images/resources/Day3_Session1/stator_rotor.png" alt="IR" width='500' height='500' />
-
-- Stepper motors have typically 50 to 100 electromagnet poles (pairs of north and south poles) generated either by a permanent magnet or an electric current.
-- The greater the number of poles the more is the precision.
-
-There are two main ways in which a stepper motor can be driven:
-
-#### Full-step mode:
-
-The rotor turns through a bigger angle at once. This can be done by energizing either one or two phases( in general) at a time.
-
-<Image src="/static/images/resources/Day3_Session1/full_step_mode.png" alt="IR" width='500' height='500' />
-
-It can be seen that the torque in two phase on mode is higher than that of one phase one mode.
-
-#### Microstepping:
-
-This mode is essential when precision is an important factor in the process. In this case, the rotor is controlled by two phases such that the current in both of them is varied such that the magnetic field produced keeps varying with time, and so is the torque acting on the rotor. This is done such that the rotor moves through small angles( depending in the magnitude of the current and the way you vary it).
-
-<Image src="/static/images/resources/Day3_Session1/microstepping.png" alt="IR" width='500' height='500' />
-
-In general, Servo Motors run more smoothly than a stepper motor except when micro stepping are used.
-
-A Servo Motor will typically provide 2-3 times the speed of a typical stepper motor as the Servo Motor speed increases, the torque of the Servo Motor remains constant, thus performing better than a stepper motor at higher speeds usually above 1000 RPM
 
 ### H-Bridge
 
@@ -632,47 +550,6 @@ The IC works on the principle of H-Bridge (this can be understood on checking ho
 - It should also be noted that the enable pins are going to control the speed of the rotation through the PWM signals (Pulse width modulation) which can be established by connecting them to the PWM digital pins on Arduino.
 
 [Reference](https://components101.com/articles/what-is-motor-driver-h-bridge-topology-and-direction-control)
-
-#### L293D PIN DESCRIPTION
-
-The following image shows the pinout of the L293D.
-
-<Image src="/static/images/resources/Day3_Session1/L293D_pins.png" alt="IR" width='500' height='500' />
-
-Understanding this is very crucial to facilitate its usage in the circuit.
-
-| Pin Number | Pin Name   | Description                                                        |
-| ---------- | ---------- | ------------------------------------------------------------------ |
-| 1          | Enable 1,2 | This pin enables the input pin Input 1(2) and Input 2(7)           |
-| 2          | Input 1    | Directly controls the Output 1 pin, Controlled by digital circuits |
-| 3          | Output 1   | Connected to one end of Motor 1                                    |
-| 4          | Ground     | Ground pins are connected to ground of circuit (0V)                |
-| 5          | Ground     | Ground pins are connected to ground of circuit (0V)                |
-| 6          | Output 2   | Connected to another end of Motor 1                                |
-| 7          | Input 2    | Directly controls the Output 2 pin, Controlled by digital circuits |
-| 8          | Vcc2 (Vs)  | Connected to Voltage pin for running motors (4.5V to 36V)          |
-| 9          | Enable 3,4 | This pin enables the input pin Input 3(10) and Input 4(15)         |
-| 10         | Input 3    | Directly controls the Output 3 pin, Controlled by digital circuits |
-| 11         | Output 3   | Connected to one end of Motor 2                                    |
-| 12         | Ground     | Ground pins are connected to ground of circuit (0V)                |
-| 13         | Ground     | Ground pins are connected to ground of circuit (0V)                |
-| 14         | Output 4   | Connected to another end of Motor 2                                |
-| 15         | Input 4    | Directly controls the Output 4 pin, Controlled by digital circuits |
-| 16         | Vcc1 (Vss) | Connected to +5V to enable IC function                             |
-
-Few points to be noted:
-
-- There is a notch on the top of the IC, to guide us with proper connections.
-- Input pins: The ones to which we give signals
-- Output pins: The ones connected to the motors.
-- The enable pins are there to “enable” the output pins. If enable pins are set to logic HIGH then the output pins match up to the input pins.
-- If the enable pins are set to logic LOW then regardless of logic states of input pins, the output pins are always set to zero.
-
-[Reference](https://components101.com/ics/l293d-pinout-features-datasheet)
-
-You can also take a look at the [datasheet](https://components101.com/asset/sites/default/files/component_datasheet/L293D%20Datasheet.pdf) of L293D for more information.
-
-Now that we have a fair idea of the the L293D, lets use it in a circuit to grasp the complete picture
 
 #### Using L293D with motors and Arduino
 
