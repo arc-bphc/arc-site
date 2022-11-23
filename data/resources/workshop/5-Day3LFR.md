@@ -123,33 +123,74 @@ It should look something like this.
 
 The Motor Driver included in the kit is a mini shield, with the following pinout
 
-<Image src="/static/images/resources/Day3_Session2/l293d-motor-driver-module-for-robot-car-using-arduino-boards-ml001.jpg" alt="L293D" width='500' height='500' />
+**Case 1:** If the L293d model is as follows:
+<Image src="/static/images/resources/Day3_Session2/case1.png" alt="case1" width='500' height='500' />
 
 In the demonstration, we shall be connecting
 
-- The right motor to pins M1, M2 of the motor driver
-- The left motor to pins M3, M4 of the motor driver
-- A 9V power supply using 4 AA cells to the 12V pin and GND pin of the motor driver
-- The 5V pin on the motor driver to the 5V pin on the Arduino Uno board
-- The other GND pin on the motor driver to a GND pin on the Arduino Uno board
-- Input pin I2 on the motor driver to digital pin 9 on the Uno (right motor)
-- Input pin I4 on the motor driver to digital pin 10 on the Uno (left motor)
+- **Right Motor:** For the Right Motor, connect its top terminal to the MA2 of the motor driver and its bottom terminal to the MA1.
+- **Left Motor:** For the Left Motor, connect the top terminal to the MB2 of the motor driver and the bottom terminal to the MB1.
+- **Power Connections:** Connect the 9V power supply to the V+ and V- on motor driver.
+- **Input Pins of Right Motor:**
+  - connect the A1 and A2 pins to pins 2 and 3 on Arduino.
+- **Enable Pins:** En A , En B go to 5V of Arduino.
+- Connect Vcc and GND to 5V and GND on Arduino respectively.
+- **Input Pins of Left Motor:**
+  - B1 and B2 go to 4 and 5 pins on Arduino respectively.
 
-<EmbedItem url='https://www.youtube.com/embed/a12CpZczu5s' />
+**Case 2:** If the L293d model is as follows:
+<Image src="/static/images/resources/Day3_Session2/case2.png" alt="IR" width='500' height='500' />
 
-The images attached below show all the necessary connections to be made on the chassis,
+- **Right Motor:** For the Right Motor, connect its top terminal to the M1 of the motor driver and its bottom terminal to the M2.
+- **Left Motor:** For the Left Motor, connect the top terminal to the M3 of the motor driver and the bottom terminal to the M4.
+- **Power Connections:** Connect the positive terminal of 9V power supply to the 12V on motor driver. To the GND on the motor driver near the 12V, connect the negative terminal of the 9V battery. Also, connect the GND of the Arduino to the same GND on the motor driver, meaning, both the wires(black of battery and GND of Uno) to be connected to GND on motor driver.
+- **Input Pins of Right Motor:**
+  - connect the In1 and In2 pins to pins 3 and 2 on Arduino.
+- **Enable Pins:** En A , En B go to 5V of Arduino.
+- Connect 5V pin to 5V on Arduino respectively.
+- **Input Pins of Left Motor:**
+  - In3 and In4 go to 5 and 4 pins on Arduino respectively.
 
+**Case 3:** If the L293d model is as follows:
+<Image src="/static/images/resources/Day3_Session2/case3.png" alt="case3" width='500' height='500' />
+
+- **Right Motor:** For the Right Motor, connect its top terminal to the MOTOR2 hole of the motor driver that is away from the voltage regulator IC and its bottom terminal to the MOTOR2 hole towards the voltage regulator IC.
+- **Left Motor:** For the Left Motor, connect the top terminal to the MOTOR1 hole of the motor driver that is towards the voltage regulator IC and its bottom terminal to the MOTOR1 hole away from the voltage regulator IC.
+- **Power Connections:** Connect the 9V power supply to the Vin+ on motor driver. Now connect both the negative terminal of the 9V battery and GND of the Arduino to the Vin- hole in the motor driver.
+- **Input Pins of Right Motor:**
+  - connect the MC6 pin that is away from the voltage regulator IC to pin 3 on Arduino and MC6 pin that is towards the voltage regulator IC to pin 2 on Arduino.
+- **Input Pins of Left Motor:**
+  - connect the MC5 pin that is away from the voltage regulator IC to pin 4 on Arduino and MC5 pin that is towards the voltage regulator IC to pin 5 on Arduino.
+
+**NOTE** - The connections between the two IR sensors, ultrasonic sensor, the Arduino Uno and the breadboard have been removed to avoid confusion. You may keep the connections shown previously as it is.
+
+The finished bot looks something like this:
 _Top view_
+<Image src="/static/images/resources/Day3_Session2/TopViewBot.png" alt="top-view" width='500' height='500' />
 
-<Image src="/static/images/resources/Day3_Session2/L293D_top.png" alt="L293D" width='500' height='500' />
+_Front view_
+<Image src="/static/images/resources/Day3_Session2/FrontViewBot.JPG" alt="front-view" width='500' height='500' />
 
-_Right side view_
+_Right view_
+<Image src="/static/images/resources/Day3_Session2/RightViewBot.png" alt="right-view" width='500' height='500' />
 
-<Image src="/static/images/resources/Day3_Session2/L293D_right.png" alt="L293D" width='500' height='500' />
+_Left view_
+<Image src="/static/images/resources/Day3_Session2/LeftViewBot.png" alt="left-view" width='500' height='500' />
 
-_Left side view_
+## Schematics
 
-<Image src="/static/images/resources/Day3_Session2/L293D_left.png" alt="L293D" width='500' height='500' />
+### TYPE-1
+
+<Image src="/static/images/resources/Day3_Session2/motordriver_type1.png" alt="IR" width='500' height='500' />
+
+### TYPE-2
+
+<Image src="/static/images/resources/Day3_Session2/motordriver_type2.png" alt="IR" width='500' height='500' />
+
+### TYPE-3
+
+<Image src="/static/images/resources/Day3_Session2/motordriver_type3.png" alt="IR" width='500' height='500' />
+
 
 ### Explanation
 
