@@ -461,10 +461,12 @@ In everyday life, we see rotating devices like a drill, wheels in a vehicle, and
 ### Other types of Motors
 
 #### 1) Servo Motor
-  <Image src="/static/images/resources/Day3_Session1/servo_working.png" alt="IR" width='500' height='500' />
+
+  <Image src="/static/images/resources/Servo-Motor.jpg" alt="IR" width='500' height='500' />
 
 #### 2) Stepper Motor
-  <Image src="/static/images/resources/Day3_Session1/stator_rotor.png" alt="IR" width='500' height='500' />
+
+  <Image src="/static/images/resources/stepper.jpg" alt="IR" width='500' height='500' />
 
 ### H-Bridge
 
