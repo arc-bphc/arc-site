@@ -223,44 +223,6 @@ A multimeter is a device that can measure many electrical properties depending o
 - Located at top of knob.
 - For switching off multimeter.
 
-# Microcontrollers
-
-## What is a microcontroller?
-
-A microcontroller is a compact integrated circuit designed to govern a specific operation in an embedded system. A typical microcontroller includes a processor, memory, and input/output (I/O) peripherals on a single chip.
-
-Also known as _embedded controllers or microcontroller units (MCUs)_, they are found in a variety of devices, including automobiles, robotics, office equipment, medical devices, mobile wireless transceivers, vending machines, and home appliances. They are essentially simple miniature personal computers (PCs) with no complex front-end operating system, designed to operate small features of a bigger component (OS).
-
-## How do microcontrollers work?
-
-A microcontroller is embedded inside a system and controls a single function. It accomplishes this by employing its core Processor to evaluate data received from its I/O peripherals. The microcontroller's temporary information is stored in its data memory, where the processor accesses it and decodes and applies the incoming data using instructions stored in its programme memory. It then communicates with its I/O peripherals and takes the required action.
-
-## Core Elements of a Microcontroller
-
-**The processor (CPU)**
-A processor might be compared to the device's brain. It interprets and responds to a variety of commands that control the microcontroller's operation. This includes basic arithmetic, logic, and input/output (I/O) operations. It also performs data transfer operations that send commands to other embedded system components.
-
-**Memory**
-The memory of a microcontroller is used to retain the data that the processor receives and to respond to commands that it has been programmed to carry out. There are two types of memory in a microcontroller:
-
-_Program memory_ is where the CPU keeps long-term information about the instructions it executes. Program memory is non-volatile memory, which means it may store data indefinitely without the need for a power source.
-
-_Data memory_ is needed to store temporary data while the instructions are being executed. Data memory is volatile, which means that the data it stores is only transient and is only kept if the device is powered up.
-
-**I/O peripherals**
-The processor's input and output devices serve as its interface to the outside world. The input ports take in information and transfer it to the processor as binary data. The processor receives that data and sends the necessary instructions to output devices that execute tasks external to the microcontroller.
-
-While the processor, memory, and I/O peripherals are the most important components of a microprocessor, other components are typically incorporated as well. Supporting components that interface with the memory and CPU are referred to as I/O peripherals. Peripherals are a broad category that includes a wide range of supporting components. Because they are the method via which the processor is applied, having some form of an I/O peripheral is essential to a microprocessor.
-
-## Examples of Microcontrollers
-
-- Most Arduino boards consist of an **Atmel 8-bit AVR microcontroller** (ATmega8, ATmega168, ATmega328, ATmega1280, or ATmega2560)
-- ARM is a family of microcontroller developed by makers like ST Microelectronics and Motorola.
-
-<Image src="/static/images/resources/Day1_Session1/microcontroller_examples.png" alt="IR" width='500' height='500' />
-
-Fig 1.2: Arduino with ATmega328 Microcontroller
-
 # Introduction to Arduino
 
 Arduino is an open-source electronics platform based on easy-to-use hardware and software. It consists of both a physical programmable circuit board (a microcontroller) and a piece of software, or [IDE](https://www.arduino.cc/en/software) (Integrated Development Environment) that runs on your computer and allows you to write and upload computer code to the physical board.
@@ -456,85 +418,6 @@ Since the nature of a device (input/output) and the pin its connected to, doesn'
 
 The pin numbers for the Arduino board are mentioned on the board and can be used as it is inside the **pinMode()** function.
 
-# Microprocessors
-
-### What is a microprocessor?
-
-A microprocessor is an integrated circuit (IC) that houses the central processing unit (CPU) of a computer . It is a clock-driven, register-based programmable multipurpose silicon device that accepts binary data as input and processes it according to instructions stored in the memory.
-
-### Why we need a Microprocessor?
-
-A microprocessor, like our brain, can be trained to perform any task. Based on its instruction set and capabilities, it can be programmed to perform anything we desire. When we try to solve a problem without programming, the solution can be exceedingly complex.
-
-When we try to solve a problem without programming, the solution can be exceedingly complex.
-
-Assume you wish to construct a large structure. The use of BRICKS will simplify and reduce the cost of building. It will also allow you to design the building in whatever shape or size you like. The bricks that you can employ to solve your problem are instructions stored in a microprocessor. You can quickly solve difficult programmes by following those guidelines.
-
-### How does a Microprocessor work ?
-
-A processor is the brain of a computer which basically consists of _Arithmetical and Logical Unit (ALU), Control Unit and Register Array_.
-
-- **ALU** performs all arithmetic and logical operations on the data received from input devices or memory.
-- **Register array** consists of a series of registers like accumulator (A), B, C, D etc. which acts as temporary fast access memory locations for processing data.
-- **Control Unit** controls the flow of instructions and data throughout the system.
-
-So basically a microprocessor takes input from input devices, process it as per instructions given in the memory and produces output.
-
-### Advantages of Microprocessors
-
-**Low Cost**
-Microprocessors are available at low cost due to integrated circuit technology which reduces the cost of a computer system.
-
-**High Speed**
-Microprocessor chips can work at very high speed due to the technology involved in it. It is capable of executing millions of instructions per second.
-
-**Small Size**
-Due to very large scale and ultra large scale integration technology, a microprocessor is fabricated in a very less footprint. This will reduce the size of the entire computer system.
-
-**Versatile**
-Microprocessors are very versatile, the same chip can be used for a number of applications by simply changing the program (instructions stored in the memory).
-
-**Low Power Consumption**
-Microprocessors are usually manufactured using metal oxide semiconductor technology, in which MOSFETs (Metal Oxide Semiconductor Field Effect Transistors) are working in saturation and cut off modes. So the power consumption is very low compared to others.
-
-**Less Heat Generation**
-Compared to vacuum tube devices, semiconductor devices won’t emit that much heat.
-
-**Reliable**
-Microprocessors are very reliable, failure rate is very less as semiconductor technology is used.
-
-**Portable**
-Devices or computer system made with microprocessors can be made portable due to the small size and low power consumption.
-
-### Examples of Microprocessors
-
-- Intel 4004 – The First Microprocessor
-- Intel 8085
-- Intel 8086
-- Intel Pentium 4
-- Intel Core i7
-- AMD Athlon
-
-### Key differences between Microcontrollers & Microprocessors:
-
-|                      | MicroConrollers                                                                                                                                                          | MicroProcessors                                                                                                                                                                                                                                     |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Structure            | CPU, Memory, I/O port and all other devices are connected on the single chip. The structure is fixed. Once it is designed the user cannot change the peripheral devices. | It has only the CPU in the chip. Other devices like I/O port, memory & timer are connected externally. The structure of the microprocessor is flexible. Users can decide the amount of memory, the number of I/O ports and other peripheral devices |
-| Application          | It is used where the task is fixed & predefined. It is used in the washing machine, alarm, microwave oven etc.                                                           | It is used where intensive processing is required. It is used in personal computers, laptops, mobiles, video games, etc.                                                                                                                            |
-| Programming          | The program for the microcontroller is fixed once it is designed.                                                                                                        | The program for the microprocessor can be changed for different applications. The programming of the microprocessor is difficult compared to the microcontroller.                                                                                   |
-| Clock Speed          | The clock speed of the microcontroller is less. It is in terms of the MHz. it ranges between 1 MHz to 300 MHz.                                                           | The clock speed of the microprocessor is high. It is in terms of the GHz. It ranges between 1 GHz to 4 GHz.                                                                                                                                         |
-| Power Consumption    | The power consumption for the microcontroller is less.                                                                                                                   | The power consumption for the microprocessor is more.                                                                                                                                                                                               |
-| Peripheral Interface | The common peripheral interface for the microcontroller is I2C, SPI, and UART.                                                                                           | The common peripheral interface for the microprocessor is USB, UART, and high-speed Ethernet.                                                                                                                                                       |
-| RAM                  | The volatile memory (RAM) for the microcontroller is in the range of 2 KB to 256 KB.                                                                                     | The volatile memory (RAM) for the microprocessor is in the range of 512 MB to 32 GB.                                                                                                                                                                |
-| ROM                  | The hard drive or flash memory (ROM) is in the range of 32 KB to 2 MB.                                                                                                   | The hard disk (ROM) for the microprocessor is in the range of 128 GB to 2 TB.                                                                                                                                                                       |
-| Bit Size             | It is available in 8-bit, 16-bit, and 36-bit.                                                                                                                            | It is available in 32-Bit and 64-bit.                                                                                                                                                                                                               |
-| Size                 | The overall size of the system is small.                                                                                                                                 | The overall size of the system is large.                                                                                                                                                                                                            |
-| Example              | Arduino UNO                                                                                                                                                              | Raspberry Pi                                                                                                                                                                                                                                        |
-| Cost                 | The cost of the microcontroller is low compared to the microprocessor.                                                                                                   | Comparatively expensive.                                                                                                                                                                                                                            |
-
-Here is a YouTube video you might refer to:
-[Difference Between MicroController & Microprocessor](https://youtu.be/U2vBsZbgw8M). (use subtitles)
-
 # C for Arduino Microcontrollers
 
 ### Programming the Arduino Microcontrollers
@@ -583,20 +466,37 @@ This would be reqiured to solve the Programming assignment.
 
 ## <s>TV</s> Serial
 
-Sometimes its really useful to see what's going on inside the brain of a microcontroller. Whilst there are many ways to send and receive information to and from a microcontroller and the computer, using the Serial port turns out to be the easiest.
+### ~~TV~~ Serial
 
-### Monitor
+Sometimes its really useful to see what's going on inside the brain of a microcontroller. Whilst there are many ways to send and receive information to and from a microcontroller and the computer, using the Serial port turns out to be the easiest.
+Serial communication is the process of sending one bit of data at a time, sequentially from one device to another. The main purpose of this serial communication is to transfer the sketch from computer to Arduino, to send information to computer etc. All Arduino boards have at least one serial port and it communicates on digital pins 0 (RX) and 1 (TX).
+The serial port is connected to the USB port on the board, and we can use the built-in Arduino Serial library to send data to the serial monitor in the Arduino IDE or to an external serial monitor.
+
+#### Monitor
 
 The Serial Monitor is basically a window in the Arduino IDE that allows you to send messages from your computer to an Arduino board (over USB) as well as receive messages from the Arduino.
 
 #### Here's how you can access the Serial Monitor
 
-1. Open your Arduino IDE. Click on 'Tools' in the Menu bar, and select 'Serial Monitor'.
-2. Alternatively, you can use the hotkey Ctrl+Shift+M
+1.  Open your Arduino IDE. Click on 'Tools' in the Menu bar, and select 'Serial Monitor'.
+2.  Alternatively, you can use the hotkey Ctrl+Shift+M
 
 This is how your Serial Monitor will typically look like
 
-<Image src="/static/images/resources/Day 0/serial.png" alt="IR" width='500' height='500' />
+<Image src="/static/images/resources/Day2_Session1/monitor.png" alt="IR" width='500' height='500' />
+
+
+#### begin()
+
+The Serial.begin( ) function is a part of the serial object in the Arduino. It tells the serial object to perform initialization steps to send and receive data on the Rx and Tx (pins 1 and 0). It sets the baud rate for serial communication between your Arduino board and another device.
+
+The most common reason to use serial.begin() is when you want to output some information from your Arduino to your computer screen. 99% of the time, you’ll be putting the Serial.begin() function inside of the setup() function. As you may know, setup() only runs once, and since you’ll only need to establish the Serial Communication one time – it makes sense to have it there.
+
+**Syntax**: `Serial.begin(speed)`
+
+_speed_: It signifies the baud rate. The default baud rate in Arduino is 9600. We can specify other baud rates as well, such as 4800, 14400, 38400, 28800, etc.
+
+Probably the most important practical thing you need to know is that for serial communication to work, the baud rate in Serial.begin() and the baud rate set on the receiving device need to match. If you are using the Arduino IDE Serial Monitor window to read the information from your Arduino, then you can use the baud rate drop down to set the baud rate. But remember! If these two values don’t match – then anything you try to send over serial will not work right.
 
 ### Basic program to print your name
 
@@ -636,6 +536,21 @@ void loop(){
 }
 
 ```
+
+
+#### print 'F'
+
+The **Serial.print( )** function in Arduino prints data to the serial port. It allows you to send information from your Arduino to your computer, so that you can see the value displayed on your Serial Monitor.
+
+**Syntax**: `Serial.print(value, format)`
+
+_value_: It signifies the value to print, which includes any data type value.
+
+_format_: It consists of number bases, such as OCT (Octal), BIN (Binary), HEX (Hexadecimal), etc. for the integral data types. It also specifies the number of decimal places.
+
+You can read more about this function [here](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/).
+
+If we wish to print the data in different lines, we can use the **Serial.println()** function. This function is basically the same as the Serial.print() function (except that it prints data in different lines) and has the same syntax.
 
 ## Variables and DataTypes in C++
 
@@ -952,4 +867,122 @@ bool isOdd(int32_t n) {
 }
 ```
 
-Now that you've finished this section, you have all the **programming knowledge** required to get started with Day 1 of our workshop.
+Now that you've finished this section, you have all the **programming knowledge** required to get started our workshop.
+
+# Microcontrollers
+
+## What is a microcontroller?
+
+A microcontroller is a compact integrated circuit designed to govern a specific operation in an embedded system. A typical microcontroller includes a processor, memory, and input/output (I/O) peripherals on a single chip.
+
+Also known as _embedded controllers or microcontroller units (MCUs)_, they are found in a variety of devices, including automobiles, robotics, office equipment, medical devices, mobile wireless transceivers, vending machines, and home appliances. They are essentially simple miniature personal computers (PCs) with no complex front-end operating system, designed to operate small features of a bigger component (OS).
+
+## How do microcontrollers work?
+
+A microcontroller is embedded inside a system and controls a single function. It accomplishes this by employing its core Processor to evaluate data received from its I/O peripherals. The microcontroller's temporary information is stored in its data memory, where the processor accesses it and decodes and applies the incoming data using instructions stored in its programme memory. It then communicates with its I/O peripherals and takes the required action.
+
+## Core Elements of a Microcontroller
+
+**The processor (CPU)**
+A processor might be compared to the device's brain. It interprets and responds to a variety of commands that control the microcontroller's operation. This includes basic arithmetic, logic, and input/output (I/O) operations. It also performs data transfer operations that send commands to other embedded system components.
+
+**Memory**
+The memory of a microcontroller is used to retain the data that the processor receives and to respond to commands that it has been programmed to carry out. There are two types of memory in a microcontroller:
+
+_Program memory_ is where the CPU keeps long-term information about the instructions it executes. Program memory is non-volatile memory, which means it may store data indefinitely without the need for a power source.
+
+_Data memory_ is needed to store temporary data while the instructions are being executed. Data memory is volatile, which means that the data it stores is only transient and is only kept if the device is powered up.
+
+**I/O peripherals**
+The processor's input and output devices serve as its interface to the outside world. The input ports take in information and transfer it to the processor as binary data. The processor receives that data and sends the necessary instructions to output devices that execute tasks external to the microcontroller.
+
+While the processor, memory, and I/O peripherals are the most important components of a microprocessor, other components are typically incorporated as well. Supporting components that interface with the memory and CPU are referred to as I/O peripherals. Peripherals are a broad category that includes a wide range of supporting components. Because they are the method via which the processor is applied, having some form of an I/O peripheral is essential to a microprocessor.
+
+## Examples of Microcontrollers
+
+- Most Arduino boards consist of an **Atmel 8-bit AVR microcontroller** (ATmega8, ATmega168, ATmega328, ATmega1280, or ATmega2560)
+- ARM is a family of microcontroller developed by makers like ST Microelectronics and Motorola.
+
+<Image src="/static/images/resources/Day1_Session1/microcontroller_examples.png" alt="IR" width='500' height='500' />
+
+Fig 1.2: Arduino with ATmega328 Microcontroller
+
+
+# Microprocessors
+
+### What is a microprocessor?
+
+A microprocessor is an integrated circuit (IC) that houses the central processing unit (CPU) of a computer . It is a clock-driven, register-based programmable multipurpose silicon device that accepts binary data as input and processes it according to instructions stored in the memory.
+
+### Why we need a Microprocessor?
+
+A microprocessor, like our brain, can be trained to perform any task. Based on its instruction set and capabilities, it can be programmed to perform anything we desire. When we try to solve a problem without programming, the solution can be exceedingly complex.
+
+When we try to solve a problem without programming, the solution can be exceedingly complex.
+
+Assume you wish to construct a large structure. The use of BRICKS will simplify and reduce the cost of building. It will also allow you to design the building in whatever shape or size you like. The bricks that you can employ to solve your problem are instructions stored in a microprocessor. You can quickly solve difficult programmes by following those guidelines.
+
+### How does a Microprocessor work ?
+
+A processor is the brain of a computer which basically consists of _Arithmetical and Logical Unit (ALU), Control Unit and Register Array_.
+
+- **ALU** performs all arithmetic and logical operations on the data received from input devices or memory.
+- **Register array** consists of a series of registers like accumulator (A), B, C, D etc. which acts as temporary fast access memory locations for processing data.
+- **Control Unit** controls the flow of instructions and data throughout the system.
+
+So basically a microprocessor takes input from input devices, process it as per instructions given in the memory and produces output.
+
+### Advantages of Microprocessors
+
+**Low Cost**
+Microprocessors are available at low cost due to integrated circuit technology which reduces the cost of a computer system.
+
+**High Speed**
+Microprocessor chips can work at very high speed due to the technology involved in it. It is capable of executing millions of instructions per second.
+
+**Small Size**
+Due to very large scale and ultra large scale integration technology, a microprocessor is fabricated in a very less footprint. This will reduce the size of the entire computer system.
+
+**Versatile**
+Microprocessors are very versatile, the same chip can be used for a number of applications by simply changing the program (instructions stored in the memory).
+
+**Low Power Consumption**
+Microprocessors are usually manufactured using metal oxide semiconductor technology, in which MOSFETs (Metal Oxide Semiconductor Field Effect Transistors) are working in saturation and cut off modes. So the power consumption is very low compared to others.
+
+**Less Heat Generation**
+Compared to vacuum tube devices, semiconductor devices won’t emit that much heat.
+
+**Reliable**
+Microprocessors are very reliable, failure rate is very less as semiconductor technology is used.
+
+**Portable**
+Devices or computer system made with microprocessors can be made portable due to the small size and low power consumption.
+
+### Examples of Microprocessors
+
+- Intel 4004 – The First Microprocessor
+- Intel 8085
+- Intel 8086
+- Intel Pentium 4
+- Intel Core i7
+- AMD Athlon
+
+### Key differences between Microcontrollers & Microprocessors:
+
+|                      | MicroConrollers                                                                                                                                                          | MicroProcessors                                                                                                                                                                                                                                     |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Structure            | CPU, Memory, I/O port and all other devices are connected on the single chip. The structure is fixed. Once it is designed the user cannot change the peripheral devices. | It has only the CPU in the chip. Other devices like I/O port, memory & timer are connected externally. The structure of the microprocessor is flexible. Users can decide the amount of memory, the number of I/O ports and other peripheral devices |
+| Application          | It is used where the task is fixed & predefined. It is used in the washing machine, alarm, microwave oven etc.                                                           | It is used where intensive processing is required. It is used in personal computers, laptops, mobiles, video games, etc.                                                                                                                            |
+| Programming          | The program for the microcontroller is fixed once it is designed.                                                                                                        | The program for the microprocessor can be changed for different applications. The programming of the microprocessor is difficult compared to the microcontroller.                                                                                   |
+| Clock Speed          | The clock speed of the microcontroller is less. It is in terms of the MHz. it ranges between 1 MHz to 300 MHz.                                                           | The clock speed of the microprocessor is high. It is in terms of the GHz. It ranges between 1 GHz to 4 GHz.                                                                                                                                         |
+| Power Consumption    | The power consumption for the microcontroller is less.                                                                                                                   | The power consumption for the microprocessor is more.                                                                                                                                                                                               |
+| Peripheral Interface | The common peripheral interface for the microcontroller is I2C, SPI, and UART.                                                                                           | The common peripheral interface for the microprocessor is USB, UART, and high-speed Ethernet.                                                                                                                                                       |
+| RAM                  | The volatile memory (RAM) for the microcontroller is in the range of 2 KB to 256 KB.                                                                                     | The volatile memory (RAM) for the microprocessor is in the range of 512 MB to 32 GB.                                                                                                                                                                |
+| ROM                  | The hard drive or flash memory (ROM) is in the range of 32 KB to 2 MB.                                                                                                   | The hard disk (ROM) for the microprocessor is in the range of 128 GB to 2 TB.                                                                                                                                                                       |
+| Bit Size             | It is available in 8-bit, 16-bit, and 36-bit.                                                                                                                            | It is available in 32-Bit and 64-bit.                                                                                                                                                                                                               |
+| Size                 | The overall size of the system is small.                                                                                                                                 | The overall size of the system is large.                                                                                                                                                                                                            |
+| Example              | Arduino UNO                                                                                                                                                              | Raspberry Pi                                                                                                                                                                                                                                        |
+| Cost                 | The cost of the microcontroller is low compared to the microprocessor.                                                                                                   | Comparatively expensive.                                                                                                                                                                                                                            |
+
+Here is a YouTube video you might refer to:
+[Difference Between MicroController & Microprocessor](https://youtu.be/U2vBsZbgw8M). (use subtitles)
