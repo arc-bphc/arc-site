@@ -213,7 +213,9 @@ A multimeter is a device that can measure many electrical properties depending o
 - The various options are used to select the maximum resistance.
 - If you select max resistance 2000k, 200k, 20k, it will show reading in kΩ. For the rest of the cases, readings will show in Ω.
 
-#### Continuity (<Image src="/static/images/resources/Day1_Session1/multimeter_3.png" alt="IR" width='500' height='500' />)
+<Image src="/static/images/resources/Day1_Session1/multimeter_3.png" alt="IR" width='500' height='500' />
+
+#### Continuity
 
 - There will be a region bottom-left to the knob marked with the above symbol.
 - When you will touch 2 terminals to some point on a circuit, if there is continuity (if those points are directly connected to each other), it will make ‘beep’ sound.
