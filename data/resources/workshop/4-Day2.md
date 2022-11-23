@@ -182,51 +182,6 @@ By the above circuit connection and the usage of the above code, the LED will bl
 
 There maybe a lot in the above code that you might not understand at present, but still try to copy the code and replicate the circuit and run the simulation. This will help you grasp the concepts better in the later sessions.
 
-### ~~TV~~ Serial
-
-Sometimes its really useful to see what's going on inside the brain of a microcontroller. Whilst there are many ways to send and receive information to and from a microcontroller and the computer, using the Serial port turns out to be the easiest.
-Serial communication is the process of sending one bit of data at a time, sequentially from one device to another. The main purpose of this serial communication is to transfer the sketch from computer to Arduino, to send information to computer etc. All Arduino boards have at least one serial port and it communicates on digital pins 0 (RX) and 1 (TX).
-The serial port is connected to the USB port on the board, and we can use the built-in Arduino Serial library to send data to the serial monitor in the Arduino IDE or to an external serial monitor.
-
-#### Monitor
-
-The Serial Monitor is basically a window in the Arduino IDE that allows you to send messages from your computer to an Arduino board (over USB) as well as receive messages from the Arduino.
-
-#### Here's how you can access the Serial Monitor
-
-1.  Open your Arduino IDE. Click on 'Tools' in the Menu bar, and select 'Serial Monitor'.
-2.  Alternatively, you can use the hotkey Ctrl+Shift+M
-
-This is how your Serial Monitor will typically look like
-
-<Image src="/static/images/resources/Day2_Session1/monitor.png" alt="IR" width='500' height='500' />
-
-#### begin()
-
-The Serial.begin( ) function is a part of the serial object in the Arduino. It tells the serial object to perform initialization steps to send and receive data on the Rx and Tx (pins 1 and 0). It sets the baud rate for serial communication between your Arduino board and another device.
-
-The most common reason to use serial.begin() is when you want to output some information from your Arduino to your computer screen. 99% of the time, you’ll be putting the Serial.begin() function inside of the setup() function. As you may know, setup() only runs once, and since you’ll only need to establish the Serial Communication one time – it makes sense to have it there.
-
-**Syntax**: `Serial.begin(speed)`
-
-_speed_: It signifies the baud rate. The default baud rate in Arduino is 9600. We can specify other baud rates as well, such as 4800, 14400, 38400, 28800, etc.
-
-Probably the most important practical thing you need to know is that for serial communication to work, the baud rate in Serial.begin() and the baud rate set on the receiving device need to match. If you are using the Arduino IDE Serial Monitor window to read the information from your Arduino, then you can use the baud rate drop down to set the baud rate. But remember! If these two values don’t match – then anything you try to send over serial will not work right.
-
-#### print 'F'
-
-The **Serial.print( )** function in Arduino prints data to the serial port. It allows you to send information from your Arduino to your computer, so that you can see the value displayed on your Serial Monitor.
-
-**Syntax**: `Serial.print(value, format)`
-
-_value_: It signifies the value to print, which includes any data type value.
-
-_format_: It consists of number bases, such as OCT (Octal), BIN (Binary), HEX (Hexadecimal), etc. for the integral data types. It also specifies the number of decimal places.
-
-You can read more about this function [here](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/).
-
-If we wish to print the data in different lines, we can use the **Serial.println()** function. This function is basically the same as the Serial.print() function (except that it prints data in different lines) and has the same syntax.
-
 ### Getting To Know Your Digital Companion
 
 #### digitalRead()
