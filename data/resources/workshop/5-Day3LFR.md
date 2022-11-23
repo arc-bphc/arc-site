@@ -47,10 +47,6 @@ The following is a list of all things necessary to build the chassis for the lin
 |   11   |     Spacers     |    4     |
 |   12   | Screwdriver kit |    1     |
 
-## Video
-
-<EmbedItem url='https://www.youtube.com/embed/R-Nf5t-5Lqs' />
-
 # Wiring and Connections
 
 ## Components
@@ -190,7 +186,6 @@ _Left view_
 ### TYPE-3
 
 <Image src="/static/images/resources/Day3_Session2/motordriver_type3.png" alt="IR" width='500' height='500' />
-
 
 ### Explanation
 
