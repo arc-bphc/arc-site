@@ -105,25 +105,23 @@ If you have not completed the course or are looking to brush up some concepts, w
 |   4   | USB AB Cable for Arduino                     |    1     |
 |   5   | IR Infrared Obstacle Avoidance Sensor Module |    2     |
 |   6   | L293D - Motor Driver Module                  |    1     |
-|   7   | Potentiometer                                |    1     |
-|   8   | Screwdriver                                  |    1     |
-|   9   | Wire Stripper                                |    1     |
-|  10   | Solderless Breadboard                        |    1     |
-|  11   | HC-SR04 Ultrasonic Range Finder Module       |    1     |
-|  12   | Jumper Wire Set                              |    1     |
-|  13   | LDR                                          |    4     |
-|  14   | Battery Snap                                 |    1     |
-|  15   | Battery                                      |    1     |
-|  16   | Battery Holder                               |    1     |
-|  17   | Multistrand Wire                             |    1     |
-|  18   | 5mm Yellow LED                               |    5     |
-|  19   | 820 Ohm Resistance                           |    5     |
-|  20   | 1.8K Ohm Resistance                          |    5     |
-|  21   | Single Strand Wire (Black) - 1m              |    1     |
-|  22   | Single Strand Wire (Red) - 1m                |    1     |
-|  23   | Multimeter                                   |    1     |
-|  24   | HC-05 Bluetooth Module                       |    1     |
-|  25   | Box                                          |    1     |
+|   7   | Screwdriver                                  |    1     |
+|   8   | Wire Stripper                                |    1     |
+|   9   | Solderless Breadboard                        |    1     |
+|  10   | HC-SR04 Ultrasonic Range Finder Module       |    1     |
+|  11   | Jumper Wire Set                              |    1     |
+|  12   | LDR                                          |    4     |
+|  13   | Battery Snap                                 |    1     |
+|  14   | Battery                                      |    1     |
+|  15   | Battery Holder                               |    1     |
+|  16   | 5mm Yellow LED                               |    5     |
+|  17   | 820 Ohm Resistance                           |    5     |
+|  18   | 1.8K Ohm Resistance                          |    5     |
+|  19   | Single Strand Wire (Black) - 1m              |    1     |
+|  20   | Single Strand Wire (Red) - 1m                |    1     |
+|  21   | Multimeter                                   |    1     |
+|  22   | 7805 Voltage Regulator IC                    |    1     |
+|  23   | Box                                          |    1     |
 
 ## Other parts to be kept handy
 
