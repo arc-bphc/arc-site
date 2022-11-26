@@ -113,15 +113,14 @@ If you have not completed the course or are looking to brush up some concepts, w
 |  12   | LDR                                          |    4     |
 |  13   | Battery Snap                                 |    1     |
 |  14   | Battery                                      |    1     |
-|  15   | Battery Holder                               |    1     |
-|  16   | 5mm Yellow LED                               |    5     |
-|  17   | 820 Ohm Resistance                           |    5     |
-|  18   | 1.8K Ohm Resistance                          |    5     |
-|  19   | Single Strand Wire (Black) - 1m              |    1     |
-|  20   | Single Strand Wire (Red) - 1m                |    1     |
-|  21   | Multimeter                                   |    1     |
-|  22   | 7805 Voltage Regulator IC                    |    1     |
-|  23   | Box                                          |    1     |
+|  15   | 5mm Yellow LED                               |    5     |
+|  16   | 820 Ohm Resistance                           |    5     |
+|  17   | 1.8K Ohm Resistance                          |    5     |
+|  18   | Single Strand Wire (Black) - 1m              |    1     |
+|  19   | Single Strand Wire (Red) - 1m                |    1     |
+|  20   | Multimeter                                   |    1     |
+|  21   | 7805 Voltage Regulator IC                    |    1     |
+|  22   | Box                                          |    1     |
 
 ## Other parts to be kept handy
 
