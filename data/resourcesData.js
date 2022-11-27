@@ -1,7 +1,7 @@
 const resourcesData = [
   {
     id: 1,
-    title: 'Robotics BootCamp',
+    title: 'Robotics 101',
     description: `A 3-Day Robotics Workshop. With no prerequisites, featuring hands-on
     experience and a 5-in-1 kit. With BONUS 2 Complete Projects`,
     imgSrc: '/static/images/workshop.jpg',
