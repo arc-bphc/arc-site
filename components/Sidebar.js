@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
 function Sidebar({ postsInSameFolder }) {
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(true)
   const [navShow, setNavShow] = useState(false)
 
   const onToggleNav = () => {
@@ -29,8 +29,8 @@ function Sidebar({ postsInSameFolder }) {
   return (
     <>
       <div
-        className={`fixed left-8 bottom-8 z-10 flex-col gap-3 rounded-lg bg-gray-100 p-2 transition-all hover:bg-gray-300 dark:bg-gray-900 md:hidden ${
-          show ? 'flex' : 'hidden'
+        className={`fixed left-8 bottom-8 z-10 flex-col gap-3 rounded-lg bg-gray-100 p-2 transition-all hover:bg-gray-300 dark:bg-gray-900 ${
+          show || postsInSameFolder.length > 7 ? 'flex' : 'hidden'
         }`}
       >
         <button
@@ -52,9 +52,10 @@ function Sidebar({ postsInSameFolder }) {
             />
           </svg>
         </button>
+
         <div
           className={`fixed top-0 right-0 z-10 h-full w-full transform overflow-y-auto bg-gray-200 opacity-95 duration-300 ease-in-out dark:bg-gray-800 ${
-            navShow ? 'translate-x-0' : 'translate-x-full'
+            navShow ? 'translate-x-0 md:translate-x-3/4' : 'translate-x-full'
           }`}
         >
           <div className="flex justify-end">
@@ -79,7 +80,7 @@ function Sidebar({ postsInSameFolder }) {
             </button>
           </div>
 
-          <nav className="fixed mt-8 h-full">
+          <nav className="fixed mt-8 h-full justify-center">
             {postsInSameFolder.map((post) => (
               <div key={post.title} className="px-12 py-4">
                 <Link
@@ -96,29 +97,31 @@ function Sidebar({ postsInSameFolder }) {
       </div>
 
       {/* Web SideBar */}
-      <div className="h-30 h-sm:hidden hidden w-full lg:table-cell lg:w-60">
-        <aside className="md:sticky md:top-10" aria-label="Sidebar">
-          <div className="overflow-y-auto rounded bg-gray-50 py-4 px-3 dark:bg-gray-800">
-            <ul>
-              {postsInSameFolder.map((post) => {
-                return (
-                  <div key={post.orderInSidebar}>
-                    <li>
-                      <a
-                        href={`/resources/${post.slug}`}
-                        className="flex items-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                      >
-                        <span className="ml-3">{post.title}</span>
-                      </a>
-                    </li>
-                    {post.orderInSidebar % 2 == 0 && <hr />}
-                  </div>
-                )
-              })}
-            </ul>
-          </div>
-        </aside>
-      </div>
+      {postsInSameFolder.length < 7 && (
+        <div className="h-30 h-sm:hidden hidden w-full lg:table-cell lg:w-60">
+          <aside className="md:sticky md:top-10" aria-label="Sidebar">
+            <div className="overflow-y-auto rounded bg-gray-50 py-4 px-3 dark:bg-gray-800">
+              <ul>
+                {postsInSameFolder.map((post) => {
+                  return (
+                    <div key={post.orderInSidebar}>
+                      <li>
+                        <a
+                          href={`/resources/${post.slug}`}
+                          className="flex items-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                        >
+                          <span className="ml-3">{post.title}</span>
+                        </a>
+                      </li>
+                      {post.orderInSidebar % 2 == 0 && <hr />}
+                    </div>
+                  )
+                })}
+              </ul>
+            </div>
+          </aside>
+        </div>
+      )}
     </>
   )
 }

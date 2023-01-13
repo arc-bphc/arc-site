@@ -1,0 +1,65 @@
+---
+title: Level 2 Assignment
+category: 'resource'
+level: 2
+tags: ['levelup', 'electronics']
+orderInSidebar: 5
+---
+
+<TOCInline toc={props.toc} toHeading={3} asDisclosure />
+
+# Assignment
+
+### Electronics
+
+- Check if a number is prime or not
+  - Input and Output should be via the Serial Monitor.
+- Encrypt and Decrypt a number using XOR
+  - Input and Output should be via the Serial Monitor.
+  - Bonus if you can let the user decide the "key".
+  - Reference: [XOR Cipher](https://www.geeksforgeeks.org/xor-cipher/)
+- Analyze the waveform from the given Black Box and comment about the same.
+  - Check the code comments for further Instructions
+
+### Mechanical
+
+Question 1:
+[https://drive.google.com/file/d/1IrdCAFcY2g63ikytJaR6wgfz5AQl4NTV/view?usp=sharing](https://drive.google.com/file/d/1JsA025Tvg-wD47ZFH60i6kuRkRNTmiVP/view?usp=sharing)
+
+Question 2:
+[https://drive.google.com/file/d/1IrdCAFcY2g63ikytJaR6wgfz5AQl4NTV/view?usp=sharing](https://drive.google.com/file/d/1IrdCAFcY2g63ikytJaR6wgfz5AQl4NTV/view?usp=sharing)
+
+## Black Box
+
+<iframe
+  width="725"
+  height="453"
+  src="https://www.tinkercad.com/embed/b46DborvjJo?editbtn=1"
+  frameBorder="0"
+  marginWidth="0"
+  marginHeight="0"
+  scrolling="no"
+></iframe>
+
+## Extra
+
+- **NOTE:** Digital pin 13 is harder to use as a digital input than the other digital pins because it has an LED and resistor attached to it that's soldered to the board on most boards. If you enable its internal 20k pull-up resistor, it will hang at around 1.7V instead of the expected 5V because the onboard LED and series resistor pull the voltage level down, meaning it always returns LOW. If you must use pin 13 as a digital input, set its pinMode() to INPUT and use an external pull down resistor.
+
+- The LED on pin 13 is used by the optiboot loader (the one used on UNO):
+
+  - at Arduino boot time (the LED blinks a few times)
+  - when uploading a sketch to Arduino
+  - Reference: [Stackexchange](https://arduino.stackexchange.com/questions/1448/whats-the-deal-with-unos-pin-13-led)
+  - In Case you'd like to know what a bootloader is, Reference: [Electrowing](https://www.electronicwings.com/arduino/basics-to-developing-bootloader-for-arduino#:~:text=Arduino%20bootloader%20uses%20the%20serial,board%20over%20USB%20cable%20serially.)
+
+- Topics to Brainstorm if you're done with the slides
+  - What are the different kinds of microcontrollers available in the market other than arduino and what makes arduino so special?
+  - Have a look at all the arduino universe made in the past years, sensors, actuators custom built to go along with arduino.
+  - [Microcontroller vs Microprocessor](https://www.electronicsforu.com/technology-trends/learn-electronics/difference-between-microprocessor-and-microcontroller)
+  - Location and purpose of a crystal oscillator on the arduino uno?
+  - Purpose of the RX and TX LEDS : The TX and RX LEDs blink whenever there is a communication between the onboard microcontroller and the computer through the USB to serial converter chip present near the USB port.
+  - [Ways to power an arduino](<https://technobyte.org/2016/07/power-up-the-arduino-uno/(edited)>)
+
+The lighting up of the LEDs indicate the direction of flow of data. When a bit of data goes from the Arduino board to the computer, the TX LED glows. The RX LED glows when a bit of data goes from the computer to the Arduino board.
+
+While the computer uploads a code to the Arduino code, the computer sends the data to the Arduino board to set its fuse bits, determines the inputs and outputs to be used and other necessary instructions to make the code work. The Arduino board replies each time the data is sent during upload to tell the computer that it is receiving the instructions. So, when the computer uploads the code to the Arduino board, the TX and RX LEDs flash rapidly, showing the data exchange process. It is so fast that these LEDs seem to be turned steady on.
