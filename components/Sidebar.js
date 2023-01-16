@@ -30,7 +30,7 @@ function Sidebar({ postsInSameFolder }) {
     <>
       <div
         className={`fixed left-8 bottom-8 z-10 flex-col gap-3 rounded-lg bg-gray-100 p-2 transition-all hover:bg-gray-300 dark:bg-gray-900 ${
-          show || postsInSameFolder.length > 7 ? 'flex' : 'hidden'
+          show || postsInSameFolder.length > 10 ? 'flex' : 'hidden'
         }`}
       >
         <button
@@ -58,10 +58,10 @@ function Sidebar({ postsInSameFolder }) {
             navShow ? 'translate-x-0 md:translate-x-3/4' : 'translate-x-full'
           }`}
         >
-          <div className="flex justify-end">
+          <div className="flex justify-between">
             <button
               type="button"
-              className="mr-5 mt-11 h-8 w-8 rounded"
+              className="m-5 mr-5 mt-11 h-8 w-8 rounded"
               aria-label="Toggle Menu"
               onClick={onToggleNav}
             >
@@ -97,7 +97,7 @@ function Sidebar({ postsInSameFolder }) {
       </div>
 
       {/* Web SideBar */}
-      {postsInSameFolder.length < 7 && (
+      {postsInSameFolder.length < 10 && (
         <div className="h-30 h-sm:hidden hidden w-full lg:table-cell lg:w-60">
           <aside className="md:sticky md:top-10" aria-label="Sidebar">
             <div className="overflow-y-auto rounded bg-gray-50 py-4 px-3 dark:bg-gray-800">
