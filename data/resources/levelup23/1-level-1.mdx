@@ -548,52 +548,6 @@ Since the nature of a device (input/output) and the pin its connected to, doesn'
 
 The pin numbers for the Arduino board are mentioned on the board and can be used as it is inside the **pinMode()** function.
 
-# C for Arduino Microcontrollers
-
-### Programming the Arduino Microcontrollers
-
-> Note: This doc assumes some basic familiarity with programming concepts as covered in CS F111: Computer Programming at BITS. Although some pre-requisite knowledge of programming structures is recommended, it is not requried.
-
-## Control Structure of a simple Arduino Program
-
-Almost any arduino program consists of two important functions: `setup()` and `loop()`. These two functions are the building blocks of any arduino program. Most programs that you need to run on a microcontroller device have two major components:
-
-1. Setting up the hardware and the program variables
-2. Recurring tasks like collecting data or sending some data
-
-These tasks are handled by the following two functions:
-
-### The setup() function
-
-This function is called when your Arduino Board starts up. It is used to initalize any variables that you have to use in your program. It can also be used to set up any hardware that you need to use. The crucial part to remember is that this function is called exactly once. Anything, and everyhting that you don't need to run more than once, should be within this function.
-
-### The loop() function
-
-This function is called repeatedly. It is the main function of your program. It is where you should put all the code that you want to run repeatedly. The loop function is called repeatedly until the program is stopped. (How is a program stopped?)
-
-Sample Code Structure:
-
-```c++
-// Define Global Variables
-
-void setup() {
-    // Set up your microcontroller here
-    // Initialize Variables
-}
-
-void loop() {
-    // Collect some data
-    // Send some data back
-}
-
-```
-
-Once we understand the strucutre of a program, we can start writing the code. Let us look at the building blocks.
-
-## Some extra knowledge (For assignments)
-
-This would be reqiured to solve the Programming assignment.
-
 ## <s>TV</s> Serial
 
 ### ~~TV~~ Serial
@@ -692,23 +646,6 @@ Also known as _embedded controllers or microcontroller units (MCUs)_, they are f
 
 A microcontroller is embedded inside a system and controls a single function. It accomplishes this by employing its core Processor to evaluate data received from its I/O peripherals. The microcontroller's temporary information is stored in its data memory, where the processor accesses it and decodes and applies the incoming data using instructions stored in its programme memory. It then communicates with its I/O peripherals and takes the required action.
 
-## Core Elements of a Microcontroller
-
-**The processor (CPU)**
-A processor might be compared to the device's brain. It interprets and responds to a variety of commands that control the microcontroller's operation. This includes basic arithmetic, logic, and input/output (I/O) operations. It also performs data transfer operations that send commands to other embedded system components.
-
-**Memory**
-The memory of a microcontroller is used to retain the data that the processor receives and to respond to commands that it has been programmed to carry out. There are two types of memory in a microcontroller:
-
-_Program memory_ is where the CPU keeps long-term information about the instructions it executes. Program memory is non-volatile memory, which means it may store data indefinitely without the need for a power source.
-
-_Data memory_ is needed to store temporary data while the instructions are being executed. Data memory is volatile, which means that the data it stores is only transient and is only kept if the device is powered up.
-
-**I/O peripherals**
-The processor's input and output devices serve as its interface to the outside world. The input ports take in information and transfer it to the processor as binary data. The processor receives that data and sends the necessary instructions to output devices that execute tasks external to the microcontroller.
-
-While the processor, memory, and I/O peripherals are the most important components of a microprocessor, other components are typically incorporated as well. Supporting components that interface with the memory and CPU are referred to as I/O peripherals. Peripherals are a broad category that includes a wide range of supporting components. Because they are the method via which the processor is applied, having some form of an I/O peripheral is essential to a microprocessor.
-
 ## Examples of Microcontrollers
 
 - Most Arduino boards consist of an **Atmel 8-bit AVR microcontroller** (ATmega8, ATmega168, ATmega328, ATmega1280, or ATmega2560)
@@ -746,32 +683,6 @@ A processor is the brain of a computer which basically consists of _Arithmetical
 - **Control Unit** controls the flow of instructions and data throughout the system.
 
 So basically a microprocessor takes input from input devices, process it as per instructions given in the memory and produces output.
-
-### Advantages of Microprocessors
-
-**Low Cost**
-Microprocessors are available at low cost due to integrated circuit technology which reduces the cost of a computer system.
-
-**High Speed**
-Microprocessor chips can work at very high speed due to the technology involved in it. It is capable of executing millions of instructions per second.
-
-**Small Size**
-Due to very large scale and ultra large scale integration technology, a microprocessor is fabricated in a very less footprint. This will reduce the size of the entire computer system.
-
-**Versatile**
-Microprocessors are very versatile, the same chip can be used for a number of applications by simply changing the program (instructions stored in the memory).
-
-**Low Power Consumption**
-Microprocessors are usually manufactured using metal oxide semiconductor technology, in which MOSFETs (Metal Oxide Semiconductor Field Effect Transistors) are working in saturation and cut off modes. So the power consumption is very low compared to others.
-
-**Less Heat Generation**
-Compared to vacuum tube devices, semiconductor devices won’t emit that much heat.
-
-**Reliable**
-Microprocessors are very reliable, failure rate is very less as semiconductor technology is used.
-
-**Portable**
-Devices or computer system made with microprocessors can be made portable due to the small size and low power consumption.
 
 ### Examples of Microprocessors
 

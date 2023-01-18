@@ -309,4 +309,46 @@ bool isOdd(int32_t n) {
 }
 ```
 
-Now that you've finished this section, you have all the **programming knowledge** required to get started our workshop.
+Now that you've finished this section, you have all the **programming knowledge** required to get started.
+
+# C for Arduino Microcontrollers
+
+### Programming the Arduino Microcontrollers
+
+> Note: This doc assumes some basic familiarity with programming concepts as covered in CS F111: Computer Programming at BITS. Although some pre-requisite knowledge of programming structures is recommended, it is not requried.
+
+## Control Structure of a simple Arduino Program
+
+Almost any arduino program consists of two important functions: `setup()` and `loop()`. These two functions are the building blocks of any arduino program. Most programs that you need to run on a microcontroller device have two major components:
+
+1. Setting up the hardware and the program variables
+2. Recurring tasks like collecting data or sending some data
+
+These tasks are handled by the following two functions:
+
+### The setup() function
+
+This function is called when your Arduino Board starts up. It is used to initalize any variables that you have to use in your program. It can also be used to set up any hardware that you need to use. The crucial part to remember is that this function is called exactly once. Anything, and everyhting that you don't need to run more than once, should be within this function.
+
+### The loop() function
+
+This function is called repeatedly. It is the main function of your program. It is where you should put all the code that you want to run repeatedly. The loop function is called repeatedly until the program is stopped. (How is a program stopped?)
+
+Sample Code Structure:
+
+```c++
+// Define Global Variables
+
+void setup() {
+    // Set up your microcontroller here
+    // Initialize Variables
+}
+
+void loop() {
+    // Collect some data
+    // Send some data back
+}
+
+```
+
+Once we understand the strucutre of a program, we can start writing the code. Let us look at the building blocks.
