@@ -9,10 +9,10 @@ const resourcesData = [
   },
   {
     id: 2,
-    title: 'Level Up',
+    title: 'Level Up 2023',
     description: `A gamified bootcamp on electronics, programming and design to get you up and running in no time`,
     imgSrc: '/static/images/Level-Up.png',
-    href: '/resources/levelup/0-introduction',
+    href: '/resources/levelup23/0-introduction',
   },
   {
     id: 3,
