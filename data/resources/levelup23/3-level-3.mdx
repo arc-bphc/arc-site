@@ -117,26 +117,23 @@ int mSpeedR = 250;
 int mSpeedR1 =0;
 int dt=1000; // delay time
 
-void setup()
-{
-  Serial.begin(9600);
+void setup() {
+    Serial.begin(9600);
 
-// set pinMode for all pins
-  pinMode(dirR1, OUTPUT);
-  pinMode(dirR2, OUTPUT);
-  pinMode(dirL1, OUTPUT);
-  pinMode(dirL2, OUTPUT);
+    // set pinMode for all pins
+    pinMode(dirR1, OUTPUT);
+    pinMode(dirR2, OUTPUT);
+    pinMode(dirL1, OUTPUT);
+    pinMode(dirL2, OUTPUT);
 }
 
-void loop()
-{
-  analogWrite(dirR1,mSpeedR);
-  analogWrite(dirR2,mSpeedR2);
-  analogWrite(dirL1,mSpeedL);
-  analogWrite(dirL2,mSpeedL2);
-
-  delay(dt); // set delay time
- }
+void loop() {
+    analogWrite(dirR1,mSpeedR);
+    analogWrite(dirR2,mSpeedR2);
+    analogWrite(dirL1,mSpeedL);
+    analogWrite(dirL2,mSpeedL2);
+    delay(dt); // set delay time
+}
 ```
 
 ## Servo
@@ -153,7 +150,7 @@ This is a simple Servo Arduino code, that takes input from a potentiometer which
 
 ### Knob
 
-```c
+```cpp
 #include <Servo.h>
 
 Servo myservo;  // create servo object to control a servo
@@ -162,14 +159,14 @@ int potpin = 0;  // analog pin used to connect the potentiometer
 int val;    // variable to read the value from the analog pin
 
 void setup() {
-  myservo.attach(9);  // attaches the servo on pin 9 to the servo object
+    myservo.attach(9);  // attaches the servo on pin 9 to the servo object
 }
 
 void loop() {
-  val = analogRead(potpin);            // reads the value of the potentiometer (value between 0 and 1023)
-  val = map(val, 0, 1023, 0, 180);     // scale it to use it with the servo (value between 0 and 180)
-  myservo.write(val);                  // sets the servo position according to the scaled value
-  delay(15);                           // waits for the servo to get there
+    val = analogRead(potpin);            // reads the value of the potentiometer (value between 0 and 1023)
+    val = map(val, 0, 1023, 0, 180);     // scale it to use it with the servo (value between 0 and 180)
+    myservo.write(val);                  // sets the servo position according to the scaled value
+    delay(15);                           // waits for the servo to get there
 }
 ```
 
@@ -179,7 +176,7 @@ void loop() {
 
 You can also make it move through the 180 degrees
 
-```c
+```cpp
 #include <Servo.h>
 
 Servo myservo;  // create servo object to control a servo
@@ -188,19 +185,19 @@ Servo myservo;  // create servo object to control a servo
 int pos = 0;    // variable to store the servo position
 
 void setup() {
-  myservo.attach(9);  // attaches the servo on pin 9 to the servo object
+    myservo.attach(9);  // attaches the servo on pin 9 to the servo object
 }
 
 void loop() {
-  for (pos = 0; pos <= 180; pos += 1) { // goes from 0 degrees to 180 degrees
-    // in steps of 1 degree
-    myservo.write(pos);              // tell servo to go to position in variable 'pos'
-    delay(15);                       // waits 15ms for the servo to reach the position
-  }
-  for (pos = 180; pos >= 0; pos -= 1) { // goes from 180 degrees to 0 degrees
-    myservo.write(pos);              // tell servo to go to position in variable 'pos'
-    delay(15);                       // waits 15ms for the servo to reach the position
-  }
+    for (pos = 0; pos <= 180; pos += 1) { // goes from 0 degrees to 180 degrees
+        // in steps of 1 degree
+        myservo.write(pos);              // tell servo to go to position in variable 'pos'
+        delay(15);                       // waits 15ms for the servo to reach the position
+    }
+    for (pos = 180; pos >= 0; pos -= 1) { // goes from 180 degrees to 0 degrees
+        myservo.write(pos);              // tell servo to go to position in variable 'pos'
+        delay(15);                       // waits 15ms for the servo to reach the position
+    }
 }
 ```
 
@@ -236,7 +233,7 @@ The following image shows the connection of the terminals of the sensor to the A
 <Image
   src="/static/images/resources/Day3_Session1/HC-SR04_2.png"
   alt="IR"
-  width="500"
+  width="600"
   height="500"
 />
 
@@ -274,8 +271,8 @@ You can watch the following videos to understand better:
 <Image
   src="/static/images/resources/Day3_Session1/HC-SR04_arduino.png"
   alt="IR"
-  width="500"
-  height="500"
+  width="700"
+  height="400"
 />
 
 ```cpp
@@ -304,8 +301,8 @@ void loop() {
 ```
 
 <iframe
-  width="725"
-  height="453"
+  width="1100"
+  height="700"
   src="https://www.tinkercad.com/embed/cGqyGisEibf?editbtn=1"
   frameBorder="0"
   marginWidth="0"
@@ -325,8 +322,6 @@ The syntax of pulseIn() function is:
 In the above code, the pin is the echoPin, and the value is HIGH, i.e. the function measures the time period of the HIGH pulse input signal on the echoPin.
 
 Hence it indirectly measures the travel time of the signal. Thus the pingTimeTravel can be calculated using the pulseIn() function.
-
-<EmbedItem url="https://www.youtube.com/embed/M-UKXCUI0r" />
 
 ---
 
