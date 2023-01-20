@@ -84,7 +84,7 @@ const data = [
   {
     Timestamp: '2022-08-17T11:07:20.271Z',
     email: 'f20201793@hyderabad.bits-pilani.ac.in',
-    name: 'AKSHAT JOHAR',
+    name: 'Akshat Johar',
     picture: '/static/members/akshat.jpg',
     github: 'https://github.com/akjo18',
     linkedin: 'https://www.linkedin.com/in/akshat-johar-11ba94222',
