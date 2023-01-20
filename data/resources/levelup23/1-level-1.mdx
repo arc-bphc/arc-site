@@ -7,6 +7,7 @@ orderInSidebar: 1
 ---
 
 <TOCInline toc={props.toc} toHeading={3} asDisclosure />
+<br />
 
 # Basic Components
 
@@ -184,23 +185,23 @@ As mentioned before, a breadboard is a circuit board that is used to make tempor
 
 The metal strips are laid out as shown below. Note that the top and bottom rows of holes are connected horizontally and split in the middle while the remaining holes are connected vertically.
 
-<Image src="/static/images/resources/Day1_Session1/b_1.png" alt="IR" width="500" height="500" />
+<Image src="/static/images/resources/Day1_Session1/b_1.png" alt="IR" width="750" height="300" />
 
 In the below image, you can see how all holes in the selected row and selected column are connected together. The set of connected holes can be called a node.
 
-<Image src="/static/images/resources/Day1_Session1/b_2.png" alt="IR" width="500" height="500" />
+<Image src="/static/images/resources/Day1_Session1/b_2.png" alt="IR" width="750" height="400" />
 
 To interconnect the selected row (node A) and column (node B) a cable going from any hole in the row to any hole in the column is needed:
 
-<Image src="/static/images/resources/Day1_Session1/b_3.png" alt="IR" width="500" height="500" />
+<Image src="/static/images/resources/Day1_Session1/b_3.png" alt="IR" width="750" height="400" />
 
 Now the selected column (node B) and row (node A) are interconnected:
 
-<Image src="/static/images/resources/Day1_Session1/b_4.png" alt="IR" width="500" height="500" />
+<Image src="/static/images/resources/Day1_Session1/b_4.png" alt="IR" width="750" height="400" />
 
 Thus, in a Breadboard
 
-<Image src="/static/images/resources/Day1_Session1/b_5.png" alt="IR" width="500" height="500" />
+<Image src="/static/images/resources/Day1_Session1/b_5.png" alt="IR" width="750" height="400" />
 
 You can refer to the following video for more information - [Understanding How Breadboards Work](https://www.youtube.com/watch?v=CfdaJ4z4u4w)
 
@@ -208,7 +209,7 @@ You can refer to the following video for more information - [Understanding How B
 
 The below image shows how to make a simple LED - Breadboard connection.
 
-<Image src="/static/images/resources/Day1_Session1/b_LED.png" alt="IR" width="500" height="500" />
+<Image src="/static/images/resources/Day1_Session1/b_LED.png" alt="IR" width="700" height="400" />
 
 ### Explanation
 
@@ -475,7 +476,7 @@ You will be learning how to talk to your Arduino and interface it with other sen
 
 Every individual program that is written for the Arduino is called as a "**sketch**", the most basic of all the sketches is the "**blank sketch**" its the first sketch you see when you open a new IDE page. Which kinda looks like this
 
-```c++
+```cpp
 void setup(){
     // Code written here will be only be executed once
 
@@ -485,8 +486,6 @@ void loop(){
     // Code written here will be run indefinitely
 
 }
-
-
 ```
 
 Go ahead and open your IDE, open a new sketch in case you have some other sketch pre-loaded.
@@ -530,7 +529,7 @@ Now that you know what kinda external devices you will be working with its high 
 
 **Example Sketch**
 
-```c++
+```cpp
 void setup(){
     // The "8" refers to the digital pin 8 on the arduino board
     pinMode(8,INPUT); // for an INPUT device
@@ -541,7 +540,6 @@ void setup(){
 void loop(){
 
 }
-
 ```
 
 Since the nature of a device (input/output) and the pin its connected to, doesn't change mid-program, its often sufficient to let the Arduino know about the devices its dealing with once at the start of the sketch, hence **pinMode()** is placed inside the **void setup()** and not inside the **void loop()**.
@@ -567,7 +565,7 @@ The Serial Monitor is basically a window in the Arduino IDE that allows you to s
 
 This is how your Serial Monitor will typically look like
 
-<Image src="/static/images/resources/Day2_Session1/monitor.png" alt="IR" width="500" height="500" />
+<Image src="/static/images/resources/Day2_Session1/monitor.png" alt="IR" width="800" height="400" />
 
 #### begin()
 
@@ -586,7 +584,7 @@ Probably the most important practical thing you need to know is that for serial 
 As you know whatever we do in the `void setup()` is only run once whereas as the part in the `void loop()` keeps on runing until Arduino is powered.
 This is an example to print your name once when the board is powered.
 
-```c++
+```cpp
 void setup()
 {
   Serial.begin(9600);  //Begin serial communication at 9600(Baud rate)
@@ -606,7 +604,7 @@ For example if you want to print "1" and thenafter 1 second you want to print "2
 
 The function takes milliseconds as input.
 
-```c++
+```cpp
 void setup(){
 	Serial.begin(9600);
 }
@@ -617,7 +615,6 @@ void loop(){
 	Serial.print(2);
 	delay(1000); // Do nothing for 1 second
 }
-
 ```
 
 #### print 'F'

@@ -118,7 +118,7 @@ export default function ResourceLayout({ frontMatter, authorDetails, next, prev,
                     {prev && (
                       <div>
                         <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                          Previous Article
+                          Next Article
                         </h2>
                         <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
                           <Link href={`/resources/${prev.slug}`}>{prev.title}</Link>
@@ -128,7 +128,7 @@ export default function ResourceLayout({ frontMatter, authorDetails, next, prev,
                     {next && (
                       <div>
                         <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                          Next Article
+                          Previous Article
                         </h2>
                         <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
                           <Link href={`/resources/${next.slug}`}>{next.title}</Link>

@@ -41,7 +41,7 @@ A pin in its HIGH state is set to 5 Volts, a pin in LOW state has 0 Volts.
 
 **Turning on an LED**
 
-```c++
+```cpp
 void setup(){
     /* LED_BUILTIN is a special keyword for the inbuilt LED connected
     to digital pin 13 on the arduino, it is usually used for debugging */
@@ -64,7 +64,7 @@ The most intuitive way of doing this would be to first turn ON the LED and then 
 
 **Blinking Attempt 1**
 
-```c++
+```cpp
 void setup(){
     // Set the pin (D13) the LED is connected to as OUTPUT
     pinMode(LED_BUILTIN,OUTPUT);
@@ -99,7 +99,7 @@ Lets use the delay() function to stall the arduino for a second after and before
 
 **Blink Attempt 2**
 
-```c++
+```cpp
 void setup(){
     pinMode(LED_BUILTIN,OUTPUT);
 }
@@ -130,7 +130,7 @@ Now that you have gained a basic understanding of digital and analog pins, let's
 
 The code of this circuit is :
 
-```c++
+```cpp
 void setup()
 {
   pinMode(9, OUTPUT);//Declaring the mode of pin
@@ -161,7 +161,7 @@ digitalRead() function is used to read the logic state at a pin. It is capable o
 
 Take a look at the following code to understand better
 
-```c++
+```cpp
 int ledPin = 13;  // LED connected to digital pin 13
 int inPin = 7;    // pushbutton connected to digital pin 7
 int val = 0;      // variable to store the read value
@@ -222,7 +222,7 @@ Connections:
 
 Code:
 
-```c++
+```cpp
 void setup()
 {
   pinMode(13,OUTPUT); // pin 13 on Uno set as output
@@ -329,7 +329,7 @@ An ADC converts an analog signal picked up by the pin to a digital signal which 
 
 **Code**:
 
-```c++
+```cpp
 int analogPin = A2; // A2 chosen as analog pin
 int val = 0; // variable initialized to store analog read
 
@@ -360,7 +360,7 @@ Follow these resources for a circuit diagram and a better understanding.
 
 #### Project using LDR, LED and Arduino
 
-```c++
+```cpp
 int ldr = A0; // Set A0 (analog input) for LDR
 int value = 0;
 
@@ -405,7 +405,7 @@ There is no return value
 
 #### Syntax
 
-```c++
+```cpp
 int ledPin = 9; // LED connected to digital pin 9
 int analogPin = 3; // potentiometer connected to analog pin 3
 int val = 0; // variable to store the read value
@@ -426,7 +426,7 @@ Also, you can watch this [video](https://www.youtube.com/watch?v=YfV-vYT3yfQ) fo
 
 #### Dimming an LED using analogWrite()
 
-```c++
+```cpp
 int brightness = 0;
 
 void setup(){
@@ -530,7 +530,7 @@ The IC works on the principle of H-Bridge (this can be understood on checking ho
 
 #### Code
 
-```c++
+```cpp
 int dirR1 = 11;
 int dirR2 = 10;
 int dirL1 = 9;
@@ -682,7 +682,7 @@ You can watch the following videos to understand better:
 
 <Image src="/static/images/resources/Day3_Session1/HC-SR04_arduino.png" alt="IR" width='500' height='500' />
 
-```c++
+```cpp
 int trigPin = 12; // connect trig pin of HC-SR04
 int echoPin = 11; // connect echo pin of HC-SR04
 int pingTravelTime; // initialize variable
