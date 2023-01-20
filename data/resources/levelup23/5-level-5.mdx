@@ -1,0 +1,157 @@
+---
+title: Level 5 (with Assignment)
+category: 'resource'
+level: 5
+tags: ['levelup', 'electronics']
+orderInSidebar: 5
+---
+
+<TOCInline toc={props.toc} toHeading={3} asDisclosure />
+
+# Introduction
+
+`important`
+
+<EmbedItem url="https://www.youtube.com/embed/nxiJ38JvZiE" />
+
+# Introduction to LINUX
+
+At present, ROS is fully supported only by Linux systems. This means any ROS-based robot uses Linux, so if you want to create programs for these robots, you have to get ready with Linux.Linux tends to be a highly reliable and secure system than any other operating systems (OS). Linux and Unix-based OS have fewer security flaws, as the code is reviewed by a huge number of developers constantly
+
+In the Linux for Robotics course, you will master essential Linux knowledge in order to get started with ROS.
+
+`important`
+
+## Setting Up Environment
+
+You can choose any one of the three ways to configure your environment.Initially,you can use the Virtual Machine to run linux-based applications and later you could dual boot your system with Linux and Windows.
+The third option of completely removing Windows and shifting to Linux completely is also present.But initially,it is advised to use any one of the first two methods.
+
+### Dual boot Installation:
+
+Switching to Linux can be a big decision, depending on how you use your computer. Sometimes, you just need Windows for specific applications, and sometimes you need Linux for other applications. Whether you are just curious or you need it for work or a personal project, having both operating systems on one computer can be useful.This article will help you [install Ubuntu 22.04 and dual boot alongside Windows 10.](https://www.linuxtechi.com/dual-boot-ubuntu-22-04-and-windows-11/)
+
+### Ubuntu 22.04 -Removing Windows completely
+
+[Remove Windows 10 and completely install Ubuntu](https://phoenixnap.com/kb/ubuntu-22-04-lts)
+
+### Virtual Machine
+
+[Use VMBOX instead](https://trendoceans.com/install-ubuntu-on-virtualbox/)
+
+### Troubleshooting Guidelines
+
+will keep updating regularly.
+
+## Bash script to install ROS/Python and other Tools
+
+- You have to run the following commands
+
+```
+sudo apt install curl
+curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+```
+
+After setting up the linux-installation,we will need to install things like python,vscode and other things.For that you can simply run this bash code in your terminal after cloning this repository.
+[[bash script]](https://drive.google.com/file/d/11oqhEBpsZzGvKTNuk04gMUGYHiLP_SNa/view?usp=sharing)
+
+After copying this file to your working folder,run the following commands in your terminal.
+
+```
+chmod +x linux-setup.sh
+./linux-setup.sh
+```
+
+### Some Issues you might face during ROS installation
+
+**1. catkin_make not found**
+
+- Run the following and then run the script again
+
+```
+source /opt/ros/noetic/setup.bash
+```
+
+**2. python being used instead of python3**
+
+- Run the script with noetic argument
+- ./linux-script.sh noetic
+
+## Courses
+
+Here is the complete course of:
+
+<Image
+  src="/static/images/levelup/level-6/linuxposter.jpg"
+  alt="Linux Course Resources"
+  width="500"
+  height="500"
+/>
+
+[Linux for Robotics ConstructSim Course](https://www.theconstructsim.com/robotigniteacademy_learnros/ros-courses-library/linux-for-robotics/)
+
+You need to complete this ConstructSim course which has the following learning objectives:
+
+- Navigate through a Linux filesystem
+- Interact with a Linux filesystem
+- Edit files using the Shell (vi editor)
+- Manage access to files (Permissions)
+- Create simple Linux programs (Bash Scripts)
+- Manage execution of Linux programs (Processes)
+- Connect to the remote computer of a robot (ssh)
+
+Here is the beginners guide to the Unix and Linux operating system. Eight simple tutorials which cover the basics of UNIX / Linux commands.Here, you can take these tutorials as a guide and currently focus on tutorials 1,2,3,4,5.
+
+[Unix Tutorials for Beginners](http://www.ee.surrey.ac.uk/Teaching/Unix/)
+
+---
+
+# Python
+
+Python is the most popular programming language for robots, and it is also the faster and easier way to learn ROS. In this Python3 for Robotics course, you will master essential Python3 knowledge in order to get started with ROS smoothly.
+
+## Courses
+
+Here is the complete course of:
+
+[Python For Robotics ConstructSim Course](https://www.theconstructsim.com/robotigniteacademy_learnros/ros-courses-library/python-robotics/)
+
+<Image
+  src="/static/images/levelup/level-6/pyposter.jpg"
+  alt="python course"
+  width="500"
+  height="500"
+/>
+
+### Learning Objectives
+
+- Store data into Variables
+- Operate with the data in the Variables
+- Change behavior based on Conditions
+- Create Functions that can be called from other parts of the code
+- Encapsulate the code into Classes so you can have clean and robust code
+
+Apart from the ConstructSim Python course, here is a python course to learn Python like a Professional Start from the basics and go all the way to creating your own applications and games.[[Python Bootcamp vids]](https://drive.google.com/drive/u/2/folders/1J7KpUG8WbaANM9-W1fadm49kIf2bIYRn)
+
+You could go from starting of this bootcamp videos till the milestone project 2.
+
+---
+
+## NUMPY
+
+Numpy is a scientific computing package in python, that’s extensively used in matrix and array manipulations,transformations,
+reshaping etc.
+Numpy is a multi-dimensional arrays library.
+You can use numpy to store all sorts of data in one dimensional array,two dimensional array,3 D array and so on.
+
+<Image src="/static/images/levelup/level-6/numpy.png" alt="Data Types" width="500" height="500" />
+
+The following link explains all sorts of stuff that can be done using numpy library.
+
+<EmbedItem url="https://www.youtube.com/embed/QUT1VHiLmmI" />
+
+For further reading visit the documentation page for numpy - Overview — NumPy v1.18 Manual
+They have an introductory guide for beginners and it can be used as a reference page.
+[Numpy QuickStart](https://numpy.org/devdocs/user/quickstart.html)
+
+---

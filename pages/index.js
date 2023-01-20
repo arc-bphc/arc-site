@@ -13,28 +13,6 @@ import logo from '../assets/ARC_logo_white.png'
 import nvidia_img from '../assets/nvidia.png'
 import { data } from './../data/membersData'
 
-// export async function getStaticProps() {
-//   const prop = data
-//   let randomIndexUsed = {}
-//   let numberOfPosts = 3
-//   let randomIndex = Math.floor(Math.random() * prop.length)
-
-//   const membersData = []
-
-//   for (let i = 0; i < numberOfPosts; i++) {
-//     while (randomIndexUsed[randomIndex]) {
-//       randomIndex = Math.floor(Math.random() * prop.length)
-//     }
-//     membersData.push(prop[randomIndex])
-
-//     randomIndexUsed[randomIndex] = 1
-//   }
-
-//   return {
-//     props: { membersData },
-//   }
-// }
-
 export default function Home() {
   const { theme, setTheme, __ } = useTheme()
 
@@ -69,7 +47,7 @@ export default function Home() {
       <ScrollTopAndComment />
       <div className="flex flex-col items-center justify-center text-center">
         <div
-          className="pointer-events-auto flex w-full justify-center bg-cover bg-no-repeat"
+          className="bodyBackground pointer-events-auto flex w-full justify-center bg-cover bg-no-repeat"
           style={{ minHeight: 100 + 'vh' }}
         >
           <div className="header pointer-events-auto z-[2] m-0 flex w-1/2 flex-col items-center justify-center text-center">
@@ -242,7 +220,7 @@ export default function Home() {
               description={`Various intriguing workshops conducted throughout the year, which
                effortlessly combine learning with enjoyment`}
               imgSrc={'/static/images/workshop.jpg'}
-              href={'/resources/workshop/2021-07-06-Day0-1'}
+              href={'/resources/workshop/1-AboutTheWorkshop'}
             />
 
             <Card
@@ -290,7 +268,13 @@ export default function Home() {
         >
           <span className="p-4 font-montserratSans text-4xl font-medium"> Our Sponsors</span>
           <div className="flex w-full items-center justify-center text-center">
-            <Card key={'Nvidia Jetson'} title={'Nvidia Jetson'} imgSrc={nvidia_img} />{' '}
+            <Image
+              alt={'Nvidia Jetson'}
+              src={nvidia_img}
+              className="object-contain object-center md:h-36 lg:h-48"
+              width={544}
+              height={306}
+            />
           </div>
         </div>
 

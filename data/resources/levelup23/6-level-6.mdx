@@ -1,0 +1,117 @@
+---
+title: Level 6 (with Assignment)
+category: 'resource'
+level: 6
+tags: ['levelup', 'electronics']
+orderInSidebar: 6
+---
+
+<TOCInline toc={props.toc} toHeading={3} asDisclosure />
+
+# Path Planning
+
+The process of determining the most efficient viable route for an autonomous robot to follow is known as path planning. The term "path" refers to a sequence of waypoints that the robot is programmed to navigate through, representing the real-world environment. This process involves various optimization techniques and checks to ensure the chosen path is as optimal as possible. It is a crucial element in making robots autonomous.
+
+## Features
+
+There are various algorithms used for path planning, but they all share some common features which can be used to judge their effectiveness:
+
+1. The primary objective of path planning algorithm is to determine a set of states (positions or velocities) that will enable the robot to reach a specified goal position, originating from a specified start position.
+2. The path generated must be free from any obstacles.
+3. The path must be optimized to the greatest extent possible within the given data, ideally using a parameter(Heuristic) to represent degree of optimization.
+4. The path should be feasible for the robot to traverse, taking into account its dynamics.
+
+## Algorithms
+
+Path planning algorithms can be broadly classified into two types:
+
+## 1. Graph-based algorithms
+
+Graph-based path planning algorithms represent the environment as a graph, with nodes representing states of the robot and edges representing the possible actions between those states. These algorithms then search the graph for a path from the start state to the goal state. Examples of graph-based path planning algorithms include A* , Dijkstra's algorithm and D*.
+
+### Dijkstra's Algorithm
+
+Dijkstra's algorithm is a graph-based path planning algorithm that finds the shortest path between a start node and a goal node in a weighted graph. The algorithm explores nodes with the lowest cost, where the cost is represented by a weight assigned to each edge in the graph. In Autonomous navigation the weights of each edge represent the distance between each individual node, and hence optimizing for cost would optimize the distance.
+
+**Pseudocode**:[link](http://www.gitta.info/Accessibiliti/en/html/Dijkstra_learningObject1.html)
+**Video**:[Dijkstra](https://www.youtube.com/watch?v=EFg3u_E6eHU)
+
+### A\* Algorithm
+
+A* (A-star) algorithm is a graph-based path planning algorithm that finds the shortest path between a start node and a goal node in a weighted graph. It is an extension of Dijkstra's algorithm that uses a heuristic function to estimate the remaining cost of reaching the goal from a node. The heuristic function is a function that estimates the cost of the cheapest path from a given node to the goal node. A* algorithm is a best-first search algorithm that explores nodes with the lowest f(n) = g(n) + h(n), where g(n) is the cost of reaching node n and h(n) is the estimated cost of reaching the goal from node n.
+
+The main idea behind A\* algorithm is to combine the information that Dijkstra's algorithm provides, which is the cost of reaching a node, with an estimation of the remaining cost to the goal node, provided by the heuristic function. This allows the algorithm to explore promising areas of the graph more efficiently, reducing the number of nodes that need to be explored ans is achieved through the h(n) reffered to as the heuristic .
+
+**Pseudocode**:[Link](https://colab.research.google.com/drive/1M76QIRc96XYMrwWYwZofAl6AOYAHgh_B?usp=sharing)
+
+This is an example of how the A\* algorithm might be implemented in Python. The graph object is an abstract representation of the environment, providing the information about the edges and the cost of the edges. The `neighbors(current)` function returns an iterable of the neighbors of the current node. The `cost(current, neighbor)` function returns the cost of the edge between the current node and the neighbor node.
+
+### D\* Algorithm
+
+D* is a path planning algorithm that is an improvement over A* and Dijkstra's algorithm. It uses a dynamic heuristic function that takes into account changes in the environment during the search. The algorithm maintains two priority queues: one for the current search and one for the next search. The current search queue contains the nodes that have been explored and the next search queue contains the nodes that have been newly discovered.
+
+D\* algorithm is based on the idea that the best path to the goal node changes dynamically as the robot moves in the environment. Therefore, it re-plans the path as the robot moves and updates the heuristic function to reflect the changes in the environment.
+
+**Pseudocode**:[Link](https://colab.research.google.com/drive/17Kab2QmdgaqtZ8NJPAMTNTOdwoucwvh1?usp=sharing)
+
+D* algorithm is more robust and efficient than A* and Dijkstra's algorithm when dealing with dynamic environments, but it requires more memory and computational power.
+
+## 2. Sampling-based algorithms
+
+Sampling-based path planning algorithms, on the other hand, randomly sample the environment to generate a set of states. These algorithms then build a roadmap of the environment by connecting nearby states. Paths between the start and goal states are then found by searching the roadmap. Examples of sampling-based path planning algorithms include Rapidly-exploring Random Trees (RRT) and RTT\*
+
+The RRT algorithm is probabilistically complete, meaning that it will find aa solution if one exists. However, in the worst case, the time taken to find a solution can be extremely long and can even be longer than that of an exhaustive search. The probability of finding a solution increases as the number of sampled nodes increases and as the number of samples reaches infinty the probability of having found a solution inches closer to 1.There is also no gaurantee regarding the optimality of the solution. The path produced may not be the the shortest path.
+
+### RRT
+
+RRT (Rapidly-exploring Random Tree) is a path planning algorithm that is used to find a path in a high-dimensional configuration space for robots and autonomous systems. The algorithm starts with a randomly generated point in the configuration space and iteratively generates new random points. It then connects the new points to the closest point in the existing tree, building the tree in a random but guided fashion.
+
+RRT is a versatile algorithm that can be used in various environments and scenarios. For example, it can be used for mobile robot navigation in complex environments with obstacles or for motion planning of manipulator robots where the configuration space is high-dimensional.
+
+The steps for the algorithm are: 0. Create an empty tree T with the start node as the root
+
+1.  while max_iterations not reached do: 0. Generate a random point in the configuration space
+    1.  Find the closest node in the tree T to the random point
+    2.  Create a new node by moving a step from the closest node towards the random point
+    3.  Add the new node to the tree T
+    4.  Check if the new node is close enough to the goal node
+    5.  If it is, return the path from start to goal
+2.  If max_iterations is reached, return "no path found"
+
+The RRT algorithm here starts with an empty tree, with the start point as the root. Then for a specified number of iterations, it repeatedly generates a random point in space, finds the closest point in the tree to the random point, extends the tree towards the random point, and adds the new point to the tree. On each iteration, the algorithm checks if the new point is close enough to the goal point and if it is, it returns the path from start to goal. If the algorithm reaches the maximum number of iterations without finding a path to the goal, it returns "no path found".
+
+Video:[RTT and RTT\*](https://www.youtube.com/watch?v=Ob3BIJkQJEw)
+
+### RRT\*
+
+RRT\* (Rapidly-exploring Random Tree Star) is an extension of the RRT algorithm. It is a path planning algorithm that is used to find the optimal path in a high-dimensional configuration space for robots and autonomous systems. The algorithm starts with a randomly generated point in the configuration space and iteratively generates new random points. It then connects the new points to the closest point in the existing tree, building the tree in a random but guided fashion like RRT , but unlike RRT, after each iteration, it rewires the neighboring vertices of the newly added vertex and updates their costs to the new path if it is shorter.
+
+The steps for the algorithm are: 0. Create an empty tree T with the start node as the root
+
+1. while max_iterations not reached do: 0. Generate a random point in the configuration space
+   1. Find the closest node in the tree T to the random point
+   2. Create a new node by moving a step from the closest node towards the random point
+   3. Add the new node to the tree T
+   4. Update the cost of neighboring nodes of the newly added node in the tree T if the new path is shorter
+   5. Check if the new node is close enough to the goal node
+   6. If it is, return the path from start to goal
+2. If max_iterations is reached, return "no path found"
+
+RRT\* functions similiarly to RRT but after each iteration, the algorithm rewires the neighboring vertices of the newly added vertex and updates their costs to the new path if it is shorter. On each iteration, the algorithm checks if the new point is close enough to the goal point and if it is, it returns the path from start to goal. If the algorithm reaches the maximum number of iterations without finding a path to the goal, it returns "no path found".
+
+RRT\* is guaranteed to find the optimal solution if one exists, unlike RRT which is only probabilistically complete.
+
+Video:Same as RTT : )
+
+---
+
+# Assignment
+
+Design a python program that can traverse throught the following graph from a to e in the shortest, the more efficient the better. Ensure that your code is properly commented and all logic in your code is explained. You will have to convert the data from the graph into a data structure that can be understood by your program.
+
+<Image
+  src="/static/images/levelup/level-6/graph_diagram.png"
+  alt="Node_Graph"
+  width="492px"
+  height="382px"
+/>

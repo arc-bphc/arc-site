@@ -1,18 +1,18 @@
 const resourcesData = [
   {
     id: 1,
-    title: 'Robotics BootCamp',
+    title: 'Robotics 101',
     description: `A 3-Day Robotics Workshop. With no prerequisites, featuring hands-on
     experience and a 5-in-1 kit. With BONUS 2 Complete Projects`,
     imgSrc: '/static/images/workshop.jpg',
-    href: '/resources/workshop/2021-07-06-Day0-1',
+    href: '/resources/workshop/1-AboutTheWorkshop',
   },
   {
     id: 2,
-    title: 'Level Up',
+    title: 'Level Up 2023',
     description: `A gamified bootcamp on electronics, programming and design to get you up and running in no time`,
     imgSrc: '/static/images/Level-Up.png',
-    href: '/resources/levelup/introduction',
+    href: '/resources/levelup23/0-introduction',
   },
   {
     id: 3,

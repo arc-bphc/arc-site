@@ -1,0 +1,336 @@
+---
+title: Level 3 (with Assignment)
+category: 'resource'
+level: 3
+tags: ['levelup', 'electronics']
+orderInSidebar: 3
+---
+
+<TOCInline toc={props.toc} toHeading={3} asDisclosure />
+
+# Motors and Motor Drivers
+
+### About
+
+In everyday life, we see rotating devices like a drill, wheels in a vehicle, and a fan that make our tasks easier because their ability to "turn" helps in these cases. But what is the cause that drives them to turn? Well, this cannot be the sole job of electrical or manual work but is a combined effort of certain laws that lead to an electric motor's principle.
+
+### Other types of Motors
+
+#### 1) Servo Motor
+
+{' '}
+
+<Image src="/static/images/resources/Servo-Motor.jpg" alt="IR" width="500" height="500" />
+
+#### 2) Stepper Motor
+
+{' '}
+
+<Image src="/static/images/resources/stepper.jpg" alt="IR" width="500" height="500" />
+
+### H-Bridge
+
+The direction in which the motor rotates is expected to change depending on the situation and this cannot be always manually changed. Here comes the role of a H-Bridge which enables the change in direction of the motor by changing the state of the switches in its circuit which can be accomplished by logical HIGH or LOW to the respective switch.
+
+<Image src="/static/images/resources/Day3_Session1/hb_1.png" alt="IR" width="500" height="500" />
+
+It is evident from the above diagram about the way in which this works. When S1 and S4 are closed (S2 and S3 being open), the motor rotates in one direction while on closing S2 and S3 (keeping S1 and S4 open) the motor turns in the other direction.
+
+<Image src="/static/images/resources/Day3_Session1/hb_2.png" alt="IR" width="500" height="500" />
+
+<Image src="/static/images/resources/Day3_Session1/hb_3.png" alt="IR" width="500" height="500" />
+
+<Image src="/static/images/resources/Day3_Session1/hb_4.png" alt="IR" width="500" height="500" />
+
+This above diagram shows shorting of circuit which may lead to the burning of H-Bridge.
+
+Also it is not advisable to drive the motor and change the direction at the same time.
+
+<Image src="/static/images/resources/Day3_Session1/hb_5.png" alt="IR" width="500" height="500" />
+
+### Motor Driver
+
+A motor driver at a basic level is an integrated circuit chip used to control a motor as per given instructions with the help of H Bridge topology in the case of the L293D.
+
+Well, lets break this down and look into it closely one at a time.
+
+#### Why do we need a motor driver?
+
+- In the world of autonomous technology, we would require efficient communication between microcontrollers like the arduino and a motor which draws a huge amount of current to work at the desired rate. Meanwhile, micro controllers operate on low level voltage/current (Eg: Arduino has an operating voltage of 5V).
+- Thus, to bridge this gap of power output from the arduino to the motor, a motor driver can act as the interface taking in the low current signals from the Arduino and converting them into higher current signals which can help drive the motor as required.
+- Thus, we can control the speed and direction of rotation of motor based on voltage provided.
+
+<Image
+  src="/static/images/resources/Day3_Session1/motor_driver_1.png"
+  alt="IR"
+  width="500"
+  height="500"
+/>
+
+#### The L293D motor driver
+
+We will now specifically look into the L293D
+
+<Image src="/static/images/resources/Day3_Session1/L293D_1.png" alt="IR" width="500" height="500" />
+
+- It is a commonly used and a popular 16 pin motor driver IC.
+- It is capable of running 2 motors at the same time and works on the principle of a H Bridge.
+
+#### Working principle
+
+The IC works on the principle of H-Bridge (this can be understood on checking how the IC conveys signals to the motor).
+
+<Image
+  src="/static/images/resources/Day3_Session1/L293D_working.png"
+  alt="IR"
+  width="500"
+  height="500"
+/>
+
+- As we see, VCC2 is the pin that drives the motor at its required voltage and VCC1 is for charging the 16-pin IC which is connected to the Arduino 5V pin. One important point is that whenever there are any components in a project, we need to provide a common ground to them. Same is the case here, all the ground pins in the circuit are to be connected with the GND pin of the Arduino.
+- It should also be noted that the enable pins are going to control the speed of the rotation through the PWM signals (Pulse width modulation) which can be established by connecting them to the PWM digital pins on Arduino.
+
+[Reference](https://components101.com/articles/what-is-motor-driver-h-bridge-topology-and-direction-control)
+
+#### Using L293D with motors and Arduino
+
+<EmbedItem url="https://www.youtube.com/embed/y7WFVobzf1M" />
+
+<Image
+  src="/static/images/resources/Day3_Session1/schematic99.png"
+  alt="IR"
+  width="500"
+  height="500"
+/>
+
+#### Code
+
+```c++
+int dirR1 = 11;
+int dirR2 = 10;
+int dirL1 = 9;
+int dirL2 = 6;
+int mSpeedL = 250;
+int mSpeedL1 = 0;
+int mSpeedR = 250;
+int mSpeedR1 =0;
+int dt=1000; // delay time
+
+void setup()
+{
+  Serial.begin(9600);
+
+// set pinMode for all pins
+  pinMode(dirR1, OUTPUT);
+  pinMode(dirR2, OUTPUT);
+  pinMode(dirL1, OUTPUT);
+  pinMode(dirL2, OUTPUT);
+}
+
+void loop()
+{
+  analogWrite(dirR1,mSpeedR);
+  analogWrite(dirR2,mSpeedR2);
+  analogWrite(dirL1,mSpeedL);
+  analogWrite(dirL2,mSpeedL2);
+
+  delay(dt); // set delay time
+ }
+```
+
+## Servo
+
+### About
+
+A servo motor is a type of motor that can rotate with great precision. Normally this type of motor consists of a control circuit that provides feedback on the current position of the motor shaft, this feedback allows the servo motors to rotate with great precision. If you want to rotate an object at some specific angles or distance, then you use a servo motor
+
+It has 3 pins, 1. Power, 2. Ground and 3. Signal
+
+<Image src="/static/images/resources/Servo-Motor.jpg" alt="IR" width="600" height="500" />
+
+This is a simple Servo Arduino code, that takes input from a potentiometer which gives you input between 0 and 1023 since it's an analogRead. Then we scale down 1024 to 180 and give the servo an angle at which it should rotate to
+
+### Knob
+
+```c
+#include <Servo.h>
+
+Servo myservo;  // create servo object to control a servo
+
+int potpin = 0;  // analog pin used to connect the potentiometer
+int val;    // variable to read the value from the analog pin
+
+void setup() {
+  myservo.attach(9);  // attaches the servo on pin 9 to the servo object
+}
+
+void loop() {
+  val = analogRead(potpin);            // reads the value of the potentiometer (value between 0 and 1023)
+  val = map(val, 0, 1023, 0, 180);     // scale it to use it with the servo (value between 0 and 180)
+  myservo.write(val);                  // sets the servo position according to the scaled value
+  delay(15);                           // waits for the servo to get there
+}
+```
+
+<Image src="/static/images/resources/arduino.png" alt="IR" width="600" height="400" />
+
+### Sweep
+
+You can also make it move through the 180 degrees
+
+```c
+#include <Servo.h>
+
+Servo myservo;  // create servo object to control a servo
+// twelve servo objects can be created on most boards
+
+int pos = 0;    // variable to store the servo position
+
+void setup() {
+  myservo.attach(9);  // attaches the servo on pin 9 to the servo object
+}
+
+void loop() {
+  for (pos = 0; pos <= 180; pos += 1) { // goes from 0 degrees to 180 degrees
+    // in steps of 1 degree
+    myservo.write(pos);              // tell servo to go to position in variable 'pos'
+    delay(15);                       // waits 15ms for the servo to reach the position
+  }
+  for (pos = 180; pos >= 0; pos -= 1) { // goes from 180 degrees to 0 degrees
+    myservo.write(pos);              // tell servo to go to position in variable 'pos'
+    delay(15);                       // waits 15ms for the servo to reach the position
+  }
+}
+```
+
+## Ultrasonic Sensor HC-SR04
+
+### About
+
+The HC-SR04 ultrasonic sensor is used to calculate the distance of an obstacle in the path of the bot. It consists of four pins: VCC, trigger, echo & ground. It also includes a transmitter and receiver, which transmit and receive the US signals, respectively.
+
+<Image
+  src="/static/images/resources/Day3_Session1/HC-SR04_1.png"
+  alt="IR"
+  width="500"
+  height="500"
+/>
+
+### Working Principle
+
+The HC-SR04 sensor detects the travel time of a signal from transmission till it's received. The sensor sends out a ping, and an echo is heard. The duration of travel of the signal is then measured by the sensor.
+When the Trig pin of the sensor receives a pulse of HIGH for at least 10 microseconds, it will initiate the sensor, which will transmit out 8 cycles of ultrasonic burst and wait for the reflected ultrasonic burst. When the sensor detects US signals from the receiver, it will set the Echo pin to HIGH and delay for a period proportional to distance.
+
+The sensor transmits 8 cycles of ultrasonic bursts since the receiver needs to hear enough cycles to reach its full output and set the Echo pin to HIGH.
+
+### Pins Description
+
+- VCC: This powers the sensor with +5V and is connected to the 5V supply of the Arduino.
+- Trigger: It is an Input pin. It is connected to any digital pin on the Arduino. On sending a HIGH signal to this pin, the transmitter sends out US signals until a LOW signal is sent.
+- Echo: It is an Output pin. It is connected to any digital pin on the Arduino. This pin goes HIGH for the duration equal to the time taken by the receiver to receive US signals after being transmitted.
+- Ground: This pin is connected to the ground of the Arduino.
+
+The following image shows the connection of the terminals of the sensor to the Arduino:
+
+<Image
+  src="/static/images/resources/Day3_Session1/HC-SR04_2.png"
+  alt="IR"
+  width="500"
+  height="500"
+/>
+
+[Reference](https://components101.com/sensors/ultrasonic-sensor-working-pinout-datasheet)
+You can also refer to the [datasheet](https://cdn.sparkfun.com/datasheets/Sensors/Proximity/HCSR04.pdf) for more information.
+
+### Distance Calculation
+
+As described earlier, the HC-SR04 sensor sends out ultrasonic signals and receives the echo, then measures the pingTimeTravel of the signal.
+
+We know, $Speed = Distance \hspace{0.1cm} / \hspace{0.1cm}Time$
+
+Sound waves travel at a speed of about $340 m/s$ at room temperature.
+$\therefore Speed = 340 m/s$
+
+The time given by HC-SR04 is in microseconds. We need to divide the time by 2 since this is the time taken by the sound waves from the transmitter to the object back to the receiver.
+
+<Image
+  src="/static/images/resources/Day3_Session1/HC-SR04_distance.png"
+  alt="IR"
+  width="500"
+  height="500"
+/>
+
+Thus, the formula becomes,
+$Distance = 340 * (pingTravelTime / 2)$
+
+You can watch the following videos to understand better:
+
+- [Measuring Speed of Sound With HC-SR04 Sensor](https://www.youtube.com/watch?v=BTMMNsL0_b0)
+- [Measuring Distance With HC-SR04 Ultrasonic Sensor](https://www.youtube.com/watch?v=2hwrDSVHQ-E)
+
+### Code
+
+<Image
+  src="/static/images/resources/Day3_Session1/HC-SR04_arduino.png"
+  alt="IR"
+  width="500"
+  height="500"
+/>
+
+```c++
+int trigPin = 12; // connect trig pin of HC-SR04
+int echoPin = 11; // connect echo pin of HC-SR04
+int pingTravelTime; // initialize variable
+
+void setup() {
+    pinMode(trigPin,OUTPUT); // trig pin set as OUTPUT
+    pinMode(echoPin,INPUT); // echo pin set as INPUT
+    Serial.begin(9600);
+}
+
+void loop() {
+    digitalWrite(trigPin,LOW); // trig pin set to low
+    delayMicroseconds(10); // delay time in microseconds
+
+    digitalWrite(trigPin,HIGH); // trig pin set to high
+    delayMicroseconds(10); // delay time in microseconds
+    digitalWrite(trigPin,LOW); // trig pin set to low
+
+    pingTravelTime = pulseIn(echoPin,HIGH); // pulseIn() function explained below
+    delay(25); // delay time
+    Serial.println(pingTravelTime); // print pingTravelTime on Serial Monitor
+}
+```
+
+<iframe
+  width="725"
+  height="453"
+  src="https://www.tinkercad.com/embed/cGqyGisEibf?editbtn=1"
+  frameBorder="0"
+  marginWidth="0"
+  marginHeight="0"
+  scrolling="no"
+></iframe>
+
+### pulseIn() Function
+
+The pulseIn() function measures the time period of either HIGH or LOW pulse input signal.
+The syntax of pulseIn() function is:
+`pulseIn(pin, value)`
+
+- pin: the number of the pin on which the pulse is to be read.
+- value: the value of the pulse, either HIGH or LOW.
+
+In the above code, the pin is the echoPin, and the value is HIGH, i.e. the function measures the time period of the HIGH pulse input signal on the echoPin.
+
+Hence it indirectly measures the travel time of the signal. Thus the pingTimeTravel can be calculated using the pulseIn() function.
+
+<EmbedItem url="https://www.youtube.com/embed/M-UKXCUI0r" />
+
+---
+
+# Assignment
+
+1. Control a motor using H-bridge.
+2. Design a circuit using appropriate sensor such that if a wall comes in front your LED starts blinking.
+3. Design a circuit using appropriate sensor such that if the sun sets the light automatically turns ON and turns off at sun rise.
