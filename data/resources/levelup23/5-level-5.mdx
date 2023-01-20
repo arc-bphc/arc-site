@@ -7,19 +7,16 @@ orderInSidebar: 5
 ---
 
 <TOCInline toc={props.toc} toHeading={3} asDisclosure />
-<br /># Introduction
+<br />
 
-`important`
+# Introduction
 
 <EmbedItem url="https://www.youtube.com/embed/nxiJ38JvZiE" />
-
-# Introduction to LINUX
+<br /># Introduction to LINUX
 
 At present, ROS is fully supported only by Linux systems. This means any ROS-based robot uses Linux, so if you want to create programs for these robots, you have to get ready with Linux.Linux tends to be a highly reliable and secure system than any other operating systems (OS). Linux and Unix-based OS have fewer security flaws, as the code is reviewed by a huge number of developers constantly
 
 In the Linux for Robotics course, you will master essential Linux knowledge in order to get started with ROS.
-
-`important`
 
 ## Setting Up Environment
 
@@ -46,7 +43,7 @@ will keep updating regularly.
 
 - You have to run the following commands
 
-```
+```bash
 sudo apt install curl
 curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
 ```
@@ -56,7 +53,7 @@ After setting up the linux-installation,we will need to install things like pyth
 
 After copying this file to your working folder,run the following commands in your terminal.
 
-```
+```bash
 chmod +x linux-setup.sh
 ./linux-setup.sh
 ```
@@ -67,7 +64,7 @@ chmod +x linux-setup.sh
 
 - Run the following and then run the script again
 
-```
+```bash
 source /opt/ros/noetic/setup.bash
 ```
 
