@@ -24,7 +24,7 @@ The Arduino microcontroller uses variables identical to C++ on most parts. Hence
 
 Example:
 
-```c++
+```cpp
 
 int32_t myverylongvariable; // Bad Naming, Extremely Unreadable
 int32_t my_very_long_variable; // Good, but unconvetional
@@ -53,7 +53,7 @@ Size and Range of Some Standard Data Types:
 
 Examples:
 
-```c++
+```cpp
 
 int a = 5;
 int32_t b = 7; // Equicvalent to int in x64 compilers
@@ -149,7 +149,7 @@ We now look at how to control the flow of execution of the program. Typically, e
 
 We have the following structure of Programs:
 
-```c++
+```cpp
 if (condition1) {
     // do something when condition1 is true
 } else if (condition2) {
@@ -163,13 +163,13 @@ if (condition1) {
 
 Ternary operator provides a simple way to execute a statement when a condition is true or false.
 
-```c++
+```cpp
 variable = condition ? value when condition is true : value when condition is false;
 ```
 
 This is equivalent to:
 
-```c++
+```cpp
 if (condition) {
     variable = value when condition is true;
 } else {
@@ -179,7 +179,7 @@ if (condition) {
 
 Example:
 
-```c++
+```cpp
 int32_t a = 5, b = 7;
 int32_t maxAB = (a > b) ? a : b; // maxAB = 7
 ```
@@ -194,7 +194,7 @@ These loops execute a set of statements as long as a condition is true. The cond
 
 Syntax:
 
-```c++
+```cpp
 while (condition) {
     // Loop body
 }
@@ -202,7 +202,7 @@ while (condition) {
 
 Example:
 
-```c++
+```cpp
 int32_t i = 0;
 while (i < 10) {
     i++;
@@ -217,7 +217,7 @@ These loops execute a set of statements once for each element in a collection. T
 
 Syntax:
 
-```c++
+```cpp
 for (variable = initial value; condition; increment variable) {
     // Loop Body
 }
@@ -268,7 +268,7 @@ Naming A Function: In C++, the conventional practive is to use Camel Case for na
 
 Example:
 
-```c++
+```cpp
 
 int32_t myverylongfunction(); // Bad Naming, Extremely Unreadable
 int32_t my_very_long_function(); // Good, but unconvetional
@@ -282,7 +282,7 @@ Every function has a protype (or its signature/declaration) and a definition. Th
 
 Syntax:
 
-```c++
+```cpp
 returnType functionName (parameter1, parameter2, ...); // Function Protype
 
 returnType functionName (parameter1, parameter2, ...) { // Function Definition
@@ -295,7 +295,7 @@ returnType functionName (parameter1, parameter2, ...) { // Function Definition
 
 Example:
 
-```c++
+```cpp
 
 bool isOdd(int32_t n) {
     /*
@@ -336,7 +336,7 @@ This function is called repeatedly. It is the main function of your program. It 
 
 Sample Code Structure:
 
-```c++
+```cpp
 // Define Global Variables
 
 void setup() {

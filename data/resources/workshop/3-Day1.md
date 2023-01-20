@@ -378,7 +378,7 @@ You will be learning how to talk to your Arduino and interface it with other sen
 
 Every individual program that is written for the Arduino is called as a "**sketch**", the most basic of all the sketches is the "**blank sketch**" its the first sketch you see when you open a new IDE page. Which kinda looks like this
 
-```c++
+```cpp
 void setup(){
     // Code written here will be only be executed once
 
@@ -433,7 +433,7 @@ Now that you know what kinda external devices you will be working with its high 
 
 **Example Sketch**
 
-```c++
+```cpp
 void setup(){
     // The "8" refers to the digital pin 8 on the arduino board
     pinMode(8,INPUT); // for an INPUT device
@@ -476,7 +476,7 @@ This function is called repeatedly. It is the main function of your program. It 
 
 Sample Code Structure:
 
-```c++
+```cpp
 // Define Global Variables
 
 void setup() {
@@ -535,7 +535,7 @@ Probably the most important practical thing you need to know is that for serial 
 As you know whatever we do in the `void setup()` is only run once whereas as the part in the `void loop()` keeps on runing until Arduino is powered.
 This is an example to print your name once when the board is powered.
 
-```c++
+```cpp
 void setup()
 {
   Serial.begin(9600);  //Begin serial communication at 9600(Baud rate)
@@ -555,7 +555,7 @@ For example if you want to print "1" and thenafter 1 second you want to print "2
 
 The function takes milliseconds as input.
 
-```c++
+```cpp
 void setup(){
 	Serial.begin(9600);
 }
@@ -591,7 +591,7 @@ The Arduino microcontroller uses variables identical to C++ on most parts. Hence
 
 Example:
 
-```c++
+```cpp
 
 int32_t myverylongvariable; // Bad Naming, Extremely Unreadable
 int32_t my_very_long_variable; // Good, but unconvetional
@@ -620,7 +620,7 @@ Size and Range of Some Standard Data Types:
 
 Examples:
 
-```c++
+```cpp
 
 int a = 5;
 int32_t b = 7; // Equicvalent to int in x64 compilers
@@ -716,7 +716,7 @@ We now look at how to control the flow of execution of the program. Typically, e
 
 We have the following structure of Programs:
 
-```c++
+```cpp
 if (condition1) {
     // do something when condition1 is true
 } else if (condition2) {
@@ -730,13 +730,13 @@ if (condition1) {
 
 Ternary operator provides a simple way to execute a statement when a condition is true or false.
 
-```c++
+```cpp
 variable = condition ? value when condition is true : value when condition is false;
 ```
 
 This is equivalent to:
 
-```c++
+```cpp
 if (condition) {
     variable = value when condition is true;
 } else {
@@ -746,7 +746,7 @@ if (condition) {
 
 Example:
 
-```c++
+```cpp
 int32_t a = 5, b = 7;
 int32_t maxAB = (a > b) ? a : b; // maxAB = 7
 ```
@@ -761,7 +761,7 @@ These loops execute a set of statements as long as a condition is true. The cond
 
 Syntax:
 
-```c++
+```cpp
 while (condition) {
     // Loop body
 }
@@ -769,7 +769,7 @@ while (condition) {
 
 Example:
 
-```c++
+```cpp
 int32_t i = 0;
 while (i < 10) {
     i++;
@@ -784,7 +784,7 @@ These loops execute a set of statements once for each element in a collection. T
 
 Syntax:
 
-```c++
+```cpp
 for (variable = initial value; condition; increment variable) {
     // Loop Body
 }
@@ -835,7 +835,7 @@ Naming A Function: In C++, the conventional practive is to use Camel Case for na
 
 Example:
 
-```c++
+```cpp
 
 int32_t myverylongfunction(); // Bad Naming, Extremely Unreadable
 int32_t my_very_long_function(); // Good, but unconvetional
@@ -849,7 +849,7 @@ Every function has a protype (or its signature/declaration) and a definition. Th
 
 Syntax:
 
-```c++
+```cpp
 returnType functionName (parameter1, parameter2, ...); // Function Protype
 
 returnType functionName (parameter1, parameter2, ...) { // Function Definition
@@ -862,7 +862,7 @@ returnType functionName (parameter1, parameter2, ...) { // Function Definition
 
 Example:
 
-```c++
+```cpp
 
 bool isOdd(int32_t n) {
     /*

@@ -475,7 +475,7 @@ You will be learning how to talk to your Arduino and interface it with other sen
 
 Every individual program that is written for the Arduino is called as a "**sketch**", the most basic of all the sketches is the "**blank sketch**" its the first sketch you see when you open a new IDE page. Which kinda looks like this
 
-```c++
+```cpp
 void setup(){
     // Code written here will be only be executed once
 
@@ -530,7 +530,7 @@ Now that you know what kinda external devices you will be working with its high 
 
 **Example Sketch**
 
-```c++
+```cpp
 void setup(){
     // The "8" refers to the digital pin 8 on the arduino board
     pinMode(8,INPUT); // for an INPUT device
@@ -586,7 +586,7 @@ Probably the most important practical thing you need to know is that for serial 
 As you know whatever we do in the `void setup()` is only run once whereas as the part in the `void loop()` keeps on runing until Arduino is powered.
 This is an example to print your name once when the board is powered.
 
-```c++
+```cpp
 void setup()
 {
   Serial.begin(9600);  //Begin serial communication at 9600(Baud rate)
@@ -606,7 +606,7 @@ For example if you want to print "1" and thenafter 1 second you want to print "2
 
 The function takes milliseconds as input.
 
-```c++
+```cpp
 void setup(){
 	Serial.begin(9600);
 }

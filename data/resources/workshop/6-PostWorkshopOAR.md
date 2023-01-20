@@ -39,7 +39,7 @@ We need to make the following connections.
 The robot would keeping moving straight until it detects an obstacle. Then it would move backwards and take a turn to continue the path.
 Attached below is the code.
 
-```c++
+```cpp
 int trigPin = 9;      // Trig Pin Of HC-SR04
 int echoPin = 8;     // Echo Pin Of HC-SR04
 int l1 = 10; // Motor Pins
