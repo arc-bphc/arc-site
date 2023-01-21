@@ -147,7 +147,9 @@ void loop()
 
 By the above circuit connection and the usage of the above code, the LED will blink until the Arduino is given power.
 
-<iframe width="400" height="253" src="https://www.tinkercad.com/embed/6NIZm9eNqsL?editbtn=1" frameBorder="0" marginWidth="0" marginHeight="0" scrolling="no"></iframe>
+<iframe
+  width="725"
+  height="453"src="https://www.tinkercad.com/embed/6NIZm9eNqsL?editbtn=1" frameBorder="0" marginWidth="0" marginHeight="0" scrolling="no"></iframe>
 
 There maybe a lot in the above code that you might not understand at present, but still try to copy the code and replicate the circuit and run the simulation. This will help you grasp the concepts better in the later sessions.
 
@@ -450,7 +452,9 @@ void loop()
 }
 ```
 
-<iframe width="600" height="453" src="https://www.tinkercad.com/embed/5OJLL9YWGF9?editbtn=1" frameBorder="0" marginWidth="0" marginHeight="0" scrolling="no"></iframe>
+<iframe
+  width="725"
+  height="453" src="https://www.tinkercad.com/embed/5OJLL9YWGF9?editbtn=1" frameBorder="0" marginWidth="0" marginHeight="0" scrolling="no"></iframe>
 
 # Motors and Motor Drivers
 
