@@ -211,7 +211,7 @@ export default function Home() {
               mastering topics ranging from basic electronics and programming to 
               simulations and mechanical design`}
               imgSrc={'/static/images/level-up-font.png'}
-              href={'/resources/levelup/introduction'}
+              href={'/resources/levelup23/0-introduction'}
             />
 
             <Card
