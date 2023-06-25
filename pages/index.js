@@ -83,7 +83,7 @@ export default function Home() {
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 480 512"
-                    className="h-12 w-12 fill-black p-1 transition-colors duration-700 ease-in-out group-hover:fill-white dark:fill-white dark:group-hover:fill-black"
+                    className="h-12 w-12 fill-black p-1 transition-colors duration-700 fease-in-out group-hover:fill-white dark:fill-white dark:group-hover:fill-black"
                   >
                     <path d="M464 64C490.5 64 512 85.49 512 112C512 127.1 504.9 141.3 492.8 150.4L275.2 313.6C263.8 322.1 248.2 322.1 236.8 313.6L19.2 150.4C7.113 141.3 0 127.1 0 112C0 85.49 21.49 64 48 64H464zM217.6 339.2C240.4 356.3 271.6 356.3 294.4 339.2L512 176V384C512 419.3 483.3 448 448 448H64C28.65 448 0 419.3 0 384V176L217.6 339.2z" />
                   </svg>
@@ -312,8 +312,8 @@ export default function Home() {
                 <span className="mb-8 text-sm font-semibold uppercase text-gray-900 dark:text-white">
                   President
                 </span>
-                <p className="mt-4 mb-1 text-gray-400">Bhaswanth Ayapilla</p>
-                <p className="text-gray-400">+91 86600 91378</p>
+                <p className="mt-4 mb-1 text-gray-400">Nilay Girgaonkar</p>
+                <p className="text-gray-400">+91 84118 13239</p>
               </div>
               <div className="mb-6 items-center md:mb-0">
                 <span className="mb-8 text-sm font-semibold uppercase text-gray-900 dark:text-white">
